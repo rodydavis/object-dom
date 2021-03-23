@@ -11,14 +11,14 @@ JS Declarative HTML Dom
 
 ```html
 <div id="root"></div>
-    <script type="module">
-        import { Div, Text, render } from './dist/object-dom.es5.js';
-        const app = new Div({
-            children: [
-                new Text('Hello World!'),
-            ]
-        });
-        // <div>Hello World!</div>
-        render(app, document.body.querySelector('#root'));
-    </script>
+<script type="module">
+    import { Div, Text, render } from './dist/object-dom.es5.js';
+    const app = new Div({
+        children: [
+            new Text('Hello World!'),
+        ]
+    });
+    // <div>Hello World!</div>
+    render(app, document.body.querySelector('#root'));
+</script>
 ```
