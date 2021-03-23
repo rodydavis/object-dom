@@ -11,16 +11,17 @@
 <body>
     <div id="root"></div>
     <script type="module">
-        import { Div, Text, Button, render } from './object-dom.es5.js';
-        const button = new Button();
-        const text = new Text('Hello World!');
-        button.node.addEventListener('click', {
-            text.value = 'New Update!';
-        });
+        import { Div, Text, render } from './object-dom.es5.js';
+
+        // const button = new Button();
+        // const text = new Text('Hello World!');
+        // button.node.addEventListener('click', {
+        //     text.value = 'New Update!';
+        // });
+
         const app = new Div({
             children: [
-                text,
-                button,
+                new Text('Hello World!'),
             ]
         });
         render(app, document.body.querySelector('#root'));
