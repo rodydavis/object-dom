@@ -1,14 +1,16 @@
-import DummyClass from "../src/object-dom"
+import {Div} from "../src/object-dom"
 
 /**
- * Dummy test
+ * Div test
  */
-describe("Dummy test", () => {
-  it("works if true is truthy", () => {
-    expect(true).toBeTruthy()
-  })
+describe("Div test", () => {
+  it("Div is instantiable", () => {
+    expect(new Div()).toBeInstanceOf(Div)
+  });
 
-  it("DummyClass is instantiable", () => {
-    expect(new DummyClass()).toBeInstanceOf(DummyClass)
-  })
+  it("Div correct output", () => {
+    const source = new Div();
+    const htmlResult = source.render();
+    expect(htmlResult).toEqual('<div></div>')
+  });
 })
