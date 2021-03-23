@@ -93,6 +93,7 @@ var Text = /** @class */ (function (_super) {
         var _a, _b;
         var _this = _super.call(this, document.createElement('p'), (_a = props === null || props === void 0 ? void 0 : props.style) !== null && _a !== void 0 ? _a : {}, (_b = props === null || props === void 0 ? void 0 : props.children) !== null && _b !== void 0 ? _b : []) || this;
         _this.value = value;
+        _this.children.push(value);
         return _this;
     }
     return Text;
@@ -100,9 +101,12 @@ var Text = /** @class */ (function (_super) {
 
 var Button = /** @class */ (function (_super) {
     __extends(Button, _super);
-    function Button(props) {
+    function Button(value, props) {
         var _a, _b;
-        return _super.call(this, document.createElement('button'), (_a = props === null || props === void 0 ? void 0 : props.style) !== null && _a !== void 0 ? _a : {}, (_b = props === null || props === void 0 ? void 0 : props.children) !== null && _b !== void 0 ? _b : []) || this;
+        var _this = _super.call(this, document.createElement('button'), (_a = props === null || props === void 0 ? void 0 : props.style) !== null && _a !== void 0 ? _a : {}, (_b = props === null || props === void 0 ? void 0 : props.children) !== null && _b !== void 0 ? _b : []) || this;
+        _this.value = value;
+        _this.children.push(value);
+        return _this;
     }
     return Button;
 }(ObjectDom));

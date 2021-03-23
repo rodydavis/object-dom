@@ -6,5 +6,6 @@ export class Text extends ObjectDom<HTMLElement> {
     props: { style?: Styles; children?: Array<ObjectDom<HTMLElement>> } = {}
   ) {
     super(document.createElement('p'), props?.style ?? {}, props?.children ?? [])
+    this.children.push(value)
   }
 }

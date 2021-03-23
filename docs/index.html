@@ -14,7 +14,7 @@
         import { Div, Text, Button, render } from './object-dom.es5.js';
 
         const text = new Text('Hello World!');
-        const button = new Button({children: ['Update']});
+        const button = new Button('Update');
         button.node.addEventListener('click', () => {
             text.value = 'New Update!';
             text.update();
