@@ -1,3 +1,40 @@
+var ObjectDom = /** @class */ (function () {
+    function ObjectDom(node, styles, children) {
+        this.node = node;
+        this.styles = styles;
+        this.children = children;
+    }
+    ObjectDom.prototype.render = function () {
+        var node = this.node;
+        if (node instanceof HTMLElement)
+            return nodeToHtml(node, this.styles, this.children);
+        return node.toString();
+    };
+    return ObjectDom;
+}());
+function applyNodeStyles(node, styles) {
+    if (styles === null || styles === void 0 ? void 0 : styles.width)
+        node.style.width = styles.width;
+    if (styles === null || styles === void 0 ? void 0 : styles.height)
+        node.style.height = styles.height;
+}
+function applyNodeChildren(node, children) {
+    var nodes = [];
+    for (var _i = 0, children_1 = children; _i < children_1.length; _i++) {
+        var child = children_1[_i];
+        var childHtml = child.render();
+        nodes.push(childHtml);
+    }
+    if (nodes.length > 0) {
+        node.innerHTML = nodes.join('\n');
+    }
+}
+function nodeToHtml(node, styles, children) {
+    applyNodeStyles(node, styles);
+    applyNodeChildren(node, children);
+    return node.outerHTML;
+}
+
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation. All rights reserved.
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use
@@ -27,35 +64,6 @@ function __extends(d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 }
 
-var ObjectDom = /** @class */ (function () {
-    function ObjectDom(node, styles, children) {
-        this.node = node;
-        this.styles = styles;
-        this.children = children;
-    }
-    ObjectDom.prototype.render = function () {
-        var _a, _b;
-        var node = this.node;
-        if (node instanceof HTMLElement) {
-            if ((_a = this.styles) === null || _a === void 0 ? void 0 : _a.width)
-                node.style.width = this.styles.width;
-            if ((_b = this.styles) === null || _b === void 0 ? void 0 : _b.height)
-                node.style.height = this.styles.height;
-            var children = [];
-            for (var _i = 0, _c = this.children; _i < _c.length; _i++) {
-                var child = _c[_i];
-                var childHtml = child.render();
-                children.push(childHtml);
-            }
-            if (children.length > 0) {
-                node.innerHTML = children.join('\n');
-            }
-            return node.outerHTML;
-        }
-        return node.toString();
-    };
-    return ObjectDom;
-}());
 var Div = /** @class */ (function (_super) {
     __extends(Div, _super);
     function Div(props) {
@@ -65,6 +73,7 @@ var Div = /** @class */ (function (_super) {
     }
     return Div;
 }(ObjectDom));
+
 var Text = /** @class */ (function (_super) {
     __extends(Text, _super);
     function Text(value, props) {
@@ -76,6 +85,7 @@ var Text = /** @class */ (function (_super) {
     }
     return Text;
 }(ObjectDom));
+
 function render(source, target) {
     if (target === void 0) { target = document.body; }
     var htmlResult = source.render();
@@ -83,5 +93,5 @@ function render(source, target) {
     target.innerHTML = htmlResult;
 }
 
-export { ObjectDom, Div, Text, render };
+export { render, ObjectDom, Div, Text };
 //# sourceMappingURL=object-dom.es5.js.map
