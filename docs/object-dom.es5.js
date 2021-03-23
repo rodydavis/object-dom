@@ -78,12 +78,21 @@ var Text = /** @class */ (function (_super) {
     __extends(Text, _super);
     function Text(value, props) {
         if (props === void 0) { props = {}; }
-        var _a, _b;
-        var _this = _super.call(this, value, (_a = props === null || props === void 0 ? void 0 : props.style) !== null && _a !== void 0 ? _a : {}, (_b = props === null || props === void 0 ? void 0 : props.children) !== null && _b !== void 0 ? _b : []) || this;
+        var _a;
+        var _this = _super.call(this, value, (_a = props === null || props === void 0 ? void 0 : props.style) !== null && _a !== void 0 ? _a : {}, []) || this;
         _this.value = value;
         return _this;
     }
     return Text;
+}(ObjectDom));
+
+var Button = /** @class */ (function (_super) {
+    __extends(Button, _super);
+    function Button(props) {
+        var _a;
+        return _super.call(this, document.createElement('button'), (_a = props === null || props === void 0 ? void 0 : props.style) !== null && _a !== void 0 ? _a : {}, []) || this;
+    }
+    return Button;
 }(ObjectDom));
 
 function render(source, target) {
@@ -93,5 +102,5 @@ function render(source, target) {
     target.innerHTML = htmlResult;
 }
 
-export { render, ObjectDom, Div, Text };
+export { render, ObjectDom, Div, Text, Button };
 //# sourceMappingURL=object-dom.es5.js.map
