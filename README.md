@@ -18,6 +18,7 @@ JS Declarative HTML Dom
                 new Text('Hello World!'),
             ]
         });
+        // <div>Hello World!</div>
         render(app, document.body.querySelector('#root'));
     </script>
 ```
