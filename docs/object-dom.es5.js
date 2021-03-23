@@ -6,12 +6,19 @@ var ObjectDom = /** @class */ (function () {
     }
     ObjectDom.prototype.render = function () {
         var node = this.node;
-        if (node instanceof HTMLElement)
-            return nodeToHtml(node, this.styles, this.children);
-        return node.toString();
+        return nodeToHtml(node, this.styles, this.children);
+    };
+    ObjectDom.prototype.update = function () {
+        render(this, this.node);
     };
     return ObjectDom;
 }());
+function render(source, target) {
+    if (target === void 0) { target = document.body; }
+    var htmlResult = source.render();
+    console.log(htmlResult);
+    target.innerHTML = htmlResult;
+}
 function applyNodeStyles(node, styles) {
     if (styles === null || styles === void 0 ? void 0 : styles.width)
         node.style.width = styles.width;
@@ -22,8 +29,13 @@ function applyNodeChildren(node, children) {
     var nodes = [];
     for (var _i = 0, children_1 = children; _i < children_1.length; _i++) {
         var child = children_1[_i];
-        var childHtml = child.render();
-        nodes.push(childHtml);
+        if (child instanceof ObjectDom) {
+            var childHtml = child.render();
+            nodes.push(childHtml);
+        }
+        else {
+            nodes.push(child);
+        }
     }
     if (nodes.length > 0) {
         node.innerHTML = nodes.join('\n');
@@ -78,8 +90,8 @@ var Text = /** @class */ (function (_super) {
     __extends(Text, _super);
     function Text(value, props) {
         if (props === void 0) { props = {}; }
-        var _a;
-        var _this = _super.call(this, value, (_a = props === null || props === void 0 ? void 0 : props.style) !== null && _a !== void 0 ? _a : {}, []) || this;
+        var _a, _b;
+        var _this = _super.call(this, document.createElement('p'), (_a = props === null || props === void 0 ? void 0 : props.style) !== null && _a !== void 0 ? _a : {}, (_b = props === null || props === void 0 ? void 0 : props.children) !== null && _b !== void 0 ? _b : []) || this;
         _this.value = value;
         return _this;
     }
@@ -89,18 +101,11 @@ var Text = /** @class */ (function (_super) {
 var Button = /** @class */ (function (_super) {
     __extends(Button, _super);
     function Button(props) {
-        var _a;
-        return _super.call(this, document.createElement('button'), (_a = props === null || props === void 0 ? void 0 : props.style) !== null && _a !== void 0 ? _a : {}, []) || this;
+        var _a, _b;
+        return _super.call(this, document.createElement('button'), (_a = props === null || props === void 0 ? void 0 : props.style) !== null && _a !== void 0 ? _a : {}, (_b = props === null || props === void 0 ? void 0 : props.children) !== null && _b !== void 0 ? _b : []) || this;
     }
     return Button;
 }(ObjectDom));
 
-function render(source, target) {
-    if (target === void 0) { target = document.body; }
-    var htmlResult = source.render();
-    console.log(htmlResult);
-    target.innerHTML = htmlResult;
-}
-
-export { render, ObjectDom, Div, Text, Button };
+export { ObjectDom, render, Div, Text, Button };
 //# sourceMappingURL=object-dom.es5.js.map

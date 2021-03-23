@@ -13,11 +13,11 @@
     <script type="module">
         import { Div, Text, Button, render } from './object-dom.es5.js';
 
-        const button = new Button();
         const text = new Text('Hello World!');
-
+        const button = new Button({children: ['Update']});
         button.node.addEventListener('click', () => {
             text.value = 'New Update!';
+            text.update();
         });
 
         const app = new Div({
