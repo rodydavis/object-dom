@@ -16,12 +16,13 @@ interface ObjectDomProps<T extends HTMLElement> extends NodeProps {
     node: T;
 }
 export declare abstract class ObjectDomBase {
+    abstract node: HTMLElement;
     update: () => void;
-    abstract render: () => ObjectDom<HTMLElement>;
+    abstract build: () => ObjectDom<HTMLElement>;
 }
 export declare class ObjectDom<T extends HTMLElement> extends ObjectDomBase {
     constructor(props: ObjectDomProps<T>);
-    render: () => this;
+    build: () => this;
     private _classList;
     get classList(): string[];
     addClassName(val: string): void;

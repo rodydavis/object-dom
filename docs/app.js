@@ -2,8 +2,7 @@ import { ObjectDomBase, Div, Heading1, Paragraph, Button, Row, render } from './
 
 class MyApp extends ObjectDomBase {
     value = 0
-
-    render() {
+    build() {
         return new Div({
             children: [
                 new Heading1({ text: 'Counter Example' }),
@@ -32,5 +31,6 @@ class MyApp extends ObjectDomBase {
         });
     }
 }
+
 
 render(new MyApp(), document.body.querySelector('#root'));

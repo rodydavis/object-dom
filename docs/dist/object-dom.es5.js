@@ -46,7 +46,22 @@ function applyNodeStyle(node, style) {
 }
 var ObjectDomBase = /** @class */ (function () {
     function ObjectDomBase() {
-        this.update = function () { };
+        this.update = function () {
+            // if (this.node) {
+            //   this.node.replaceWith(this.build().node);
+            // } else {
+            //   this.node = this.build().node;
+            // }
+        };
+        // render = (target: HTMLElement) => {
+        //   // this.update = () => {
+        //   //   // if (this.node) this.node.remove();
+        //   //   // this.node = this.build().node;
+        //   //   // target.appendChild(this.node);
+        //   //   this.node.replaceWith(this.build().node);
+        //   // };
+        //   target.appendChild(this.node);
+        // };
     }
     return ObjectDomBase;
 }());
@@ -54,7 +69,7 @@ var ObjectDom = /** @class */ (function (_super) {
     __extends(ObjectDom, _super);
     function ObjectDom(props) {
         var _this = _super.call(this) || this;
-        _this.render = function () { return _this; };
+        _this.build = function () { return _this; };
         _this._node = props.node;
         _this._style = props.style;
         _this._children = [];
@@ -134,7 +149,7 @@ var ObjectDom = /** @class */ (function (_super) {
     ObjectDom.prototype.addChild = function (value) {
         this._children.push(value);
         if (value instanceof ObjectDomBase) {
-            this._node.append(value.render().node);
+            this._node.append(value.build().node);
         }
         else {
             this._node.append(value);
@@ -145,13 +160,14 @@ var ObjectDom = /** @class */ (function (_super) {
 function render(source, target) {
     if (target === void 0) { target = document.body; }
     target.innerHTML = '';
-    var node = source.render().node;
+    var node = source.build().node;
     source.update = function () {
         node.remove();
-        node = source.render().node;
+        node = source.build().node;
         target.appendChild(node);
     };
     target.appendChild(node);
+    // source.render(target);
     //   console.log('render node', target, source)
 }
 
