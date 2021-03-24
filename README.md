@@ -33,7 +33,7 @@
 
 ## Available Methods
 
-- tableFromJsonList
+- jsonTable
 - render
 
 ## Getting Started
@@ -170,7 +170,7 @@ render(new MyApp(), document.body.querySelector('#root'));
 Create a table from JSON:
 
 ```js
-tableFromJsonList(
+jsonTable(
   [
     {
       first_name: 'John',
