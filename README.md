@@ -12,13 +12,19 @@ JS Declarative HTML Dom
 ```html
 <div id="root"></div>
 <script type="module">
-    import { Div, Text, render } from './dist/object-dom.es5.js';
+    import { Div, Text, Button, render } from './object-dom.es5.js';
+
+    const text = new Text('Hello World!');
+    const button = new Button('Update');
     const app = new Div({
         children: [
-            new Text('Hello World!'),
+            text,
+            button
         ]
     });
-    // <div>Hello World!</div>
+    button.node.addEventListener('click', () => {
+        text.value = 'New Update!';
+    });
     render(app, document.body.querySelector('#root'));
 </script>
 ```
