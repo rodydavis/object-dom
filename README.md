@@ -12,19 +12,35 @@ JS Declarative HTML Dom
 ```html
 <div id="root"></div>
 <script type="module">
-    import { Div, Text, Button, render } from './object-dom.es5.js';
+    import { Div, Text, Button, Row, Column, render } from './object-dom.es5.js';
 
     const text = new Text('Hello World!');
-    const button = new Button('Update');
+    const button = new Button('Update', {
+        style: {
+            width: '100px'
+        },
+    });
     const app = new Div({
         children: [
-            text,
-            button
+            new Column({
+                children: [
+                    text,
+                    button,
+                    new Row({
+                        style: {
+                            padding: '10px'
+                        },
+                        children: [
+                            'A', 'B', 'C'
+                        ]
+                    }),
+                ],
+            }),
         ]
     });
-    button.node.addEventListener('click', () => {
+    button.onClick = () => {
         text.value = 'New Update!';
-    });
+    };
     render(app, document.body.querySelector('#root'));
 </script>
 ```
