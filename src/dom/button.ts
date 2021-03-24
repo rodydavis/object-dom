@@ -3,8 +3,7 @@ import { ObjectDom, Styles } from '../base'
 export class Button extends ObjectDom<HTMLButtonElement> {
   constructor(value: string, props: { style?: Styles; children?: Array<ObjectDom<HTMLElement>> }) {
     super(document.createElement('button'), props?.style ?? {}, props?.children ?? [])
-    this._value = value
-    this.children.push(value)
+    this._value = this.node.innerText = value
   }
 
   private _value: string
@@ -13,6 +12,6 @@ export class Button extends ObjectDom<HTMLButtonElement> {
   }
   public set value(value: string) {
     this._value = value
-    this.update()
+    this.node.innerText = value
   }
 }

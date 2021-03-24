@@ -14,10 +14,6 @@ export class ObjectDom<T extends HTMLElement> {
     return this._node
   }
 
-  update() {
-    render(this, this.node)
-  }
-
   private _styles: Styles
   public get styles(): Styles {
     return this._styles

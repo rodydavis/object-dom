@@ -13,9 +13,6 @@ var ObjectDom = /** @class */ (function () {
         enumerable: false,
         configurable: true
     });
-    ObjectDom.prototype.update = function () {
-        render(this, this.node);
-    };
     Object.defineProperty(ObjectDom.prototype, "styles", {
         get: function () {
             return this._styles;
@@ -110,10 +107,9 @@ var Text = /** @class */ (function (_super) {
     __extends(Text, _super);
     function Text(value, props) {
         if (props === void 0) { props = {}; }
-        var _a, _b;
-        var _this = _super.call(this, document.createElement('p'), (_a = props === null || props === void 0 ? void 0 : props.style) !== null && _a !== void 0 ? _a : {}, (_b = props === null || props === void 0 ? void 0 : props.children) !== null && _b !== void 0 ? _b : []) || this;
-        _this._value = value;
-        _this.children.push(value);
+        var _a;
+        var _this = _super.call(this, document.createElement('p'), (_a = props === null || props === void 0 ? void 0 : props.style) !== null && _a !== void 0 ? _a : {}, []) || this;
+        _this._value = _this.node.innerText = value;
         return _this;
     }
     Object.defineProperty(Text.prototype, "value", {
@@ -122,7 +118,7 @@ var Text = /** @class */ (function (_super) {
         },
         set: function (value) {
             this._value = value;
-            this.update();
+            this.node.innerText = value;
         },
         enumerable: false,
         configurable: true
@@ -135,8 +131,7 @@ var Button = /** @class */ (function (_super) {
     function Button(value, props) {
         var _a, _b;
         var _this = _super.call(this, document.createElement('button'), (_a = props === null || props === void 0 ? void 0 : props.style) !== null && _a !== void 0 ? _a : {}, (_b = props === null || props === void 0 ? void 0 : props.children) !== null && _b !== void 0 ? _b : []) || this;
-        _this._value = value;
-        _this.children.push(value);
+        _this._value = _this.node.innerText = value;
         return _this;
     }
     Object.defineProperty(Button.prototype, "value", {
@@ -145,7 +140,7 @@ var Button = /** @class */ (function (_super) {
         },
         set: function (value) {
             this._value = value;
-            this.update();
+            this.node.innerText = value;
         },
         enumerable: false,
         configurable: true

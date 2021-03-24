@@ -1,13 +1,9 @@
 import { ObjectDom, Styles } from '../base'
 
 export class Text extends ObjectDom<HTMLElement> {
-  constructor(
-    value: string,
-    props: { style?: Styles; children?: Array<ObjectDom<HTMLElement>> } = {}
-  ) {
-    super(document.createElement('p'), props?.style ?? {}, props?.children ?? [])
-    this._value = value
-    this.children.push(value)
+  constructor(value: string, props: { style?: Styles } = {}) {
+    super(document.createElement('p'), props?.style ?? {}, [])
+    this._value = this.node.innerText = value
   }
 
   private _value: string
@@ -16,6 +12,6 @@ export class Text extends ObjectDom<HTMLElement> {
   }
   public set value(value: string) {
     this._value = value
-    this.update()
+    this.node.innerText = value
   }
 }
