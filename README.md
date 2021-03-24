@@ -38,7 +38,7 @@
 
 ## Getting Started
 
-Use functional style:
+### Functional Approach
 
 ```html
 <div id="root"></div>
@@ -71,7 +71,7 @@ Use functional style:
 </script>
 ```
 
-Or take a class approach:
+### Class Approach
 
 ```js
 import {
@@ -118,7 +118,7 @@ class MyApp extends ObjectDomBase {
 render(new MyApp(), document.body.querySelector('#root'));
 ```
 
-or if you want to use `update` to rebuild the tree:
+### Class Approach with Rebuild
 
 ```js
 import {
@@ -167,7 +167,7 @@ class MyApp extends ObjectDomBase {
 render(new MyApp(), document.body.querySelector('#root'));
 ```
 
-Create a table from JSON:
+### JSON Table
 
 ```js
 jsonTable(
