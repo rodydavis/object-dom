@@ -1,7 +1,7 @@
-import { ObjectDom, Styles } from '../base'
+import { ObjectDom, Style } from '../base'
 
 export class Text extends ObjectDom<HTMLElement> {
-  constructor(value: string, props: { style?: Styles } = {}) {
+  constructor(value: string, props: { style?: Style } = {}) {
     super(document.createElement('p'), props?.style ?? {}, [])
     this._value = this.node.innerText = value
   }

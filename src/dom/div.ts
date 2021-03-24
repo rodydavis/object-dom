@@ -1,8 +1,8 @@
-import { ObjectDom, Styles } from '../base'
+import { ObjectDom, Style } from '../base'
 
 class Div extends ObjectDom<HTMLDivElement> {
   constructor(
-    props: { style: Styles; children: Array<ObjectDom<HTMLElement>> } = { style: {}, children: [] }
+    props: { style: Style; children: Array<ObjectDom<HTMLElement>> } = { style: {}, children: [] }
   ) {
     super(document.createElement('div'), props?.style ?? {}, props?.children ?? [])
   }
@@ -10,64 +10,64 @@ class Div extends ObjectDom<HTMLDivElement> {
 
 class Flex extends Div {
   constructor(
-    props: { style: Styles; children: Array<ObjectDom<HTMLElement>> } = { style: {}, children: [] }
+    props: { style: Style; children: Array<ObjectDom<HTMLElement>> } = { style: {}, children: [] }
   ) {
-    props.style.display = 'flex'
     super(props)
+    this.node.style.display = 'flex'
   }
 }
 
 class Row extends Flex {
   constructor(
-    props: { style: Styles; children: Array<ObjectDom<HTMLElement>> } = { style: {}, children: [] }
+    props: { style: Style; children: Array<ObjectDom<HTMLElement>> } = { style: {}, children: [] }
   ) {
-    props.style.flexDirection = 'row'
     super(props)
+    this.node.style.flexDirection = 'row'
   }
 }
 
 class Column extends Flex {
   constructor(
-    props: { style: Styles; children: Array<ObjectDom<HTMLElement>> } = { style: {}, children: [] }
+    props: { style: Style; children: Array<ObjectDom<HTMLElement>> } = { style: {}, children: [] }
   ) {
-    props.style.flexDirection = 'column'
     super(props)
+    this.node.style.flexDirection = 'column'
   }
 }
 
 class Grid extends Div {
   constructor(
-    props: { style: Styles; children: Array<ObjectDom<HTMLElement>> } = { style: {}, children: [] }
+    props: { style: Style; children: Array<ObjectDom<HTMLElement>> } = { style: {}, children: [] }
   ) {
-    props.style.display = 'grid'
     super(props)
+    this.node.style.display = 'grid'
   }
 }
 
 class Block extends Div {
   constructor(
-    props: { style: Styles; children: Array<ObjectDom<HTMLElement>> } = { style: {}, children: [] }
+    props: { style: Style; children: Array<ObjectDom<HTMLElement>> } = { style: {}, children: [] }
   ) {
-    props.style.display = 'block'
     super(props)
+    this.node.style.display = 'block'
   }
 }
 
 class Inline extends Div {
   constructor(
-    props: { style: Styles; children: Array<ObjectDom<HTMLElement>> } = { style: {}, children: [] }
+    props: { style: Style; children: Array<ObjectDom<HTMLElement>> } = { style: {}, children: [] }
   ) {
-    props.style.display = 'inline'
     super(props)
+    this.node.style.display = 'inline'
   }
 }
 
 class InlineBlock extends Div {
   constructor(
-    props: { style: Styles; children: Array<ObjectDom<HTMLElement>> } = { style: {}, children: [] }
+    props: { style: Style; children: Array<ObjectDom<HTMLElement>> } = { style: {}, children: [] }
   ) {
-    props.style.display = 'inline-block'
     super(props)
+    this.node.style.display = 'inline-block'
   }
 }
 

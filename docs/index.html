@@ -33,9 +33,9 @@
                 }),
             ]
         });
-        button.node.addEventListener('click', () => {
+        button.onClick = () => {
             text.value = 'New Update!';
-        });
+        };
         render(app, document.body.querySelector('#root'));
     </script>
 </body>

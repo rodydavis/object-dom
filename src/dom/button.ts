@@ -1,9 +1,10 @@
-import { ObjectDom, Styles } from '../base'
+import { ObjectDom, Style } from '../base'
 
 export class Button extends ObjectDom<HTMLButtonElement> {
-  constructor(value: string, props: { style?: Styles; children?: Array<ObjectDom<HTMLElement>> }) {
+  constructor(value: string, props: { style?: Style; children?: Array<ObjectDom<HTMLElement>> }) {
     super(document.createElement('button'), props?.style ?? {}, props?.children ?? [])
     this._value = this.node.innerText = value
+    this.node.addEventListener('click', () => this.onClick())
   }
 
   private _value: string
@@ -14,4 +15,6 @@ export class Button extends ObjectDom<HTMLButtonElement> {
     this._value = value
     this.node.innerText = value
   }
+
+  onClick: Function = () => {}
 }

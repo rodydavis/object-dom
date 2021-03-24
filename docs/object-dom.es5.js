@@ -1,9 +1,15 @@
+function applyNodeStyle(node, style) {
+    for (var _i = 0, _a = Object.entries(style); _i < _a.length; _i++) {
+        var _b = _a[_i], key = _b[0], value = _b[1];
+        node.style.setProperty(key, value);
+    }
+}
 var ObjectDom = /** @class */ (function () {
-    function ObjectDom(node, styles, children) {
+    function ObjectDom(node, style, children) {
         this._node = node;
-        this._styles = styles;
+        this._style = style;
         this._children = [];
-        applyNodeStyles(this.node, this.styles);
+        this.updateStyle();
         for (var _i = 0, children_1 = children; _i < children_1.length; _i++) {
             var child = children_1[_i];
             this.addChild(child);
@@ -16,17 +22,20 @@ var ObjectDom = /** @class */ (function () {
         enumerable: false,
         configurable: true
     });
-    Object.defineProperty(ObjectDom.prototype, "styles", {
+    Object.defineProperty(ObjectDom.prototype, "style", {
         get: function () {
-            return this._styles;
+            return this._style;
         },
         set: function (value) {
-            this._styles = value;
-            applyNodeStyles(this.node, this.styles);
+            this._style = value;
+            this.updateStyle();
         },
         enumerable: false,
         configurable: true
     });
+    ObjectDom.prototype.updateStyle = function () {
+        applyNodeStyle(this.node, this.style);
+    };
     Object.defineProperty(ObjectDom.prototype, "children", {
         get: function () {
             return this._children;
@@ -50,12 +59,6 @@ function render(source, target) {
     target.innerHTML = '';
     target.appendChild(source.node);
     console.log('render node', target, source);
-}
-function applyNodeStyles(node, styles) {
-    for (var _i = 0, _a = Object.entries(styles); _i < _a.length; _i++) {
-        var _b = _a[_i], key = _b[0], value = _b[1];
-        node.style.setProperty(key, value);
-    }
 }
 
 /*! *****************************************************************************
@@ -100,9 +103,8 @@ var Flex = /** @class */ (function (_super) {
     __extends(Flex, _super);
     function Flex(props) {
         if (props === void 0) { props = { style: {}, children: [] }; }
-        var _this = this;
-        props.style.display = 'flex';
-        _this = _super.call(this, props) || this;
+        var _this = _super.call(this, props) || this;
+        _this.node.style.display = 'flex';
         return _this;
     }
     return Flex;
@@ -111,9 +113,8 @@ var Row = /** @class */ (function (_super) {
     __extends(Row, _super);
     function Row(props) {
         if (props === void 0) { props = { style: {}, children: [] }; }
-        var _this = this;
-        props.style.flexDirection = 'row';
-        _this = _super.call(this, props) || this;
+        var _this = _super.call(this, props) || this;
+        _this.node.style.flexDirection = 'row';
         return _this;
     }
     return Row;
@@ -122,9 +123,8 @@ var Column = /** @class */ (function (_super) {
     __extends(Column, _super);
     function Column(props) {
         if (props === void 0) { props = { style: {}, children: [] }; }
-        var _this = this;
-        props.style.flexDirection = 'column';
-        _this = _super.call(this, props) || this;
+        var _this = _super.call(this, props) || this;
+        _this.node.style.flexDirection = 'column';
         return _this;
     }
     return Column;
@@ -133,9 +133,8 @@ var Grid = /** @class */ (function (_super) {
     __extends(Grid, _super);
     function Grid(props) {
         if (props === void 0) { props = { style: {}, children: [] }; }
-        var _this = this;
-        props.style.display = 'grid';
-        _this = _super.call(this, props) || this;
+        var _this = _super.call(this, props) || this;
+        _this.node.style.display = 'grid';
         return _this;
     }
     return Grid;
@@ -144,9 +143,8 @@ var Block = /** @class */ (function (_super) {
     __extends(Block, _super);
     function Block(props) {
         if (props === void 0) { props = { style: {}, children: [] }; }
-        var _this = this;
-        props.style.display = 'block';
-        _this = _super.call(this, props) || this;
+        var _this = _super.call(this, props) || this;
+        _this.node.style.display = 'block';
         return _this;
     }
     return Block;
@@ -155,9 +153,8 @@ var Inline = /** @class */ (function (_super) {
     __extends(Inline, _super);
     function Inline(props) {
         if (props === void 0) { props = { style: {}, children: [] }; }
-        var _this = this;
-        props.style.display = 'inline';
-        _this = _super.call(this, props) || this;
+        var _this = _super.call(this, props) || this;
+        _this.node.style.display = 'inline';
         return _this;
     }
     return Inline;
@@ -166,9 +163,8 @@ var InlineBlock = /** @class */ (function (_super) {
     __extends(InlineBlock, _super);
     function InlineBlock(props) {
         if (props === void 0) { props = { style: {}, children: [] }; }
-        var _this = this;
-        props.style.display = 'inline-block';
-        _this = _super.call(this, props) || this;
+        var _this = _super.call(this, props) || this;
+        _this.node.style.display = 'inline-block';
         return _this;
     }
     return InlineBlock;
@@ -202,7 +198,9 @@ var Button = /** @class */ (function (_super) {
     function Button(value, props) {
         var _a, _b;
         var _this = _super.call(this, document.createElement('button'), (_a = props === null || props === void 0 ? void 0 : props.style) !== null && _a !== void 0 ? _a : {}, (_b = props === null || props === void 0 ? void 0 : props.children) !== null && _b !== void 0 ? _b : []) || this;
+        _this.onClick = function () { };
         _this._value = _this.node.innerText = value;
+        _this.node.addEventListener('click', function () { return _this.onClick(); });
         return _this;
     }
     Object.defineProperty(Button.prototype, "value", {

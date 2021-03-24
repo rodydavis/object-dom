@@ -1,4 +1,4 @@
-export interface Styles {
+export interface Style {
   alignContent?: string
   alignItems?: string
   alignSelf?: string

@@ -1,20 +1,20 @@
-import { Styles } from './styles'
-export { Styles } from './styles'
+import { Style } from './styles'
+export * from './styles'
 
 type NodeArray = Array<ObjectDom<HTMLElement> | string>
 
-function applyNodeStyles(node: HTMLElement, styles: Styles) {
-  for (const [key, value] of Object.entries(styles)) {
+function applyNodeStyle(node: HTMLElement, style: Style) {
+  for (const [key, value] of Object.entries(style)) {
     node.style.setProperty(key, value)
   }
 }
 
 export class ObjectDom<T extends HTMLElement> {
-  constructor(node: T, styles: Styles, children: NodeArray) {
+  constructor(node: T, style: Style, children: NodeArray) {
     this._node = node
-    this._styles = styles
+    this._style = style
     this._children = []
-    applyNodeStyles(this.node, this.styles)
+    this.updateStyle()
     for (const child of children) this.addChild(child)
   }
 
@@ -23,13 +23,17 @@ export class ObjectDom<T extends HTMLElement> {
     return this._node
   }
 
-  private _styles: Styles
-  public get styles(): Styles {
-    return this._styles
+  private _style: Style
+  public get style(): Style {
+    return this._style
   }
-  public set styles(value: Styles) {
-    this._styles = value
-    applyNodeStyles(this.node, this.styles)
+  public set style(value: Style) {
+    this._style = value
+    this.updateStyle()
+  }
+
+  updateStyle() {
+    applyNodeStyle(this.node, this.style)
   }
 
   private _children: NodeArray
