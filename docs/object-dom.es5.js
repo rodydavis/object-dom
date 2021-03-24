@@ -185,17 +185,17 @@ var Text = /** @class */ (function (_super) {
     function Text(tag, props) {
         var _a, _b;
         var _this = _super.call(this, document.createElement(tag), (_a = props === null || props === void 0 ? void 0 : props.style) !== null && _a !== void 0 ? _a : {}, (_b = props === null || props === void 0 ? void 0 : props.children) !== null && _b !== void 0 ? _b : []) || this;
-        _this.value = props.value;
+        _this.text = props.text;
         return _this;
     }
-    Object.defineProperty(Text.prototype, "value", {
+    Object.defineProperty(Text.prototype, "text", {
         get: function () {
-            return this._value;
+            return this._text;
         },
-        set: function (value) {
-            this._value = value;
-            if (value)
-                this.node.innerText = value;
+        set: function (text) {
+            this._text = text;
+            if (text)
+                this.node.innerText = text;
         },
         enumerable: false,
         configurable: true
@@ -355,17 +355,17 @@ var Button = /** @class */ (function (_super) {
         var _this = _super.call(this, document.createElement('button'), (_a = props === null || props === void 0 ? void 0 : props.style) !== null && _a !== void 0 ? _a : {}, (_b = props === null || props === void 0 ? void 0 : props.children) !== null && _b !== void 0 ? _b : []) || this;
         _this.onClick = function () { };
         _this.node.addEventListener('click', function () { return _this.onClick(); });
-        _this.value = props.value;
+        _this.text = props.text;
         return _this;
     }
-    Object.defineProperty(Button.prototype, "value", {
+    Object.defineProperty(Button.prototype, "text", {
         get: function () {
-            return this._value;
+            return this._text;
         },
-        set: function (value) {
-            this._value = value;
-            if (value)
-                this.node.innerText = value;
+        set: function (text) {
+            this._text = text;
+            if (text)
+                this.node.innerText = text;
         },
         enumerable: false,
         configurable: true
