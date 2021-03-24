@@ -2,9 +2,12 @@ var ObjectDom = /** @class */ (function () {
     function ObjectDom(node, styles, children) {
         this._node = node;
         this._styles = styles;
-        this._children = children;
+        this._children = [];
         applyNodeStyles(this.node, this.styles);
-        applyNodeChildren(this.node, this.children);
+        for (var _i = 0, children_1 = children; _i < children_1.length; _i++) {
+            var child = children_1[_i];
+            this.addChild(child);
+        }
     }
     Object.defineProperty(ObjectDom.prototype, "node", {
         get: function () {
@@ -28,19 +31,22 @@ var ObjectDom = /** @class */ (function () {
         get: function () {
             return this._children;
         },
-        set: function (value) {
-            this._children = value;
-            applyNodeChildren(this.node, this.children);
-        },
         enumerable: false,
         configurable: true
     });
+    ObjectDom.prototype.addChild = function (value) {
+        this._children.push(value);
+        if (value instanceof ObjectDom) {
+            this._node.append(value.node);
+        }
+        else {
+            this._node.append(value);
+        }
+    };
     return ObjectDom;
 }());
 function render(source, target) {
     if (target === void 0) { target = document.body; }
-    //   const htmlResult = source.render()
-    //   console.log(htmlResult)
     target.innerHTML = '';
     target.appendChild(source.node);
     console.log('render node', target, source);
@@ -50,18 +56,6 @@ function applyNodeStyles(node, styles) {
         node.style.width = styles.width;
     if (styles === null || styles === void 0 ? void 0 : styles.height)
         node.style.height = styles.height;
-}
-function applyNodeChildren(node, children) {
-    node.innerHTML = '';
-    for (var _i = 0, children_1 = children; _i < children_1.length; _i++) {
-        var child = children_1[_i];
-        if (child instanceof ObjectDom) {
-            node.append(child.node);
-        }
-        else {
-            node.append(child);
-        }
-    }
 }
 
 /*! *****************************************************************************
