@@ -1,7 +1,7 @@
 import { ObjectDom, NodeArray, Style } from '../base'
 
 interface TextProps {
-  value?: string
+  text?: string
   style?: Style
   children?: NodeArray
 }
@@ -9,16 +9,16 @@ interface TextProps {
 class Text extends ObjectDom<HTMLElement> {
   constructor(tag: string, props: TextProps) {
     super(document.createElement(tag), props?.style ?? {}, props?.children ?? [])
-    this.value = props.value
+    this.text = props.text
   }
 
-  private _value: string | undefined
-  public get value(): string | undefined {
-    return this._value
+  private _text: string | undefined
+  public get text(): string | undefined {
+    return this._text
   }
-  public set value(value: string | undefined) {
-    this._value = value
-    if (value) this.node.innerText = value
+  public set text(text: string | undefined) {
+    this._text = text
+    if (text) this.node.innerText = text
   }
 }
 
