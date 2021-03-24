@@ -22,114 +22,93 @@ class Text extends ObjectDom<HTMLElement> {
   }
 }
 
-class Span extends Text {
+export class Span extends Text {
   constructor(props: TextProps = {}) {
     super('span', props)
   }
 }
-class Paragraph extends Text {
+export class Paragraph extends Text {
   constructor(props: TextProps = {}) {
     super('p', props)
   }
 }
-class Bold extends Text {
+export class Bold extends Text {
   constructor(props: TextProps = {}) {
     super('b', props)
   }
 }
-class Strong extends Text {
+export class Strong extends Text {
   constructor(props: TextProps = {}) {
     super('strong', props)
   }
 }
-class Italic extends Text {
+export class Italic extends Text {
   constructor(props: TextProps = {}) {
     super('i', props)
   }
 }
-class Emphasized extends Text {
+export class Emphasized extends Text {
   constructor(props: TextProps = {}) {
     super('em', props)
   }
 }
-class Marked extends Text {
+export class Marked extends Text {
   constructor(props: TextProps = {}) {
     super('mark', props)
   }
 }
-class Smaller extends Text {
+export class Smaller extends Text {
   constructor(props: TextProps = {}) {
     super('small', props)
   }
 }
-class Deleted extends Text {
+export class Deleted extends Text {
   constructor(props: TextProps = {}) {
     super('del', props)
   }
 }
-class Inserted extends Text {
+export class Inserted extends Text {
   constructor(props: TextProps = {}) {
     super('ins', props)
   }
 }
-class Subscript extends Text {
+export class Subscript extends Text {
   constructor(props: TextProps = {}) {
     super('sub', props)
   }
 }
-class Superscript extends Text {
+export class Superscript extends Text {
   constructor(props: TextProps = {}) {
     super('sup', props)
   }
 }
-class Heading1 extends Text {
+export class Heading1 extends Text {
   constructor(props: TextProps = {}) {
     super('h1', props)
   }
 }
-class Heading2 extends Text {
+export class Heading2 extends Text {
   constructor(props: TextProps = {}) {
     super('h2', props)
   }
 }
-class Heading3 extends Text {
+export class Heading3 extends Text {
   constructor(props: TextProps = {}) {
     super('h3', props)
   }
 }
-class Heading4 extends Text {
+export class Heading4 extends Text {
   constructor(props: TextProps = {}) {
     super('h4', props)
   }
 }
-class Heading5 extends Text {
+export class Heading5 extends Text {
   constructor(props: TextProps = {}) {
     super('h5', props)
   }
 }
-class Heading6 extends Text {
+export class Heading6 extends Text {
   constructor(props: TextProps = {}) {
     super('h6', props)
   }
-}
-
-export {
-  Span,
-  Paragraph,
-  Bold,
-  Strong,
-  Italic,
-  Emphasized,
-  Marked,
-  Smaller,
-  Deleted,
-  Inserted,
-  Subscript,
-  Superscript,
-  Heading1,
-  Heading2,
-  Heading3,
-  Heading4,
-  Heading5,
-  Heading6
 }
