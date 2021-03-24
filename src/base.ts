@@ -1,11 +1,17 @@
 type NodeArray = Array<ObjectDom<HTMLElement> | string>
 
 export class ObjectDom<T extends HTMLElement> {
-  constructor(public node: T, styles: Styles, children: NodeArray) {
+  constructor(node: T, styles: Styles, children: NodeArray) {
+    this._node = node
     this._styles = styles
     this._children = children
     applyNodeStyles(this.node, this.styles)
     applyNodeChildren(this.node, this.children)
+  }
+
+  private _node: T
+  public get node(): T {
+    return this._node
   }
 
   update() {
@@ -34,8 +40,10 @@ export class ObjectDom<T extends HTMLElement> {
 export function render(source: ObjectDom<HTMLElement>, target: HTMLElement = document.body) {
   //   const htmlResult = source.render()
   //   console.log(htmlResult)
+  source.update()
   target.innerHTML = ''
   target.appendChild(source.node)
+  console.log('render node', target, source)
 }
 
 export interface Styles {

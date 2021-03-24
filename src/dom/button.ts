@@ -4,7 +4,7 @@ export class Button extends ObjectDom<HTMLButtonElement> {
   constructor(value: string, props: { style?: Styles; children?: Array<ObjectDom<HTMLElement>> }) {
     super(document.createElement('button'), props?.style ?? {}, props?.children ?? [])
     this._value = value
-    this.children = [value]
+    this.children.push(value)
   }
 
   private _value: string

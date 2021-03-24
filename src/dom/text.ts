@@ -7,7 +7,7 @@ export class Text extends ObjectDom<HTMLElement> {
   ) {
     super(document.createElement('p'), props?.style ?? {}, props?.children ?? [])
     this._value = value
-    this.children = [value]
+    this.children.push(value)
   }
 
   private _value: string

@@ -15,16 +15,17 @@
 
         const text = new Text('Hello World!');
         const button = new Button('Update');
-        button.node.addEventListener('click', () => {
-            text.value = 'New Update!';
-            text.update();
-        });
-
         const app = new Div({
             children: [
                 text,
                 button
             ]
+        });
+        button.node.addEventListener('click', () => {
+            text.value = 'New Update!';
+            // text.update();
+            // app.update();
+            render(app, document.body.querySelector('#root'));
         });
         render(app, document.body.querySelector('#root'));
     </script>
