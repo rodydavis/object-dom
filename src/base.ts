@@ -27,7 +27,7 @@ interface ObjectDomProps<T extends HTMLElement> extends NodeProps {
 }
 
 export abstract class ObjectDomBase {
-  abstract build: () => ObjectDom<HTMLElement>;
+  abstract render: () => ObjectDom<HTMLElement>;
 }
 
 export class ObjectDom<T extends HTMLElement> extends ObjectDomBase {
@@ -50,7 +50,7 @@ export class ObjectDom<T extends HTMLElement> extends ObjectDomBase {
     if (props?.children) for (const child of props.children) this.addChild(child);
   }
 
-  build = () => this;
+  render = () => this;
 
   private _classList: string[];
   public get classList(): string[] {
@@ -112,6 +112,6 @@ export class ObjectDom<T extends HTMLElement> extends ObjectDomBase {
 
 export function render(source: ObjectDomBase, target: HTMLElement = document.body) {
   target.innerHTML = '';
-  target.appendChild(source.build().node);
+  target.appendChild(source.render().node);
   //   console.log('render node', target, source)
 }

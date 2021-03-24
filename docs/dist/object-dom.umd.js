@@ -59,7 +59,7 @@
         __extends(ObjectDom, _super);
         function ObjectDom(props) {
             var _this = _super.call(this) || this;
-            _this.build = function () { return _this; };
+            _this.render = function () { return _this; };
             _this._node = props.node;
             _this._style = props.style;
             _this._children = [];
@@ -160,7 +160,7 @@
     function render(source, target) {
         if (target === void 0) { target = document.body; }
         target.innerHTML = '';
-        target.appendChild(source.build().node);
+        target.appendChild(source.render().node);
         //   console.log('render node', target, source)
     }
 

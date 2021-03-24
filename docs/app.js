@@ -3,7 +3,7 @@ import { ObjectDomBase, Div, Heading1, Paragraph, Button, Row, render } from './
 class MyApp extends ObjectDomBase {
     counter = new Paragraph({ text: '0', style: { margin: '5px' } });
 
-    build() {
+    render() {
         return new Div({
             children: [
                 new Heading1({ text: 'Counter Example' }),
