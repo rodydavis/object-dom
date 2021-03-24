@@ -16,9 +16,7 @@ JS Declarative HTML Dom
 
     const text = new Text('Hello World!');
     const button = new Button('Update', {
-        style: {
-            width: '100px'
-        },
+        style: { width: '100px' },
     });
     const app = new Div({
         children: [
