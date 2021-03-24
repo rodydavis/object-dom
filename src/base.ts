@@ -57,5 +57,5 @@ export class ObjectDom<T extends HTMLElement> {
 export function render(source: ObjectDom<HTMLElement>, target: HTMLElement = document.body) {
   target.innerHTML = ''
   target.appendChild(source.node)
-  console.log('render node', target, source)
+  //   console.log('render node', target, source)
 }

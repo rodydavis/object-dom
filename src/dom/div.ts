@@ -7,23 +7,30 @@ class Div extends ObjectDom<HTMLDivElement> {
 }
 
 class Flex extends Div {
-  constructor(props: Props = { style: {}, children: [] }) {
+  constructor(props: { style: {}; children: [] }) {
     super(props)
     this.node.style.display = 'flex'
   }
 }
 
 class Row extends Flex {
-  constructor(props: Props = { style: {}, children: [] }) {
+  constructor(props: { style: {}; children: []; reversed?: boolean }) {
     super(props)
-    this.node.style.flexDirection = 'row'
+    this.node.style.flexDirection = props?.reversed ? 'row-reversed' : 'row'
   }
 }
 
 class Column extends Flex {
-  constructor(props: Props = { style: {}, children: [] }) {
+  constructor(props: { style: {}; children: []; reversed?: boolean }) {
     super(props)
-    this.node.style.flexDirection = 'column'
+    this.node.style.flexDirection = props?.reversed ? 'column-reversed' : 'column'
+  }
+}
+
+class Wrap extends Flex {
+  constructor(props: { style: {}; children: []; reversed?: boolean; none?: boolean }) {
+    super(props)
+    this.node.style.flexWrap = props?.none ? 'nowrap' : props?.reversed ? 'wrap-reversed' : 'wrap'
   }
 }
 
@@ -55,4 +62,4 @@ class InlineBlock extends Div {
   }
 }
 
-export { Div, Flex, Row, Column, Grid, Block, Inline, InlineBlock }
+export { Div, Flex, Row, Column, Wrap, Grid, Block, Inline, InlineBlock }
