@@ -16,24 +16,24 @@
         class MyApp extends Div {
             constructor() {
                 super();
-                const counter = new Paragraph({ value: '0' });
+                const counter = new Paragraph({ text: '0' });
                 const increment = new Button({
-                    value: '+',
+                    text: '+',
                     style: { width: '50px' },
                 });
                 increment.onClick = () => {
-                    counter.value = (Number(counter.value) + 1).toString();
+                    counter.text = (Number(counter.text) + 1).toString();
                 };
                 const decrement = new Button({
-                    value: '-',
+                    text: '-',
                     style: { width: '50px' },
                 });
                 decrement.onClick = () => {
-                    counter.value = (Number(counter.value) - 1).toString();
+                    counter.text = (Number(counter.text) - 1).toString();
                 };
                 this.addChild(new Column({
                     children: [
-                        new Heading1({ value: 'Counter Example' }),
+                        new Heading1({ text: 'Counter Example' }),
                         counter,
                         new Row({ children: [decrement, increment] }),
                     ],

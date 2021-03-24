@@ -14,30 +14,27 @@ JS Declarative HTML Dom
 <script type="module">
     import { Div, Text, Button, Row, Column, render } from './object-dom.es5.js';
 
-    const text = new Text('Hello World!');
-    const button = new Button('Update', {
+    const label = new Text({ text: 'Hello World!' });
+    const button = new Button({
+        text: 'Update',
         style: { width: '100px' },
     });
     const app = new Div({
         children: [
             new Column({
                 children: [
-                    text,
+                    label,
                     button,
                     new Row({
-                        style: {
-                            padding: '10px'
-                        },
-                        children: [
-                            'A', 'B', 'C'
-                        ]
+                        style: { padding: '10px' },
+                        children: ['A', 'B', 'C']
                     }),
                 ],
             }),
         ]
     });
     button.onClick = () => {
-        text.value = 'New Update!';
+        label.text = 'New Update!';
     };
     render(app, document.body.querySelector('#root'));
 </script>
@@ -53,24 +50,24 @@ Or take a class approach:
     class MyApp extends Div {
         constructor() {
             super();
-            const counter = new Paragraph({ value: '0' });
+            const counter = new Paragraph({ text: '0' });
             const increment = new Button({
-                value: '+',
+                text: '+',
                 style: { width: '50px' },
             });
             increment.onClick = () => {
-                counter.value = (Number(counter.value) + 1).toString();
+                counter.text = (Number(counter.text) + 1).toString();
             };
             const decrement = new Button({
-                value: '-',
+                text: '-',
                 style: { width: '50px' },
             });
             decrement.onClick = () => {
-                counter.value = (Number(counter.value) - 1).toString();
+                counter.text = (Number(counter.text) - 1).toString();
             };
             this.addChild(new Column({
                 children: [
-                    new Heading1({ value: 'Counter Example' }),
+                    new Heading1({ text: 'Counter Example' }),
                     counter,
                     new Row({ children: [decrement, increment] }),
                 ],
