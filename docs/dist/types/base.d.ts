@@ -1,6 +1,6 @@
 import { Style } from './styles';
 export * from './styles';
-export declare type NodeArray = Array<ObjectDom<HTMLElement> | string>;
+export declare type NodeArray = Array<ObjectDomBase | string>;
 export interface Props {
     style: Style;
     children: NodeArray;
@@ -16,6 +16,7 @@ interface ObjectDomProps<T extends HTMLElement> extends NodeProps {
     node: T;
 }
 export declare abstract class ObjectDomBase {
+    update: () => void;
     abstract render: () => ObjectDom<HTMLElement>;
 }
 export declare class ObjectDom<T extends HTMLElement> extends ObjectDomBase {
@@ -30,14 +31,11 @@ export declare class ObjectDom<T extends HTMLElement> extends ObjectDomBase {
     private _node;
     get node(): T;
     set node(value: T);
-    private _parent;
-    get parent(): ObjectDom<T> | undefined;
-    set parent(value: ObjectDom<T> | undefined);
     private _style;
     get style(): Style | undefined;
     set style(value: Style | undefined);
     private _children;
     get children(): NodeArray;
-    addChild(value: ObjectDom<HTMLElement> | string): void;
+    addChild(value: ObjectDomBase | string): void;
 }
 export declare function render(source: ObjectDomBase, target?: HTMLElement): void;

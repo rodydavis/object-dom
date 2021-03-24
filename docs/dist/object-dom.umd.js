@@ -52,6 +52,7 @@
     }
     var ObjectDomBase = /** @class */ (function () {
         function ObjectDomBase() {
+            this.update = function () { };
         }
         return ObjectDomBase;
     }());
@@ -101,7 +102,8 @@
             },
             set: function (value) {
                 this._id = value;
-                this.node.id = value !== null && value !== void 0 ? value : '';
+                if (value)
+                    this.node.id = value;
             },
             enumerable: false,
             configurable: true
@@ -112,16 +114,6 @@
             },
             set: function (value) {
                 this._node = value;
-            },
-            enumerable: false,
-            configurable: true
-        });
-        Object.defineProperty(ObjectDom.prototype, "parent", {
-            get: function () {
-                return this._parent;
-            },
-            set: function (value) {
-                this._parent = value;
             },
             enumerable: false,
             configurable: true
@@ -147,9 +139,8 @@
         });
         ObjectDom.prototype.addChild = function (value) {
             this._children.push(value);
-            if (value instanceof ObjectDom) {
-                value.parent = this;
-                this._node.append(value.node);
+            if (value instanceof ObjectDomBase) {
+                this._node.append(value.render().node);
             }
             else {
                 this._node.append(value);
@@ -160,7 +151,13 @@
     function render(source, target) {
         if (target === void 0) { target = document.body; }
         target.innerHTML = '';
-        target.appendChild(source.render().node);
+        var node = source.render().node;
+        source.update = function () {
+            node.remove();
+            node = source.render().node;
+            target.appendChild(node);
+        };
+        target.appendChild(node);
         //   console.log('render node', target, source)
     }
 
@@ -586,6 +583,7 @@
 
     function tableFromJsonList(data, props) {
         var _a, _b, _c, _d;
+        if (props === void 0) { props = {}; }
         var table = new Table((_a = props === null || props === void 0 ? void 0 : props.table) !== null && _a !== void 0 ? _a : {});
         var index = 0;
         var headerRow = new TableRow((_c = (_b = props === null || props === void 0 ? void 0 : props.headerRow) !== null && _b !== void 0 ? _b : props === null || props === void 0 ? void 0 : props.tableRow) !== null && _c !== void 0 ? _c : {});
@@ -598,7 +596,7 @@
                     var cell_1 = new HeaderCell({ text: key });
                     headerRow.addChild(cell_1);
                 }
-                var cell = new HeaderCell({ text: value });
+                var cell = new Cell({ text: value });
                 row.addChild(cell);
             }
             if (index === 0) {
@@ -715,6 +713,15 @@
         return TableColumnGroup;
     }(Col));
 
+    var Break = /** @class */ (function (_super) {
+        __extends(Break, _super);
+        function Break(props) {
+            if (props === void 0) { props = {}; }
+            return _super.call(this, __assign({ node: document.createElement('br') }, props)) || this;
+        }
+        return Break;
+    }(ObjectDom));
+
     exports.ObjectDomBase = ObjectDomBase;
     exports.ObjectDom = ObjectDom;
     exports.render = render;
@@ -769,6 +776,7 @@
     exports.Caption = Caption;
     exports.TableColumn = TableColumn;
     exports.TableColumnGroup = TableColumnGroup;
+    exports.Break = Break;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 

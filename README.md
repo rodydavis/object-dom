@@ -12,12 +12,12 @@
 - button
 - form, input, label
 - p, span, h1, h2, h3, h4, h5, h6
-- div
+- div, br
 - table, thead, tfoot, tbody, th, tr, td, col, colgroup, caption
 
-## Available Classes/Methods
+## Available Classes
 
-- Button
+- Button, Break
 - Span, Paragraph
 - Bold, Strong, Italic, Emphasized
 - Marked, Smaller, Deleted, Inserted
@@ -26,11 +26,15 @@
 - Form, Label, InputGroup
 - SubmitInput, TextInput, FileInput, NumberInput
 - EmailInput, ColorInput, PhoneInput
-- tableFromJsonList
 - Table, TableRow, TableHeader, TableFooter, TableBody
 - HeaderCell, Cell, Caption, TableColumn, TableColumnGroup
 - Div, Grid, Block, Inline, InlineBlock
 - Flex, Row, Column, Wrap
+
+## Available Methods
+
+- tableFromJsonList
+- render
 
 ## Getting Started
 
@@ -39,61 +43,111 @@ Use functional style:
 ```html
 <div id="root"></div>
 <script type="module">
-    import { Div, Text, Button, Row, Column, render } from './object-dom.es5.js';
+  import { Div, Text, Button, Row, Column, render } from './object-dom.es5.js';
 
-    const label = new Text({ text: 'Hello World!' });
-    const button = new Button({
-        text: 'Update',
-        style: { width: '100px' },
-    });
-    const app = new Div({
+  const label = new Text({ text: 'Hello World!' });
+  const button = new Button({
+    text: 'Update',
+    style: { width: '100px' }
+  });
+  const app = new Div({
+    children: [
+      new Column({
         children: [
-            new Column({
-                children: [
-                    label,
-                    button,
-                    new Row({
-                        style: { padding: '10px' },
-                        children: ['A', 'B', 'C']
-                    }),
-                ],
-            }),
+          label,
+          button,
+          new Row({
+            style: { padding: '10px' },
+            children: ['A', 'B', 'C']
+          })
         ]
-    });
-    button.onClick = () => {
-        label.text = 'New Update!';
-    };
-    render(app, document.body.querySelector('#root'));
+      })
+    ]
+  });
+  button.onClick = () => {
+    label.text = 'New Update!';
+  };
+  render(app, document.body.querySelector('#root'));
 </script>
 ```
 
 Or take a class approach:
 
 ```js
+import {
+  ObjectDomBase,
+  Div,
+  Heading1,
+  Paragraph,
+  Button,
+  Row,
+  render
+} from './dist/object-dom.es5.js';
+
+class MyApp extends ObjectDomBase {
+  counter = new Paragraph({ text: '0', style: { margin: '5px' } });
+
+  build() {
+    return new Div({
+      children: [
+        new Heading1({ text: 'Counter Example' }),
+        this.counter,
+        new Row({
+          children: [
+            new Button({
+              text: '-',
+              style: { width: '50px', margin: '5px' },
+              onClick: () => {
+                this.counter.text = (Number(this.counter.text) - 1).toString();
+              }
+            }),
+            new Button({
+              text: '+',
+              style: { width: '50px', margin: '5px' },
+              onClick: () => {
+                this.counter.text = (Number(this.counter.text) + 1).toString();
+              }
+            })
+          ]
+        })
+      ]
+    });
+  }
+}
+
+render(new MyApp(), document.body.querySelector('#root'));
+```
+
+or if you want to use `update` to rebuild the tree:
+
+```js
 import { ObjectDomBase, Div, Heading1, Paragraph, Button, Row, render } from './dist/object-dom.es5.js';
 
 class MyApp extends ObjectDomBase {
-    counter = new Paragraph({ text: '0', style: { margin: '5px' } });
+    value = 0
 
-    build() {
+    render() {
+        const setState = () => this.update();
         return new Div({
             children: [
                 new Heading1({ text: 'Counter Example' }),
-                this.counter,
+                new Paragraph({ text: `${this.value}`, style: { margin: '5px' } }),
                 new Row({
                     children: [
                         new Button({
                             text: '-',
                             style: { width: '50px', margin: '5px' },
                             onClick: () => {
-                                this.counter.text = (Number(this.counter.text) - 1).toString();
+                                this.value -= 1;
+                                setState();
                             }
                         }),
                         new Button({
                             text: '+',
                             style: { width: '50px', margin: '5px' },
                             onClick: () => {
-                                this.counter.text = (Number(this.counter.text) + 1).toString();
+                                this.value += 1;
+                                setState();
                             }
                         }),
                     ]
@@ -104,4 +158,66 @@ class MyApp extends ObjectDomBase {
 }
 
 render(new MyApp(), document.body.querySelector('#root'));
+```
+
+Create a table from JSON:
+
+```js
+tableFromJsonList(
+  [
+    {
+      first_name: 'John',
+      last_name: 'Smith',
+      company: 'N/A'
+    },
+    {
+      first_name: 'Steve',
+      last_name: 'Jobs',
+      company: 'Apple'
+    },
+    {
+      first_name: 'Bill',
+      last_name: 'Gates',
+      company: 'Microsoft'
+    },
+    {
+      first_name: 'Elon',
+      last_name: 'Musk',
+      company: 'Tesla'
+    }
+  ],
+  { style: { margin: '10px' } }
+);
+```
+
+Which renders the following html:
+
+```html
+<table>
+  <tr>
+    <th>first_name</th>
+    <th>last_name</th>
+    <th>company</th>
+  </tr>
+  <tr>
+    <td>John</td>
+    <td>Smith</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Steve</td>
+    <td>Jobs</td>
+    <td>Apple</td>
+  </tr>
+  <tr>
+    <td>Bill</td>
+    <td>Gates</td>
+    <td>Microsoft</td>
+  </tr>
+  <tr>
+    <td>Elon</td>
+    <td>Musk</td>
+    <td>Tesla</td>
+  </tr>
+</table>
 ```

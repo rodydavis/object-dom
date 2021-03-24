@@ -8,7 +8,7 @@ export interface TableJsonProps {
   tableRow?: NodeProps;
 }
 
-export function tableFromJsonList(data: Object[], props: TableJsonProps): Table {
+export function tableFromJsonList(data: Object[], props: TableJsonProps = {}): Table {
   const table = new Table(props?.table ?? {});
   let index = 0;
   const headerRow = new TableRow(props?.headerRow ?? props?.tableRow ?? {});
@@ -19,7 +19,7 @@ export function tableFromJsonList(data: Object[], props: TableJsonProps): Table 
         const cell = new HeaderCell({ text: key });
         headerRow.addChild(cell);
       }
-      const cell = new HeaderCell({ text: value });
+      const cell = new Cell({ text: value });
       row.addChild(cell);
     }
     if (index === 0) {

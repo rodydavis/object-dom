@@ -28,6 +28,7 @@ exports.TableColumnGroup = exports.TableColumn = exports.Caption = exports.Cell 
 var base_1 = require("../base");
 function tableFromJsonList(data, props) {
     var _a, _b, _c, _d;
+    if (props === void 0) { props = {}; }
     var table = new Table((_a = props === null || props === void 0 ? void 0 : props.table) !== null && _a !== void 0 ? _a : {});
     var index = 0;
     var headerRow = new TableRow((_c = (_b = props === null || props === void 0 ? void 0 : props.headerRow) !== null && _b !== void 0 ? _b : props === null || props === void 0 ? void 0 : props.tableRow) !== null && _c !== void 0 ? _c : {});
@@ -40,7 +41,7 @@ function tableFromJsonList(data, props) {
                 var cell_1 = new HeaderCell({ text: key });
                 headerRow.addChild(cell_1);
             }
-            var cell = new HeaderCell({ text: value });
+            var cell = new Cell({ text: value });
             row.addChild(cell);
         }
         if (index === 0) {

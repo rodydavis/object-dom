@@ -6,7 +6,7 @@ export interface TableJsonProps {
     headerRow?: NodeProps;
     tableRow?: NodeProps;
 }
-export declare function tableFromJsonList(data: Object[], props: TableJsonProps): Table;
+export declare function tableFromJsonList(data: Object[], props?: TableJsonProps): Table;
 export declare class Table extends ObjectDom<HTMLTableElement> {
     constructor(props: NodeProps);
 }

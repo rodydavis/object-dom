@@ -33,6 +33,7 @@ function applyNodeStyle(node, style) {
 }
 var ObjectDomBase = /** @class */ (function () {
     function ObjectDomBase() {
+        this.update = function () { };
     }
     return ObjectDomBase;
 }());
@@ -83,7 +84,8 @@ var ObjectDom = /** @class */ (function (_super) {
         },
         set: function (value) {
             this._id = value;
-            this.node.id = value !== null && value !== void 0 ? value : '';
+            if (value)
+                this.node.id = value;
         },
         enumerable: false,
         configurable: true
@@ -94,16 +96,6 @@ var ObjectDom = /** @class */ (function (_super) {
         },
         set: function (value) {
             this._node = value;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(ObjectDom.prototype, "parent", {
-        get: function () {
-            return this._parent;
-        },
-        set: function (value) {
-            this._parent = value;
         },
         enumerable: false,
         configurable: true
@@ -129,9 +121,8 @@ var ObjectDom = /** @class */ (function (_super) {
     });
     ObjectDom.prototype.addChild = function (value) {
         this._children.push(value);
-        if (value instanceof ObjectDom) {
-            value.parent = this;
-            this._node.append(value.node);
+        if (value instanceof ObjectDomBase) {
+            this._node.append(value.render().node);
         }
         else {
             this._node.append(value);
@@ -143,7 +134,13 @@ exports.ObjectDom = ObjectDom;
 function render(source, target) {
     if (target === void 0) { target = document.body; }
     target.innerHTML = '';
-    target.appendChild(source.render().node);
+    var node = source.render().node;
+    source.update = function () {
+        node.remove();
+        node = source.render().node;
+        target.appendChild(node);
+    };
+    target.appendChild(node);
     //   console.log('render node', target, source)
 }
 exports.render = render;

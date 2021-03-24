@@ -1,8 +1,7 @@
-import { Div } from './dom';
 import { Style } from './styles';
 export * from './styles';
 
-export type NodeArray = Array<ObjectDom<HTMLElement> | string>;
+export type NodeArray = Array<ObjectDomBase | string>;
 export interface Props {
   style: Style;
   children: NodeArray;
@@ -27,6 +26,7 @@ interface ObjectDomProps<T extends HTMLElement> extends NodeProps {
 }
 
 export abstract class ObjectDomBase {
+  update: () => void = () => {};
   abstract render: () => ObjectDom<HTMLElement>;
 }
 
@@ -67,7 +67,7 @@ export class ObjectDom<T extends HTMLElement> extends ObjectDomBase {
   }
   public set id(value: string | undefined) {
     this._id = value;
-    this.node.id = value ?? '';
+    if (value) this.node.id = value;
   }
 
   private _node: T;
@@ -76,14 +76,6 @@ export class ObjectDom<T extends HTMLElement> extends ObjectDomBase {
   }
   public set node(value: T) {
     this._node = value;
-  }
-
-  private _parent: ObjectDom<T> | undefined;
-  public get parent(): ObjectDom<T> | undefined {
-    return this._parent;
-  }
-  public set parent(value: ObjectDom<T> | undefined) {
-    this._parent = value;
   }
 
   private _style: Style | undefined;
@@ -99,11 +91,10 @@ export class ObjectDom<T extends HTMLElement> extends ObjectDomBase {
   public get children(): NodeArray {
     return this._children;
   }
-  public addChild(value: ObjectDom<HTMLElement> | string) {
+  public addChild(value: ObjectDomBase | string) {
     this._children.push(value);
-    if (value instanceof ObjectDom) {
-      value.parent = this;
-      this._node.append(value.node);
+    if (value instanceof ObjectDomBase) {
+      this._node.append(value.render().node);
     } else {
       this._node.append(value);
     }
@@ -112,6 +103,12 @@ export class ObjectDom<T extends HTMLElement> extends ObjectDomBase {
 
 export function render(source: ObjectDomBase, target: HTMLElement = document.body) {
   target.innerHTML = '';
-  target.appendChild(source.render().node);
+  let node = source.render().node;
+  source.update = () => {
+    node.remove();
+    node = source.render().node;
+    target.appendChild(node);
+  };
+  target.appendChild(node);
   //   console.log('render node', target, source)
 }

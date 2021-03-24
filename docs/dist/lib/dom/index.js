@@ -15,4 +15,5 @@ __exportStar(require("./text"), exports);
 __exportStar(require("./button"), exports);
 __exportStar(require("./input"), exports);
 __exportStar(require("./table"), exports);
+__exportStar(require("./misc"), exports);
 //# sourceMappingURL=index.js.map
