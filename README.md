@@ -43,38 +43,38 @@ JS Declarative HTML Dom
 Or take a class approach:
 
 ```html
-<div id="root"></div>
-<script type="module">
-    import { Div, Heading1, Paragraph, Button, Row, Column, render } from './object-dom.es5.js';
+import { ObjectDomBase, Div, Heading1, Paragraph, Button, Row, render } from './dist/object-dom.es5.js';
 
-    class MyApp extends Div {
-        constructor() {
-            super();
-            const counter = new Paragraph({ text: '0' });
-            const increment = new Button({
-                text: '+',
-                style: { width: '50px' },
-            });
-            increment.onClick = () => {
-                counter.text = (Number(counter.text) + 1).toString();
-            };
-            const decrement = new Button({
-                text: '-',
-                style: { width: '50px' },
-            });
-            decrement.onClick = () => {
-                counter.text = (Number(counter.text) - 1).toString();
-            };
-            this.addChild(new Column({
-                children: [
-                    new Heading1({ text: 'Counter Example' }),
-                    counter,
-                    new Row({ children: [decrement, increment] }),
-                ],
-            }));
-        }
+class MyApp extends ObjectDomBase {
+    counter = new Paragraph({ text: '0', style: { margin: '5px' } });
+
+    build() {
+        return new Div({
+            children: [
+                new Heading1({ text: 'Counter Example' }),
+                this.counter,
+                new Row({
+                    children: [
+                        new Button({
+                            text: '-',
+                            style: { width: '50px', margin: '5px' },
+                            onClick: () => {
+                                this.counter.text = (Number(this.counter.text) - 1).toString();
+                            }
+                        }),
+                        new Button({
+                            text: '+',
+                            style: { width: '50px', margin: '5px' },
+                            onClick: () => {
+                                this.counter.text = (Number(this.counter.text) + 1).toString();
+                            }
+                        }),
+                    ]
+                }),
+            ]
+        });
     }
+}
 
-    render(new MyApp(), document.body.querySelector('#root'));
-</script>
+render(new MyApp(), document.body.querySelector('#root'));
 ```
