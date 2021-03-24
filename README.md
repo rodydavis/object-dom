@@ -134,7 +134,7 @@ import {
 class MyApp extends ObjectDomBase {
   value = 0;
 
-  render() {
+  build() {
     return new Div({
       children: [
         new Heading1({ text: 'Counter Example' }),
