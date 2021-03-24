@@ -42,7 +42,7 @@ JS Declarative HTML Dom
 
 Or take a class approach:
 
-```html
+```js
 import { ObjectDomBase, Div, Heading1, Paragraph, Button, Row, render } from './dist/object-dom.es5.js';
 
 class MyApp extends ObjectDomBase {
