@@ -29,6 +29,7 @@ export abstract class ObjectDomBase {
   abstract node: HTMLElement;
   update: () => void = () => {};
   abstract build: () => ObjectDom<HTMLElement>;
+  toHtml = () => this.build().node.outerHTML;
 }
 
 export class ObjectDom<T extends HTMLElement> extends ObjectDomBase {
