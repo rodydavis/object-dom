@@ -42,3 +42,44 @@ JS Declarative HTML Dom
     render(app, document.body.querySelector('#root'));
 </script>
 ```
+
+Or take a class approach:
+
+```html
+<div id="root"></div>
+<script type="module">
+import { Div, Paragraph, Button, Row, Column, render } from './object-dom.es5.js';
+
+class MyApp extends Div {
+    constructor() {
+        super();
+        const text = new Paragraph({ value: 'Hello World!' });
+        const button = new Button({
+            value: 'Update',
+            style: {
+                width: '100px'
+            },
+        });
+        this.addChild(new Column({
+            children: [
+                text,
+                button,
+                new Row({
+                    style: {
+                        padding: '10px'
+                    },
+                    children: [
+                        'A', 'B', 'C'
+                    ]
+                }),
+            ],
+        }));
+        button.onClick = () => {
+            text.value = 'New Update!';
+        };
+    }
+}
+
+render(new MyApp(), document.body.querySelector('#root'));
+</script>
+```

@@ -11,35 +11,33 @@
 <body>
     <div id="root"></div>
     <script type="module">
-        import { Div, Paragraph, Button, Row, Column, render } from './object-dom.es5.js';
+        import { Div, Heading1, Paragraph, Button, Row, Column, render } from './object-dom.es5.js';
 
         class MyApp extends Div {
             constructor() {
                 super();
-                const text = new Paragraph({ value: 'Hello World!' });
-                const button = new Button({
-                    value: 'Update',
-                    style: {
-                        width: '100px'
-                    },
+                const counter = new Paragraph({ value: '0' });
+                const increment = new Button({
+                    value: '+',
+                    style: { width: '50px' },
                 });
+                increment.onClick = () => {
+                    counter.value = (Number(counter.value) + 1).toString();
+                };
+                const decrement = new Button({
+                    value: '-',
+                    style: { width: '50px' },
+                });
+                decrement.onClick = () => {
+                    counter.value = (Number(counter.value) - 1).toString();
+                };
                 this.addChild(new Column({
                     children: [
-                        text,
-                        button,
-                        new Row({
-                            style: {
-                                padding: '10px'
-                            },
-                            children: [
-                                'A', 'B', 'C'
-                            ]
-                        }),
+                        new Heading1({ value: 'Counter Example' }),
+                        counter,
+                        new Row({ children: [decrement, increment] }),
                     ],
                 }));
-                button.onClick = () => {
-                    text.value = 'New Update!';
-                };
             }
         }
 
