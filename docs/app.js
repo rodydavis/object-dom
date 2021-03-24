@@ -4,7 +4,6 @@ class MyApp extends ObjectDomBase {
     value = 0
 
     render() {
-        const setState = () => this.update();
         return new Div({
             children: [
                 new Heading1({ text: 'Counter Example' }),
@@ -16,7 +15,7 @@ class MyApp extends ObjectDomBase {
                             style: { width: '50px', margin: '5px' },
                             onClick: () => {
                                 this.value -= 1;
-                                setState();
+                                this.update();
                             }
                         }),
                         new Button({
@@ -24,7 +23,7 @@ class MyApp extends ObjectDomBase {
                             style: { width: '50px', margin: '5px' },
                             onClick: () => {
                                 this.value += 1;
-                                setState();
+                                this.update();
                             }
                         }),
                     ]
