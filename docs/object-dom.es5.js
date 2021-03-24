@@ -52,10 +52,10 @@ function render(source, target) {
     console.log('render node', target, source);
 }
 function applyNodeStyles(node, styles) {
-    if (styles === null || styles === void 0 ? void 0 : styles.width)
-        node.style.width = styles.width;
-    if (styles === null || styles === void 0 ? void 0 : styles.height)
-        node.style.height = styles.height;
+    for (var _i = 0, _a = Object.entries(styles); _i < _a.length; _i++) {
+        var _b = _a[_i], key = _b[0], value = _b[1];
+        node.style.setProperty(key, value);
+    }
 }
 
 /*! *****************************************************************************
@@ -90,12 +90,89 @@ function __extends(d, b) {
 var Div = /** @class */ (function (_super) {
     __extends(Div, _super);
     function Div(props) {
-        if (props === void 0) { props = {}; }
+        if (props === void 0) { props = { style: {}, children: [] }; }
         var _a, _b;
         return _super.call(this, document.createElement('div'), (_a = props === null || props === void 0 ? void 0 : props.style) !== null && _a !== void 0 ? _a : {}, (_b = props === null || props === void 0 ? void 0 : props.children) !== null && _b !== void 0 ? _b : []) || this;
     }
     return Div;
 }(ObjectDom));
+var Flex = /** @class */ (function (_super) {
+    __extends(Flex, _super);
+    function Flex(props) {
+        if (props === void 0) { props = { style: {}, children: [] }; }
+        var _this = this;
+        props.style.display = 'flex';
+        _this = _super.call(this, props) || this;
+        return _this;
+    }
+    return Flex;
+}(Div));
+var Row = /** @class */ (function (_super) {
+    __extends(Row, _super);
+    function Row(props) {
+        if (props === void 0) { props = { style: {}, children: [] }; }
+        var _this = this;
+        props.style.flexDirection = 'row';
+        _this = _super.call(this, props) || this;
+        return _this;
+    }
+    return Row;
+}(Flex));
+var Column = /** @class */ (function (_super) {
+    __extends(Column, _super);
+    function Column(props) {
+        if (props === void 0) { props = { style: {}, children: [] }; }
+        var _this = this;
+        props.style.flexDirection = 'column';
+        _this = _super.call(this, props) || this;
+        return _this;
+    }
+    return Column;
+}(Flex));
+var Grid = /** @class */ (function (_super) {
+    __extends(Grid, _super);
+    function Grid(props) {
+        if (props === void 0) { props = { style: {}, children: [] }; }
+        var _this = this;
+        props.style.display = 'grid';
+        _this = _super.call(this, props) || this;
+        return _this;
+    }
+    return Grid;
+}(Div));
+var Block = /** @class */ (function (_super) {
+    __extends(Block, _super);
+    function Block(props) {
+        if (props === void 0) { props = { style: {}, children: [] }; }
+        var _this = this;
+        props.style.display = 'block';
+        _this = _super.call(this, props) || this;
+        return _this;
+    }
+    return Block;
+}(Div));
+var Inline = /** @class */ (function (_super) {
+    __extends(Inline, _super);
+    function Inline(props) {
+        if (props === void 0) { props = { style: {}, children: [] }; }
+        var _this = this;
+        props.style.display = 'inline';
+        _this = _super.call(this, props) || this;
+        return _this;
+    }
+    return Inline;
+}(Div));
+var InlineBlock = /** @class */ (function (_super) {
+    __extends(InlineBlock, _super);
+    function InlineBlock(props) {
+        if (props === void 0) { props = { style: {}, children: [] }; }
+        var _this = this;
+        props.style.display = 'inline-block';
+        _this = _super.call(this, props) || this;
+        return _this;
+    }
+    return InlineBlock;
+}(Div));
 
 var Text = /** @class */ (function (_super) {
     __extends(Text, _super);
@@ -142,5 +219,5 @@ var Button = /** @class */ (function (_super) {
     return Button;
 }(ObjectDom));
 
-export { ObjectDom, render, Div, Text, Button };
+export { ObjectDom, render, Div, Flex, Row, Column, Grid, Block, Inline, InlineBlock, Text, Button };
 //# sourceMappingURL=object-dom.es5.js.map

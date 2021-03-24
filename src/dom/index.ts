@@ -1,3 +1,3 @@
-export { Div } from './div';
-export { Text } from './text';
-export { Button } from './button';
+export * from './div'
+export * from './text'
+export * from './button'

@@ -1,4 +1,13 @@
+import { Styles } from './styles'
+export { Styles } from './styles'
+
 type NodeArray = Array<ObjectDom<HTMLElement> | string>
+
+function applyNodeStyles(node: HTMLElement, styles: Styles) {
+  for (const [key, value] of Object.entries(styles)) {
+    node.style.setProperty(key, value)
+  }
+}
 
 export class ObjectDom<T extends HTMLElement> {
   constructor(node: T, styles: Styles, children: NodeArray) {
@@ -41,14 +50,4 @@ export function render(source: ObjectDom<HTMLElement>, target: HTMLElement = doc
   target.innerHTML = ''
   target.appendChild(source.node)
   console.log('render node', target, source)
-}
-
-export interface Styles {
-  width?: string
-  height?: string
-}
-
-function applyNodeStyles(node: HTMLElement, styles: Styles) {
-  if (styles?.width) node.style.width = styles.width
-  if (styles?.height) node.style.height = styles.height
 }
