@@ -24,7 +24,7 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InputGroup = exports.ColorInput = exports.EmailInput = exports.NumberInput = exports.FileInput = exports.TextInput = exports.SubmitInput = exports.Input = exports.Label = exports.Form = void 0;
+exports.InputGroup = exports.ColorInput = exports.EmailInput = exports.PhoneInput = exports.NumberInput = exports.FileInput = exports.TextInput = exports.SubmitInput = exports.Input = exports.Label = exports.Form = void 0;
 var base_1 = require("../base");
 var div_1 = require("./div");
 var Form = /** @class */ (function (_super) {
@@ -130,6 +130,14 @@ var NumberInput = /** @class */ (function (_super) {
     return NumberInput;
 }(Input));
 exports.NumberInput = NumberInput;
+var PhoneInput = /** @class */ (function (_super) {
+    __extends(PhoneInput, _super);
+    function PhoneInput(props) {
+        return _super.call(this, 'tel', props) || this;
+    }
+    return PhoneInput;
+}(Input));
+exports.PhoneInput = PhoneInput;
 var EmailInput = /** @class */ (function (_super) {
     __extends(EmailInput, _super);
     function EmailInput(props) {

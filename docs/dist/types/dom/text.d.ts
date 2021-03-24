@@ -1,5 +1,5 @@
 import { ObjectDom, NodeProps } from '../base';
-declare class Text extends ObjectDom<HTMLElement> {
+export declare class Text extends ObjectDom<HTMLElement> {
     constructor(tag: string, props: NodeProps);
     private _text;
     get text(): string | undefined;
@@ -59,4 +59,3 @@ export declare class Heading5 extends Text {
 export declare class Heading6 extends Text {
     constructor(props?: NodeProps);
 }
-export {};

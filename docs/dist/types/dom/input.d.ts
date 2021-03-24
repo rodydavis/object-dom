@@ -43,6 +43,9 @@ export declare class FileInput extends Input {
 export declare class NumberInput extends Input {
     constructor(props: InputProps);
 }
+export declare class PhoneInput extends Input {
+    constructor(props: InputProps);
+}
 export declare class EmailInput extends Input {
     constructor(props: InputProps);
 }

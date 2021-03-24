@@ -539,6 +539,13 @@ var NumberInput = /** @class */ (function (_super) {
     }
     return NumberInput;
 }(Input));
+var PhoneInput = /** @class */ (function (_super) {
+    __extends(PhoneInput, _super);
+    function PhoneInput(props) {
+        return _super.call(this, 'tel', props) || this;
+    }
+    return PhoneInput;
+}(Input));
 var EmailInput = /** @class */ (function (_super) {
     __extends(EmailInput, _super);
     function EmailInput(props) {
@@ -702,5 +709,5 @@ var TableColumnGroup = /** @class */ (function (_super) {
     return TableColumnGroup;
 }(Col));
 
-export { ObjectDomBase, ObjectDom, render, Div, Grid, Block, Inline, InlineBlock, Flex, Row, Column, Wrap, Span, Paragraph, Bold, Strong, Italic, Emphasized, Marked, Smaller, Deleted, Inserted, Subscript, Superscript, Heading1, Heading2, Heading3, Heading4, Heading5, Heading6, Button, Form, Label, Input, SubmitInput, TextInput, FileInput, NumberInput, EmailInput, ColorInput, InputGroup, tableFromJsonList, Table, TableRow, TableHeader, TableFooter, TableBody, HeaderCell, Cell, Caption, TableColumn, TableColumnGroup };
+export { ObjectDomBase, ObjectDom, render, Div, Grid, Block, Inline, InlineBlock, Flex, Row, Column, Wrap, Text, Span, Paragraph, Bold, Strong, Italic, Emphasized, Marked, Smaller, Deleted, Inserted, Subscript, Superscript, Heading1, Heading2, Heading3, Heading4, Heading5, Heading6, Button, Form, Label, Input, SubmitInput, TextInput, FileInput, NumberInput, PhoneInput, EmailInput, ColorInput, InputGroup, tableFromJsonList, Table, TableRow, TableHeader, TableFooter, TableBody, HeaderCell, Cell, Caption, TableColumn, TableColumnGroup };
 //# sourceMappingURL=object-dom.es5.js.map

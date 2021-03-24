@@ -24,7 +24,7 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Heading6 = exports.Heading5 = exports.Heading4 = exports.Heading3 = exports.Heading2 = exports.Heading1 = exports.Superscript = exports.Subscript = exports.Inserted = exports.Deleted = exports.Smaller = exports.Marked = exports.Emphasized = exports.Italic = exports.Strong = exports.Bold = exports.Paragraph = exports.Span = void 0;
+exports.Heading6 = exports.Heading5 = exports.Heading4 = exports.Heading3 = exports.Heading2 = exports.Heading1 = exports.Superscript = exports.Subscript = exports.Inserted = exports.Deleted = exports.Smaller = exports.Marked = exports.Emphasized = exports.Italic = exports.Strong = exports.Bold = exports.Paragraph = exports.Span = exports.Text = void 0;
 var base_1 = require("../base");
 var Text = /** @class */ (function (_super) {
     __extends(Text, _super);
@@ -47,6 +47,7 @@ var Text = /** @class */ (function (_super) {
     });
     return Text;
 }(base_1.ObjectDom));
+exports.Text = Text;
 var Span = /** @class */ (function (_super) {
     __extends(Span, _super);
     function Span(props) {

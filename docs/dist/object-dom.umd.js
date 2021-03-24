@@ -545,6 +545,13 @@
         }
         return NumberInput;
     }(Input));
+    var PhoneInput = /** @class */ (function (_super) {
+        __extends(PhoneInput, _super);
+        function PhoneInput(props) {
+            return _super.call(this, 'tel', props) || this;
+        }
+        return PhoneInput;
+    }(Input));
     var EmailInput = /** @class */ (function (_super) {
         __extends(EmailInput, _super);
         function EmailInput(props) {
@@ -720,6 +727,7 @@
     exports.Row = Row;
     exports.Column = Column;
     exports.Wrap = Wrap;
+    exports.Text = Text;
     exports.Span = Span;
     exports.Paragraph = Paragraph;
     exports.Bold = Bold;
@@ -746,6 +754,7 @@
     exports.TextInput = TextInput;
     exports.FileInput = FileInput;
     exports.NumberInput = NumberInput;
+    exports.PhoneInput = PhoneInput;
     exports.EmailInput = EmailInput;
     exports.ColorInput = ColorInput;
     exports.InputGroup = InputGroup;
