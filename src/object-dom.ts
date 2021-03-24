@@ -1,2 +1,2 @@
-export { ObjectDom, render } from './base'
-export * from './dom'
+export * from './base';
+export * from './dom/index';

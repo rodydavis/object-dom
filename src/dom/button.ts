@@ -1,26 +1,26 @@
-import { ObjectDom, NodeArray, Style } from '../base'
+import { ObjectDom, NodeProps } from '../base';
 
-interface ButtonProps {
-  text?: string
-  style?: Style
-  children?: NodeArray
+interface ButtonProps extends NodeProps {
+  text?: string;
+  onClick?: () => void;
 }
 
 export class Button extends ObjectDom<HTMLButtonElement> {
   constructor(props: ButtonProps = {}) {
-    super(document.createElement('button'), props?.style ?? {}, props?.children ?? [])
-    this.node.addEventListener('click', () => this.onClick())
-    this.text = props.text
+    super({ node: document.createElement('button'), ...props });
+    if (props?.onClick) this.onClick = props.onClick;
+    this.node.addEventListener('click', () => this.onClick());
+    this.text = props.text;
   }
 
-  private _text: string | undefined
+  onClick: Function = () => {};
+
+  private _text: string | undefined;
   public get text(): string | undefined {
-    return this._text
+    return this._text;
   }
   public set text(text: string | undefined) {
-    this._text = text
-    if (text) this.node.innerText = text
+    this._text = text;
+    if (text) this.node.innerText = text;
   }
-
-  onClick: Function = () => {}
 }
