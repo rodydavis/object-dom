@@ -16,7 +16,8 @@ class MyApp extends ObjectDomBase {
                             onClick: () => {
                                 this.counter.text = (Number(this.counter.text) - 1).toString();
                             }
-                        }), new Button({
+                        }),
+                        new Button({
                             text: '+',
                             style: { width: '50px', margin: '5px' },
                             onClick: () => {
