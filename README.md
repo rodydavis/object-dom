@@ -7,7 +7,17 @@
 [![Dev Dependencies](https://david-dm.org/alexjoverm/typescript-library-starter/dev-status.svg)](https://david-dm.org/alexjoverm/typescript-library-starter?type=dev)
 [![Donate](https://img.shields.io/badge/donate-paypal-blue.svg)](https://paypal.me/AJoverMorales)
 
-JS Declarative HTML Dom
+## Supported Tags
+
+- button
+- form, input, label
+- p, span, h1, h2, h3, h4, h5, h6
+- div
+- table, thead, tfoot, tbody, th, tr, td, col, colgroup, caption 
+
+## Getting Started
+
+Use functional style:
 
 ```html
 <div id="root"></div>
