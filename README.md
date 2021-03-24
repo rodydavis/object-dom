@@ -13,7 +13,24 @@
 - form, input, label
 - p, span, h1, h2, h3, h4, h5, h6
 - div
-- table, thead, tfoot, tbody, th, tr, td, col, colgroup, caption 
+- table, thead, tfoot, tbody, th, tr, td, col, colgroup, caption
+
+## Available Classes/Methods
+
+- Button
+- Span, Paragraph
+- Bold, Strong, Italic, Emphasized
+- Marked, Smaller, Deleted, Inserted
+- Subscript, Superscript
+- Heading1, Heading2, Heading3, Heading4, Heading5, Heading6
+- Form, Label, InputGroup
+- SubmitInput, TextInput, FileInput, NumberInput
+- EmailInput, ColorInput, PhoneInput
+- tableFromJsonList
+- Table, TableRow, TableHeader, TableFooter, TableBody
+- HeaderCell, Cell, Caption, TableColumn, TableColumnGroup
+- Div, Grid, Block, Inline, InlineBlock
+- Flex, Row, Column, Wrap
 
 ## Getting Started
 

@@ -1,6 +1,6 @@
 import { ObjectDom, NodeProps } from '../base';
 
-class Text extends ObjectDom<HTMLElement> {
+export class Text extends ObjectDom<HTMLElement> {
   constructor(tag: string, props: NodeProps) {
     super({ node: document.createElement(tag), ...props });
     this.text = props.text;

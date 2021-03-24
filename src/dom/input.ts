@@ -92,6 +92,12 @@ export class NumberInput extends Input {
   }
 }
 
+export class PhoneInput extends Input {
+  constructor(props: InputProps) {
+    super('tel', props);
+  }
+}
+
 export class EmailInput extends Input {
   constructor(props: InputProps) {
     super('email', props);
