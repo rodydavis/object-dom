@@ -58,7 +58,7 @@ function render(source, target) {
     if (target === void 0) { target = document.body; }
     target.innerHTML = '';
     target.appendChild(source.node);
-    console.log('render node', target, source);
+    //   console.log('render node', target, source)
 }
 
 /*! *****************************************************************************
@@ -93,7 +93,7 @@ function __extends(d, b) {
 var Div = /** @class */ (function (_super) {
     __extends(Div, _super);
     function Div(props) {
-        if (props === void 0) { props = { style: {}, children: [] }; }
+        if (props === void 0) { props = {}; }
         var _a, _b;
         return _super.call(this, document.createElement('div'), (_a = props === null || props === void 0 ? void 0 : props.style) !== null && _a !== void 0 ? _a : {}, (_b = props === null || props === void 0 ? void 0 : props.children) !== null && _b !== void 0 ? _b : []) || this;
     }
@@ -102,7 +102,7 @@ var Div = /** @class */ (function (_super) {
 var Flex = /** @class */ (function (_super) {
     __extends(Flex, _super);
     function Flex(props) {
-        if (props === void 0) { props = { style: {}, children: [] }; }
+        if (props === void 0) { props = {}; }
         var _this = _super.call(this, props) || this;
         _this.node.style.display = 'flex';
         return _this;
@@ -112,9 +112,9 @@ var Flex = /** @class */ (function (_super) {
 var Row = /** @class */ (function (_super) {
     __extends(Row, _super);
     function Row(props) {
-        if (props === void 0) { props = { style: {}, children: [] }; }
+        if (props === void 0) { props = {}; }
         var _this = _super.call(this, props) || this;
-        _this.node.style.flexDirection = 'row';
+        _this.node.style.flexDirection = (props === null || props === void 0 ? void 0 : props.reversed) ? 'row-reversed' : 'row';
         return _this;
     }
     return Row;
@@ -122,17 +122,27 @@ var Row = /** @class */ (function (_super) {
 var Column = /** @class */ (function (_super) {
     __extends(Column, _super);
     function Column(props) {
-        if (props === void 0) { props = { style: {}, children: [] }; }
+        if (props === void 0) { props = {}; }
         var _this = _super.call(this, props) || this;
-        _this.node.style.flexDirection = 'column';
+        _this.node.style.flexDirection = (props === null || props === void 0 ? void 0 : props.reversed) ? 'column-reversed' : 'column';
         return _this;
     }
     return Column;
 }(Flex));
+var Wrap = /** @class */ (function (_super) {
+    __extends(Wrap, _super);
+    function Wrap(props) {
+        if (props === void 0) { props = {}; }
+        var _this = _super.call(this, props) || this;
+        _this.node.style.flexWrap = (props === null || props === void 0 ? void 0 : props.none) ? 'nowrap' : (props === null || props === void 0 ? void 0 : props.reversed) ? 'wrap-reversed' : 'wrap';
+        return _this;
+    }
+    return Wrap;
+}(Flex));
 var Grid = /** @class */ (function (_super) {
     __extends(Grid, _super);
     function Grid(props) {
-        if (props === void 0) { props = { style: {}, children: [] }; }
+        if (props === void 0) { props = {}; }
         var _this = _super.call(this, props) || this;
         _this.node.style.display = 'grid';
         return _this;
@@ -142,7 +152,7 @@ var Grid = /** @class */ (function (_super) {
 var Block = /** @class */ (function (_super) {
     __extends(Block, _super);
     function Block(props) {
-        if (props === void 0) { props = { style: {}, children: [] }; }
+        if (props === void 0) { props = {}; }
         var _this = _super.call(this, props) || this;
         _this.node.style.display = 'block';
         return _this;
@@ -152,7 +162,7 @@ var Block = /** @class */ (function (_super) {
 var Inline = /** @class */ (function (_super) {
     __extends(Inline, _super);
     function Inline(props) {
-        if (props === void 0) { props = { style: {}, children: [] }; }
+        if (props === void 0) { props = {}; }
         var _this = _super.call(this, props) || this;
         _this.node.style.display = 'inline';
         return _this;
@@ -162,7 +172,7 @@ var Inline = /** @class */ (function (_super) {
 var InlineBlock = /** @class */ (function (_super) {
     __extends(InlineBlock, _super);
     function InlineBlock(props) {
-        if (props === void 0) { props = { style: {}, children: [] }; }
+        if (props === void 0) { props = {}; }
         var _this = _super.call(this, props) || this;
         _this.node.style.display = 'inline-block';
         return _this;
@@ -192,6 +202,14 @@ var Text = /** @class */ (function (_super) {
     });
     return Text;
 }(ObjectDom));
+var Span = /** @class */ (function (_super) {
+    __extends(Span, _super);
+    function Span(props) {
+        if (props === void 0) { props = {}; }
+        return _super.call(this, 'span', props) || this;
+    }
+    return Span;
+}(Text));
 var Paragraph = /** @class */ (function (_super) {
     __extends(Paragraph, _super);
     function Paragraph(props) {
@@ -207,6 +225,78 @@ var Bold = /** @class */ (function (_super) {
         return _super.call(this, 'b', props) || this;
     }
     return Bold;
+}(Text));
+var Strong = /** @class */ (function (_super) {
+    __extends(Strong, _super);
+    function Strong(props) {
+        if (props === void 0) { props = {}; }
+        return _super.call(this, 'strong', props) || this;
+    }
+    return Strong;
+}(Text));
+var Italic = /** @class */ (function (_super) {
+    __extends(Italic, _super);
+    function Italic(props) {
+        if (props === void 0) { props = {}; }
+        return _super.call(this, 'i', props) || this;
+    }
+    return Italic;
+}(Text));
+var Emphasized = /** @class */ (function (_super) {
+    __extends(Emphasized, _super);
+    function Emphasized(props) {
+        if (props === void 0) { props = {}; }
+        return _super.call(this, 'em', props) || this;
+    }
+    return Emphasized;
+}(Text));
+var Marked = /** @class */ (function (_super) {
+    __extends(Marked, _super);
+    function Marked(props) {
+        if (props === void 0) { props = {}; }
+        return _super.call(this, 'mark', props) || this;
+    }
+    return Marked;
+}(Text));
+var Smaller = /** @class */ (function (_super) {
+    __extends(Smaller, _super);
+    function Smaller(props) {
+        if (props === void 0) { props = {}; }
+        return _super.call(this, 'small', props) || this;
+    }
+    return Smaller;
+}(Text));
+var Deleted = /** @class */ (function (_super) {
+    __extends(Deleted, _super);
+    function Deleted(props) {
+        if (props === void 0) { props = {}; }
+        return _super.call(this, 'del', props) || this;
+    }
+    return Deleted;
+}(Text));
+var Inserted = /** @class */ (function (_super) {
+    __extends(Inserted, _super);
+    function Inserted(props) {
+        if (props === void 0) { props = {}; }
+        return _super.call(this, 'ins', props) || this;
+    }
+    return Inserted;
+}(Text));
+var Subscript = /** @class */ (function (_super) {
+    __extends(Subscript, _super);
+    function Subscript(props) {
+        if (props === void 0) { props = {}; }
+        return _super.call(this, 'sub', props) || this;
+    }
+    return Subscript;
+}(Text));
+var Superscript = /** @class */ (function (_super) {
+    __extends(Superscript, _super);
+    function Superscript(props) {
+        if (props === void 0) { props = {}; }
+        return _super.call(this, 'sup', props) || this;
+    }
+    return Superscript;
 }(Text));
 var Heading1 = /** @class */ (function (_super) {
     __extends(Heading1, _super);
@@ -283,5 +373,5 @@ var Button = /** @class */ (function (_super) {
     return Button;
 }(ObjectDom));
 
-export { ObjectDom, render, Div, Flex, Row, Column, Grid, Block, Inline, InlineBlock, Paragraph, Bold, Heading1, Heading2, Heading3, Heading4, Heading5, Heading6, Button };
+export { ObjectDom, render, Div, Flex, Row, Column, Wrap, Grid, Block, Inline, InlineBlock, Span, Paragraph, Bold, Strong, Italic, Emphasized, Marked, Smaller, Deleted, Inserted, Subscript, Superscript, Heading1, Heading2, Heading3, Heading4, Heading5, Heading6, Button };
 //# sourceMappingURL=object-dom.es5.js.map

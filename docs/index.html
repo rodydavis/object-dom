@@ -13,16 +13,17 @@
     <script type="module">
         import { Div, Paragraph, Button, Row, Column, render } from './object-dom.es5.js';
 
-        const text = new Paragraph({value: 'Hello World!'});
-        const button = new Button({
-            value: 'Update',
-            style: {
-                width: '100px'
-            },
-        });
-        const app = new Div({
-            children: [
-                new Column({
+        class MyApp extends Div {
+            constructor() {
+                super();
+                const text = new Paragraph({ value: 'Hello World!' });
+                const button = new Button({
+                    value: 'Update',
+                    style: {
+                        width: '100px'
+                    },
+                });
+                this.addChild(new Column({
                     children: [
                         text,
                         button,
@@ -35,13 +36,14 @@
                             ]
                         }),
                     ],
-                }),
-            ]
-        });
-        button.onClick = () => {
-            text.value = 'New Update!';
-        };
-        render(app, document.body.querySelector('#root'));
+                }));
+                button.onClick = () => {
+                    text.value = 'New Update!';
+                };
+            }
+        }
+
+        render(new MyApp(), document.body.querySelector('#root'));
     </script>
 </body>
 
