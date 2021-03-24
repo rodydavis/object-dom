@@ -1,20 +1,41 @@
 type NodeArray = Array<ObjectDom<HTMLElement> | string>
 
 export class ObjectDom<T extends HTMLElement> {
-  constructor(public node: T, public styles: Styles, public children: NodeArray) {}
-  render(): string {
-    const node = this.node
-    return nodeToHtml(node, this.styles, this.children)
+  constructor(public node: T, styles: Styles, children: NodeArray) {
+    this._styles = styles
+    this._children = children
+    applyNodeStyles(this.node, this.styles)
+    applyNodeChildren(this.node, this.children)
   }
+
   update() {
     render(this, this.node)
+  }
+
+  private _styles: Styles
+  public get styles(): Styles {
+    return this._styles
+  }
+  public set styles(value: Styles) {
+    this._styles = value
+    applyNodeStyles(this.node, this.styles)
+  }
+
+  private _children: NodeArray
+  public get children(): NodeArray {
+    return this._children
+  }
+  public set children(value: NodeArray) {
+    this._children = value
+    applyNodeChildren(this.node, this.children)
   }
 }
 
 export function render(source: ObjectDom<HTMLElement>, target: HTMLElement = document.body) {
-  const htmlResult = source.render()
-  console.log(htmlResult)
-  target.innerHTML = htmlResult
+  //   const htmlResult = source.render()
+  //   console.log(htmlResult)
+  target.innerHTML = ''
+  target.appendChild(source.node)
 }
 
 export interface Styles {
@@ -28,22 +49,12 @@ function applyNodeStyles(node: HTMLElement, styles: Styles) {
 }
 
 function applyNodeChildren(node: HTMLElement, children: NodeArray) {
-  const nodes: string[] = []
+  node.innerHTML = ''
   for (const child of children) {
     if (child instanceof ObjectDom) {
-      const childHtml = child.render()
-      nodes.push(childHtml)
+      node.append(child.node)
     } else {
-      nodes.push(child)
+      node.append(child)
     }
   }
-  if (nodes.length > 0) {
-    node.innerHTML = nodes.join('\n')
-  }
-}
-
-function nodeToHtml(node: HTMLElement, styles: Styles, children: NodeArray): string {
-  applyNodeStyles(node, styles)
-  applyNodeChildren(node, children)
-  return node.outerHTML
 }

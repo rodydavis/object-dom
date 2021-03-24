@@ -1,23 +1,44 @@
 var ObjectDom = /** @class */ (function () {
     function ObjectDom(node, styles, children) {
         this.node = node;
-        this.styles = styles;
-        this.children = children;
+        this._styles = styles;
+        this._children = children;
+        applyNodeStyles(this.node, this.styles);
+        applyNodeChildren(this.node, this.children);
     }
-    ObjectDom.prototype.render = function () {
-        var node = this.node;
-        return nodeToHtml(node, this.styles, this.children);
-    };
     ObjectDom.prototype.update = function () {
         render(this, this.node);
     };
+    Object.defineProperty(ObjectDom.prototype, "styles", {
+        get: function () {
+            return this._styles;
+        },
+        set: function (value) {
+            this._styles = value;
+            applyNodeStyles(this.node, this.styles);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(ObjectDom.prototype, "children", {
+        get: function () {
+            return this._children;
+        },
+        set: function (value) {
+            this._children = value;
+            applyNodeChildren(this.node, this.children);
+        },
+        enumerable: false,
+        configurable: true
+    });
     return ObjectDom;
 }());
 function render(source, target) {
     if (target === void 0) { target = document.body; }
-    var htmlResult = source.render();
-    console.log(htmlResult);
-    target.innerHTML = htmlResult;
+    //   const htmlResult = source.render()
+    //   console.log(htmlResult)
+    target.innerHTML = '';
+    target.appendChild(source.node);
 }
 function applyNodeStyles(node, styles) {
     if (styles === null || styles === void 0 ? void 0 : styles.width)
@@ -26,25 +47,16 @@ function applyNodeStyles(node, styles) {
         node.style.height = styles.height;
 }
 function applyNodeChildren(node, children) {
-    var nodes = [];
+    node.innerHTML = '';
     for (var _i = 0, children_1 = children; _i < children_1.length; _i++) {
         var child = children_1[_i];
         if (child instanceof ObjectDom) {
-            var childHtml = child.render();
-            nodes.push(childHtml);
+            node.append(child.node);
         }
         else {
-            nodes.push(child);
+            node.append(child);
         }
     }
-    if (nodes.length > 0) {
-        node.innerHTML = nodes.join('\n');
-    }
-}
-function nodeToHtml(node, styles, children) {
-    applyNodeStyles(node, styles);
-    applyNodeChildren(node, children);
-    return node.outerHTML;
 }
 
 /*! *****************************************************************************
@@ -92,10 +104,21 @@ var Text = /** @class */ (function (_super) {
         if (props === void 0) { props = {}; }
         var _a, _b;
         var _this = _super.call(this, document.createElement('p'), (_a = props === null || props === void 0 ? void 0 : props.style) !== null && _a !== void 0 ? _a : {}, (_b = props === null || props === void 0 ? void 0 : props.children) !== null && _b !== void 0 ? _b : []) || this;
-        _this.value = value;
-        _this.children.push(value);
+        _this._value = value;
+        _this.children = [value];
         return _this;
     }
+    Object.defineProperty(Text.prototype, "value", {
+        get: function () {
+            return this._value;
+        },
+        set: function (value) {
+            this._value = value;
+            this.update();
+        },
+        enumerable: false,
+        configurable: true
+    });
     return Text;
 }(ObjectDom));
 
@@ -104,10 +127,21 @@ var Button = /** @class */ (function (_super) {
     function Button(value, props) {
         var _a, _b;
         var _this = _super.call(this, document.createElement('button'), (_a = props === null || props === void 0 ? void 0 : props.style) !== null && _a !== void 0 ? _a : {}, (_b = props === null || props === void 0 ? void 0 : props.children) !== null && _b !== void 0 ? _b : []) || this;
-        _this.value = value;
-        _this.children.push(value);
+        _this._value = value;
+        _this.children = [value];
         return _this;
     }
+    Object.defineProperty(Button.prototype, "value", {
+        get: function () {
+            return this._value;
+        },
+        set: function (value) {
+            this._value = value;
+            this.update();
+        },
+        enumerable: false,
+        configurable: true
+    });
     return Button;
 }(ObjectDom));
 
