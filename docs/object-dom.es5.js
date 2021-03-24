@@ -44,7 +44,6 @@ function render(source, target) {
     if (target === void 0) { target = document.body; }
     //   const htmlResult = source.render()
     //   console.log(htmlResult)
-    source.update();
     target.innerHTML = '';
     target.appendChild(source.node);
     console.log('render node', target, source);
