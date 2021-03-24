@@ -1,7 +1,11 @@
 import { Style } from './styles'
 export * from './styles'
 
-type NodeArray = Array<ObjectDom<HTMLElement> | string>
+export type NodeArray = Array<ObjectDom<HTMLElement> | string>
+export interface Props {
+  style: Style
+  children: NodeArray
+}
 
 function applyNodeStyle(node: HTMLElement, style: Style) {
   for (const [key, value] of Object.entries(style)) {

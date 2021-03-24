@@ -11,10 +11,11 @@
 <body>
     <div id="root"></div>
     <script type="module">
-        import { Div, Text, Button, Row, Column, render } from './object-dom.es5.js';
+        import { Div, Paragraph, Button, Row, Column, render } from './object-dom.es5.js';
 
-        const text = new Text('Hello World!');
-        const button = new Button('Update', {
+        const text = new Paragraph({value: 'Hello World!'});
+        const button = new Button({
+            value: 'Update',
             style: {
                 width: '100px'
             },

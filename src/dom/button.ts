@@ -1,19 +1,25 @@
-import { ObjectDom, Style } from '../base'
+import { ObjectDom, NodeArray, Style } from '../base'
+
+interface ButtonProps {
+  value?: string
+  style?: Style
+  children?: NodeArray
+}
 
 export class Button extends ObjectDom<HTMLButtonElement> {
-  constructor(value: string, props: { style?: Style; children?: Array<ObjectDom<HTMLElement>> }) {
+  constructor(props: ButtonProps = {}) {
     super(document.createElement('button'), props?.style ?? {}, props?.children ?? [])
-    this._value = this.node.innerText = value
     this.node.addEventListener('click', () => this.onClick())
+    this.value = props.value
   }
 
-  private _value: string
-  public get value(): string {
+  private _value: string | undefined
+  public get value(): string | undefined {
     return this._value
   }
-  public set value(value: string) {
+  public set value(value: string | undefined) {
     this._value = value
-    this.node.innerText = value
+    if (value) this.node.innerText = value
   }
 
   onClick: Function = () => {}

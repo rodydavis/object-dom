@@ -172,11 +172,10 @@ var InlineBlock = /** @class */ (function (_super) {
 
 var Text = /** @class */ (function (_super) {
     __extends(Text, _super);
-    function Text(value, props) {
-        if (props === void 0) { props = {}; }
-        var _a;
-        var _this = _super.call(this, document.createElement('p'), (_a = props === null || props === void 0 ? void 0 : props.style) !== null && _a !== void 0 ? _a : {}, []) || this;
-        _this._value = _this.node.innerText = value;
+    function Text(tag, props) {
+        var _a, _b;
+        var _this = _super.call(this, document.createElement(tag), (_a = props === null || props === void 0 ? void 0 : props.style) !== null && _a !== void 0 ? _a : {}, (_b = props === null || props === void 0 ? void 0 : props.children) !== null && _b !== void 0 ? _b : []) || this;
+        _this.value = props.value;
         return _this;
     }
     Object.defineProperty(Text.prototype, "value", {
@@ -185,22 +184,88 @@ var Text = /** @class */ (function (_super) {
         },
         set: function (value) {
             this._value = value;
-            this.node.innerText = value;
+            if (value)
+                this.node.innerText = value;
         },
         enumerable: false,
         configurable: true
     });
     return Text;
 }(ObjectDom));
+var Paragraph = /** @class */ (function (_super) {
+    __extends(Paragraph, _super);
+    function Paragraph(props) {
+        if (props === void 0) { props = {}; }
+        return _super.call(this, 'p', props) || this;
+    }
+    return Paragraph;
+}(Text));
+var Bold = /** @class */ (function (_super) {
+    __extends(Bold, _super);
+    function Bold(props) {
+        if (props === void 0) { props = {}; }
+        return _super.call(this, 'b', props) || this;
+    }
+    return Bold;
+}(Text));
+var Heading1 = /** @class */ (function (_super) {
+    __extends(Heading1, _super);
+    function Heading1(props) {
+        if (props === void 0) { props = {}; }
+        return _super.call(this, 'h1', props) || this;
+    }
+    return Heading1;
+}(Text));
+var Heading2 = /** @class */ (function (_super) {
+    __extends(Heading2, _super);
+    function Heading2(props) {
+        if (props === void 0) { props = {}; }
+        return _super.call(this, 'h2', props) || this;
+    }
+    return Heading2;
+}(Text));
+var Heading3 = /** @class */ (function (_super) {
+    __extends(Heading3, _super);
+    function Heading3(props) {
+        if (props === void 0) { props = {}; }
+        return _super.call(this, 'h3', props) || this;
+    }
+    return Heading3;
+}(Text));
+var Heading4 = /** @class */ (function (_super) {
+    __extends(Heading4, _super);
+    function Heading4(props) {
+        if (props === void 0) { props = {}; }
+        return _super.call(this, 'h4', props) || this;
+    }
+    return Heading4;
+}(Text));
+var Heading5 = /** @class */ (function (_super) {
+    __extends(Heading5, _super);
+    function Heading5(props) {
+        if (props === void 0) { props = {}; }
+        return _super.call(this, 'h5', props) || this;
+    }
+    return Heading5;
+}(Text));
+var Heading6 = /** @class */ (function (_super) {
+    __extends(Heading6, _super);
+    function Heading6(props) {
+        if (props === void 0) { props = {}; }
+        return _super.call(this, 'h6', props) || this;
+    }
+    return Heading6;
+}(Text));
 
 var Button = /** @class */ (function (_super) {
     __extends(Button, _super);
-    function Button(value, props) {
+    function Button(props) {
+        if (props === void 0) { props = {}; }
         var _a, _b;
         var _this = _super.call(this, document.createElement('button'), (_a = props === null || props === void 0 ? void 0 : props.style) !== null && _a !== void 0 ? _a : {}, (_b = props === null || props === void 0 ? void 0 : props.children) !== null && _b !== void 0 ? _b : []) || this;
         _this.onClick = function () { };
-        _this._value = _this.node.innerText = value;
         _this.node.addEventListener('click', function () { return _this.onClick(); });
+        _this.value = props.value;
         return _this;
     }
     Object.defineProperty(Button.prototype, "value", {
@@ -209,7 +274,8 @@ var Button = /** @class */ (function (_super) {
         },
         set: function (value) {
             this._value = value;
-            this.node.innerText = value;
+            if (value)
+                this.node.innerText = value;
         },
         enumerable: false,
         configurable: true
@@ -217,5 +283,5 @@ var Button = /** @class */ (function (_super) {
     return Button;
 }(ObjectDom));
 
-export { ObjectDom, render, Div, Flex, Row, Column, Grid, Block, Inline, InlineBlock, Text, Button };
+export { ObjectDom, render, Div, Flex, Row, Column, Grid, Block, Inline, InlineBlock, Paragraph, Bold, Heading1, Heading2, Heading3, Heading4, Heading5, Heading6, Button };
 //# sourceMappingURL=object-dom.es5.js.map
