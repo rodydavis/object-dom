@@ -14,10 +14,11 @@
 - p, span, h1, h2, h3, h4, h5, h6
 - div, br
 - table, thead, tfoot, tbody, th, tr, td, col, colgroup, caption
+- html, head, body, script, style, link, meta, title
 
 ## Available Classes
 
-- Button, Break
+- Button, Break, Custom
 - Span, Paragraph
 - Bold, Strong, Italic, Emphasized
 - Marked, Smaller, Deleted, Inserted
@@ -30,10 +31,12 @@
 - HeaderCell, Cell, Caption, TableColumn, TableColumnGroup
 - Div, Grid, Block, Inline, InlineBlock
 - Flex, Row, Column, Wrap
+- Html, Head, Body, Script
+- Style, Link, Meta, Title
 
 ## Available Methods
 
-- tableFromJsonList
+- jsonTable
 - render
 
 ## Getting Started

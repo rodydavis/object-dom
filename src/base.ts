@@ -1,13 +1,13 @@
-import { Style } from './styles';
+import { CSS } from './styles';
 export * from './styles';
 
 export type NodeArray = Array<ObjectDomBase | string>;
 export interface Props {
-  style: Style;
+  style: CSS;
   children: NodeArray;
 }
 
-function applyNodeStyle(node: HTMLElement, style: Style) {
+function applyNodeStyle(node: HTMLElement, style: CSS) {
   for (const [key, value] of Object.entries(style)) {
     node.style.setProperty(key, value);
   }
@@ -17,7 +17,7 @@ export interface NodeProps {
   id?: string;
   text?: string;
   className?: string | string[];
-  style?: Style;
+  style?: CSS;
   children?: NodeArray;
 }
 
@@ -79,11 +79,11 @@ export class ObjectDom<T extends HTMLElement> extends ObjectDomBase {
     this._node = value;
   }
 
-  private _style: Style | undefined;
-  public get style(): Style | undefined {
+  private _style: CSS | undefined;
+  public get style(): CSS | undefined {
     return this._style;
   }
-  public set style(value: Style | undefined) {
+  public set style(value: CSS | undefined) {
     this._style = value;
     if (this.style) applyNodeStyle(this.node, this.style);
   }

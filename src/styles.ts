@@ -1,4 +1,4 @@
-export interface Style {
+export interface CSS {
   alignContent?: string;
   alignItems?: string;
   alignSelf?: string;
