@@ -1,4 +1,4 @@
-import {Div} from "../src/object-dom"
+import { Div } from "../src/object-dom"
 
 /**
  * Div test
@@ -10,7 +10,7 @@ describe("Div test", () => {
 
   it("Div correct output", () => {
     const source = new Div();
-    const htmlResult = source.render();
+    const htmlResult = source.toHtml();
     expect(htmlResult).toEqual('<div></div>')
   });
 })

@@ -8,7 +8,7 @@ export interface TableJsonProps {
   tableRow?: NodeProps;
 }
 
-export function tableFromJsonList(data: Object[], props: TableJsonProps = {}): Table {
+export function jsonTable(data: Object[], props: TableJsonProps = {}): Table {
   const table = new Table(props?.table ?? {});
   let index = 0;
   const headerRow = new TableRow(props?.headerRow ?? props?.tableRow ?? {});
