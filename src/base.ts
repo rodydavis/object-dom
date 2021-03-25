@@ -1,4 +1,5 @@
 import { CSS } from './styles';
+
 export * from './styles';
 
 export type NodeArray = Array<ObjectDom | string>;

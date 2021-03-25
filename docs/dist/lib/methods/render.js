@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.render = void 0;
+require("html-document/lib/global");
 function render(source, target) {
     if (target === void 0) { target = document.body; }
     target.innerHTML = '';

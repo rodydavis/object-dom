@@ -26,6 +26,7 @@ var __assign = (this && this.__assign) || function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TableColumnGroup = exports.TableColumn = exports.Caption = exports.Cell = exports.HeaderCell = exports.TableBody = exports.TableFooter = exports.TableHeader = exports.TableRow = exports.Table = void 0;
 var base_1 = require("../base");
+require("html-document/lib/global");
 var Table = /** @class */ (function (_super) {
     __extends(Table, _super);
     function Table(props) {

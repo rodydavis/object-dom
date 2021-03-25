@@ -1,5 +1,6 @@
 import { CoreDom, NodeProps } from '../base';
 import { Div } from './div';
+
 export interface FormProps extends NodeProps {
     method: 'post' | 'get' | 'dialog';
     action: string;

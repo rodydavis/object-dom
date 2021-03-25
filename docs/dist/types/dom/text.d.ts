@@ -1,4 +1,5 @@
 import { CoreDom, NodeProps } from '../base';
+
 export declare class Text extends CoreDom<HTMLElement> {
     constructor(tag: string, props: NodeProps);
     private _text;

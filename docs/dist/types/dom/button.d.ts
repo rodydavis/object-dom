@@ -1,4 +1,5 @@
 import { CoreDom, NodeProps } from '../base';
+
 interface ButtonProps extends NodeProps {
     text?: string;
     onClick?: () => void;

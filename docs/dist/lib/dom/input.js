@@ -27,6 +27,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.InputGroup = exports.ColorInput = exports.EmailInput = exports.PhoneInput = exports.NumberInput = exports.FileInput = exports.TextInput = exports.SubmitInput = exports.Input = exports.Label = exports.Form = void 0;
 var base_1 = require("../base");
 var div_1 = require("./div");
+require("html-document/lib/global");
 var Form = /** @class */ (function (_super) {
     __extends(Form, _super);
     function Form(type, props) {

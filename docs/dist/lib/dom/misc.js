@@ -26,6 +26,7 @@ var __assign = (this && this.__assign) || function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Break = exports.Custom = void 0;
 var base_1 = require("../base");
+require("html-document/lib/global");
 var Custom = /** @class */ (function (_super) {
     __extends(Custom, _super);
     function Custom(tag, props) {

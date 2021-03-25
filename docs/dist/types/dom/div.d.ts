@@ -1,4 +1,5 @@
 import { CoreDom, NodeProps } from '../base';
+
 export declare class Div extends CoreDom<HTMLDivElement> {
     constructor(props?: NodeProps);
 }

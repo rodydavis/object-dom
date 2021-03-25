@@ -26,6 +26,7 @@ var __assign = (this && this.__assign) || function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Button = void 0;
 var base_1 = require("../base");
+require("html-document/lib/global");
 var Button = /** @class */ (function (_super) {
     __extends(Button, _super);
     function Button(props) {
