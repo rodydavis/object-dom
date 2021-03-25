@@ -26,7 +26,6 @@ var __assign = (this && this.__assign) || function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Wrap = exports.Column = exports.Row = exports.Flex = exports.InlineBlock = exports.Inline = exports.Block = exports.Grid = exports.Div = void 0;
 var base_1 = require("../base");
-require("html-document/lib/global");
 var Div = /** @class */ (function (_super) {
     __extends(Div, _super);
     function Div(props) {

@@ -7,6 +7,11 @@
 [![Dev Dependencies](https://david-dm.org/alexjoverm/typescript-library-starter/dev-status.svg)](https://david-dm.org/alexjoverm/typescript-library-starter?type=dev)
 [![Donate](https://img.shields.io/badge/donate-paypal-blue.svg)](https://paypal.me/AJoverMorales)
 
+- ✅ No Dependencies
+- ✅ ES Modules
+- ✅ Full Browser Support
+- ✅ 100% Typescript
+
 ## Supported Tags
 
 - button

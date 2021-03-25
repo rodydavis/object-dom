@@ -1,16 +1,9 @@
-import { Div } from "../src/object-dom"
+import { create } from '../src/object-dom';
 
-/**
- * Div test
- */
-describe("Div test", () => {
-  it("Div is instantiable", () => {
-    expect(new Div()).toBeInstanceOf(Div)
+describe('create test', () => {
+  it('Base HTML Create', () => {
+    expect(create({ title: 'Example' }).toHtml()).toEqual(
+      '<html><head><title></title></head><body></body></html>'
+    );
   });
-
-  it("Div correct output", () => {
-    const source = new Div();
-    const htmlResult = source.toHtml();
-    expect(htmlResult).toEqual('<div></div>')
-  });
-})
+});

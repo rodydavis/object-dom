@@ -24,7 +24,6 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CoreDom = exports.ObjectDom = void 0;
-require("html-document/lib/global");
 __exportStar(require("./styles"), exports);
 function applyNodeStyle(node, style) {
     for (var _i = 0, _a = Object.entries(style); _i < _a.length; _i++) {

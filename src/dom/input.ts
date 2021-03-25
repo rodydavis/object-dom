@@ -11,10 +11,9 @@ export interface FormProps extends NodeProps {
 }
 
 export class Form extends CoreDom<HTMLFormElement> {
-  constructor(type: string, props: FormProps) {
+  constructor(props?: FormProps) {
     super({ node: document.createElement('form'), ...props });
     this.node.addEventListener('change', () => this.onChange());
-    this.node.type = type;
     if (props?.target) this.node.target = props.target;
     if (props?.acceptCharset) this.node.acceptCharset = props.acceptCharset;
     if (props?.method) this.node.method = props.method;
@@ -32,7 +31,7 @@ export interface LabelProps extends NodeProps {
 }
 
 export class Label extends CoreDom<HTMLLabelElement> {
-  constructor(props: LabelProps) {
+  constructor(props?: LabelProps) {
     super({ node: document.createElement('label'), ...props });
     if (props?.value) this.value = props.value;
     if (props?.input) this.node.htmlFor = props.input;
@@ -44,16 +43,17 @@ export class Label extends CoreDom<HTMLLabelElement> {
 }
 
 export interface InputProps extends NodeProps {
+  type?: string;
   value?: string;
   name?: string;
   required?: boolean;
 }
 
 export class Input extends CoreDom<HTMLInputElement> {
-  constructor(type: string, props: InputProps) {
+  constructor(props?: InputProps) {
     super({ node: document.createElement('input'), ...props });
     this.node.addEventListener('change', val => this.onChange(val));
-    this.node.type = type;
+    if (props?.type) this.node.type = props.type;
     if (props?.name) this.node.name = props.name;
     if (props?.required) this.node.required = props.required;
   }
@@ -70,43 +70,43 @@ export class Input extends CoreDom<HTMLInputElement> {
 
 export class SubmitInput extends Input {
   constructor(props: InputProps) {
-    super('submit', props);
+    super({ type: 'submit', ...props });
   }
 }
 
 export class TextInput extends Input {
   constructor(props: InputProps) {
-    super('text', props);
+    super({ type: 'text', ...props });
   }
 }
 
 export class FileInput extends Input {
   constructor(props: InputProps) {
-    super('file', props);
+    super({ type: 'file', ...props });
   }
 }
 
 export class NumberInput extends Input {
   constructor(props: InputProps) {
-    super('number', props);
+    super({ type: 'number', ...props });
   }
 }
 
 export class PhoneInput extends Input {
   constructor(props: InputProps) {
-    super('tel', props);
+    super({ type: 'tel', ...props });
   }
 }
 
 export class EmailInput extends Input {
   constructor(props: InputProps) {
-    super('email', props);
+    super({ type: 'email', ...props });
   }
 }
 
 export class ColorInput extends Input {
   constructor(props: InputProps) {
-    super('color', props);
+    super({ type: 'color', ...props });
   }
 }
 
@@ -123,8 +123,9 @@ export class InputGroup extends Div {
         input: id,
         ...props?.label
       }),
-      new Input(type, {
+      new Input({
         id,
+        type,
         ...props?.input
       })
     ];

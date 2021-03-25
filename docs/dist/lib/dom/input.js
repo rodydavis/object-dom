@@ -27,14 +27,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.InputGroup = exports.ColorInput = exports.EmailInput = exports.PhoneInput = exports.NumberInput = exports.FileInput = exports.TextInput = exports.SubmitInput = exports.Input = exports.Label = exports.Form = void 0;
 var base_1 = require("../base");
 var div_1 = require("./div");
-require("html-document/lib/global");
 var Form = /** @class */ (function (_super) {
     __extends(Form, _super);
-    function Form(type, props) {
+    function Form(props) {
         var _this = _super.call(this, __assign({ node: document.createElement('form') }, props)) || this;
         _this.onChange = function () { };
         _this.node.addEventListener('change', function () { return _this.onChange(); });
-        _this.node.type = type;
         if (props === null || props === void 0 ? void 0 : props.target)
             _this.node.target = props.target;
         if (props === null || props === void 0 ? void 0 : props.acceptCharset)
@@ -74,11 +72,12 @@ var Label = /** @class */ (function (_super) {
 exports.Label = Label;
 var Input = /** @class */ (function (_super) {
     __extends(Input, _super);
-    function Input(type, props) {
+    function Input(props) {
         var _this = _super.call(this, __assign({ node: document.createElement('input') }, props)) || this;
         _this.onChange = function (val) { };
         _this.node.addEventListener('change', function (val) { return _this.onChange(val); });
-        _this.node.type = type;
+        if (props === null || props === void 0 ? void 0 : props.type)
+            _this.node.type = props.type;
         if (props === null || props === void 0 ? void 0 : props.name)
             _this.node.name = props.name;
         if (props === null || props === void 0 ? void 0 : props.required)
@@ -102,7 +101,7 @@ exports.Input = Input;
 var SubmitInput = /** @class */ (function (_super) {
     __extends(SubmitInput, _super);
     function SubmitInput(props) {
-        return _super.call(this, 'submit', props) || this;
+        return _super.call(this, __assign({ type: 'submit' }, props)) || this;
     }
     return SubmitInput;
 }(Input));
@@ -110,7 +109,7 @@ exports.SubmitInput = SubmitInput;
 var TextInput = /** @class */ (function (_super) {
     __extends(TextInput, _super);
     function TextInput(props) {
-        return _super.call(this, 'text', props) || this;
+        return _super.call(this, __assign({ type: 'text' }, props)) || this;
     }
     return TextInput;
 }(Input));
@@ -118,7 +117,7 @@ exports.TextInput = TextInput;
 var FileInput = /** @class */ (function (_super) {
     __extends(FileInput, _super);
     function FileInput(props) {
-        return _super.call(this, 'file', props) || this;
+        return _super.call(this, __assign({ type: 'file' }, props)) || this;
     }
     return FileInput;
 }(Input));
@@ -126,7 +125,7 @@ exports.FileInput = FileInput;
 var NumberInput = /** @class */ (function (_super) {
     __extends(NumberInput, _super);
     function NumberInput(props) {
-        return _super.call(this, 'number', props) || this;
+        return _super.call(this, __assign({ type: 'number' }, props)) || this;
     }
     return NumberInput;
 }(Input));
@@ -134,7 +133,7 @@ exports.NumberInput = NumberInput;
 var PhoneInput = /** @class */ (function (_super) {
     __extends(PhoneInput, _super);
     function PhoneInput(props) {
-        return _super.call(this, 'tel', props) || this;
+        return _super.call(this, __assign({ type: 'tel' }, props)) || this;
     }
     return PhoneInput;
 }(Input));
@@ -142,7 +141,7 @@ exports.PhoneInput = PhoneInput;
 var EmailInput = /** @class */ (function (_super) {
     __extends(EmailInput, _super);
     function EmailInput(props) {
-        return _super.call(this, 'email', props) || this;
+        return _super.call(this, __assign({ type: 'email' }, props)) || this;
     }
     return EmailInput;
 }(Input));
@@ -150,7 +149,7 @@ exports.EmailInput = EmailInput;
 var ColorInput = /** @class */ (function (_super) {
     __extends(ColorInput, _super);
     function ColorInput(props) {
-        return _super.call(this, 'color', props) || this;
+        return _super.call(this, __assign({ type: 'color' }, props)) || this;
     }
     return ColorInput;
 }(Input));
@@ -162,7 +161,8 @@ var InputGroup = /** @class */ (function (_super) {
         var _this = _super.call(this, { style: props === null || props === void 0 ? void 0 : props.style }) || this;
         var children = [
             new Label(__assign({ input: id }, props === null || props === void 0 ? void 0 : props.label)),
-            new Input(type, __assign({ id: id }, props === null || props === void 0 ? void 0 : props.input))
+            new Input(__assign({ id: id,
+                type: type }, props === null || props === void 0 ? void 0 : props.input))
         ];
         for (var _i = 0, children_1 = children; _i < children_1.length; _i++) {
             var child = children_1[_i];

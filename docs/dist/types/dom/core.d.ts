@@ -1,5 +1,4 @@
 import { CoreDom, NodeProps } from '../base';
-
 export declare class Html extends CoreDom<HTMLHtmlElement> {
     constructor(props?: NodeProps);
 }

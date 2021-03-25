@@ -1,5 +1,4 @@
 import { CSS } from './styles';
-
 export * from './styles';
 export declare type NodeArray = Array<ObjectDom | string>;
 export interface Props {
