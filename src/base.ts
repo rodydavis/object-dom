@@ -1,7 +1,7 @@
 import { CSS } from './styles';
 export * from './styles';
 
-export type NodeArray = Array<ObjectDomBase | string>;
+export type NodeArray = Array<ObjectDom | string>;
 export interface Props {
   style: CSS;
   children: NodeArray;
@@ -25,14 +25,14 @@ interface ObjectDomProps<T extends HTMLElement> extends NodeProps {
   node: T;
 }
 
-export abstract class ObjectDomBase {
+export abstract class ObjectDom {
   abstract node: HTMLElement;
   update: () => void = () => {};
-  abstract build: () => ObjectDom<HTMLElement>;
+  abstract build: () => CoreDom<HTMLElement>;
   toHtml = () => this.build().node.outerHTML;
 }
 
-export class ObjectDom<T extends HTMLElement> extends ObjectDomBase {
+export class CoreDom<T extends HTMLElement> extends ObjectDom {
   constructor(props: ObjectDomProps<T>) {
     super();
     this._node = props.node;
@@ -93,25 +93,12 @@ export class ObjectDom<T extends HTMLElement> extends ObjectDomBase {
   public get children(): NodeArray {
     return this._children;
   }
-  public addChild(value: ObjectDomBase | string) {
+  public addChild(value: ObjectDom | string) {
     this._children.push(value);
-    if (value instanceof ObjectDomBase) {
+    if (value instanceof ObjectDom) {
       this._node.append(value.build().node);
     } else {
       this._node.append(value);
     }
   }
-}
-
-export function render(source: ObjectDomBase, target: HTMLElement = document.body) {
-  target.innerHTML = '';
-  let node = source.build().node;
-  source.update = () => {
-    node.remove();
-    node = source.build().node;
-    target.appendChild(node);
-  };
-  target.appendChild(node);
-  // source.render(target);
-  //   console.log('render node', target, source)
 }

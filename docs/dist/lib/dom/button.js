@@ -51,6 +51,6 @@ var Button = /** @class */ (function (_super) {
         configurable: true
     });
     return Button;
-}(base_1.ObjectDom));
+}(base_1.CoreDom));
 exports.Button = Button;
 //# sourceMappingURL=button.js.map

@@ -1,6 +1,6 @@
-import { ObjectDomBase, Div, Heading1, Paragraph, Button, Row, render } from './dist/object-dom.es5.js';
+import { ObjectDom, Div, Heading1, Paragraph, Button, Row, render } from './dist/object-dom.es5.js';
 
-class MyApp extends ObjectDomBase {
+class MyApp extends ObjectDom {
     value = 0
     build() {
         return new Div({

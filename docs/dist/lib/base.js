@@ -23,7 +23,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.render = exports.ObjectDom = exports.ObjectDomBase = void 0;
+exports.CoreDom = exports.ObjectDom = void 0;
 __exportStar(require("./styles"), exports);
 function applyNodeStyle(node, style) {
     for (var _i = 0, _a = Object.entries(style); _i < _a.length; _i++) {
@@ -31,31 +31,18 @@ function applyNodeStyle(node, style) {
         node.style.setProperty(key, value);
     }
 }
-var ObjectDomBase = /** @class */ (function () {
-    function ObjectDomBase() {
-        this.update = function () {
-            // if (this.node) {
-            //   this.node.replaceWith(this.build().node);
-            // } else {
-            //   this.node = this.build().node;
-            // }
-        };
-        // render = (target: HTMLElement) => {
-        //   // this.update = () => {
-        //   //   // if (this.node) this.node.remove();
-        //   //   // this.node = this.build().node;
-        //   //   // target.appendChild(this.node);
-        //   //   this.node.replaceWith(this.build().node);
-        //   // };
-        //   target.appendChild(this.node);
-        // };
+var ObjectDom = /** @class */ (function () {
+    function ObjectDom() {
+        var _this = this;
+        this.update = function () { };
+        this.toHtml = function () { return _this.build().node.outerHTML; };
     }
-    return ObjectDomBase;
+    return ObjectDom;
 }());
-exports.ObjectDomBase = ObjectDomBase;
-var ObjectDom = /** @class */ (function (_super) {
-    __extends(ObjectDom, _super);
-    function ObjectDom(props) {
+exports.ObjectDom = ObjectDom;
+var CoreDom = /** @class */ (function (_super) {
+    __extends(CoreDom, _super);
+    function CoreDom(props) {
         var _this = _super.call(this) || this;
         _this.build = function () { return _this; };
         _this._node = props.node;
@@ -82,18 +69,18 @@ var ObjectDom = /** @class */ (function (_super) {
             }
         return _this;
     }
-    Object.defineProperty(ObjectDom.prototype, "classList", {
+    Object.defineProperty(CoreDom.prototype, "classList", {
         get: function () {
             return this._classList;
         },
         enumerable: false,
         configurable: true
     });
-    ObjectDom.prototype.addClassName = function (val) {
+    CoreDom.prototype.addClassName = function (val) {
         this._classList.push(val);
         this.node.classList.add(val);
     };
-    Object.defineProperty(ObjectDom.prototype, "id", {
+    Object.defineProperty(CoreDom.prototype, "id", {
         get: function () {
             return this._id;
         },
@@ -105,7 +92,7 @@ var ObjectDom = /** @class */ (function (_super) {
         enumerable: false,
         configurable: true
     });
-    Object.defineProperty(ObjectDom.prototype, "node", {
+    Object.defineProperty(CoreDom.prototype, "node", {
         get: function () {
             return this._node;
         },
@@ -115,7 +102,7 @@ var ObjectDom = /** @class */ (function (_super) {
         enumerable: false,
         configurable: true
     });
-    Object.defineProperty(ObjectDom.prototype, "style", {
+    Object.defineProperty(CoreDom.prototype, "style", {
         get: function () {
             return this._style;
         },
@@ -127,37 +114,23 @@ var ObjectDom = /** @class */ (function (_super) {
         enumerable: false,
         configurable: true
     });
-    Object.defineProperty(ObjectDom.prototype, "children", {
+    Object.defineProperty(CoreDom.prototype, "children", {
         get: function () {
             return this._children;
         },
         enumerable: false,
         configurable: true
     });
-    ObjectDom.prototype.addChild = function (value) {
+    CoreDom.prototype.addChild = function (value) {
         this._children.push(value);
-        if (value instanceof ObjectDomBase) {
+        if (value instanceof ObjectDom) {
             this._node.append(value.build().node);
         }
         else {
             this._node.append(value);
         }
     };
-    return ObjectDom;
-}(ObjectDomBase));
-exports.ObjectDom = ObjectDom;
-function render(source, target) {
-    if (target === void 0) { target = document.body; }
-    target.innerHTML = '';
-    var node = source.build().node;
-    source.update = function () {
-        node.remove();
-        node = source.build().node;
-        target.appendChild(node);
-    };
-    target.appendChild(node);
-    // source.render(target);
-    //   console.log('render node', target, source)
-}
-exports.render = render;
+    return CoreDom;
+}(ObjectDom));
+exports.CoreDom = CoreDom;
 //# sourceMappingURL=base.js.map

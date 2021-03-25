@@ -38,6 +38,7 @@
 
 - jsonTable
 - render
+- create
 
 ## Getting Started
 
@@ -78,7 +79,7 @@
 
 ```js
 import {
-  ObjectDomBase,
+  ObjectDom,
   Div,
   Heading1,
   Paragraph,
@@ -87,7 +88,7 @@ import {
   render
 } from './dist/object-dom.es5.js';
 
-class MyApp extends ObjectDomBase {
+class MyApp extends ObjectDom {
   counter = new Paragraph({ text: '0', style: { margin: '5px' } });
 
   build() {
@@ -125,7 +126,7 @@ render(new MyApp(), document.body.querySelector('#root'));
 
 ```js
 import {
-  ObjectDomBase,
+  ObjectDom,
   Div,
   Heading1,
   Paragraph,
@@ -134,7 +135,7 @@ import {
   render
 } from './dist/object-dom.es5.js';
 
-class MyApp extends ObjectDomBase {
+class MyApp extends ObjectDom {
   value = 0;
 
   build() {

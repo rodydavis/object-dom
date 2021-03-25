@@ -33,7 +33,7 @@ var Div = /** @class */ (function (_super) {
         return _super.call(this, __assign({ node: document.createElement('div') }, props)) || this;
     }
     return Div;
-}(base_1.ObjectDom));
+}(base_1.CoreDom));
 exports.Div = Div;
 var Display = /** @class */ (function (_super) {
     __extends(Display, _super);

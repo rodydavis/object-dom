@@ -49,7 +49,7 @@ var Form = /** @class */ (function (_super) {
         return _this;
     }
     return Form;
-}(base_1.ObjectDom));
+}(base_1.CoreDom));
 exports.Form = Form;
 var Label = /** @class */ (function (_super) {
     __extends(Label, _super);
@@ -69,7 +69,7 @@ var Label = /** @class */ (function (_super) {
         configurable: true
     });
     return Label;
-}(base_1.ObjectDom));
+}(base_1.CoreDom));
 exports.Label = Label;
 var Input = /** @class */ (function (_super) {
     __extends(Input, _super);
@@ -96,7 +96,7 @@ var Input = /** @class */ (function (_super) {
         configurable: true
     });
     return Input;
-}(base_1.ObjectDom));
+}(base_1.CoreDom));
 exports.Input = Input;
 var SubmitInput = /** @class */ (function (_super) {
     __extends(SubmitInput, _super);

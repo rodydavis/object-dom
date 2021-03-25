@@ -1,19 +1,11 @@
-import { ObjectDom, NodeProps } from '../base';
-export interface TableJsonProps {
-    table?: NodeProps;
-    header?: TableHeader;
-    body?: TableHeader;
-    headerRow?: NodeProps;
-    tableRow?: NodeProps;
-}
-export declare function tableFromJsonList(data: Object[], props?: TableJsonProps): Table;
-export declare class Table extends ObjectDom<HTMLTableElement> {
+import { CoreDom, NodeProps } from '../base';
+export declare class Table extends CoreDom<HTMLTableElement> {
     constructor(props: NodeProps);
 }
-export declare class TableRow extends ObjectDom<HTMLTableRowElement> {
+export declare class TableRow extends CoreDom<HTMLTableRowElement> {
     constructor(props: NodeProps);
 }
-declare class Section extends ObjectDom<HTMLTableSectionElement> {
+declare class Section extends CoreDom<HTMLTableSectionElement> {
     constructor(node: HTMLTableSectionElement, props: NodeProps);
 }
 export declare class TableHeader extends Section {
@@ -29,16 +21,16 @@ export interface HeaderNodeProps extends NodeProps {
     colspan?: number;
     rowspan?: number;
 }
-export declare class HeaderCell extends ObjectDom<HTMLTableHeaderCellElement> {
+export declare class HeaderCell extends CoreDom<HTMLTableHeaderCellElement> {
     constructor(props: HeaderNodeProps);
 }
-export declare class Cell extends ObjectDom<HTMLTableCellElement> {
+export declare class Cell extends CoreDom<HTMLTableCellElement> {
     constructor(props: NodeProps);
 }
-export declare class Caption extends ObjectDom<HTMLTableCaptionElement> {
+export declare class Caption extends CoreDom<HTMLTableCaptionElement> {
     constructor(props: NodeProps);
 }
-declare class Col extends ObjectDom<HTMLTableColElement> {
+declare class Col extends CoreDom<HTMLTableColElement> {
     constructor(node: HTMLTableColElement, props: NodeProps);
 }
 export declare class TableColumn extends Col {

@@ -1,4 +1,4 @@
-import { ObjectDom, NodeProps } from '../base';
+import { CoreDom, NodeProps } from '../base';
 import { Div } from './div';
 
 export interface FormProps extends NodeProps {
@@ -10,7 +10,7 @@ export interface FormProps extends NodeProps {
   novalidate: boolean;
 }
 
-export class Form extends ObjectDom<HTMLFormElement> {
+export class Form extends CoreDom<HTMLFormElement> {
   constructor(type: string, props: FormProps) {
     super({ node: document.createElement('form'), ...props });
     this.node.addEventListener('change', () => this.onChange());
@@ -31,7 +31,7 @@ export interface LabelProps extends NodeProps {
   input?: string;
 }
 
-export class Label extends ObjectDom<HTMLLabelElement> {
+export class Label extends CoreDom<HTMLLabelElement> {
   constructor(props: LabelProps) {
     super({ node: document.createElement('label'), ...props });
     if (props?.value) this.value = props.value;
@@ -49,7 +49,7 @@ export interface InputProps extends NodeProps {
   required?: boolean;
 }
 
-export class Input extends ObjectDom<HTMLInputElement> {
+export class Input extends CoreDom<HTMLInputElement> {
   constructor(type: string, props: InputProps) {
     super({ node: document.createElement('input'), ...props });
     this.node.addEventListener('change', val => this.onChange(val));

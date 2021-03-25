@@ -1,5 +1,5 @@
-import { ObjectDom, NodeProps } from '../base';
-export declare class Text extends ObjectDom<HTMLElement> {
+import { CoreDom, NodeProps } from '../base';
+export declare class Text extends CoreDom<HTMLElement> {
     constructor(tag: string, props: NodeProps);
     private _text;
     get text(): string | undefined;

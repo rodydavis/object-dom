@@ -1,4 +1,4 @@
-import { ObjectDom, NodeProps } from '../base';
+import { CoreDom, NodeProps } from '../base';
 import { Div } from './div';
 export interface FormProps extends NodeProps {
     method: 'post' | 'get' | 'dialog';
@@ -8,7 +8,7 @@ export interface FormProps extends NodeProps {
     autocomplete: boolean;
     novalidate: boolean;
 }
-export declare class Form extends ObjectDom<HTMLFormElement> {
+export declare class Form extends CoreDom<HTMLFormElement> {
     constructor(type: string, props: FormProps);
     onChange: Function;
 }
@@ -16,7 +16,7 @@ export interface LabelProps extends NodeProps {
     value?: string;
     input?: string;
 }
-export declare class Label extends ObjectDom<HTMLLabelElement> {
+export declare class Label extends CoreDom<HTMLLabelElement> {
     constructor(props: LabelProps);
     set value(val: string | undefined);
 }
@@ -25,7 +25,7 @@ export interface InputProps extends NodeProps {
     name?: string;
     required?: boolean;
 }
-export declare class Input extends ObjectDom<HTMLInputElement> {
+export declare class Input extends CoreDom<HTMLInputElement> {
     constructor(type: string, props: InputProps);
     get value(): string | undefined;
     set value(val: string | undefined);

@@ -46,7 +46,7 @@ var Text = /** @class */ (function (_super) {
         configurable: true
     });
     return Text;
-}(base_1.ObjectDom));
+}(base_1.CoreDom));
 exports.Text = Text;
 var Span = /** @class */ (function (_super) {
     __extends(Span, _super);

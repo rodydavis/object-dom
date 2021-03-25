@@ -1,26 +1,27 @@
-import { Style } from './styles';
+import { CSS } from './styles';
 export * from './styles';
-export declare type NodeArray = Array<ObjectDomBase | string>;
+export declare type NodeArray = Array<ObjectDom | string>;
 export interface Props {
-    style: Style;
+    style: CSS;
     children: NodeArray;
 }
 export interface NodeProps {
     id?: string;
     text?: string;
     className?: string | string[];
-    style?: Style;
+    style?: CSS;
     children?: NodeArray;
 }
 interface ObjectDomProps<T extends HTMLElement> extends NodeProps {
     node: T;
 }
-export declare abstract class ObjectDomBase {
+export declare abstract class ObjectDom {
     abstract node: HTMLElement;
     update: () => void;
-    abstract build: () => ObjectDom<HTMLElement>;
+    abstract build: () => CoreDom<HTMLElement>;
+    toHtml: () => string;
 }
-export declare class ObjectDom<T extends HTMLElement> extends ObjectDomBase {
+export declare class CoreDom<T extends HTMLElement> extends ObjectDom {
     constructor(props: ObjectDomProps<T>);
     build: () => this;
     private _classList;
@@ -33,10 +34,9 @@ export declare class ObjectDom<T extends HTMLElement> extends ObjectDomBase {
     get node(): T;
     set node(value: T);
     private _style;
-    get style(): Style | undefined;
-    set style(value: Style | undefined);
+    get style(): CSS | undefined;
+    set style(value: CSS | undefined);
     private _children;
     get children(): NodeArray;
-    addChild(value: ObjectDomBase | string): void;
+    addChild(value: ObjectDom | string): void;
 }
-export declare function render(source: ObjectDomBase, target?: HTMLElement): void;
