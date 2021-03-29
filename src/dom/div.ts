@@ -1,49 +1,49 @@
 import { CoreDom, NodeProps } from '../base';
 
 export class Div extends CoreDom<HTMLDivElement> {
-  constructor(props: NodeProps = {}) {
+  constructor(props: NodeProps<HTMLDivElement> = {}) {
     super({ node: document.createElement('div'), ...props });
   }
 }
 
 class Display extends Div {
-  constructor(display: string, props: NodeProps = {}) {
+  constructor(display: string, props: NodeProps<HTMLDivElement> = {}) {
     super(props);
     this.node.style.display = display;
   }
 }
 
 export class Grid extends Display {
-  constructor(props: NodeProps = {}) {
+  constructor(props: NodeProps<HTMLDivElement> = {}) {
     super('grid', props);
   }
 }
 
 export class Block extends Display {
-  constructor(props: NodeProps = {}) {
+  constructor(props: NodeProps<HTMLDivElement> = {}) {
     super('block', props);
   }
 }
 
 export class Inline extends Display {
-  constructor(props: NodeProps = {}) {
+  constructor(props: NodeProps<HTMLDivElement> = {}) {
     super('inline', props);
   }
 }
 
 export class InlineBlock extends Display {
-  constructor(props: NodeProps = {}) {
+  constructor(props: NodeProps<HTMLDivElement> = {}) {
     super('inline-block', props);
   }
 }
 
 export class Flex extends Display {
-  constructor(props: NodeProps = {}) {
+  constructor(props: NodeProps<HTMLDivElement> = {}) {
     super('flex', props);
   }
 }
 
-export interface RowProps extends NodeProps {
+export interface RowProps extends NodeProps<HTMLDivElement> {
   direction?: 'row-reversed' | 'row';
 }
 
@@ -54,7 +54,7 @@ export class Row extends Flex {
   }
 }
 
-export interface ColumnProps extends NodeProps {
+export interface ColumnProps extends NodeProps<HTMLDivElement> {
   direction?: 'column-reversed' | 'column';
 }
 
@@ -65,7 +65,7 @@ export class Column extends Flex {
   }
 }
 
-export interface WrapProps extends NodeProps {
+export interface WrapProps extends NodeProps<HTMLDivElement> {
   direction?: 'wrap-reversed' | 'wrap' | 'nowrap';
 }
 

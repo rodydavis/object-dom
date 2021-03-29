@@ -1,6 +1,6 @@
 import { CoreDom, NodeProps } from '../base';
 
-interface ButtonProps extends NodeProps {
+interface ButtonProps extends NodeProps<HTMLButtonElement> {
   text?: string;
   onClick?: () => void;
 }

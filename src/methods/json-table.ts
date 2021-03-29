@@ -2,11 +2,11 @@ import { NodeProps } from '../base';
 import { Cell, HeaderCell, Table, TableHeader, TableRow } from '../dom';
 
 export interface TableJsonProps {
-  table?: NodeProps;
+  table?: NodeProps<HTMLTableElement>;
   header?: TableHeader;
   body?: TableHeader;
-  headerRow?: NodeProps;
-  tableRow?: NodeProps;
+  headerRow?: NodeProps<HTMLTableRowElement>;
+  tableRow?: NodeProps<HTMLTableRowElement>;
 }
 
 export function jsonTable(data: Object[], props: TableJsonProps = {}): Table {

@@ -14,15 +14,16 @@ function applyNodeStyle(node: HTMLElement, style: CSS) {
   }
 }
 
-export interface NodeProps {
+export interface NodeProps<T extends HTMLElement> {
   id?: string;
+  node?: T;
   text?: string;
   className?: string | string[];
   style?: CSS;
   children?: NodeArray;
 }
 
-interface ObjectDomProps<T extends HTMLElement> extends NodeProps {
+interface ObjectDomProps<T extends HTMLElement> extends NodeProps<T> {
   node: T;
 }
 
