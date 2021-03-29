@@ -3,11 +3,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.render = void 0;
 function render(source, target) {
     if (target === void 0) { target = document.body; }
-    target.innerHTML = '';
-    var node = source.build().node;
+    var node = source.render().node;
     source.update = function () {
-        node.remove();
-        node = source.build().node;
+        if (node)
+            node.remove();
+        node = source.render().node;
         target.appendChild(node);
     };
     target.appendChild(node);

@@ -89,7 +89,7 @@ describe('Component tests', () => {
   testComponent('colgroup', new TableColumnGroup());
 });
 
-function testComponent(tag: string, target: ObjectDom) {
+function testComponent(tag: string, target: ObjectDom<HTMLElement>) {
   describe(`${tag} tests`, () => {
     it(`${tag} correct output`, () => {
       const htmlResult = target.toHtml();

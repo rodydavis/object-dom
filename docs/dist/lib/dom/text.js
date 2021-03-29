@@ -24,7 +24,7 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Heading6 = exports.Heading5 = exports.Heading4 = exports.Heading3 = exports.Heading2 = exports.Heading1 = exports.Superscript = exports.Subscript = exports.Inserted = exports.Deleted = exports.Smaller = exports.Marked = exports.Emphasized = exports.Italic = exports.Strong = exports.Bold = exports.Paragraph = exports.Span = exports.Text = void 0;
+exports.Break = exports.Heading6 = exports.Heading5 = exports.Heading4 = exports.Heading3 = exports.Heading2 = exports.Heading1 = exports.Superscript = exports.Subscript = exports.Inserted = exports.Deleted = exports.Smaller = exports.Marked = exports.Emphasized = exports.Italic = exports.Strong = exports.Bold = exports.Paragraph = exports.Span = exports.Text = void 0;
 var base_1 = require("../base");
 var Text = /** @class */ (function (_super) {
     __extends(Text, _super);
@@ -210,4 +210,13 @@ var Heading6 = /** @class */ (function (_super) {
     return Heading6;
 }(Text));
 exports.Heading6 = Heading6;
+var Break = /** @class */ (function (_super) {
+    __extends(Break, _super);
+    function Break(props) {
+        if (props === void 0) { props = {}; }
+        return _super.call(this, __assign({ node: document.createElement('br') }, props)) || this;
+    }
+    return Break;
+}(base_1.CoreDom));
+exports.Break = Break;
 //# sourceMappingURL=text.js.map

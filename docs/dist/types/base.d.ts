@@ -1,42 +1,41 @@
 import { CSS } from './styles';
 export * from './styles';
-export declare type NodeArray = Array<ObjectDom | string>;
+export declare type NodeArray = Array<ObjectDom<HTMLElement> | string>;
 export interface Props {
     style: CSS;
     children: NodeArray;
 }
-export interface NodeProps {
+export interface NodeProps<T extends HTMLElement> {
     id?: string;
+    node?: T;
     text?: string;
     className?: string | string[];
     style?: CSS;
     children?: NodeArray;
 }
-interface ObjectDomProps<T extends HTMLElement> extends NodeProps {
+interface ObjectDomProps<T extends HTMLElement> extends NodeProps<T> {
     node: T;
 }
-export declare abstract class ObjectDom {
+export declare abstract class ObjectDom<T extends HTMLElement> {
     abstract node: HTMLElement;
+    abstract render: () => ObjectDom<T>;
     update: () => void;
-    abstract build: () => CoreDom<HTMLElement>;
-    toHtml: () => string;
+    toHtml: (root?: HTMLElement | undefined) => string;
 }
-export declare class CoreDom<T extends HTMLElement> extends ObjectDom {
+export declare class CoreDom<T extends HTMLElement> extends ObjectDom<T> {
+    private props;
     constructor(props: ObjectDomProps<T>);
-    build: () => this;
-    private _classList;
+    render: () => this;
     get classList(): string[];
-    addClassName(val: string): void;
-    private _id;
     get id(): string | undefined;
     set id(value: string | undefined);
-    private _node;
+    private get rootNode();
+    private set rootNode(value);
     get node(): T;
-    set node(value: T);
-    private _style;
     get style(): CSS | undefined;
     set style(value: CSS | undefined);
-    private _children;
     get children(): NodeArray;
-    addChild(value: ObjectDom | string): void;
+    set children(value: NodeArray);
+    addChild(value: ObjectDom<HTMLElement>, index?: number | undefined): void;
+    removeChild(index: number): void;
 }

@@ -1,2 +1,2 @@
 import { ObjectDom } from '../base';
-export declare function render(source: ObjectDom, target?: HTMLElement): void;
+export declare function render(source: ObjectDom<HTMLElement>, target?: HTMLElement): void;

@@ -1,6 +1,6 @@
 import { CoreDom, NodeProps } from '../base';
 import { Div } from './div';
-export interface FormProps extends NodeProps {
+export interface FormProps extends NodeProps<HTMLFormElement> {
     method: 'post' | 'get' | 'dialog';
     action: string;
     acceptCharset: string;
@@ -12,7 +12,7 @@ export declare class Form extends CoreDom<HTMLFormElement> {
     constructor(props?: FormProps);
     onChange: Function;
 }
-export interface LabelProps extends NodeProps {
+export interface LabelProps extends NodeProps<HTMLLabelElement> {
     value?: string;
     input?: string;
 }
@@ -20,7 +20,7 @@ export declare class Label extends CoreDom<HTMLLabelElement> {
     constructor(props?: LabelProps);
     set value(val: string | undefined);
 }
-export interface InputProps extends NodeProps {
+export interface InputProps extends NodeProps<HTMLInputElement> {
     type?: string;
     value?: string;
     name?: string;
@@ -53,7 +53,7 @@ export declare class EmailInput extends Input {
 export declare class ColorInput extends Input {
     constructor(props: InputProps);
 }
-export interface InputGroupProps extends NodeProps {
+export interface InputGroupProps extends NodeProps<HTMLDivElement> {
     input?: InputProps;
     label?: LabelProps;
 }

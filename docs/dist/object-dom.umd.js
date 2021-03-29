@@ -62,7 +62,7 @@
         function ObjectDom() {
             var _this = this;
             this.update = function () { };
-            this.toHtml = function () { return _this.build().node.outerHTML; };
+            this.toHtml = function (root) { return _this.render().node.outerHTML; };
         }
         return ObjectDom;
     }());
@@ -70,91 +70,128 @@
         __extends(CoreDom, _super);
         function CoreDom(props) {
             var _this = _super.call(this) || this;
-            _this.build = function () { return _this; };
-            _this._node = props.node;
-            _this._style = props.style;
-            _this._children = [];
-            _this._classList = [];
-            _this.id = props.id;
-            if (props === null || props === void 0 ? void 0 : props.text)
-                _this.node.innerText = props.text;
-            if (props === null || props === void 0 ? void 0 : props.className) {
-                if (typeof props.className === 'string') {
-                    _this.addClassName(props.className);
-                }
-                else {
-                    props.className.forEach(function (e) { return _this.addClassName(e); });
-                }
-            }
-            if (_this.style)
-                applyNodeStyle(_this.node, _this.style);
-            if (props === null || props === void 0 ? void 0 : props.children)
-                for (var _i = 0, _a = props.children; _i < _a.length; _i++) {
-                    var child = _a[_i];
-                    _this.addChild(child);
-                }
+            _this.props = props;
+            _this.render = function () { return _this; };
             return _this;
         }
         Object.defineProperty(CoreDom.prototype, "classList", {
             get: function () {
-                return this._classList;
+                var _a;
+                var _classList = [];
+                if ((_a = this.props) === null || _a === void 0 ? void 0 : _a.className) {
+                    if (typeof this.props.className === 'string') {
+                        _classList.push(this.props.className);
+                    }
+                    else {
+                        this.props.className.forEach(function (e) { return _classList.push(e); });
+                    }
+                }
+                return _classList;
             },
             enumerable: false,
             configurable: true
         });
-        CoreDom.prototype.addClassName = function (val) {
-            this._classList.push(val);
-            this.node.classList.add(val);
-        };
         Object.defineProperty(CoreDom.prototype, "id", {
             get: function () {
-                return this._id;
+                return this.props.id;
             },
             set: function (value) {
-                this._id = value;
-                if (value)
-                    this.node.id = value;
+                this.props.id = value;
+            },
+            enumerable: false,
+            configurable: true
+        });
+        Object.defineProperty(CoreDom.prototype, "rootNode", {
+            get: function () {
+                var _a;
+                return (_a = this.props.node) !== null && _a !== void 0 ? _a : this.render().rootNode;
+            },
+            set: function (value) {
+                this.props.node = value;
             },
             enumerable: false,
             configurable: true
         });
         Object.defineProperty(CoreDom.prototype, "node", {
             get: function () {
-                return this._node;
-            },
-            set: function (value) {
-                this._node = value;
+                var _a;
+                var _parent = this.render();
+                var _node = _parent.rootNode;
+                if (_parent.id)
+                    _node.id = _parent.id;
+                if ((_a = _parent.props) === null || _a === void 0 ? void 0 : _a.text) {
+                    _node.innerText = _parent.props.text;
+                }
+                else {
+                    _node.innerText = '';
+                }
+                for (var _i = 0, _b = _parent.classList; _i < _b.length; _i++) {
+                    var className = _b[_i];
+                    _node.classList.add(className);
+                }
+                if (_parent.style)
+                    applyNodeStyle(_node, _parent.style);
+                var _loop_1 = function (child) {
+                    if (child instanceof ObjectDom) {
+                        var childNode_1 = child.render().node;
+                        child.update = function () {
+                            if (childNode_1)
+                                childNode_1.remove();
+                            childNode_1 = child.render().node;
+                            _node.appendChild(childNode_1);
+                        };
+                        _node.appendChild(childNode_1);
+                    }
+                    else {
+                        _node.append(child);
+                    }
+                };
+                for (var _c = 0, _d = _parent.children; _c < _d.length; _c++) {
+                    var child = _d[_c];
+                    _loop_1(child);
+                }
+                return _node;
             },
             enumerable: false,
             configurable: true
         });
         Object.defineProperty(CoreDom.prototype, "style", {
             get: function () {
-                return this._style;
+                return this.props.style;
             },
             set: function (value) {
-                this._style = value;
-                if (this.style)
-                    applyNodeStyle(this.node, this.style);
+                this.props.style = value;
             },
             enumerable: false,
             configurable: true
         });
         Object.defineProperty(CoreDom.prototype, "children", {
             get: function () {
-                return this._children;
+                var _a;
+                return (_a = this.props.children) !== null && _a !== void 0 ? _a : [];
+            },
+            set: function (value) {
+                this.props.children = value;
             },
             enumerable: false,
             configurable: true
         });
-        CoreDom.prototype.addChild = function (value) {
-            this._children.push(value);
-            if (value instanceof ObjectDom) {
-                this._node.append(value.build().node);
+        CoreDom.prototype.addChild = function (value, index) {
+            if (this.props.children == undefined) {
+                this.props.children = [];
+            }
+            if (index) {
+                this.props.children.splice(index, 0, value);
             }
             else {
-                this._node.append(value);
+                this.props.children.push(value);
             }
+        };
+        CoreDom.prototype.removeChild = function (index) {
+            if (this.props.children == undefined) {
+                return;
+            }
+            this.props.children.splice(index, 1);
         };
         return CoreDom;
     }(ObjectDom));
@@ -416,6 +453,14 @@
         }
         return Heading6;
     }(Text));
+    var Break = /** @class */ (function (_super) {
+        __extends(Break, _super);
+        function Break(props) {
+            if (props === void 0) { props = {}; }
+            return _super.call(this, __assign({ node: document.createElement('br') }, props)) || this;
+        }
+        return Break;
+    }(CoreDom));
 
     var Button = /** @class */ (function (_super) {
         __extends(Button, _super);
@@ -745,14 +790,6 @@
         }
         return Custom;
     }(CoreDom));
-    var Break = /** @class */ (function (_super) {
-        __extends(Break, _super);
-        function Break(props) {
-            if (props === void 0) { props = {}; }
-            return _super.call(this, __assign({ node: document.createElement('br') }, props)) || this;
-        }
-        return Break;
-    }(CoreDom));
 
     function jsonTable(data, props) {
         var _a, _b, _c, _d;
@@ -797,11 +834,11 @@
 
     function render(source, target) {
         if (target === void 0) { target = document.body; }
-        target.innerHTML = '';
-        var node = source.build().node;
+        var node = source.render().node;
         source.update = function () {
-            node.remove();
-            node = source.build().node;
+            if (node)
+                node.remove();
+            node = source.render().node;
             target.appendChild(node);
         };
         target.appendChild(node);

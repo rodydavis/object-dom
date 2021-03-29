@@ -24,7 +24,7 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Break = exports.Custom = void 0;
+exports.Custom = void 0;
 var base_1 = require("../base");
 var Custom = /** @class */ (function (_super) {
     __extends(Custom, _super);
@@ -35,13 +35,4 @@ var Custom = /** @class */ (function (_super) {
     return Custom;
 }(base_1.CoreDom));
 exports.Custom = Custom;
-var Break = /** @class */ (function (_super) {
-    __extends(Break, _super);
-    function Break(props) {
-        if (props === void 0) { props = {}; }
-        return _super.call(this, __assign({ node: document.createElement('br') }, props)) || this;
-    }
-    return Break;
-}(base_1.CoreDom));
-exports.Break = Break;
 //# sourceMappingURL=misc.js.map

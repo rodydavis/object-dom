@@ -6,7 +6,7 @@ interface CreateProps {
     link?: Link[];
     meta?: Meta[];
     scripts?: Script[];
-    children?: ObjectDom[];
+    children?: ObjectDom<HTMLElement>[];
 }
 export declare function create(props: CreateProps): Html;
 export {};
