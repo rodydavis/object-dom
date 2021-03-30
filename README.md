@@ -48,7 +48,7 @@
 ```html
 <div id="root"></div>
 <script type="module">
-  import { Div, Text, Button, Row, Column, render } from './object-dom.es5.js';
+  import { Div, Text, Button, Row, Column, render } from 'object-dom';
 
   const label = new Text({ text: 'Hello World!' });
   const button = new Button({
