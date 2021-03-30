@@ -1,3 +1,3 @@
 export * from './base';
-export * from './dom/index';
-export * from './methods/index';
+export * from './dom';
+export * from './methods';
