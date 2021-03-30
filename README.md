@@ -79,94 +79,50 @@
 ### Class Approach
 
 ```js
-import {
-  ObjectDom,
-  Div,
-  Heading1,
-  Paragraph,
-  Button,
-  Row,
-  render
-} from './dist/object-dom.es5.js';
+import { ObjectDom, Div, Heading1, Button, Row, render } from 'object-dom';
 
 class MyApp extends ObjectDom {
-  counter = new Paragraph({ text: '0', style: { margin: '5px' } });
-
-  build() {
-    return new Div({
-      children: [
-        new Heading1({ text: 'Counter Example' }),
-        this.counter,
-        new Row({
-          children: [
-            new Button({
-              text: '-',
-              style: { width: '50px', margin: '5px' },
-              onClick: () => {
-                this.counter.text = (Number(this.counter.text) - 1).toString();
-              }
-            }),
-            new Button({
-              text: '+',
-              style: { width: '50px', margin: '5px' },
-              onClick: () => {
-                this.counter.text = (Number(this.counter.text) + 1).toString();
-              }
-            })
-          ]
-        })
-      ]
-    });
-  }
+    constructor() { super() }
+    render = () => {
+        return new Div({
+            children: [
+                new Heading1({ text: 'Counter Example' }),
+                new Counter(),
+            ]
+        });
+    }
 }
 
-render(new MyApp(), document.body.querySelector('#root'));
-```
-
-### Class Approach with Rebuild
-
-```js
-import {
-  ObjectDom,
-  Div,
-  Heading1,
-  Paragraph,
-  Button,
-  Row,
-  render
-} from './dist/object-dom.es5.js';
-
-class MyApp extends ObjectDom {
-  value = 0;
-
-  build() {
-    return new Div({
-      children: [
-        new Heading1({ text: 'Counter Example' }),
-        new Paragraph({ text: `${this.value}`, style: { margin: '5px' } }),
-        new Row({
-          children: [
-            new Button({
-              text: '-',
-              style: { width: '50px', margin: '5px' },
-              onClick: () => {
-                this.value -= 1;
-                this.update();
-              }
-            }),
-            new Button({
-              text: '+',
-              style: { width: '50px', margin: '5px' },
-              onClick: () => {
-                this.value += 1;
-                this.update();
-              }
-            })
-          ]
-        })
-      ]
-    });
-  }
+class Counter extends ObjectDom {
+    value = 0;
+    render = () => {
+        return new Div({
+            style: { padding: '5px' },
+            children: [
+                `${this.value}`,
+                new Row({
+                    children: [
+                        new Button({
+                            text: '-',
+                            style: { width: '50px' },
+                            onClick: () => {
+                                this.value -= 1;
+                                this.update();
+                            }
+                        }),
+                        new Button({
+                            text: '+',
+                            style: { width: '50px', marginLeft: '5px' },
+                            onClick: () => {
+                                this.value += 1;
+                                this.update();
+                            }
+                        })
+                    ]
+                })
+            ]
+        });
+    }
 }
 
 render(new MyApp(), document.body.querySelector('#root'));

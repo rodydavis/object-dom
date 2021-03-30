@@ -4,7 +4,10 @@ class MyApp extends ObjectDom {
     constructor() { super() }
     render = () => {
         return new Div({
-            children: [new Heading1({ text: 'Counter Example' }), new Counter()]
+            children: [
+                new Heading1({ text: 'Counter Example' }),
+                new Counter(),
+            ]
         });
     }
 }
