@@ -9,26 +9,26 @@ import {
 } from './dom/attrs';
 import { convertClassList, convertCssStyles } from './styles';
 
-export type NodeArray = Array<ObjectDom<HTMLElement> | string>;
+export type NodeArray = Array<ObjectDom | string>;
 
-export interface NodeProps<T extends HTMLElement> extends GlobalAttrs {
+export interface NodeProps<T extends HTMLElement = HTMLElement> extends GlobalAttrs {
   node?: T;
   text?: string;
   children?: NodeArray;
 }
 
-export interface ObjectDomProps<T extends HTMLElement> extends NodeProps<T> {
+export interface ObjectDomProps<T extends HTMLElement = HTMLElement> extends NodeProps<T> {
   node: T;
 }
 
-export abstract class ObjectDom<T extends HTMLElement> {
-  abstract node: HTMLElement;
-  abstract render: () => ObjectDom<T>;
-  update: () => void = () => {};
-  toHtml: (root?: HTMLElement | undefined) => string = root => this.render().node.outerHTML;
+export class ObjectDom<T extends HTMLElement = HTMLElement> {
+  build: () => T = () => { return this.render().build() }
+  render: () => ObjectDom<T> = () => this;
+  update: () => void = () => { };
+  toHtml: (root?: HTMLElement | undefined) => string = root => this.build().outerHTML;
 }
 
-export class GlobalDom<T extends HTMLElement> extends ObjectDom<T> {
+export class GlobalDom<T extends HTMLElement = HTMLElement> extends ObjectDom<T> {
   constructor(public props: ObjectDomProps<T>) {
     super();
     this.id = new NodeAttr(this, 'id', props?.id);
@@ -75,6 +75,8 @@ export class GlobalDom<T extends HTMLElement> extends ObjectDom<T> {
 
   render = () => this;
 
+  build = () => this.node;
+
   public get node(): T {
     const _parent = this.render();
     const _node = _parent.rootNode;
@@ -85,10 +87,10 @@ export class GlobalDom<T extends HTMLElement> extends ObjectDom<T> {
     }
     for (const child of _parent.children) {
       if (child instanceof ObjectDom) {
-        let childNode = child.render().node;
+        let childNode = child.render().build();
         child.update = () => {
           if (childNode) childNode.remove();
-          childNode = child.render().node;
+          childNode = child.render().build();
           _node.appendChild(childNode);
         };
         _node.appendChild(childNode);

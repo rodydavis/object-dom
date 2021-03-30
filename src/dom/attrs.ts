@@ -54,7 +54,7 @@ export class NodeAttr<T extends string | boolean | number = string> {
     }
 
     public get node(): HTMLElement {
-        return this._root.node;
+        return this._root.build();
     }
 }
 
