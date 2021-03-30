@@ -12,13 +12,14 @@ class Counter extends ObjectDom {
   value = 0;
   render() {
     return new Div({
+      style: { padding: '5px' },
       children: [
-        new Paragraph({ text: `${this.value}`, style: { margin: '5px' } }),
+        `${this.value}`,
         new Row({
           children: [
             new Button({
               text: '-',
-              style: { width: '50px', margin: '5px' },
+              style: { width: '50px' },
               onClick: () => {
                 this.value -= 1;
                 this.update();
@@ -26,7 +27,7 @@ class Counter extends ObjectDom {
             }),
             new Button({
               text: '+',
-              style: { width: '50px', margin: '5px' },
+              style: { width: '50px', marginLeft: '5px' },
               onClick: () => {
                 this.value += 1;
                 this.update();

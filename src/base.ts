@@ -10,7 +10,11 @@ export interface Props {
 
 function applyNodeStyle(node: HTMLElement, style: CSS) {
   for (const [key, value] of Object.entries(style)) {
-    node.style.setProperty(key, value);
+    const _key = key
+      .split(/(?=[A-Z])/)
+      .join('-')
+      .toLowerCase();
+    node.style.setProperty(_key, value);
   }
 }
 

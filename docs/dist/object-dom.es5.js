@@ -49,7 +49,8 @@ function __spreadArrays() {
 function applyNodeStyle(node, style) {
     for (var _i = 0, _a = Object.entries(style); _i < _a.length; _i++) {
         var _b = _a[_i], key = _b[0], value = _b[1];
-        node.style.setProperty(key, value);
+        var _key = key.split(/(?=[A-Z])/).join('-').toLowerCase();
+        node.style.setProperty(_key, value);
     }
 }
 var ObjectDom = /** @class */ (function () {
