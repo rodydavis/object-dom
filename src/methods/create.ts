@@ -1,4 +1,4 @@
-import { ObjectDom } from '../base';
+import { NodeArray } from '../base';
 import { Head, Body, Html, Title, Style, Script, Link, Meta } from '../dom';
 
 interface CreateProps {
@@ -7,7 +7,7 @@ interface CreateProps {
   link?: Link[];
   meta?: Meta[];
   scripts?: Script[];
-  children?: ObjectDom<HTMLElement>[];
+  children?: NodeArray;
 }
 
 export function create(props: CreateProps): Html {

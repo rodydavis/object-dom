@@ -1820,7 +1820,9 @@ function (_super) {
         style: {
           padding: '5px'
         },
-        children: ["" + _this.value, new _objectDom.Row({
+        children: [new _objectDom.Title({
+          text: "" + _this.value
+        }), new _objectDom.Row({
           children: [new _objectDom.Button({
             text: '-',
             style: {
@@ -1882,7 +1884,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62906" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65420" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

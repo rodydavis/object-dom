@@ -1,12 +1,12 @@
 import { GlobalDom, NodeProps } from '../base';
 import { Div } from './div';
-import { NodeAttr } from './attrs';
+import { NodeAttr, InputType, Method, Target } from './attrs';
 
 export interface FormProps extends NodeProps<HTMLFormElement> {
-  method?: 'post' | 'get' | 'dialog';
+  method?: Method;
   action?: string;
   acceptCharset?: string;
-  target?: '_self' | '_blank' | '_parent' | '_top';
+  target?: Target;
   autocomplete?: 'on' | 'off';
   novalidate?: boolean;
 }
@@ -22,14 +22,14 @@ export class Form extends GlobalDom<HTMLFormElement> {
     this.autocomplete = new NodeAttr(this, 'autocomplete', props?.autocomplete);
     this.novalidate = new NodeAttr(this, 'novalidate', props?.novalidate);
   }
-  target: NodeAttr;
+  target: NodeAttr<Target>;
   acceptCharset: NodeAttr;
-  method: NodeAttr;
+  method: NodeAttr<Method>;
   action: NodeAttr;
   autocomplete: NodeAttr;
   novalidate: NodeAttr<boolean>;
 
-  onChange: Function = () => {};
+  onChange: Function = () => { };
 }
 
 export interface LabelProps extends NodeProps<HTMLLabelElement> {
@@ -52,29 +52,7 @@ export class Label extends GlobalDom<HTMLLabelElement> {
     this.node.innerText = val ?? '';
   }
 }
-type InputType =
-  | 'button'
-  | 'checkbox'
-  | 'color'
-  | 'date'
-  | 'datetime-local'
-  | 'email'
-  | 'file'
-  | 'hidden'
-  | 'image'
-  | 'month'
-  | 'number'
-  | 'password'
-  | 'radio'
-  | 'range'
-  | 'reset'
-  | 'search'
-  | 'submit'
-  | 'tel'
-  | 'text'
-  | 'time'
-  | 'url'
-  | 'week';
+
 export interface InputProps extends NodeProps<HTMLInputElement> {
   type?: InputType;
   value?: string;
@@ -86,10 +64,13 @@ export class Input extends GlobalDom<HTMLInputElement> {
   constructor(props: InputProps = {}) {
     super({ node: document.createElement('input'), ...props });
     this.node.addEventListener('change', val => this.onChange(val));
-    if (props?.type) this.node.type = props.type;
-    if (props?.name) this.node.name = props.name;
-    if (props?.required) this.node.required = props.required;
+    this.type = new NodeAttr(this, 'type', props?.type);
+    this.name = new NodeAttr(this, 'name', props?.type);
+    this.required = new NodeAttr(this, 'required', props?.type);
   }
+  type: NodeAttr;
+  name: NodeAttr;
+  required: NodeAttr;
 
   public get value(): string | undefined {
     return this.node.value ?? '';
@@ -98,7 +79,7 @@ export class Input extends GlobalDom<HTMLInputElement> {
     this.node.value = val ?? '';
   }
 
-  onChange: Function = (val: string) => {};
+  onChange: Function = (val: string) => { };
 }
 
 export interface InputGroupProps extends NodeProps<HTMLDivElement> {

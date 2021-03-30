@@ -4,5 +4,6 @@ export * from './button';
 export * from './input';
 export * from './table';
 export * from './core';
+export * from './math';
 export * from './svg';
 export * from './misc';

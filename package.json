@@ -25,6 +25,7 @@
     "copy": "mkdir -p docs/dist && cp -r dist/. docs/dist/.",
     "build:prod": "tsc --module commonjs && rollup -c rollup.config.ts && typedoc --out docs --target es6 --theme minimal --mode file src",
     "start": "rollup -c rollup.config.ts -w",
+    "deploy": "cd example && npm run deploy && cd ..",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --coverage --watch",

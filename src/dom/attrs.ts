@@ -58,12 +58,6 @@ export class NodeAttr<T extends string | boolean | number = string> {
     }
 }
 
-export type StringBool = 'true' | 'false';
-export type StringYesNo = 'yes' | 'no';
-export type Direction = 'ltr' | 'rtl' | 'auto';
-export type AutoCapitalize = 'off' | 'none' | 'on' | 'sentences' | 'words' | 'characters';
-export type InputMode = 'none' | 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url';
-
 export interface GlobalAttrs {
     id?: string;
     className?: string | string[];
@@ -86,3 +80,37 @@ export interface GlobalAttrs {
     title?: string;
     translate?: StringYesNo;
 }
+
+export type Target = '_self' | '_blank' | '_parent' | '_top';
+export type As = 'audio' | 'document' | 'embed' | 'fetch' | 'font' | 'image' | 'object' | 'script' | 'style' | 'track' | 'video' | 'worker';
+export type CrossOrigin = 'anonymous' | 'use-credentials';
+export type Method = 'post' | 'get' | 'dialog';
+export type InputType =
+    | 'button'
+    | 'checkbox'
+    | 'color'
+    | 'date'
+    | 'datetime-local'
+    | 'email'
+    | 'file'
+    | 'hidden'
+    | 'image'
+    | 'month'
+    | 'number'
+    | 'password'
+    | 'radio'
+    | 'range'
+    | 'reset'
+    | 'search'
+    | 'submit'
+    | 'tel'
+    | 'text'
+    | 'time'
+    | 'url'
+    | 'week';
+
+export type StringBool = 'true' | 'false';
+export type StringYesNo = 'yes' | 'no';
+export type Direction = 'ltr' | 'rtl' | 'auto';
+export type AutoCapitalize = 'off' | 'none' | 'on' | 'sentences' | 'words' | 'characters';
+export type InputMode = 'none' | 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url';
