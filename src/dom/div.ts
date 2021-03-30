@@ -1,6 +1,6 @@
-import { CoreDom, NodeProps } from '../base';
+import { GlobalDom, NodeProps } from '../base';
 
-export class Div extends CoreDom<HTMLDivElement> {
+export class Div extends GlobalDom<HTMLDivElement> {
   constructor(props: NodeProps<HTMLDivElement> = {}) {
     super({ node: document.createElement('div'), ...props });
   }

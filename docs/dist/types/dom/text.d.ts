@@ -1,5 +1,5 @@
-import { CoreDom, NodeProps } from '../base';
-export declare class Text extends CoreDom<HTMLElement> {
+import { GlobalDom, NodeProps } from '../base';
+export declare class Text extends GlobalDom<HTMLElement> {
     constructor(tag: string, props: NodeProps<HTMLElement>);
     private _text;
     get text(): string | undefined;
@@ -59,6 +59,6 @@ export declare class Heading5 extends Text {
 export declare class Heading6 extends Text {
     constructor(props?: NodeProps<HTMLHeadingElement>);
 }
-export declare class Break extends CoreDom<HTMLBRElement> {
+export declare class Break extends GlobalDom<HTMLBRElement> {
     constructor(props?: NodeProps<HTMLBRElement>);
 }

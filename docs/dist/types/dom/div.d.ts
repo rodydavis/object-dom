@@ -1,5 +1,5 @@
-import { CoreDom, NodeProps } from '../base';
-export declare class Div extends CoreDom<HTMLDivElement> {
+import { GlobalDom, NodeProps } from '../base';
+export declare class Div extends GlobalDom<HTMLDivElement> {
     constructor(props?: NodeProps<HTMLDivElement>);
 }
 declare class Display extends Div {

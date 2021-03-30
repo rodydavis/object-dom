@@ -1,19 +1,11 @@
-import { CSS } from './styles';
-export * from './styles';
+import { AutoCapitalize, Direction, GlobalAttrs, InputMode, NodeAttr, StringBool, StringYesNo } from './dom/attrs';
 export declare type NodeArray = Array<ObjectDom<HTMLElement> | string>;
-export interface Props {
-    style: CSS;
-    children: NodeArray;
-}
-export interface NodeProps<T extends HTMLElement> {
-    id?: string;
+export interface NodeProps<T extends HTMLElement> extends GlobalAttrs {
     node?: T;
     text?: string;
-    className?: string | string[];
-    style?: CSS;
     children?: NodeArray;
 }
-interface ObjectDomProps<T extends HTMLElement> extends NodeProps<T> {
+export interface ObjectDomProps<T extends HTMLElement> extends NodeProps<T> {
     node: T;
 }
 export declare abstract class ObjectDom<T extends HTMLElement> {
@@ -22,20 +14,35 @@ export declare abstract class ObjectDom<T extends HTMLElement> {
     update: () => void;
     toHtml: (root?: HTMLElement | undefined) => string;
 }
-export declare class CoreDom<T extends HTMLElement> extends ObjectDom<T> {
-    private props;
+export declare class GlobalDom<T extends HTMLElement> extends ObjectDom<T> {
+    props: ObjectDomProps<T>;
     constructor(props: ObjectDomProps<T>);
+    id: NodeAttr;
+    className: NodeAttr;
+    contentEditable: NodeAttr<StringBool>;
+    accesskey: NodeAttr;
+    autocapitalize: NodeAttr<AutoCapitalize>;
+    dir: NodeAttr<Direction>;
+    draggable: NodeAttr<StringBool>;
+    enterkeyhint: NodeAttr<string>;
+    hidden: NodeAttr<boolean>;
+    inputmode: NodeAttr<InputMode>;
+    is: NodeAttr<string>;
+    lang: NodeAttr<string>;
+    nonce: NodeAttr<string>;
+    part: NodeAttr<string>;
+    slot: NodeAttr<string>;
+    spellcheck: NodeAttr<StringBool>;
+    style: NodeAttr<string | number | boolean>;
+    tabindex: NodeAttr<number>;
+    title: NodeAttr<string>;
+    translate: NodeAttr<StringYesNo>;
     render: () => this;
-    get classList(): string[];
-    get id(): string | undefined;
-    set id(value: string | undefined);
-    private get rootNode();
-    private set rootNode(value);
     get node(): T;
-    get style(): CSS | undefined;
-    set style(value: CSS | undefined);
     get children(): NodeArray;
     set children(value: NodeArray);
+    get rootNode(): T;
+    set rootNode(value: T);
     addChild(value: ObjectDom<HTMLElement>, index?: number | undefined): void;
     removeChild(index: number): void;
 }

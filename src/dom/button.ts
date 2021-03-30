@@ -1,11 +1,11 @@
-import { CoreDom, NodeProps } from '../base';
+import { GlobalDom, NodeProps } from '../base';
 
 interface ButtonProps extends NodeProps<HTMLButtonElement> {
   text?: string;
   onClick?: () => void;
 }
 
-export class Button extends CoreDom<HTMLButtonElement> {
+export class Button extends GlobalDom<HTMLButtonElement> {
   constructor(props: ButtonProps = {}) {
     super({ node: document.createElement('button'), ...props });
     if (props?.onClick) this.onClick = props.onClick;

@@ -12,26 +12,10 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __exportStar = (this && this.__exportStar) || function(m, exports) {
-    for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CoreDom = exports.ObjectDom = void 0;
-__exportStar(require("./styles"), exports);
-function applyNodeStyle(node, style) {
-    for (var _i = 0, _a = Object.entries(style); _i < _a.length; _i++) {
-        var _b = _a[_i], key = _b[0], value = _b[1];
-        var _key = key.split(/(?=[A-Z])/).join('-').toLowerCase();
-        node.style.setProperty(_key, value);
-    }
-}
+exports.GlobalDom = exports.ObjectDom = void 0;
+var attrs_1 = require("./dom/attrs");
+var styles_1 = require("./styles");
 var ObjectDom = /** @class */ (function () {
     function ObjectDom() {
         var _this = this;
@@ -41,71 +25,45 @@ var ObjectDom = /** @class */ (function () {
     return ObjectDom;
 }());
 exports.ObjectDom = ObjectDom;
-var CoreDom = /** @class */ (function (_super) {
-    __extends(CoreDom, _super);
-    function CoreDom(props) {
+var GlobalDom = /** @class */ (function (_super) {
+    __extends(GlobalDom, _super);
+    function GlobalDom(props) {
         var _this = _super.call(this) || this;
         _this.props = props;
         _this.render = function () { return _this; };
+        _this.id = new attrs_1.NodeAttr(_this, 'id', props === null || props === void 0 ? void 0 : props.id);
+        _this.className = new attrs_1.NodeAttr(_this, 'class', styles_1.convertClassList(props === null || props === void 0 ? void 0 : props.className));
+        _this.contentEditable = new attrs_1.NodeAttr(_this, 'contenteditable', props === null || props === void 0 ? void 0 : props.contenteditable);
+        _this.accesskey = new attrs_1.NodeAttr(_this, 'accesskey', props === null || props === void 0 ? void 0 : props.accesskey);
+        _this.autocapitalize = new attrs_1.NodeAttr(_this, 'autocapitalize', props === null || props === void 0 ? void 0 : props.autocapitalize);
+        _this.dir = new attrs_1.NodeAttr(_this, 'dir', props === null || props === void 0 ? void 0 : props.dir);
+        _this.draggable = new attrs_1.NodeAttr(_this, 'draggable', props === null || props === void 0 ? void 0 : props.draggable);
+        _this.enterkeyhint = new attrs_1.NodeAttr(_this, 'enterkeyhint', props === null || props === void 0 ? void 0 : props.enterkeyhint);
+        _this.hidden = new attrs_1.NodeAttr(_this, 'hidden', props === null || props === void 0 ? void 0 : props.hidden);
+        _this.inputmode = new attrs_1.NodeAttr(_this, 'inputmode', props === null || props === void 0 ? void 0 : props.inputmode);
+        _this.is = new attrs_1.NodeAttr(_this, 'is', props === null || props === void 0 ? void 0 : props.is);
+        _this.lang = new attrs_1.NodeAttr(_this, 'lang', props === null || props === void 0 ? void 0 : props.lang);
+        _this.nonce = new attrs_1.NodeAttr(_this, 'nonce', props === null || props === void 0 ? void 0 : props.nonce);
+        _this.part = new attrs_1.NodeAttr(_this, 'part', props === null || props === void 0 ? void 0 : props.part);
+        _this.slot = new attrs_1.NodeAttr(_this, 'slot', props === null || props === void 0 ? void 0 : props.slot);
+        _this.spellcheck = new attrs_1.NodeAttr(_this, 'spellcheck', props === null || props === void 0 ? void 0 : props.spellcheck);
+        _this.style = new attrs_1.NodeAttr(_this, 'style', styles_1.convertCssStyles(props === null || props === void 0 ? void 0 : props.style));
+        _this.tabindex = new attrs_1.NodeAttr(_this, 'tabindex', props === null || props === void 0 ? void 0 : props.tabindex);
+        _this.title = new attrs_1.NodeAttr(_this, 'title', props === null || props === void 0 ? void 0 : props.title);
+        _this.translate = new attrs_1.NodeAttr(_this, 'translate', props === null || props === void 0 ? void 0 : props.translate);
         return _this;
     }
-    Object.defineProperty(CoreDom.prototype, "classList", {
-        get: function () {
-            var _a;
-            var _classList = [];
-            if ((_a = this.props) === null || _a === void 0 ? void 0 : _a.className) {
-                if (typeof this.props.className === 'string') {
-                    _classList.push(this.props.className);
-                }
-                else {
-                    this.props.className.forEach(function (e) { return _classList.push(e); });
-                }
-            }
-            return _classList;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(CoreDom.prototype, "id", {
-        get: function () {
-            return this.props.id;
-        },
-        set: function (value) {
-            this.props.id = value;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(CoreDom.prototype, "rootNode", {
-        get: function () {
-            var _a;
-            return (_a = this.props.node) !== null && _a !== void 0 ? _a : this.render().rootNode;
-        },
-        set: function (value) {
-            this.props.node = value;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(CoreDom.prototype, "node", {
+    Object.defineProperty(GlobalDom.prototype, "node", {
         get: function () {
             var _a;
             var _parent = this.render();
             var _node = _parent.rootNode;
-            if (_parent.id)
-                _node.id = _parent.id;
             if ((_a = _parent.props) === null || _a === void 0 ? void 0 : _a.text) {
                 _node.innerText = _parent.props.text;
             }
             else {
                 _node.innerText = '';
             }
-            for (var _i = 0, _b = _parent.classList; _i < _b.length; _i++) {
-                var className = _b[_i];
-                _node.classList.add(className);
-            }
-            if (_parent.style)
-                applyNodeStyle(_node, _parent.style);
             var _loop_1 = function (child) {
                 if (child instanceof ObjectDom) {
                     var childNode_1 = child.render().node;
@@ -121,8 +79,8 @@ var CoreDom = /** @class */ (function (_super) {
                     _node.append(child);
                 }
             };
-            for (var _c = 0, _d = _parent.children; _c < _d.length; _c++) {
-                var child = _d[_c];
+            for (var _i = 0, _b = _parent.children; _i < _b.length; _i++) {
+                var child = _b[_i];
                 _loop_1(child);
             }
             return _node;
@@ -130,45 +88,46 @@ var CoreDom = /** @class */ (function (_super) {
         enumerable: false,
         configurable: true
     });
-    Object.defineProperty(CoreDom.prototype, "style", {
-        get: function () {
-            return this.props.style;
-        },
-        set: function (value) {
-            this.props.style = value;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(CoreDom.prototype, "children", {
+    Object.defineProperty(GlobalDom.prototype, "children", {
         get: function () {
             var _a;
             return (_a = this.props.children) !== null && _a !== void 0 ? _a : [];
         },
         set: function (value) {
             this.props.children = value;
+            this.update();
         },
         enumerable: false,
         configurable: true
     });
-    CoreDom.prototype.addChild = function (value, index) {
-        if (this.props.children == undefined) {
-            this.props.children = [];
-        }
+    Object.defineProperty(GlobalDom.prototype, "rootNode", {
+        get: function () {
+            var _a;
+            return (_a = this.props.node) !== null && _a !== void 0 ? _a : this.render().rootNode;
+        },
+        set: function (value) {
+            this.props.node = value;
+            this.update();
+        },
+        enumerable: false,
+        configurable: true
+    });
+    GlobalDom.prototype.addChild = function (value, index) {
+        var current = this.children;
         if (index) {
-            this.props.children.splice(index, 0, value);
+            current.splice(index, 0, value);
         }
         else {
-            this.props.children.push(value);
+            current.push(value);
         }
+        this.children = current;
     };
-    CoreDom.prototype.removeChild = function (index) {
-        if (this.props.children == undefined) {
-            return;
-        }
-        this.props.children.splice(index, 1);
+    GlobalDom.prototype.removeChild = function (index) {
+        var current = this.children;
+        current.splice(index, 1);
+        this.children = current;
     };
-    return CoreDom;
+    return GlobalDom;
 }(ObjectDom));
-exports.CoreDom = CoreDom;
+exports.GlobalDom = GlobalDom;
 //# sourceMappingURL=base.js.map

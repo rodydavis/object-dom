@@ -1,4 +1,4 @@
-export interface CSS {
+export interface CSSStyles {
     alignContent?: string;
     alignItems?: string;
     alignSelf?: string;
@@ -314,3 +314,5 @@ export interface CSS {
     writingMode?: string;
     zIndex?: string;
 }
+export declare function convertCssStyles(style: CSSStyles | string | undefined): string | undefined;
+export declare function convertClassList(value: string | string[] | undefined): string | undefined;

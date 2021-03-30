@@ -1,6 +1,6 @@
-import { CoreDom, NodeProps } from '../base';
+import { GlobalDom, NodeProps } from '../base';
 
-export class Text extends CoreDom<HTMLElement> {
+export class Text extends GlobalDom<HTMLElement> {
   constructor(tag: string, props: NodeProps<HTMLElement>) {
     super({ node: document.createElement(tag), ...props });
     this.text = props.text;
@@ -106,7 +106,7 @@ export class Heading6 extends Text {
     super('h6', props);
   }
 }
-export class Break extends CoreDom<HTMLBRElement> {
+export class Break extends GlobalDom<HTMLBRElement> {
   constructor(props: NodeProps<HTMLBRElement> = {}) {
     super({ node: document.createElement('br'), ...props });
   }

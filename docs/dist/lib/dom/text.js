@@ -46,7 +46,7 @@ var Text = /** @class */ (function (_super) {
         configurable: true
     });
     return Text;
-}(base_1.CoreDom));
+}(base_1.GlobalDom));
 exports.Text = Text;
 var Span = /** @class */ (function (_super) {
     __extends(Span, _super);
@@ -217,6 +217,6 @@ var Break = /** @class */ (function (_super) {
         return _super.call(this, __assign({ node: document.createElement('br') }, props)) || this;
     }
     return Break;
-}(base_1.CoreDom));
+}(base_1.GlobalDom));
 exports.Break = Break;
 //# sourceMappingURL=text.js.map

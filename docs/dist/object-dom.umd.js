@@ -52,13 +52,85 @@
         return r;
     }
 
-    function applyNodeStyle(node, style) {
-        for (var _i = 0, _a = Object.entries(style); _i < _a.length; _i++) {
-            var _b = _a[_i], key = _b[0], value = _b[1];
-            var _key = key.split(/(?=[A-Z])/).join('-').toLowerCase();
-            node.style.setProperty(_key, value);
+    var NodeAttr = /** @class */ (function () {
+        function NodeAttr(root, key, value) {
+            this._root = root;
+            this._key = key;
+            this._value = value !== null && value !== void 0 ? value : null;
+            this.update();
         }
+        Object.defineProperty(NodeAttr.prototype, "value", {
+            get: function () {
+                return this._value;
+            },
+            set: function (value) {
+                this._value = value;
+                this.update();
+            },
+            enumerable: false,
+            configurable: true
+        });
+        NodeAttr.prototype.update = function () {
+            if (this.value === null) {
+                this.clear();
+                return;
+            }
+            if (typeof this.value === 'string') {
+                this.node.setAttribute(this._key, this.value);
+                this._root.update();
+                return;
+            }
+            if (typeof this.value === 'boolean' && this.value) {
+                this.node.setAttribute(this._key, this._key);
+                this._root.update();
+                return;
+            }
+            if (typeof this.value === 'number' && this.value) {
+                this.node.setAttribute(this._key, this._key);
+                this._root.update();
+                return;
+            }
+        };
+        NodeAttr.prototype.clear = function () {
+            this.node.removeAttribute(this._key);
+            this._root.update();
+        };
+        Object.defineProperty(NodeAttr.prototype, "node", {
+            get: function () {
+                return this._root.node;
+            },
+            enumerable: false,
+            configurable: true
+        });
+        return NodeAttr;
+    }());
+
+    function convertCssStyles(style) {
+        if (style) {
+            if (typeof style === 'string')
+                return style;
+            var results = [];
+            for (var _i = 0, _a = Object.entries(style); _i < _a.length; _i++) {
+                var _b = _a[_i], key = _b[0], value = _b[1];
+                var _key = key
+                    .split(/(?=[A-Z])/)
+                    .join('-')
+                    .toLowerCase();
+                results.push(_key + ": " + value + ";");
+            }
+            return results.join(' ');
+        }
+        return undefined;
     }
+    function convertClassList(value) {
+        if (value) {
+            if (typeof value === 'string')
+                return value;
+            return value.join(' ');
+        }
+        return undefined;
+    }
+
     var ObjectDom = /** @class */ (function () {
         function ObjectDom() {
             var _this = this;
@@ -67,71 +139,45 @@
         }
         return ObjectDom;
     }());
-    var CoreDom = /** @class */ (function (_super) {
-        __extends(CoreDom, _super);
-        function CoreDom(props) {
+    var GlobalDom = /** @class */ (function (_super) {
+        __extends(GlobalDom, _super);
+        function GlobalDom(props) {
             var _this = _super.call(this) || this;
             _this.props = props;
             _this.render = function () { return _this; };
+            _this.id = new NodeAttr(_this, 'id', props === null || props === void 0 ? void 0 : props.id);
+            _this.className = new NodeAttr(_this, 'class', convertClassList(props === null || props === void 0 ? void 0 : props.className));
+            _this.contentEditable = new NodeAttr(_this, 'contenteditable', props === null || props === void 0 ? void 0 : props.contenteditable);
+            _this.accesskey = new NodeAttr(_this, 'accesskey', props === null || props === void 0 ? void 0 : props.accesskey);
+            _this.autocapitalize = new NodeAttr(_this, 'autocapitalize', props === null || props === void 0 ? void 0 : props.autocapitalize);
+            _this.dir = new NodeAttr(_this, 'dir', props === null || props === void 0 ? void 0 : props.dir);
+            _this.draggable = new NodeAttr(_this, 'draggable', props === null || props === void 0 ? void 0 : props.draggable);
+            _this.enterkeyhint = new NodeAttr(_this, 'enterkeyhint', props === null || props === void 0 ? void 0 : props.enterkeyhint);
+            _this.hidden = new NodeAttr(_this, 'hidden', props === null || props === void 0 ? void 0 : props.hidden);
+            _this.inputmode = new NodeAttr(_this, 'inputmode', props === null || props === void 0 ? void 0 : props.inputmode);
+            _this.is = new NodeAttr(_this, 'is', props === null || props === void 0 ? void 0 : props.is);
+            _this.lang = new NodeAttr(_this, 'lang', props === null || props === void 0 ? void 0 : props.lang);
+            _this.nonce = new NodeAttr(_this, 'nonce', props === null || props === void 0 ? void 0 : props.nonce);
+            _this.part = new NodeAttr(_this, 'part', props === null || props === void 0 ? void 0 : props.part);
+            _this.slot = new NodeAttr(_this, 'slot', props === null || props === void 0 ? void 0 : props.slot);
+            _this.spellcheck = new NodeAttr(_this, 'spellcheck', props === null || props === void 0 ? void 0 : props.spellcheck);
+            _this.style = new NodeAttr(_this, 'style', convertCssStyles(props === null || props === void 0 ? void 0 : props.style));
+            _this.tabindex = new NodeAttr(_this, 'tabindex', props === null || props === void 0 ? void 0 : props.tabindex);
+            _this.title = new NodeAttr(_this, 'title', props === null || props === void 0 ? void 0 : props.title);
+            _this.translate = new NodeAttr(_this, 'translate', props === null || props === void 0 ? void 0 : props.translate);
             return _this;
         }
-        Object.defineProperty(CoreDom.prototype, "classList", {
-            get: function () {
-                var _a;
-                var _classList = [];
-                if ((_a = this.props) === null || _a === void 0 ? void 0 : _a.className) {
-                    if (typeof this.props.className === 'string') {
-                        _classList.push(this.props.className);
-                    }
-                    else {
-                        this.props.className.forEach(function (e) { return _classList.push(e); });
-                    }
-                }
-                return _classList;
-            },
-            enumerable: false,
-            configurable: true
-        });
-        Object.defineProperty(CoreDom.prototype, "id", {
-            get: function () {
-                return this.props.id;
-            },
-            set: function (value) {
-                this.props.id = value;
-            },
-            enumerable: false,
-            configurable: true
-        });
-        Object.defineProperty(CoreDom.prototype, "rootNode", {
-            get: function () {
-                var _a;
-                return (_a = this.props.node) !== null && _a !== void 0 ? _a : this.render().rootNode;
-            },
-            set: function (value) {
-                this.props.node = value;
-            },
-            enumerable: false,
-            configurable: true
-        });
-        Object.defineProperty(CoreDom.prototype, "node", {
+        Object.defineProperty(GlobalDom.prototype, "node", {
             get: function () {
                 var _a;
                 var _parent = this.render();
                 var _node = _parent.rootNode;
-                if (_parent.id)
-                    _node.id = _parent.id;
                 if ((_a = _parent.props) === null || _a === void 0 ? void 0 : _a.text) {
                     _node.innerText = _parent.props.text;
                 }
                 else {
                     _node.innerText = '';
                 }
-                for (var _i = 0, _b = _parent.classList; _i < _b.length; _i++) {
-                    var className = _b[_i];
-                    _node.classList.add(className);
-                }
-                if (_parent.style)
-                    applyNodeStyle(_node, _parent.style);
                 var _loop_1 = function (child) {
                     if (child instanceof ObjectDom) {
                         var childNode_1 = child.render().node;
@@ -147,8 +193,8 @@
                         _node.append(child);
                     }
                 };
-                for (var _c = 0, _d = _parent.children; _c < _d.length; _c++) {
-                    var child = _d[_c];
+                for (var _i = 0, _b = _parent.children; _i < _b.length; _i++) {
+                    var child = _b[_i];
                     _loop_1(child);
                 }
                 return _node;
@@ -156,45 +202,46 @@
             enumerable: false,
             configurable: true
         });
-        Object.defineProperty(CoreDom.prototype, "style", {
-            get: function () {
-                return this.props.style;
-            },
-            set: function (value) {
-                this.props.style = value;
-            },
-            enumerable: false,
-            configurable: true
-        });
-        Object.defineProperty(CoreDom.prototype, "children", {
+        Object.defineProperty(GlobalDom.prototype, "children", {
             get: function () {
                 var _a;
                 return (_a = this.props.children) !== null && _a !== void 0 ? _a : [];
             },
             set: function (value) {
                 this.props.children = value;
+                this.update();
             },
             enumerable: false,
             configurable: true
         });
-        CoreDom.prototype.addChild = function (value, index) {
-            if (this.props.children == undefined) {
-                this.props.children = [];
-            }
+        Object.defineProperty(GlobalDom.prototype, "rootNode", {
+            get: function () {
+                var _a;
+                return (_a = this.props.node) !== null && _a !== void 0 ? _a : this.render().rootNode;
+            },
+            set: function (value) {
+                this.props.node = value;
+                this.update();
+            },
+            enumerable: false,
+            configurable: true
+        });
+        GlobalDom.prototype.addChild = function (value, index) {
+            var current = this.children;
             if (index) {
-                this.props.children.splice(index, 0, value);
+                current.splice(index, 0, value);
             }
             else {
-                this.props.children.push(value);
+                current.push(value);
             }
+            this.children = current;
         };
-        CoreDom.prototype.removeChild = function (index) {
-            if (this.props.children == undefined) {
-                return;
-            }
-            this.props.children.splice(index, 1);
+        GlobalDom.prototype.removeChild = function (index) {
+            var current = this.children;
+            current.splice(index, 1);
+            this.children = current;
         };
-        return CoreDom;
+        return GlobalDom;
     }(ObjectDom));
 
     var Div = /** @class */ (function (_super) {
@@ -204,7 +251,7 @@
             return _super.call(this, __assign({ node: document.createElement('div') }, props)) || this;
         }
         return Div;
-    }(CoreDom));
+    }(GlobalDom));
     var Display = /** @class */ (function (_super) {
         __extends(Display, _super);
         function Display(display, props) {
@@ -309,7 +356,7 @@
             configurable: true
         });
         return Text;
-    }(CoreDom));
+    }(GlobalDom));
     var Span = /** @class */ (function (_super) {
         __extends(Span, _super);
         function Span(props) {
@@ -461,7 +508,7 @@
             return _super.call(this, __assign({ node: document.createElement('br') }, props)) || this;
         }
         return Break;
-    }(CoreDom));
+    }(GlobalDom));
 
     var Button = /** @class */ (function (_super) {
         __extends(Button, _super);
@@ -488,41 +535,38 @@
             configurable: true
         });
         return Button;
-    }(CoreDom));
+    }(GlobalDom));
 
     var Form = /** @class */ (function (_super) {
         __extends(Form, _super);
         function Form(props) {
+            if (props === void 0) { props = {}; }
             var _this = _super.call(this, __assign({ node: document.createElement('form') }, props)) || this;
             _this.onChange = function () { };
             _this.node.addEventListener('change', function () { return _this.onChange(); });
-            if (props === null || props === void 0 ? void 0 : props.target)
-                _this.node.target = props.target;
-            if (props === null || props === void 0 ? void 0 : props.acceptCharset)
-                _this.node.acceptCharset = props.acceptCharset;
-            if (props === null || props === void 0 ? void 0 : props.method)
-                _this.node.method = props.method;
-            if (props === null || props === void 0 ? void 0 : props.action)
-                _this.node.action = props.action;
-            if (props === null || props === void 0 ? void 0 : props.novalidate)
-                _this.node.noValidate = props.novalidate;
-            if (props === null || props === void 0 ? void 0 : props.autocomplete)
-                _this.node.autocomplete = props.autocomplete ? 'on' : 'off';
+            _this.target = new NodeAttr(_this, 'target', props === null || props === void 0 ? void 0 : props.target);
+            _this.acceptCharset = new NodeAttr(_this, 'accept-charset', props === null || props === void 0 ? void 0 : props.acceptCharset);
+            _this.method = new NodeAttr(_this, 'method', props === null || props === void 0 ? void 0 : props.method);
+            _this.action = new NodeAttr(_this, 'action', props === null || props === void 0 ? void 0 : props.action);
+            _this.autocomplete = new NodeAttr(_this, 'autocomplete', props === null || props === void 0 ? void 0 : props.autocomplete);
+            _this.novalidate = new NodeAttr(_this, 'novalidate', props === null || props === void 0 ? void 0 : props.novalidate);
             return _this;
         }
         return Form;
-    }(CoreDom));
+    }(GlobalDom));
     var Label = /** @class */ (function (_super) {
         __extends(Label, _super);
         function Label(props) {
+            if (props === void 0) { props = {}; }
             var _this = _super.call(this, __assign({ node: document.createElement('label') }, props)) || this;
-            if (props === null || props === void 0 ? void 0 : props.value)
-                _this.value = props.value;
-            if (props === null || props === void 0 ? void 0 : props.input)
-                _this.node.htmlFor = props.input;
+            _this.value = props.value;
+            _this.input = new NodeAttr(_this, 'for', props === null || props === void 0 ? void 0 : props.input);
             return _this;
         }
         Object.defineProperty(Label.prototype, "value", {
+            get: function () {
+                return this.node.innerText;
+            },
             set: function (val) {
                 this.node.innerText = val !== null && val !== void 0 ? val : '';
             },
@@ -530,10 +574,11 @@
             configurable: true
         });
         return Label;
-    }(CoreDom));
+    }(GlobalDom));
     var Input = /** @class */ (function (_super) {
         __extends(Input, _super);
         function Input(props) {
+            if (props === void 0) { props = {}; }
             var _this = _super.call(this, __assign({ node: document.createElement('input') }, props)) || this;
             _this.onChange = function (val) { };
             _this.node.addEventListener('change', function (val) { return _this.onChange(val); });
@@ -557,56 +602,7 @@
             configurable: true
         });
         return Input;
-    }(CoreDom));
-    var SubmitInput = /** @class */ (function (_super) {
-        __extends(SubmitInput, _super);
-        function SubmitInput(props) {
-            return _super.call(this, __assign({ type: 'submit' }, props)) || this;
-        }
-        return SubmitInput;
-    }(Input));
-    var TextInput = /** @class */ (function (_super) {
-        __extends(TextInput, _super);
-        function TextInput(props) {
-            return _super.call(this, __assign({ type: 'text' }, props)) || this;
-        }
-        return TextInput;
-    }(Input));
-    var FileInput = /** @class */ (function (_super) {
-        __extends(FileInput, _super);
-        function FileInput(props) {
-            return _super.call(this, __assign({ type: 'file' }, props)) || this;
-        }
-        return FileInput;
-    }(Input));
-    var NumberInput = /** @class */ (function (_super) {
-        __extends(NumberInput, _super);
-        function NumberInput(props) {
-            return _super.call(this, __assign({ type: 'number' }, props)) || this;
-        }
-        return NumberInput;
-    }(Input));
-    var PhoneInput = /** @class */ (function (_super) {
-        __extends(PhoneInput, _super);
-        function PhoneInput(props) {
-            return _super.call(this, __assign({ type: 'tel' }, props)) || this;
-        }
-        return PhoneInput;
-    }(Input));
-    var EmailInput = /** @class */ (function (_super) {
-        __extends(EmailInput, _super);
-        function EmailInput(props) {
-            return _super.call(this, __assign({ type: 'email' }, props)) || this;
-        }
-        return EmailInput;
-    }(Input));
-    var ColorInput = /** @class */ (function (_super) {
-        __extends(ColorInput, _super);
-        function ColorInput(props) {
-            return _super.call(this, __assign({ type: 'color' }, props)) || this;
-        }
-        return ColorInput;
-    }(Input));
+    }(GlobalDom));
     var InputGroup = /** @class */ (function (_super) {
         __extends(InputGroup, _super);
         function InputGroup(id, type, props) {
@@ -629,27 +625,31 @@
     var Table = /** @class */ (function (_super) {
         __extends(Table, _super);
         function Table(props) {
+            if (props === void 0) { props = {}; }
             return _super.call(this, __assign({ node: document.createElement('table') }, props)) || this;
         }
         return Table;
-    }(CoreDom));
+    }(GlobalDom));
     var TableRow = /** @class */ (function (_super) {
         __extends(TableRow, _super);
         function TableRow(props) {
+            if (props === void 0) { props = {}; }
             return _super.call(this, __assign({ node: document.createElement('tr') }, props)) || this;
         }
         return TableRow;
-    }(CoreDom));
+    }(GlobalDom));
     var Section = /** @class */ (function (_super) {
         __extends(Section, _super);
         function Section(node, props) {
+            if (props === void 0) { props = {}; }
             return _super.call(this, __assign({ node: node }, props)) || this;
         }
         return Section;
-    }(CoreDom));
+    }(GlobalDom));
     var TableHeader = /** @class */ (function (_super) {
         __extends(TableHeader, _super);
         function TableHeader(props) {
+            if (props === void 0) { props = {}; }
             return _super.call(this, document.createElement('thead'), props) || this;
         }
         return TableHeader;
@@ -657,6 +657,7 @@
     var TableFooter = /** @class */ (function (_super) {
         __extends(TableFooter, _super);
         function TableFooter(props) {
+            if (props === void 0) { props = {}; }
             return _super.call(this, document.createElement('tfoot'), props) || this;
         }
         return TableFooter;
@@ -664,6 +665,7 @@
     var TableBody = /** @class */ (function (_super) {
         __extends(TableBody, _super);
         function TableBody(props) {
+            if (props === void 0) { props = {}; }
             return _super.call(this, document.createElement('tbody'), props) || this;
         }
         return TableBody;
@@ -671,6 +673,7 @@
     var HeaderCell = /** @class */ (function (_super) {
         __extends(HeaderCell, _super);
         function HeaderCell(props) {
+            if (props === void 0) { props = {}; }
             var _this = _super.call(this, __assign({ node: document.createElement('th') }, props)) || this;
             if (props === null || props === void 0 ? void 0 : props.colspan)
                 _this.node.colSpan = props.colspan;
@@ -681,31 +684,35 @@
             return _this;
         }
         return HeaderCell;
-    }(CoreDom));
+    }(GlobalDom));
     var Cell = /** @class */ (function (_super) {
         __extends(Cell, _super);
         function Cell(props) {
+            if (props === void 0) { props = {}; }
             return _super.call(this, __assign({ node: document.createElement('td') }, props)) || this;
         }
         return Cell;
-    }(CoreDom));
+    }(GlobalDom));
     var Caption = /** @class */ (function (_super) {
         __extends(Caption, _super);
         function Caption(props) {
+            if (props === void 0) { props = {}; }
             return _super.call(this, __assign({ node: document.createElement('caption') }, props)) || this;
         }
         return Caption;
-    }(CoreDom));
+    }(GlobalDom));
     var Col = /** @class */ (function (_super) {
         __extends(Col, _super);
         function Col(node, props) {
+            if (props === void 0) { props = {}; }
             return _super.call(this, __assign({ node: node }, props)) || this;
         }
         return Col;
-    }(CoreDom));
+    }(GlobalDom));
     var TableColumn = /** @class */ (function (_super) {
         __extends(TableColumn, _super);
         function TableColumn(props) {
+            if (props === void 0) { props = {}; }
             return _super.call(this, document.createElement('col'), props) || this;
         }
         return TableColumn;
@@ -713,6 +720,7 @@
     var TableColumnGroup = /** @class */ (function (_super) {
         __extends(TableColumnGroup, _super);
         function TableColumnGroup(props) {
+            if (props === void 0) { props = {}; }
             return _super.call(this, document.createElement('colgroup'), props) || this;
         }
         return TableColumnGroup;
@@ -722,10 +730,13 @@
         __extends(Html, _super);
         function Html(props) {
             if (props === void 0) { props = {}; }
-            return _super.call(this, __assign({ node: document.createElement('html') }, props)) || this;
+            var _this = _super.call(this, __assign({ node: document.createElement('html') }, props)) || this;
+            _this.lang = new NodeAttr(_this, 'lang', props.lang);
+            _this.xmlns = new NodeAttr(_this, 'xmlns', props.xmlns);
+            return _this;
         }
         return Html;
-    }(CoreDom));
+    }(GlobalDom));
     var Head = /** @class */ (function (_super) {
         __extends(Head, _super);
         function Head(props) {
@@ -733,7 +744,7 @@
             return _super.call(this, __assign({ node: document.createElement('head') }, props)) || this;
         }
         return Head;
-    }(CoreDom));
+    }(GlobalDom));
     var Body = /** @class */ (function (_super) {
         __extends(Body, _super);
         function Body(props) {
@@ -741,7 +752,7 @@
             return _super.call(this, __assign({ node: document.createElement('body') }, props)) || this;
         }
         return Body;
-    }(CoreDom));
+    }(GlobalDom));
     var Script = /** @class */ (function (_super) {
         __extends(Script, _super);
         function Script(props) {
@@ -749,7 +760,7 @@
             return _super.call(this, __assign({ node: document.createElement('script') }, props)) || this;
         }
         return Script;
-    }(CoreDom));
+    }(GlobalDom));
     var Style = /** @class */ (function (_super) {
         __extends(Style, _super);
         function Style(props) {
@@ -757,7 +768,7 @@
             return _super.call(this, __assign({ node: document.createElement('style') }, props)) || this;
         }
         return Style;
-    }(CoreDom));
+    }(GlobalDom));
     var Link = /** @class */ (function (_super) {
         __extends(Link, _super);
         function Link(props) {
@@ -765,7 +776,7 @@
             return _super.call(this, __assign({ node: document.createElement('link') }, props)) || this;
         }
         return Link;
-    }(CoreDom));
+    }(GlobalDom));
     var Meta = /** @class */ (function (_super) {
         __extends(Meta, _super);
         function Meta(props) {
@@ -773,7 +784,7 @@
             return _super.call(this, __assign({ node: document.createElement('meta') }, props)) || this;
         }
         return Meta;
-    }(CoreDom));
+    }(GlobalDom));
     var Title = /** @class */ (function (_super) {
         __extends(Title, _super);
         function Title(props) {
@@ -781,7 +792,24 @@
             return _super.call(this, __assign({ node: document.createElement('title') }, props)) || this;
         }
         return Title;
-    }(CoreDom));
+    }(GlobalDom));
+    var Template = /** @class */ (function (_super) {
+        __extends(Template, _super);
+        function Template(props) {
+            if (props === void 0) { props = {}; }
+            return _super.call(this, __assign({ node: document.createElement('template') }, props)) || this;
+        }
+        return Template;
+    }(GlobalDom));
+
+    var Svg = /** @class */ (function (_super) {
+        __extends(Svg, _super);
+        function Svg(props) {
+            if (props === void 0) { props = {}; }
+            return _super.call(this, __assign({ node: document.createElement('svg') }, props)) || this;
+        }
+        return Svg;
+    }(GlobalDom));
 
     var Custom = /** @class */ (function (_super) {
         __extends(Custom, _super);
@@ -790,7 +818,7 @@
             return _super.call(this, __assign({ node: document.createElement(tag) }, props)) || this;
         }
         return Custom;
-    }(CoreDom));
+    }(GlobalDom));
 
     function jsonTable(data, props) {
         var _a, _b, _c, _d;
@@ -867,17 +895,14 @@
     exports.Button = Button;
     exports.Caption = Caption;
     exports.Cell = Cell;
-    exports.ColorInput = ColorInput;
     exports.Column = Column;
-    exports.CoreDom = CoreDom;
     exports.Custom = Custom;
     exports.Deleted = Deleted;
     exports.Div = Div;
-    exports.EmailInput = EmailInput;
     exports.Emphasized = Emphasized;
-    exports.FileInput = FileInput;
     exports.Flex = Flex;
     exports.Form = Form;
+    exports.GlobalDom = GlobalDom;
     exports.Grid = Grid;
     exports.Head = Head;
     exports.HeaderCell = HeaderCell;
@@ -898,19 +923,17 @@
     exports.Link = Link;
     exports.Marked = Marked;
     exports.Meta = Meta;
-    exports.NumberInput = NumberInput;
     exports.ObjectDom = ObjectDom;
     exports.Paragraph = Paragraph;
-    exports.PhoneInput = PhoneInput;
     exports.Row = Row;
     exports.Script = Script;
     exports.Smaller = Smaller;
     exports.Span = Span;
     exports.Strong = Strong;
     exports.Style = Style;
-    exports.SubmitInput = SubmitInput;
     exports.Subscript = Subscript;
     exports.Superscript = Superscript;
+    exports.Svg = Svg;
     exports.Table = Table;
     exports.TableBody = TableBody;
     exports.TableColumn = TableColumn;
@@ -918,10 +941,12 @@
     exports.TableFooter = TableFooter;
     exports.TableHeader = TableHeader;
     exports.TableRow = TableRow;
+    exports.Template = Template;
     exports.Text = Text;
-    exports.TextInput = TextInput;
     exports.Title = Title;
     exports.Wrap = Wrap;
+    exports.convertClassList = convertClassList;
+    exports.convertCssStyles = convertCssStyles;
     exports.create = create;
     exports.jsonTable = jsonTable;
     exports.render = render;

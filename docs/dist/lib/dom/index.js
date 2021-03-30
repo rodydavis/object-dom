@@ -16,5 +16,6 @@ __exportStar(require("./button"), exports);
 __exportStar(require("./input"), exports);
 __exportStar(require("./table"), exports);
 __exportStar(require("./core"), exports);
+__exportStar(require("./svg"), exports);
 __exportStar(require("./misc"), exports);
 //# sourceMappingURL=index.js.map

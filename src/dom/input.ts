@@ -1,26 +1,33 @@
-import { CoreDom, NodeProps } from '../base';
+import { GlobalDom, NodeProps } from '../base';
 import { Div } from './div';
+import { NodeAttr } from './attrs';
 
 export interface FormProps extends NodeProps<HTMLFormElement> {
-  method: 'post' | 'get' | 'dialog';
-  action: string;
-  acceptCharset: string;
-  target: '_self' | '_blank' | '_parent' | '_top';
-  autocomplete: boolean;
-  novalidate: boolean;
+  method?: 'post' | 'get' | 'dialog';
+  action?: string;
+  acceptCharset?: string;
+  target?: '_self' | '_blank' | '_parent' | '_top';
+  autocomplete?: 'on' | 'off';
+  novalidate?: boolean;
 }
 
-export class Form extends CoreDom<HTMLFormElement> {
-  constructor(props?: FormProps) {
+export class Form extends GlobalDom<HTMLFormElement> {
+  constructor(props: FormProps = {}) {
     super({ node: document.createElement('form'), ...props });
     this.node.addEventListener('change', () => this.onChange());
-    if (props?.target) this.node.target = props.target;
-    if (props?.acceptCharset) this.node.acceptCharset = props.acceptCharset;
-    if (props?.method) this.node.method = props.method;
-    if (props?.action) this.node.action = props.action;
-    if (props?.novalidate) this.node.noValidate = props.novalidate;
-    if (props?.autocomplete) this.node.autocomplete = props.autocomplete ? 'on' : 'off';
+    this.target = new NodeAttr(this, 'target', props?.target);
+    this.acceptCharset = new NodeAttr(this, 'accept-charset', props?.acceptCharset);
+    this.method = new NodeAttr(this, 'method', props?.method);
+    this.action = new NodeAttr(this, 'action', props?.action);
+    this.autocomplete = new NodeAttr(this, 'autocomplete', props?.autocomplete);
+    this.novalidate = new NodeAttr(this, 'novalidate', props?.novalidate);
   }
+  target: NodeAttr;
+  acceptCharset: NodeAttr;
+  method: NodeAttr;
+  action: NodeAttr;
+  autocomplete: NodeAttr;
+  novalidate: NodeAttr<boolean>;
 
   onChange: Function = () => {};
 }
@@ -30,27 +37,53 @@ export interface LabelProps extends NodeProps<HTMLLabelElement> {
   input?: string;
 }
 
-export class Label extends CoreDom<HTMLLabelElement> {
-  constructor(props?: LabelProps) {
+export class Label extends GlobalDom<HTMLLabelElement> {
+  constructor(props: LabelProps = {}) {
     super({ node: document.createElement('label'), ...props });
-    if (props?.value) this.value = props.value;
-    if (props?.input) this.node.htmlFor = props.input;
+    this.value = props.value;
+    this.input = new NodeAttr(this, 'for', props?.input);
   }
+  input: NodeAttr;
 
+  public get value(): string | undefined {
+    return this.node.innerText;
+  }
   public set value(val: string | undefined) {
     this.node.innerText = val ?? '';
   }
 }
-
+type InputType =
+  | 'button'
+  | 'checkbox'
+  | 'color'
+  | 'date'
+  | 'datetime-local'
+  | 'email'
+  | 'file'
+  | 'hidden'
+  | 'image'
+  | 'month'
+  | 'number'
+  | 'password'
+  | 'radio'
+  | 'range'
+  | 'reset'
+  | 'search'
+  | 'submit'
+  | 'tel'
+  | 'text'
+  | 'time'
+  | 'url'
+  | 'week';
 export interface InputProps extends NodeProps<HTMLInputElement> {
-  type?: string;
+  type?: InputType;
   value?: string;
   name?: string;
   required?: boolean;
 }
 
-export class Input extends CoreDom<HTMLInputElement> {
-  constructor(props?: InputProps) {
+export class Input extends GlobalDom<HTMLInputElement> {
+  constructor(props: InputProps = {}) {
     super({ node: document.createElement('input'), ...props });
     this.node.addEventListener('change', val => this.onChange(val));
     if (props?.type) this.node.type = props.type;
@@ -68,55 +101,13 @@ export class Input extends CoreDom<HTMLInputElement> {
   onChange: Function = (val: string) => {};
 }
 
-export class SubmitInput extends Input {
-  constructor(props: InputProps) {
-    super({ type: 'submit', ...props });
-  }
-}
-
-export class TextInput extends Input {
-  constructor(props: InputProps) {
-    super({ type: 'text', ...props });
-  }
-}
-
-export class FileInput extends Input {
-  constructor(props: InputProps) {
-    super({ type: 'file', ...props });
-  }
-}
-
-export class NumberInput extends Input {
-  constructor(props: InputProps) {
-    super({ type: 'number', ...props });
-  }
-}
-
-export class PhoneInput extends Input {
-  constructor(props: InputProps) {
-    super({ type: 'tel', ...props });
-  }
-}
-
-export class EmailInput extends Input {
-  constructor(props: InputProps) {
-    super({ type: 'email', ...props });
-  }
-}
-
-export class ColorInput extends Input {
-  constructor(props: InputProps) {
-    super({ type: 'color', ...props });
-  }
-}
-
 export interface InputGroupProps extends NodeProps<HTMLDivElement> {
   input?: InputProps;
   label?: LabelProps;
 }
 
 export class InputGroup extends Div {
-  constructor(id: string, type: string, props: InputGroupProps = {}) {
+  constructor(id: string, type: InputType, props: InputGroupProps = {}) {
     super({ style: props?.style });
     let children = [
       new Label({

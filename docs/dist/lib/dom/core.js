@@ -24,16 +24,20 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Title = exports.Meta = exports.Link = exports.Style = exports.Script = exports.Body = exports.Head = exports.Html = void 0;
+exports.Template = exports.Title = exports.Meta = exports.Link = exports.Style = exports.Script = exports.Body = exports.Head = exports.Html = void 0;
 var base_1 = require("../base");
+var attrs_1 = require("./attrs");
 var Html = /** @class */ (function (_super) {
     __extends(Html, _super);
     function Html(props) {
         if (props === void 0) { props = {}; }
-        return _super.call(this, __assign({ node: document.createElement('html') }, props)) || this;
+        var _this = _super.call(this, __assign({ node: document.createElement('html') }, props)) || this;
+        _this.lang = new attrs_1.NodeAttr(_this, 'lang', props.lang);
+        _this.xmlns = new attrs_1.NodeAttr(_this, 'xmlns', props.xmlns);
+        return _this;
     }
     return Html;
-}(base_1.CoreDom));
+}(base_1.GlobalDom));
 exports.Html = Html;
 var Head = /** @class */ (function (_super) {
     __extends(Head, _super);
@@ -42,7 +46,7 @@ var Head = /** @class */ (function (_super) {
         return _super.call(this, __assign({ node: document.createElement('head') }, props)) || this;
     }
     return Head;
-}(base_1.CoreDom));
+}(base_1.GlobalDom));
 exports.Head = Head;
 var Body = /** @class */ (function (_super) {
     __extends(Body, _super);
@@ -51,7 +55,7 @@ var Body = /** @class */ (function (_super) {
         return _super.call(this, __assign({ node: document.createElement('body') }, props)) || this;
     }
     return Body;
-}(base_1.CoreDom));
+}(base_1.GlobalDom));
 exports.Body = Body;
 var Script = /** @class */ (function (_super) {
     __extends(Script, _super);
@@ -60,7 +64,7 @@ var Script = /** @class */ (function (_super) {
         return _super.call(this, __assign({ node: document.createElement('script') }, props)) || this;
     }
     return Script;
-}(base_1.CoreDom));
+}(base_1.GlobalDom));
 exports.Script = Script;
 var Style = /** @class */ (function (_super) {
     __extends(Style, _super);
@@ -69,7 +73,7 @@ var Style = /** @class */ (function (_super) {
         return _super.call(this, __assign({ node: document.createElement('style') }, props)) || this;
     }
     return Style;
-}(base_1.CoreDom));
+}(base_1.GlobalDom));
 exports.Style = Style;
 var Link = /** @class */ (function (_super) {
     __extends(Link, _super);
@@ -78,7 +82,7 @@ var Link = /** @class */ (function (_super) {
         return _super.call(this, __assign({ node: document.createElement('link') }, props)) || this;
     }
     return Link;
-}(base_1.CoreDom));
+}(base_1.GlobalDom));
 exports.Link = Link;
 var Meta = /** @class */ (function (_super) {
     __extends(Meta, _super);
@@ -87,7 +91,7 @@ var Meta = /** @class */ (function (_super) {
         return _super.call(this, __assign({ node: document.createElement('meta') }, props)) || this;
     }
     return Meta;
-}(base_1.CoreDom));
+}(base_1.GlobalDom));
 exports.Meta = Meta;
 var Title = /** @class */ (function (_super) {
     __extends(Title, _super);
@@ -96,6 +100,15 @@ var Title = /** @class */ (function (_super) {
         return _super.call(this, __assign({ node: document.createElement('title') }, props)) || this;
     }
     return Title;
-}(base_1.CoreDom));
+}(base_1.GlobalDom));
 exports.Title = Title;
+var Template = /** @class */ (function (_super) {
+    __extends(Template, _super);
+    function Template(props) {
+        if (props === void 0) { props = {}; }
+        return _super.call(this, __assign({ node: document.createElement('template') }, props)) || this;
+    }
+    return Template;
+}(base_1.GlobalDom));
+exports.Template = Template;
 //# sourceMappingURL=core.js.map

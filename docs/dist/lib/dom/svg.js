@@ -24,15 +24,15 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Custom = void 0;
+exports.Svg = void 0;
 var base_1 = require("../base");
-var Custom = /** @class */ (function (_super) {
-    __extends(Custom, _super);
-    function Custom(tag, props) {
+var Svg = /** @class */ (function (_super) {
+    __extends(Svg, _super);
+    function Svg(props) {
         if (props === void 0) { props = {}; }
-        return _super.call(this, __assign({ node: document.createElement(tag) }, props)) || this;
+        return _super.call(this, __assign({ node: document.createElement('svg') }, props)) || this;
     }
-    return Custom;
+    return Svg;
 }(base_1.GlobalDom));
-exports.Custom = Custom;
-//# sourceMappingURL=misc.js.map
+exports.Svg = Svg;
+//# sourceMappingURL=svg.js.map

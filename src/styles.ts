@@ -1,4 +1,4 @@
-export interface CSS {
+export interface CSSStyles {
   alignContent?: string;
   alignItems?: string;
   alignSelf?: string;
@@ -313,4 +313,28 @@ export interface CSS {
   wordWrap?: string;
   writingMode?: string;
   zIndex?: string;
+}
+
+export function convertCssStyles(style: CSSStyles | string | undefined): string | undefined {
+  if (style) {
+    if (typeof style === 'string') return style;
+    const results: string[] = [];
+    for (const [key, value] of Object.entries(style)) {
+      const _key = key
+        .split(/(?=[A-Z])/)
+        .join('-')
+        .toLowerCase();
+      results.push(`${_key}: ${value};`);
+    }
+    return results.join(' ');
+  }
+  return undefined;
+}
+
+export function convertClassList(value: string | string[] | undefined): string | undefined {
+  if (value) {
+    if (typeof value === 'string') return value;
+    return value.join(' ');
+  }
+  return undefined;
 }

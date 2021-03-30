@@ -24,43 +24,41 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InputGroup = exports.ColorInput = exports.EmailInput = exports.PhoneInput = exports.NumberInput = exports.FileInput = exports.TextInput = exports.SubmitInput = exports.Input = exports.Label = exports.Form = void 0;
+exports.InputGroup = exports.Input = exports.Label = exports.Form = void 0;
 var base_1 = require("../base");
 var div_1 = require("./div");
+var attrs_1 = require("./attrs");
 var Form = /** @class */ (function (_super) {
     __extends(Form, _super);
     function Form(props) {
+        if (props === void 0) { props = {}; }
         var _this = _super.call(this, __assign({ node: document.createElement('form') }, props)) || this;
         _this.onChange = function () { };
         _this.node.addEventListener('change', function () { return _this.onChange(); });
-        if (props === null || props === void 0 ? void 0 : props.target)
-            _this.node.target = props.target;
-        if (props === null || props === void 0 ? void 0 : props.acceptCharset)
-            _this.node.acceptCharset = props.acceptCharset;
-        if (props === null || props === void 0 ? void 0 : props.method)
-            _this.node.method = props.method;
-        if (props === null || props === void 0 ? void 0 : props.action)
-            _this.node.action = props.action;
-        if (props === null || props === void 0 ? void 0 : props.novalidate)
-            _this.node.noValidate = props.novalidate;
-        if (props === null || props === void 0 ? void 0 : props.autocomplete)
-            _this.node.autocomplete = props.autocomplete ? 'on' : 'off';
+        _this.target = new attrs_1.NodeAttr(_this, 'target', props === null || props === void 0 ? void 0 : props.target);
+        _this.acceptCharset = new attrs_1.NodeAttr(_this, 'accept-charset', props === null || props === void 0 ? void 0 : props.acceptCharset);
+        _this.method = new attrs_1.NodeAttr(_this, 'method', props === null || props === void 0 ? void 0 : props.method);
+        _this.action = new attrs_1.NodeAttr(_this, 'action', props === null || props === void 0 ? void 0 : props.action);
+        _this.autocomplete = new attrs_1.NodeAttr(_this, 'autocomplete', props === null || props === void 0 ? void 0 : props.autocomplete);
+        _this.novalidate = new attrs_1.NodeAttr(_this, 'novalidate', props === null || props === void 0 ? void 0 : props.novalidate);
         return _this;
     }
     return Form;
-}(base_1.CoreDom));
+}(base_1.GlobalDom));
 exports.Form = Form;
 var Label = /** @class */ (function (_super) {
     __extends(Label, _super);
     function Label(props) {
+        if (props === void 0) { props = {}; }
         var _this = _super.call(this, __assign({ node: document.createElement('label') }, props)) || this;
-        if (props === null || props === void 0 ? void 0 : props.value)
-            _this.value = props.value;
-        if (props === null || props === void 0 ? void 0 : props.input)
-            _this.node.htmlFor = props.input;
+        _this.value = props.value;
+        _this.input = new attrs_1.NodeAttr(_this, 'for', props === null || props === void 0 ? void 0 : props.input);
         return _this;
     }
     Object.defineProperty(Label.prototype, "value", {
+        get: function () {
+            return this.node.innerText;
+        },
         set: function (val) {
             this.node.innerText = val !== null && val !== void 0 ? val : '';
         },
@@ -68,11 +66,12 @@ var Label = /** @class */ (function (_super) {
         configurable: true
     });
     return Label;
-}(base_1.CoreDom));
+}(base_1.GlobalDom));
 exports.Label = Label;
 var Input = /** @class */ (function (_super) {
     __extends(Input, _super);
     function Input(props) {
+        if (props === void 0) { props = {}; }
         var _this = _super.call(this, __assign({ node: document.createElement('input') }, props)) || this;
         _this.onChange = function (val) { };
         _this.node.addEventListener('change', function (val) { return _this.onChange(val); });
@@ -96,64 +95,8 @@ var Input = /** @class */ (function (_super) {
         configurable: true
     });
     return Input;
-}(base_1.CoreDom));
+}(base_1.GlobalDom));
 exports.Input = Input;
-var SubmitInput = /** @class */ (function (_super) {
-    __extends(SubmitInput, _super);
-    function SubmitInput(props) {
-        return _super.call(this, __assign({ type: 'submit' }, props)) || this;
-    }
-    return SubmitInput;
-}(Input));
-exports.SubmitInput = SubmitInput;
-var TextInput = /** @class */ (function (_super) {
-    __extends(TextInput, _super);
-    function TextInput(props) {
-        return _super.call(this, __assign({ type: 'text' }, props)) || this;
-    }
-    return TextInput;
-}(Input));
-exports.TextInput = TextInput;
-var FileInput = /** @class */ (function (_super) {
-    __extends(FileInput, _super);
-    function FileInput(props) {
-        return _super.call(this, __assign({ type: 'file' }, props)) || this;
-    }
-    return FileInput;
-}(Input));
-exports.FileInput = FileInput;
-var NumberInput = /** @class */ (function (_super) {
-    __extends(NumberInput, _super);
-    function NumberInput(props) {
-        return _super.call(this, __assign({ type: 'number' }, props)) || this;
-    }
-    return NumberInput;
-}(Input));
-exports.NumberInput = NumberInput;
-var PhoneInput = /** @class */ (function (_super) {
-    __extends(PhoneInput, _super);
-    function PhoneInput(props) {
-        return _super.call(this, __assign({ type: 'tel' }, props)) || this;
-    }
-    return PhoneInput;
-}(Input));
-exports.PhoneInput = PhoneInput;
-var EmailInput = /** @class */ (function (_super) {
-    __extends(EmailInput, _super);
-    function EmailInput(props) {
-        return _super.call(this, __assign({ type: 'email' }, props)) || this;
-    }
-    return EmailInput;
-}(Input));
-exports.EmailInput = EmailInput;
-var ColorInput = /** @class */ (function (_super) {
-    __extends(ColorInput, _super);
-    function ColorInput(props) {
-        return _super.call(this, __assign({ type: 'color' }, props)) || this;
-    }
-    return ColorInput;
-}(Input));
-exports.ColorInput = ColorInput;
 var InputGroup = /** @class */ (function (_super) {
     __extends(InputGroup, _super);
     function InputGroup(id, type, props) {
