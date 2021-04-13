@@ -9,3 +9,5 @@ coverage
 compiled
 .awcache
 .rpt2_cache
+example/.cache
+example/dist
