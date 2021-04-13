@@ -1,11 +1,23 @@
-<!DOCTYPE html><html lang="en"><head>
-    <base href="/object-dom/">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <base href="/object-dom/" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
     <title>Example</title>
-    <link href="https://fonts.googleapis.com/css?family=Material+Icons&amp;display=block" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Material+Icons&display=block"
+      rel="stylesheet"
+    />
     <script src="https://unpkg.com/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <script
+      src="https://unpkg.com/playground-elements@0.8.0/playground-ide.js?module"
+      type="module"
+    ></script>
 
     <style>
       body {
@@ -20,8 +32,19 @@
   </head>
 
   <body>
-    
-    <playground-ide editable-filesystem="" line-numbers="" resizable="">
+    <script>
+      (() => {
+        const _define = window.customElements.define.bind(window.customElements);
+        window.customElements.define = ((tagName, klass) => {
+          try {
+            return _define(tagName, klass);
+          } catch (err) {
+            console.warn(err);
+          }
+        }).bind(window.customElements);
+      })();
+    </script>
+    <playground-ide editable-filesystem line-numbers resizable>
       <script type="sample/html" filename="index.html">
 <!doctype html>
 <body>
@@ -80,6 +103,5 @@ class Counter extends ObjectDom {
 render(new MyApp(), document.body.querySelector('#root'));
       </script>
     </playground-ide>
-  
-
-<script type="module" src="./inline-module-7368247a5561432e5449d70a1433207c.js"></script></body></html>
+  </body>
+</html>
