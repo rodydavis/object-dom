@@ -50,9 +50,9 @@ Declarative dom with 1:1 mapping of objects and tags, typed css, reactive update
 ```html
 <div id="root"></div>
 <script type="module">
-  import { Div, Text, Button, Row, Column, render } from 'object-dom';
+  import { Div, Paragraph, Button, Row, Column, render } from 'object-dom';
 
-  const label = new Text({ text: 'Hello World!' });
+  const label = new Paragraph({ text: 'Hello World!' });
   const button = new Button({
     text: 'Update',
     style: { width: '100px' }
