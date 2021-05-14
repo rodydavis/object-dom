@@ -1,6 +1,5 @@
 import { GlobalDom, NodeProps } from '../base';
-import { NodeAttr } from './attrs';
-import { As, CrossOrigin, Target } from './attrs';
+import { As, CrossOrigin, NodeAttr } from './attrs';
 
 interface HtmlProps extends NodeProps<HTMLHtmlElement> {
   lang?: string;

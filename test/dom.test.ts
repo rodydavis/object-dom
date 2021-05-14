@@ -41,63 +41,68 @@ import {
   TableRow,
   Caption,
   TableColumn,
-  TableColumnGroup
-} from '../src/object-dom';
+  TableColumnGroup,
+} from "../src/object-dom";
 
-describe('Component tests', () => {
-  testComponent('html', new Html());
-  testComponent('head', new Head());
-  testComponent('body', new Body());
-  testComponent('style', new Style());
-  testComponent('script', new Script());
-  testComponent('link', new Link());
-  testComponent('meta', new Meta());
-  testComponent('title', new Title());
-  testComponent('div', new Div());
-  testComponent('button', new Button());
-  testComponent('br', new Break());
-  testComponent('span', new Span());
-  testComponent('p', new Paragraph());
-  testComponent('b', new Bold());
-  testComponent('strong', new Strong());
-  testComponent('i', new Italic());
-  testComponent('em', new Emphasized());
-  testComponent('mark', new Marked());
-  testComponent('small', new Smaller());
-  testComponent('del', new Deleted());
-  testComponent('ins', new Inserted());
-  testComponent('sub', new Subscript());
-  testComponent('sup', new Superscript());
-  testComponent('h1', new Heading1());
-  testComponent('h2', new Heading2());
-  testComponent('h3', new Heading3());
-  testComponent('h4', new Heading4());
-  testComponent('h5', new Heading5());
-  testComponent('h6', new Heading6());
-  testComponent('form', new Form());
-  testComponent('label', new Label());
-  testComponent('input', new Input());
-  testComponent('table', new Table());
-  testComponent('thead', new TableHeader());
-  testComponent('tfoot', new TableFooter());
-  testComponent('tbody', new TableBody());
-  testComponent('tr', new TableRow());
-  testComponent('th', new HeaderCell());
-  testComponent('td', new Cell());
-  testComponent('caption', new Caption());
-  testComponent('col', new TableColumn());
-  testComponent('colgroup', new TableColumnGroup());
+group("Component tests", () => {
+  testComponent("html", new Html());
+  testComponent("head", new Head());
+  testComponent("body", new Body());
+  testComponent("style", new Style());
+  testComponent("script", new Script());
+  testComponent("link", new Link());
+  testComponent("meta", new Meta());
+  testComponent("title", new Title());
+  testComponent("div", new Div());
+  testComponent("button", new Button());
+  testComponent("br", new Break());
+  testComponent("span", new Span());
+  testComponent("p", new Paragraph());
+  testComponent("b", new Bold());
+  testComponent("strong", new Strong());
+  testComponent("i", new Italic());
+  testComponent("em", new Emphasized());
+  testComponent("mark", new Marked());
+  testComponent("small", new Smaller());
+  testComponent("del", new Deleted());
+  testComponent("ins", new Inserted());
+  testComponent("sub", new Subscript());
+  testComponent("sup", new Superscript());
+  testComponent("h1", new Heading1());
+  testComponent("h2", new Heading2());
+  testComponent("h3", new Heading3());
+  testComponent("h4", new Heading4());
+  testComponent("h5", new Heading5());
+  testComponent("h6", new Heading6());
+  testComponent("form", new Form());
+  testComponent("label", new Label());
+  testComponent("input", new Input());
+  testComponent("table", new Table());
+  testComponent("thead", new TableHeader());
+  testComponent("tfoot", new TableFooter());
+  testComponent("tbody", new TableBody());
+  testComponent("tr", new TableRow());
+  testComponent("th", new HeaderCell());
+  testComponent("td", new Cell());
+  testComponent("caption", new Caption());
+  testComponent("col", new TableColumn());
+  testComponent("colgroup", new TableColumnGroup());
 });
 
 function testComponent(tag: string, target: ObjectDom<HTMLElement>) {
-  describe(`${tag} tests`, () => {
-    it(`${tag} correct output`, () => {
+  group(`${tag} tests`, () => {
+    test(`${tag} correct output`, () => {
       const htmlResult = target.toHtml();
-      if (htmlResult.match('></')) {
-        expect(htmlResult).toEqual(`<${tag}></${tag}>`);
+      if (htmlResult.match("></")) {
+        expect(htmlResult === `<${tag}></${tag}>`).toBe(true);
       } else {
-        expect(htmlResult).toEqual(`<${tag}>`);
+        expect(htmlResult === `<${tag}>`).toBe(true);
       }
     });
   });
+}
+
+function group(_: string, action: () => void) {
+  // console.log("testing group", name);
+  action();
 }

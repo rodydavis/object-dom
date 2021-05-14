@@ -22,10 +22,14 @@ export interface ObjectDomProps<T extends HTMLElement = HTMLElement> extends Nod
 }
 
 export class ObjectDom<T extends HTMLElement = HTMLElement> {
-  build: () => T = () => { return this.render().build() }
+  build: () => T = () => {
+    return this.render().build();
+  };
   render: () => ObjectDom<T> = () => this;
-  update: () => void = () => { };
-  toHtml: (root?: HTMLElement | undefined) => string = root => this.build().outerHTML;
+  update: () => void = () => {};
+  toHtml: (root?: HTMLElement | undefined) => string = _ => {
+    return this.build().outerHTML;
+  };
 }
 
 export class GlobalDom<T extends HTMLElement = HTMLElement> extends ObjectDom<T> {

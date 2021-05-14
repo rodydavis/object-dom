@@ -29,7 +29,7 @@ export class Form extends GlobalDom<HTMLFormElement> {
   autocomplete: NodeAttr;
   novalidate: NodeAttr<boolean>;
 
-  onChange: Function = () => { };
+  onChange: Function = () => {};
 }
 
 export interface LabelProps extends NodeProps<HTMLLabelElement> {
@@ -79,7 +79,9 @@ export class Input extends GlobalDom<HTMLInputElement> {
     this.node.value = val ?? '';
   }
 
-  onChange: Function = (val: string) => { };
+  onChange: Function = (val: string) => {
+    console.log('input value', val);
+  };
 }
 
 export interface InputGroupProps extends NodeProps<HTMLDivElement> {

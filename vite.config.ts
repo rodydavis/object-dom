@@ -7,13 +7,7 @@ export default defineConfig({
     outDir: 'build',
     lib: {
       entry: 'src/object-dom.ts',
-      formats: ['es']
-    },
-    manifest: true,
-    rollupOptions: {
-      input: {
-        main: resolve(__dirname, 'index.html')
-      }
+      name: 'object-dom'
     }
   }
 });
