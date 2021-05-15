@@ -133,7 +133,7 @@ https://www.w3schools.com/TAGS/default.ASP
 
 ### Functional Approach
 
-``html
+```html
 <div id="root"></div>
 <script type="module">
   import { Div, Paragraph, Button, Row, Column, render } from 'object-dom';
@@ -162,11 +162,11 @@ https://www.w3schools.com/TAGS/default.ASP
   };
   render(app, document.body.querySelector('#root'));
 </script>
-``
+```
 
 ### Class Approach
 
-``js
+```js
 import { ObjectDom, Div, H1, Button, Row, render } from 'object-dom';
 
 class MyApp extends ObjectDom {
@@ -214,11 +214,11 @@ class Counter extends ObjectDom {
 }
 
 render(new MyApp(), document.body.querySelector('#root'));
-``
+```
 
 ### JSON Table
 
-``js
+```js
 jsonTable(
   [
     {
@@ -244,11 +244,11 @@ jsonTable(
   ],
   { style: { margin: '10px' } }
 );
-``
+```
 
 Which renders the following html:
 
-``html
+```html
 <table>
   <tr>
     <th>first_name</th>
@@ -276,4 +276,4 @@ Which renders the following html:
     <td>Tesla</td>
   </tr>
 </table>
-``
+```
