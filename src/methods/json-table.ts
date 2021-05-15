@@ -1,10 +1,10 @@
 import { NodeProps } from '../base';
-import { Cell, HeaderCell, Table, TableHeader, TableRow } from '../dom';
+import { Td, Th, Table, THead, Tr } from '../dom';
 
 export interface TableJsonProps {
   table?: NodeProps<HTMLTableElement>;
-  header?: TableHeader;
-  body?: TableHeader;
+  header?: THead;
+  body?: THead;
   headerRow?: NodeProps<HTMLTableRowElement>;
   tableRow?: NodeProps<HTMLTableRowElement>;
 }
@@ -12,15 +12,15 @@ export interface TableJsonProps {
 export function jsonTable(data: Object[], props: TableJsonProps = {}): Table {
   const table = new Table(props?.table ?? {});
   let index = 0;
-  const headerRow = new TableRow(props?.headerRow ?? props?.tableRow ?? {});
+  const headerRow = new Tr(props?.headerRow ?? props?.tableRow ?? {});
   for (const item of data) {
-    const row = new TableRow(props?.tableRow ?? {});
+    const row = new Tr(props?.tableRow ?? {});
     for (const [key, value] of Object.entries(item)) {
       if (index === 0) {
-        const cell = new HeaderCell({ text: key });
+        const cell = new Th({ text: key });
         headerRow.addChild(cell);
       }
-      const cell = new Cell({ text: value });
+      const cell = new Td({ text: value });
       row.addChild(cell);
     }
     if (index === 0) {

@@ -1,15 +1,29 @@
 {
   "name": "object-dom",
-  "version": "0.0.1",
-  "description": "",
-  "keywords": [],
-  "main": "dist/object-dom.umd.js",
-  "module": "dist/object-dom.es5.js",
-  "typings": "dist/types/object-dom.d.ts",
-  "files": [
-    "dist"
+  "version": "0.1.2",
+  "description": "Declarative dom with 1:1 mapping of objects and tags, typed css, reactive updates and no bundler needed.",
+  "main": "build/object-dom.umd.js",
+  "module": "build/object-dom.es.js",
+  "typings": "types/object-dom.d.ts",
+  "keywords": [
+    "object",
+    "doc",
+    "html",
+    "tags",
+    "web",
+    "pdf",
+    "print",
+    "xml",
+    "reactive"
   ],
-  "author": "Rody Davis <rody.davis.jr@gmail.com>",
+  "files": [
+    "build"
+  ],
+  "author": {
+    "name": "Rody Davis",
+    "email": "rody.davis.jr@gmail.com"
+  },
+  "homepage": "https://rodydavis.github.io/object-dom/",
   "repository": {
     "type": "git",
     "url": "https://github.com/rodydavis/object-dom"
@@ -18,102 +32,26 @@
   "engines": {
     "node": ">=6.0.0"
   },
+  "browserslist": [
+    "chrome >= 50",
+    "firefox >= 52",
+    "safari >= 10",
+    "ie >= 11"
+  ],
   "scripts": {
-    "lint": "tslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
-    "prebuild": "rimraf dist",
-    "build": "tsc --module commonjs && rollup -c rollup.config.ts && npm run copy",
-    "copy": "mkdir -p docs/dist && cp -r dist/. docs/dist/.",
-    "build:prod": "tsc --module commonjs && rollup -c rollup.config.ts && typedoc --out docs --target es6 --theme minimal --mode file src",
-    "start": "rollup -c rollup.config.ts -w",
-    "deploy": "cd example && npm run deploy && cd ..",
-    "test": "jest",
-    "test:coverage": "jest --coverage",
-    "test:watch": "jest --coverage --watch",
-    "test:prod": "npm run lint && npm run test -- --no-cache",
-    "deploy-docs": "ts-node tools/gh-pages-publish",
-    "report-coverage": "cat ./coverage/lcov.info | coveralls",
-    "commit": "git-cz",
-    "semantic-release": "semantic-release",
-    "semantic-release-prepare": "ts-node tools/semantic-release-prepare",
-    "travis-deploy-once": "travis-deploy-once"
-  },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-conventional-changelog"
-    }
-  },
-  "jest": {
-    "transform": {
-      ".(ts|tsx)": "ts-jest"
-    },
-    "testEnvironment": "jsdom",
-    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ],
-    "coveragePathIgnorePatterns": [
-      "/node_modules/",
-      "/test/"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "branches": 90,
-        "functions": 95,
-        "lines": 95,
-        "statements": 95
-      }
-    },
-    "collectCoverageFrom": [
-      "src/*.{js,ts}"
-    ]
-  },
-  "prettier": {
-    "semi": true,
-    "singleQuote": true
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
+    "start": "npm run dev",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "serve": "tsc && vite preview",
+    "test": "npx jest",
+    "deploy": "npm run build && npm run test && npm publish"
   },
   "devDependencies": {
-    "@commitlint/cli": "^7.1.2",
-    "@commitlint/config-conventional": "^7.1.2",
-    "@types/jest": "^23.3.2",
+    "@types/jest": "^26.0.23",
     "@types/node": "^10.11.0",
-    "colors": "^1.3.2",
-    "commitizen": "^3.0.0",
-    "coveralls": "^3.0.2",
-    "cross-env": "^5.2.0",
-    "cz-conventional-changelog": "^2.1.0",
-    "husky": "^1.0.1",
-    "jest": "^23.6.0",
-    "jest-config": "^23.6.0",
-    "lint-staged": "^8.0.0",
-    "lodash.camelcase": "^4.3.0",
-    "prettier": "^1.14.3",
-    "prompt": "^1.0.0",
-    "replace-in-file": "^3.4.2",
-    "rimraf": "^2.6.2",
-    "rollup": "^2.42.4",
-    "rollup-plugin-commonjs": "^9.1.8",
-    "rollup-plugin-json": "^3.1.0",
-    "rollup-plugin-node-resolve": "^3.4.0",
-    "rollup-plugin-sourcemaps": "^0.4.2",
-    "rollup-plugin-typescript2": "^0.23.0",
-    "semantic-release": "^15.9.16",
-    "shelljs": "^0.8.3",
-    "travis-deploy-once": "^5.0.9",
-    "ts-jest": "^23.10.2",
-    "ts-node": "^7.0.1",
-    "tslib": "^1.10.0",
-    "tslint": "^5.11.0",
-    "tslint-config-prettier": "^1.15.0",
-    "tslint-config-standard": "^8.0.1",
-    "typedoc": "^0.12.0",
-    "typescript": "^3.7.2"
-  },
-  "dependencies": {}
+    "jest": "^26.6.3",
+    "ts-jest": "^26.5.6",
+    "typescript": "^3.9.9",
+    "vite": "^2.1.3"
+  }
 }
