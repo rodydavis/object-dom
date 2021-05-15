@@ -1,47 +1,46 @@
 import {
   Body,
   Bold,
-  Break,
+  Br,
   Button,
-  Deleted,
+  Del,
   Div,
-  Emphasized,
+  Em,
   Head,
-  Heading1,
-  Heading2,
-  Heading3,
-  Heading4,
-  Heading5,
-  Heading6,
+  H1,
+  H2,
+  H3,
+  H4,
+  H5,
+  H6,
   Html,
-  Inserted,
-  Italic,
+  Ins,
+  I,
   Link,
-  Marked,
+  Mark,
   Meta,
   ObjectDom,
-  Paragraph,
+  P,
   Script,
-  Smaller,
+  Small,
   Span,
   Strong,
   Style,
-  Subscript,
-  Superscript,
+  Sub,
   Title,
   Form,
   Label,
   Input,
   Table,
-  Cell,
-  HeaderCell,
-  TableBody,
-  TableFooter,
-  TableHeader,
-  TableRow,
+  Td,
+  Th,
+  TBody,
+  TFoot,
+  THead,
+  Tr,
   Caption,
-  TableColumn,
-  TableColumnGroup,
+  Col,
+  ColGroup,
 } from "../src/object-dom";
 
 group("Component tests", () => {
@@ -55,38 +54,37 @@ group("Component tests", () => {
   testComponent("title", new Title());
   testComponent("div", new Div());
   testComponent("button", new Button());
-  testComponent("br", new Break());
+  testComponent("br", new Br());
   testComponent("span", new Span());
-  testComponent("p", new Paragraph());
+  testComponent("p", new P());
   testComponent("b", new Bold());
   testComponent("strong", new Strong());
-  testComponent("i", new Italic());
-  testComponent("em", new Emphasized());
-  testComponent("mark", new Marked());
-  testComponent("small", new Smaller());
-  testComponent("del", new Deleted());
-  testComponent("ins", new Inserted());
-  testComponent("sub", new Subscript());
-  testComponent("sup", new Superscript());
-  testComponent("h1", new Heading1());
-  testComponent("h2", new Heading2());
-  testComponent("h3", new Heading3());
-  testComponent("h4", new Heading4());
-  testComponent("h5", new Heading5());
-  testComponent("h6", new Heading6());
+  testComponent("i", new I());
+  testComponent("em", new Em());
+  testComponent("mark", new Mark());
+  testComponent("small", new Small());
+  testComponent("del", new Del());
+  testComponent("ins", new Ins());
+  testComponent("sub", new Sub());
+  testComponent("h1", new H1());
+  testComponent("h2", new H2());
+  testComponent("h3", new H3());
+  testComponent("h4", new H4());
+  testComponent("h5", new H5());
+  testComponent("h6", new H6());
   testComponent("form", new Form());
   testComponent("label", new Label());
   testComponent("input", new Input());
   testComponent("table", new Table());
-  testComponent("thead", new TableHeader());
-  testComponent("tfoot", new TableFooter());
-  testComponent("tbody", new TableBody());
-  testComponent("tr", new TableRow());
-  testComponent("th", new HeaderCell());
-  testComponent("td", new Cell());
+  testComponent("thead", new THead());
+  testComponent("tfoot", new TFoot());
+  testComponent("tbody", new TBody());
+  testComponent("tr", new Tr());
+  testComponent("th", new Th());
+  testComponent("td", new Td());
   testComponent("caption", new Caption());
-  testComponent("col", new TableColumn());
-  testComponent("colgroup", new TableColumnGroup());
+  testComponent("col", new Col());
+  testComponent("colgroup", new ColGroup());
 });
 
 function testComponent(tag: string, target: ObjectDom<HTMLElement>) {

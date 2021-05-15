@@ -1,9 +1,9 @@
 import { NodeProps } from '../base';
-import { Table, TableHeader } from '../dom';
+import { Table, THead } from '../dom';
 export interface TableJsonProps {
     table?: NodeProps<HTMLTableElement>;
-    header?: TableHeader;
-    body?: TableHeader;
+    header?: THead;
+    body?: THead;
     headerRow?: NodeProps<HTMLTableRowElement>;
     tableRow?: NodeProps<HTMLTableRowElement>;
 }

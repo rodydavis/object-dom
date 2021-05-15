@@ -1,7 +1,7 @@
 {
   "name": "object-dom",
-  "version": "0.0.2",
-  "description": "Javascript objects that generate a reactive html dom.",
+  "version": "0.1.1",
+  "description": "Declarative dom with 1:1 mapping of objects and tags, typed css, reactive updates and no bundler needed.",
   "main": "build/object-dom.umd.js",
   "module": "build/object-dom.es.js",
   "typings": "types/object-dom.d.ts",
@@ -19,7 +19,11 @@
   "files": [
     "build"
   ],
-  "author": "Rody Davis <rody.davis.jr@gmail.com>",
+  "author": {
+    "name": "Rody Davis",
+    "email": "rody.davis.jr@gmail.com"
+  },
+  "homepage": "https://rodydavis.github.io/object-dom/",
   "repository": {
     "type": "git",
     "url": "https://github.com/rodydavis/object-dom"
@@ -28,12 +32,19 @@
   "engines": {
     "node": ">=6.0.0"
   },
+  "browserslist": [
+    "chrome >= 50",
+    "firefox >= 52",
+    "safari >= 10",
+    "ie >= 11"
+  ],
   "scripts": {
     "start": "npm run dev",
     "dev": "vite",
     "build": "tsc && vite build",
     "serve": "tsc && vite preview",
-    "test": "npx jest"
+    "test": "npx jest",
+    "deploy": "npm run build && npm run test && npm publish"
   },
   "devDependencies": {
     "@types/jest": "^26.0.23",

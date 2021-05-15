@@ -1,4 +1,4 @@
-import { AutoCapitalize, Direction, GlobalAttrs, InputMode, NodeAttr, StringBool, StringYesNo } from './dom/attrs';
+import { AutoCapitalize, Direction, GlobalAttrs, InputMode, NodeAttr, StringBool, StringYesNo } from "./dom/attrs";
 export declare type NodeArray = Array<ObjectDom | string>;
 export interface NodeProps<T extends HTMLElement = HTMLElement> extends GlobalAttrs {
     node?: T;
@@ -46,4 +46,9 @@ export declare class GlobalDom<T extends HTMLElement = HTMLElement> extends Obje
     set rootNode(value: T);
     addChild(value: ObjectDom<HTMLElement>, index?: number | undefined): void;
     removeChild(index: number): void;
+    private _text;
+    get text(): string | undefined;
+    set text(text: string | undefined);
+    addEventListener(type: string, callback: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions | undefined): void;
+    removeEventListener(type: string, callback: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions | undefined): void;
 }
