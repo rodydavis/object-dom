@@ -54,14 +54,14 @@
       </script>
 
       <script type="sample/ts" filename="index.ts">
-import { ObjectDom, Div, Heading1, Button, Row, render } from 'object-dom';
+import { ObjectDom, Div, H1, Button, Row, render } from 'object-dom';
 
 class MyApp extends ObjectDom {
     constructor() { super() }
     render = () => {
         return new Div({
             children: [
-                new Heading1({ text: 'Counter Example' }),
+                new H1({ text: 'Counter Example' }),
                 new Counter(),
             ]
         });
