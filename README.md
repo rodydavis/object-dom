@@ -136,9 +136,9 @@ https://www.w3schools.com/TAGS/default.ASP
 ```html
 <div id="root"></div>
 <script type="module">
-  import { Div, Paragraph, Button, Row, Column, render } from 'object-dom';
+  import { Div, P, Button, Row, Column, render } from 'object-dom';
 
-  const label = new Paragraph({ text: 'Hello World!' });
+  const label = new P({ text: 'Hello World!' });
   const button = new Button({
     text: 'Update',
     style: { width: '100px' }
