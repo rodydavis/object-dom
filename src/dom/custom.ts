@@ -1,7 +1,8 @@
-import { GlobalDom, NodeProps } from "../base";
+import type { NodeProps } from "../object-dom";
+import { GlobalDom } from "../object-dom";
 
-export class Custom<T extends HTMLElement = HTMLElement> extends GlobalDom<T> {
-  constructor(tag: string, props: NodeProps<T> = {}) {
-    super({ node: document.createElement(tag) as T, ...props });
+export class Custom extends GlobalDom<HTMLElement> {
+  constructor(tag: string, props: NodeProps<HTMLElement> = {}) {
+    super({ node: document.createElement(tag), ...props });
   }
 }

@@ -1,4 +1,5 @@
-import { GlobalDom, NodeProps } from "../../object-dom";
+import type { NodeProps } from "../../object-dom";
+import { GlobalDom } from "../../object-dom";
 export interface HeaderNodeProps extends NodeProps<HTMLTableHeaderCellElement> {
     colspan?: number;
     rowspan?: number;

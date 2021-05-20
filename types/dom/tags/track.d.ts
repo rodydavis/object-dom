@@ -1,4 +1,5 @@
-import { GlobalDom, NodeProps } from "../../object-dom";
+import type { NodeProps } from "../../object-dom";
+import { GlobalDom } from "../../object-dom";
 /**
  * Defines text tracks for media
  * elements (`<video>` and `<audio>`).

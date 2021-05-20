@@ -1,4 +1,4 @@
-import { GlobalDom, Method, NodeAttr, NodeProps, Target } from "../../object-dom";
+import { GlobalDom, Method, NodeProps, Target } from "../../object-dom";
 export interface FormProps extends NodeProps<HTMLFormElement> {
     method?: Method;
     action?: string;
@@ -14,11 +14,5 @@ export interface FormProps extends NodeProps<HTMLFormElement> {
  */
 export declare class Form extends GlobalDom<HTMLFormElement> {
     constructor(props?: FormProps);
-    target: NodeAttr<Target>;
-    acceptCharset: NodeAttr;
-    method: NodeAttr<Method>;
-    action: NodeAttr;
-    autocomplete: NodeAttr;
-    novalidate: NodeAttr<boolean>;
     onChange: Function;
 }

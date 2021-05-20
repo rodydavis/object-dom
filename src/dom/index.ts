@@ -1,6 +1,7 @@
 // @index('./**/*.ts', f => `export * from '${f.path}';`)
 export * from './attrs';
 export * from './custom';
+export * from './styles';
 export * from './tags/a';
 export * from './tags/abbr';
 export * from './tags/address';
@@ -86,6 +87,8 @@ export * from './tags/span';
 export * from './tags/strong';
 export * from './tags/style';
 export * from './tags/sub';
+export * from './tags/summary';
+export * from './tags/sup';
 export * from './tags/svg';
 export * from './tags/table';
 export * from './tags/tbody';

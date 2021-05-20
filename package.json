@@ -1,6 +1,6 @@
 {
   "name": "object-dom",
-  "version": "0.1.6",
+  "version": "0.2.0",
   "description": "Declarative dom with 1:1 mapping of objects and tags, typed css, reactive updates and no bundler needed.",
   "main": "build/object-dom.umd.js",
   "module": "build/object-dom.es.js",
@@ -38,12 +38,26 @@
     "safari >= 10",
     "ie >= 11"
   ],
+  "jest": {
+    "verbose": true,
+    "roots": [
+      "test"
+    ],
+    "testMatch": [
+      "**/__tests__/**/*.+(ts|tsx|js)",
+      "**/?(*.)+(spec|test).+(ts|tsx|js)"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    }
+  },
   "scripts": {
     "start": "npm run dev",
     "dev": "vite",
     "build": "tsc && vite build",
     "serve": "tsc && vite preview",
-    "test": "npx jest",
+    "test": "npx jest --useStderr",
+    "test:watch": "npx jest --watch --onlyChanged",
     "deploy": "npm run build && npm run test && npm publish"
   },
   "devDependencies": {

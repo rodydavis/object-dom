@@ -1,5 +1,5 @@
-import { NodeProps } from '../base';
-import { Td, Th, Table, THead, Tr } from '../dom';
+import type { NodeProps } from "../base";
+import { Td, Th, Table, THead, Tr } from "../dom";
 
 export interface TableJsonProps {
   table?: NodeProps<HTMLTableElement>;

@@ -1,4 +1,4 @@
-import { As, CrossOrigin, GlobalDom, NodeAttr, NodeProps } from "../../object-dom";
+import { As, CrossOrigin, GlobalDom, NodeProps } from "../../object-dom";
 interface LinkProps extends NodeProps<HTMLLinkElement> {
     as?: As;
     crossorigin?: CrossOrigin;
@@ -14,9 +14,5 @@ interface LinkProps extends NodeProps<HTMLLinkElement> {
  */
 export declare class Link extends GlobalDom<HTMLLinkElement> {
     constructor(props?: LinkProps);
-    as: NodeAttr<As>;
-    crossorigin: NodeAttr<CrossOrigin>;
-    disabled: NodeAttr<boolean>;
-    href: NodeAttr;
 }
 export {};

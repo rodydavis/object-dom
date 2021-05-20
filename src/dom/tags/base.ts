@@ -1,4 +1,4 @@
-import { GlobalDom, NodeAttr, NodeProps } from "../../object-dom";
+import { GlobalDom, NodeProps } from "../../object-dom";
 
 interface BaseProps extends NodeProps<HTMLBaseElement> {
   href?: string;
@@ -13,7 +13,6 @@ interface BaseProps extends NodeProps<HTMLBaseElement> {
 export class Base extends GlobalDom<HTMLBaseElement> {
   constructor(props: BaseProps = {}) {
     super({ node: document.createElement("base"), ...props });
-    this.href = new NodeAttr(this, "href", props.href);
+    this.addAttr("href", props.href);
   }
-  href: NodeAttr;
 }

@@ -19,7 +19,6 @@ import {
   Link,
   Mark,
   Meta,
-  ObjectDom,
   P,
   Script,
   Small,
@@ -41,6 +40,8 @@ import {
   Caption,
   Col,
   ColGroup,
+  generateHtml,
+  GlobalDom,
 } from "../src/object-dom";
 
 group("Component tests", () => {
@@ -87,14 +88,14 @@ group("Component tests", () => {
   testComponent("colgroup", new ColGroup());
 });
 
-function testComponent(tag: string, target: ObjectDom<HTMLElement>) {
+function testComponent(tag: string, target: GlobalDom<HTMLElement>) {
   group(`${tag} tests`, () => {
     test(`${tag} correct output`, () => {
-      const htmlResult = target.toHtml();
+      const htmlResult = generateHtml(target);
       if (htmlResult.match("></")) {
-        expect(htmlResult === `<${tag}></${tag}>`).toBe(true);
+        expect(htmlResult).toBe(`<${tag}></${tag}>`);
       } else {
-        expect(htmlResult === `<${tag}>`).toBe(true);
+        expect(htmlResult).toBe(`<${tag}>`);
       }
     });
   });
