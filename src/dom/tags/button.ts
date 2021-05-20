@@ -14,9 +14,9 @@ interface ButtonProps extends NodeProps<HTMLButtonElement> {
 export class Button extends GlobalDom<HTMLButtonElement> {
   constructor(props: ButtonProps = {}) {
     super({ node: document.createElement("button"), ...props });
-    if (props?.onClick) this.onClick = props.onClick;
-    this.node.addEventListener("click", () => this.onClick());
     this.text = props.text;
+    if (props?.onClick) this.onClick = props.onClick;
+    this.addEventListener("click", () => this.onClick());
   }
 
   onClick: Function = () => {};

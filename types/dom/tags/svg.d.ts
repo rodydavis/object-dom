@@ -1,8 +1,8 @@
-import { GlobalDom, NodeAttr, NodeProps } from "../../object-dom";
+import { GlobalDom, NodeProps } from "../../object-dom";
 interface SvgProps extends NodeProps<HTMLElement> {
     preserveAspectRatio?: "none" | "xMinYMin" | "xMidYMin" | "xMaxYMin" | "xMinYMid" | "xMidYMid" | "xMaxYMid" | "xMinYMax" | "xMidYMax" | "xMaxYMax";
     viewbox?: string;
-    weight?: string;
+    width?: string;
     height?: string;
     x?: string;
     y?: string;
@@ -14,11 +14,5 @@ interface SvgProps extends NodeProps<HTMLElement> {
  */
 export declare class Svg extends GlobalDom<HTMLElement> {
     constructor(props?: SvgProps);
-    viewbox: NodeAttr;
-    preserveAspectRatio: NodeAttr;
-    weight: NodeAttr;
-    height: NodeAttr;
-    x: NodeAttr;
-    y: NodeAttr;
 }
 export {};

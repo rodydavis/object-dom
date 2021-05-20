@@ -15,7 +15,7 @@ export class Div extends GlobalDom<HTMLDivElement> {
 class Display extends Div {
   constructor(display: string, props: NodeProps<HTMLDivElement> = {}) {
     super(props);
-    this.node.style.display = display;
+    this.addStyle("display", display);
   }
 }
 
@@ -56,7 +56,7 @@ interface RowProps extends NodeProps<HTMLDivElement> {
 export class Row extends Flex {
   constructor(props: RowProps = {}) {
     super(props);
-    if (props?.direction) this.node.style.flexDirection = props.direction;
+    this.addStyle("flex-direction", props?.direction);
   }
 }
 
@@ -67,7 +67,7 @@ interface ColumnProps extends NodeProps<HTMLDivElement> {
 export class Column extends Flex {
   constructor(props: ColumnProps = {}) {
     super(props);
-    if (props?.direction) this.node.style.flexDirection = props.direction;
+    this.addStyle("flex-direction", props?.direction);
   }
 }
 
@@ -78,6 +78,6 @@ interface WrapProps extends NodeProps<HTMLDivElement> {
 export class Wrap extends Flex {
   constructor(props: WrapProps = {}) {
     super(props);
-    if (props?.direction) this.node.style.flexWrap = props.direction;
+    this.addStyle("flex-wrap", props?.direction);
   }
 }

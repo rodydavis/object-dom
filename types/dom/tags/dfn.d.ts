@@ -1,4 +1,5 @@
-import { GlobalDom, NodeProps } from "../../object-dom";
+import type { NodeProps } from "../../object-dom";
+import { GlobalDom } from "../../object-dom";
 /**
  * Specifies a term that is going
  * to be defined within the content.

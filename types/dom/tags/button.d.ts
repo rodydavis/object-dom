@@ -1,4 +1,5 @@
-import { GlobalDom, NodeProps } from "../../object-dom";
+import type { NodeProps } from "../../object-dom";
+import { GlobalDom } from "../../object-dom";
 interface ButtonProps extends NodeProps<HTMLButtonElement> {
     text?: string;
     onClick?: () => void;

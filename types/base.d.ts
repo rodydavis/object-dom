@@ -1,9 +1,18 @@
-import { AutoCapitalize, Direction, GlobalAttrs, InputMode, NodeAttr, StringBool, StringYesNo } from "./dom/attrs";
+import { GlobalAttrs } from "./dom/attrs";
+import { AttrType, NodeAttr, NodeStyle, PossibleAttr, PossibleStyle } from "./object-dom";
+export declare type NodeAttrs = {
+    [key: string]: PossibleAttr;
+};
+export declare type NodeStyles = {
+    [key: string]: PossibleStyle;
+};
 export declare type NodeArray = Array<ObjectDom | string>;
 export interface NodeProps<T extends HTMLElement = HTMLElement> extends GlobalAttrs {
     node?: T;
     text?: string;
     children?: NodeArray;
+    attributes?: NodeAttrs;
+    styles?: NodeStyles;
 }
 export interface ObjectDomProps<T extends HTMLElement = HTMLElement> extends NodeProps<T> {
     node: T;
@@ -12,31 +21,20 @@ export declare class ObjectDom<T extends HTMLElement = HTMLElement> {
     build: () => T;
     render: () => ObjectDom<T>;
     update: () => void;
-    toHtml: (root?: HTMLElement | undefined) => string;
 }
 export declare class GlobalDom<T extends HTMLElement = HTMLElement> extends ObjectDom<T> {
     props: ObjectDomProps<T>;
+    attributes: {
+        [key: string]: NodeAttr<string | boolean | number>;
+    };
+    styles: {
+        [key: string]: NodeStyle<string>;
+    };
     constructor(props: ObjectDomProps<T>);
-    id: NodeAttr;
-    className: NodeAttr;
-    contentEditable: NodeAttr<StringBool>;
-    accesskey: NodeAttr;
-    autocapitalize: NodeAttr<AutoCapitalize>;
-    dir: NodeAttr<Direction>;
-    draggable: NodeAttr<StringBool>;
-    enterkeyhint: NodeAttr<string>;
-    hidden: NodeAttr<boolean>;
-    inputmode: NodeAttr<InputMode>;
-    is: NodeAttr<string>;
-    lang: NodeAttr<string>;
-    nonce: NodeAttr<string>;
-    part: NodeAttr<string>;
-    slot: NodeAttr<string>;
-    spellcheck: NodeAttr<StringBool>;
-    style: NodeAttr<string | number | boolean>;
-    tabindex: NodeAttr<number>;
-    title: NodeAttr<string>;
-    translate: NodeAttr<StringYesNo>;
+    addAttr(key: string, value: PossibleAttr): void;
+    setAttr(key: string, value: AttrType): void;
+    addStyle(key: string, value: PossibleStyle): void;
+    setStyle(key: string, value: string): void;
     render: () => this;
     build: () => T;
     get node(): T;
@@ -44,11 +42,12 @@ export declare class GlobalDom<T extends HTMLElement = HTMLElement> extends Obje
     set children(value: NodeArray);
     get rootNode(): T;
     set rootNode(value: T);
-    addChild(value: ObjectDom<HTMLElement>, index?: number | undefined): void;
+    addChild(value: ObjectDom<HTMLElement> | string, index?: number | undefined): void;
     removeChild(index: number): void;
     private _text;
     get text(): string | undefined;
     set text(text: string | undefined);
     addEventListener(type: string, callback: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions | undefined): void;
     removeEventListener(type: string, callback: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions | undefined): void;
+    toString: () => string;
 }

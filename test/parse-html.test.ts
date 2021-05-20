@@ -1,13 +1,8 @@
-import { Body, Head, Html, parseHtml, Title, generateHtml } from "../src/object-dom";
+import { parseHtml, generateHtml } from "../src/object-dom";
 
 test("Parse HTML Check", () => {
-  const raw = `<html><head name="doc head"><title>Title</title></head><body></body></html>`;
-  const source = generateHtml(parseHtml(raw));
-  expect(source).toBe(raw);
-  const target = generateHtml(
-    new Html({
-      children: [new Head({ children: [new Title()] }), new Body()],
-    })
-  );
+  const target = `<html><head name="doc head"><title>Title</title></head><body></body></html>`;
+  const result = parseHtml(target);
+  const source = generateHtml(result);
   expect(source).toBe(target);
 });

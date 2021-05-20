@@ -1,4 +1,4 @@
-import { GlobalDom, NodeAttr, NodeProps } from "../../object-dom";
+import { GlobalDom, NodeProps } from "../../object-dom";
 
 interface SvgProps extends NodeProps<HTMLElement> {
   preserveAspectRatio?:
@@ -13,7 +13,7 @@ interface SvgProps extends NodeProps<HTMLElement> {
     | "xMidYMax"
     | "xMaxYMax";
   viewbox?: string;
-  weight?: string;
+  width?: string;
   height?: string;
   x?: string;
   y?: string;
@@ -27,21 +27,11 @@ interface SvgProps extends NodeProps<HTMLElement> {
 export class Svg extends GlobalDom<HTMLElement> {
   constructor(props: SvgProps = {}) {
     super({ node: document.createElement("svg"), ...props });
-    this.viewbox = new NodeAttr(this, "viewbox", props?.viewbox);
-    this.preserveAspectRatio = new NodeAttr(
-      this,
-      "preserve-aspect-ratio",
-      props?.preserveAspectRatio
-    );
-    this.weight = new NodeAttr(this, "weight", props?.weight);
-    this.height = new NodeAttr(this, "height", props?.height);
-    this.x = new NodeAttr(this, "x", props?.x);
-    this.y = new NodeAttr(this, "y", props?.y);
+    this.addAttr("viewbox", props?.viewbox);
+    this.addAttr("preserve-aspect-ratio", props?.preserveAspectRatio);
+    this.addAttr("width", props?.width);
+    this.addAttr("height", props?.height);
+    this.addAttr("x", props?.x);
+    this.addAttr("y", props?.y);
   }
-  viewbox: NodeAttr;
-  preserveAspectRatio: NodeAttr;
-  weight: NodeAttr;
-  height: NodeAttr;
-  x: NodeAttr;
-  y: NodeAttr;
 }

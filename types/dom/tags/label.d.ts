@@ -1,7 +1,7 @@
-import { GlobalDom, NodeAttr, NodeProps } from "../../object-dom";
+import { GlobalDom, NodeProps } from "../../object-dom";
 export interface LabelProps extends NodeProps<HTMLLabelElement> {
     value?: string;
-    input?: string;
+    htmlFor?: string;
 }
 /**
  * Defines a label for an `<input>` element.
@@ -10,7 +10,6 @@ export interface LabelProps extends NodeProps<HTMLLabelElement> {
  */
 export declare class Label extends GlobalDom<HTMLLabelElement> {
     constructor(props?: LabelProps);
-    input: NodeAttr;
     get value(): string | undefined;
     set value(val: string | undefined);
 }

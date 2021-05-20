@@ -1,4 +1,4 @@
-import { As, CrossOrigin, GlobalDom, NodeAttr, NodeProps } from "../../object-dom";
+import { As, CrossOrigin, GlobalDom, NodeProps } from "../../object-dom";
 
 interface LinkProps extends NodeProps<HTMLLinkElement> {
   as?: As;
@@ -17,13 +17,9 @@ interface LinkProps extends NodeProps<HTMLLinkElement> {
 export class Link extends GlobalDom<HTMLLinkElement> {
   constructor(props: LinkProps = {}) {
     super({ node: document.createElement("link"), ...props });
-    this.as = new NodeAttr(this, "as", props.as);
-    this.crossorigin = new NodeAttr(this, "crossorigin", props.crossorigin);
-    this.disabled = new NodeAttr(this, "disabled", props.disabled);
-    this.href = new NodeAttr(this, "href", props.href);
+    this.addAttr("as", props?.as);
+    this.addAttr("crossorigin", props?.crossorigin);
+    this.addAttr("disabled", props?.disabled);
+    this.addAttr("href", props?.href);
   }
-  as: NodeAttr<As>;
-  crossorigin: NodeAttr<CrossOrigin>;
-  disabled: NodeAttr<boolean>;
-  href: NodeAttr;
 }

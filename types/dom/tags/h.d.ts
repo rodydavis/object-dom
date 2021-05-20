@@ -1,4 +1,5 @@
-import { GlobalDom, NodeProps } from "../../object-dom";
+import type { NodeProps } from "../../object-dom";
+import { GlobalDom } from "../../object-dom";
 export declare class Heading extends GlobalDom<HTMLHeadingElement> {
     constructor(level: 1 | 2 | 3 | 4 | 5 | 6, props?: NodeProps<HTMLHeadingElement>);
 }

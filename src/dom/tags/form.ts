@@ -1,4 +1,4 @@
-import { GlobalDom, Method, NodeAttr, NodeProps, Target } from "../../object-dom";
+import { GlobalDom, Method, NodeProps, Target } from "../../object-dom";
 
 export interface FormProps extends NodeProps<HTMLFormElement> {
   method?: Method;
@@ -17,20 +17,13 @@ export interface FormProps extends NodeProps<HTMLFormElement> {
 export class Form extends GlobalDom<HTMLFormElement> {
   constructor(props: FormProps = {}) {
     super({ node: document.createElement("form"), ...props });
-    this.node.addEventListener("change", () => this.onChange());
-    this.target = new NodeAttr(this, "target", props?.target);
-    this.acceptCharset = new NodeAttr(this, "accept-charset", props?.acceptCharset);
-    this.method = new NodeAttr(this, "method", props?.method);
-    this.action = new NodeAttr(this, "action", props?.action);
-    this.autocomplete = new NodeAttr(this, "autocomplete", props?.autocomplete);
-    this.novalidate = new NodeAttr(this, "novalidate", props?.novalidate);
+    this.addEventListener("change", () => this.onChange());
+    this.addAttr("target", props?.target);
+    this.addAttr("accept-charset", props?.acceptCharset);
+    this.addAttr("method", props?.method);
+    this.addAttr("action", props?.action);
+    this.addAttr("autocomplete", props?.autocomplete);
+    this.addAttr("novalidate", props?.novalidate);
   }
-  target: NodeAttr<Target>;
-  acceptCharset: NodeAttr;
-  method: NodeAttr<Method>;
-  action: NodeAttr;
-  autocomplete: NodeAttr;
-  novalidate: NodeAttr<boolean>;
-
   onChange: Function = () => {};
 }

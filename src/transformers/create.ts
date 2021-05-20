@@ -1,4 +1,4 @@
-import type { NodeArray } from "../base";
+import type { NodeArray } from "../object-dom";
 import { Head, Body, Html, Title, Style, Script, Link, Meta } from "../dom";
 
 interface CreateProps {

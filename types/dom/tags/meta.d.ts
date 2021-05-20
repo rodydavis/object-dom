@@ -1,4 +1,4 @@
-import { GlobalDom, NodeAttr, NodeProps } from "../../object-dom";
+import { GlobalDom, NodeProps } from "../../object-dom";
 interface MetaProps extends NodeProps<HTMLMetaElement> {
     charset?: string;
     content?: string;
@@ -12,9 +12,5 @@ interface MetaProps extends NodeProps<HTMLMetaElement> {
  */
 export declare class Meta extends GlobalDom<HTMLMetaElement> {
     constructor(props?: MetaProps);
-    charset: NodeAttr;
-    content: NodeAttr;
-    httpEquiv: NodeAttr;
-    name: NodeAttr;
 }
 export {};

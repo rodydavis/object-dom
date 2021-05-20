@@ -1,8 +1,8 @@
-import { GlobalDom, NodeAttr, NodeProps } from "../../object-dom";
+import { GlobalDom, NodeProps } from "../../object-dom";
 
 export interface LabelProps extends NodeProps<HTMLLabelElement> {
   value?: string;
-  input?: string;
+  htmlFor?: string;
 }
 
 /**
@@ -14,9 +14,8 @@ export class Label extends GlobalDom<HTMLLabelElement> {
   constructor(props: LabelProps = {}) {
     super({ node: document.createElement("label"), ...props });
     this.value = props.value;
-    this.input = new NodeAttr(this, "for", props?.input);
+    this.addAttr("for", props?.htmlFor);
   }
-  input: NodeAttr;
 
   public get value(): string | undefined {
     return this.node.innerText;

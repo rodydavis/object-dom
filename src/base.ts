@@ -1,14 +1,25 @@
 import { GlobalAttrs } from "./dom/attrs";
 import {
+  AttrType,
   AutoCapitalize,
   convertClassList,
   convertCssStyles,
   Direction,
   InputMode,
   NodeAttr,
+  NodeStyle,
+  PossibleAttr,
+  PossibleStyle,
   StringBool,
   StringYesNo,
 } from "./object-dom";
+
+export type NodeAttrs = {
+  [key: string]: PossibleAttr;
+};
+export type NodeStyles = {
+  [key: string]: PossibleStyle;
+};
 
 export type NodeArray = Array<ObjectDom | string>;
 
@@ -16,6 +27,8 @@ export interface NodeProps<T extends HTMLElement = HTMLElement> extends GlobalAt
   node?: T;
   text?: string;
   children?: NodeArray;
+  attributes?: NodeAttrs;
+  styles?: NodeStyles;
 }
 
 export interface ObjectDomProps<T extends HTMLElement = HTMLElement> extends NodeProps<T> {
@@ -31,49 +44,82 @@ export class ObjectDom<T extends HTMLElement = HTMLElement> {
 }
 
 export class GlobalDom<T extends HTMLElement = HTMLElement> extends ObjectDom<T> {
+  attributes: { [key: string]: NodeAttr<string | boolean | number> } = {};
+  styles: { [key: string]: NodeStyle<string> } = {};
   constructor(public props: ObjectDomProps<T>) {
     super();
-    this.id = new NodeAttr(this, "id", props?.id);
-    this.className = new NodeAttr(this, "class", convertClassList(props?.className));
-    this.contentEditable = new NodeAttr(this, "contenteditable", props?.contenteditable);
-    this.accesskey = new NodeAttr(this, "accesskey", props?.accesskey);
-    this.autocapitalize = new NodeAttr(this, "autocapitalize", props?.autocapitalize);
-    this.dir = new NodeAttr(this, "dir", props?.dir);
-    this.draggable = new NodeAttr(this, "draggable", props?.draggable);
-    this.enterkeyhint = new NodeAttr(this, "enterkeyhint", props?.enterkeyhint);
-    this.hidden = new NodeAttr(this, "hidden", props?.hidden);
-    this.inputmode = new NodeAttr(this, "inputmode", props?.inputmode);
-    this.is = new NodeAttr(this, "is", props?.is);
-    this.lang = new NodeAttr(this, "lang", props?.lang);
-    this.nonce = new NodeAttr(this, "nonce", props?.nonce);
-    this.part = new NodeAttr(this, "part", props?.part);
-    this.slot = new NodeAttr(this, "slot", props?.slot);
-    this.spellcheck = new NodeAttr(this, "spellcheck", props?.spellcheck);
-    this.style = new NodeAttr(this, "style", convertCssStyles(props?.style));
-    this.tabindex = new NodeAttr(this, "tabindex", props?.tabindex);
-    this.title = new NodeAttr(this, "title", props?.title);
-    this.translate = new NodeAttr(this, "translate", props?.translate);
+    if (this.props.text) this.text = this.props.text;
+    this.attributes = {
+      id: new NodeAttr(this, "id", props?.id),
+      className: new NodeAttr(this, "class", convertClassList(props?.className)),
+      contentEditable: new NodeAttr<StringBool>(this, "contenteditable", props?.contenteditable),
+      accesskey: new NodeAttr(this, "accesskey", props?.accesskey),
+      autocapitalize: new NodeAttr<AutoCapitalize>(this, "autocapitalize", props?.autocapitalize),
+      dir: new NodeAttr<Direction>(this, "dir", props?.dir),
+      draggable: new NodeAttr<StringBool>(this, "draggable", props?.draggable),
+      enterkeyhint: new NodeAttr<string>(this, "enterkeyhint", props?.enterkeyhint),
+      hidden: new NodeAttr<boolean>(this, "hidden", props?.hidden),
+      inputmode: new NodeAttr<InputMode>(this, "inputmode", props?.inputmode),
+      is: new NodeAttr<string>(this, "is", props?.is),
+      lang: new NodeAttr<string>(this, "lang", props?.lang),
+      nonce: new NodeAttr<string>(this, "nonce", props?.nonce),
+      part: new NodeAttr<string>(this, "part", props?.part),
+      slot: new NodeAttr<string>(this, "slot", props?.slot),
+      spellcheck: new NodeAttr<StringBool>(this, "spellcheck", props?.spellcheck),
+      style: new NodeAttr<string | number | boolean>(this, "style", convertCssStyles(props?.style)),
+      tabindex: new NodeAttr<number>(this, "tabindex", props?.tabindex),
+      title: new NodeAttr<string>(this, "title", props?.title),
+      translate: new NodeAttr<StringYesNo>(this, "translate", props?.translate),
+    };
+    if (this.props.attributes) {
+      for (const [key, value] of Object.entries(this.props.attributes)) {
+        this.addAttr(key, value);
+      }
+    }
+    if (this.props.styles) {
+      for (const [key, value] of Object.entries(this.props.styles)) {
+        this.addStyle(key, value);
+      }
+    }
   }
-  id: NodeAttr;
-  className: NodeAttr;
-  contentEditable: NodeAttr<StringBool>;
-  accesskey: NodeAttr;
-  autocapitalize: NodeAttr<AutoCapitalize>;
-  dir: NodeAttr<Direction>;
-  draggable: NodeAttr<StringBool>;
-  enterkeyhint: NodeAttr<string>;
-  hidden: NodeAttr<boolean>;
-  inputmode: NodeAttr<InputMode>;
-  is: NodeAttr<string>;
-  lang: NodeAttr<string>;
-  nonce: NodeAttr<string>;
-  part: NodeAttr<string>;
-  slot: NodeAttr<string>;
-  spellcheck: NodeAttr<StringBool>;
-  style: NodeAttr<string | number | boolean>;
-  tabindex: NodeAttr<number>;
-  title: NodeAttr<string>;
-  translate: NodeAttr<StringYesNo>;
+
+  addAttr(key: string, value: PossibleAttr) {
+    if (value) {
+      if (typeof value === "string") {
+        this.attributes[key] = new NodeAttr<string>(this, key, value);
+      } else if (typeof value === "boolean") {
+        this.attributes[key] = new NodeAttr<boolean>(this, key, value);
+      } else if (typeof value === "number") {
+        this.attributes[key] = new NodeAttr<number>(this, key, value);
+      } else if (value) {
+        this.attributes[key] = value;
+      }
+    }
+  }
+
+  setAttr(key: string, value: AttrType) {
+    if (!this.attributes[key]) {
+      this.addAttr(key, value);
+    }
+    this.attributes[key].value = value;
+  }
+
+  addStyle(key: string, value: PossibleStyle) {
+    if (value) {
+      if (typeof value === "string") {
+        this.styles[key] = new NodeStyle<string>(this, key, value);
+      } else if (value) {
+        this.styles[key] = value;
+      }
+    }
+  }
+
+  setStyle(key: string, value: string) {
+    if (!this.styles[key]) {
+      this.addAttr(key, value);
+    }
+    this.styles[key].value = value;
+  }
 
   render = () => this;
 
@@ -82,9 +128,6 @@ export class GlobalDom<T extends HTMLElement = HTMLElement> extends ObjectDom<T>
   public get node(): T {
     const _parent = this.render();
     const _node = _parent.rootNode;
-    if (_parent.props?.text) {
-      _node.innerText = _parent.props.text;
-    }
     for (const child of _parent.children) {
       if (child instanceof ObjectDom) {
         let childNode = child.render().build();
@@ -97,6 +140,9 @@ export class GlobalDom<T extends HTMLElement = HTMLElement> extends ObjectDom<T>
       } else {
         _node.append(child);
       }
+    }
+    if (this.text && this.text?.length > 0) {
+      _node.innerHTML = this.text;
     }
     return _node;
   }
@@ -118,7 +164,7 @@ export class GlobalDom<T extends HTMLElement = HTMLElement> extends ObjectDom<T>
     this.update();
   }
 
-  public addChild(value: ObjectDom<HTMLElement>, index?: number | undefined) {
+  public addChild(value: ObjectDom<HTMLElement> | string, index?: number | undefined) {
     const current = this.children;
     if (index) {
       current.splice(index, 0, value);
@@ -158,4 +204,46 @@ export class GlobalDom<T extends HTMLElement = HTMLElement> extends ObjectDom<T>
   ) {
     this.rootNode.removeEventListener(type, callback, options);
   }
+
+  public toString = (): string => {
+    const tab = "";
+    const sb: string[] = [];
+    sb.push(`new ${this.constructor.name}({`);
+    if (this.text) sb.push(`${tab}text: "${this.text}"`);
+    if (this.styles) {
+      const styles = Object.entries(this.styles)
+        .filter((n) => n[1].value)
+        .map(([key, value]) => `"${key}": "${value.value}"`);
+      if (styles.length > 0) {
+        sb.push(`${tab}styles: {`);
+        for (const item of styles) {
+          sb.push(`${tab}${tab}${item},`);
+        }
+        sb.push(`${tab}},`);
+      }
+    }
+    if (this.attributes) {
+      const attrs = Object.entries(this.attributes)
+        .filter((n) => n[1].value)
+        .filter((n) => n[1].value)
+        .map(([key, value]) => `"${key}": "${value.value}"`);
+      if (attrs.length > 0) {
+        sb.push(`${tab}attributes: {`);
+        for (const item of attrs) {
+          sb.push(`${tab}${tab}${item},`);
+        }
+        sb.push(`${tab}},`);
+      }
+    }
+    if (this.children && this.children.length > 0) {
+      sb.push(`${tab}children: {`);
+      for (const child of this.children) {
+        const item = child.toString();
+        sb.push(`${tab}${tab}${item},`);
+      }
+      sb.push(`${tab}},`);
+    }
+    sb.push(`})`);
+    return sb.join("");
+  };
 }

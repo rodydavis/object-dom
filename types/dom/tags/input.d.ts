@@ -1,4 +1,4 @@
-import { GlobalDom, InputType, NodeAttr, NodeProps } from "../../object-dom";
+import { GlobalDom, InputType, NodeProps } from "../../object-dom";
 export interface InputProps extends NodeProps<HTMLInputElement> {
     type?: InputType;
     value?: string;
@@ -12,9 +12,6 @@ export interface InputProps extends NodeProps<HTMLInputElement> {
  */
 export declare class Input extends GlobalDom<HTMLInputElement> {
     constructor(props?: InputProps);
-    type: NodeAttr;
-    name: NodeAttr;
-    required: NodeAttr;
     get value(): string | undefined;
     set value(val: string | undefined);
     onChange: Function;

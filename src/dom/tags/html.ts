@@ -1,4 +1,4 @@
-import { GlobalDom, NodeAttr, NodeProps } from "../../object-dom";
+import { GlobalDom, NodeProps } from "../../object-dom";
 
 interface HtmlProps extends NodeProps<HTMLHtmlElement> {
   lang?: string;
@@ -13,9 +13,7 @@ interface HtmlProps extends NodeProps<HTMLHtmlElement> {
 export class Html extends GlobalDom<HTMLHtmlElement> {
   constructor(props: HtmlProps = {}) {
     super({ node: document.createElement("html"), ...props });
-    this.lang = new NodeAttr(this, "lang", props.lang);
-    this.xmlns = new NodeAttr(this, "xmlns", props.xmlns);
+    this.addAttr("lang", props?.lang);
+    this.addAttr("xmlns", props?.xmlns);
   }
-  lang: NodeAttr;
-  xmlns: NodeAttr;
 }
