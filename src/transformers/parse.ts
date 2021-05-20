@@ -43,7 +43,6 @@ function parseNode(node: Element): GlobalDom<HTMLElement> {
     case "html":
       return new tags.Html(_props);
     default:
-      // return new tags.Custom(node.tagName, _props);
-      return new tags.Div(_props);
+      return new tags.Custom(node.tagName, _props);
   }
 }
