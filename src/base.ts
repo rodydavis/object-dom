@@ -35,20 +35,22 @@ export interface ObjectDomProps<T extends HTMLElement = HTMLElement> extends Nod
   node: T;
 }
 
-export class ObjectDom<T extends HTMLElement = HTMLElement> {
-  build: () => T = () => {
-    return this.render().build();
-  };
-  render: () => ObjectDom<T> = () => this;
+export abstract class ObjectDom<T extends HTMLElement = HTMLElement> {
+  abstract render: () => GlobalDom<T>;
   update: () => void = () => {};
 }
 
 export class GlobalDom<T extends HTMLElement = HTMLElement> extends ObjectDom<T> {
   attributes: { [key: string]: NodeAttr<string | boolean | number> } = {};
   styles: { [key: string]: NodeStyle<string> } = {};
-  constructor(public props: ObjectDomProps<T>) {
+  _children: NodeArray = [];
+  constructor(private props: ObjectDomProps<T>) {
     super();
     if (this.props.text) this.text = this.props.text;
+    this._children = [];
+    if (props.children) {
+      this._children = [...props.children];
+    }
     this.attributes = {
       id: new NodeAttr(this, "id", props?.id),
       className: new NodeAttr(this, "class", convertClassList(props?.className)),
@@ -123,17 +125,15 @@ export class GlobalDom<T extends HTMLElement = HTMLElement> extends ObjectDom<T>
 
   render = () => this;
 
-  build = () => this.node;
-
   public get node(): T {
-    const _parent = this.render();
-    const _node = _parent.rootNode;
-    for (const child of _parent.children) {
+    const _node = this.rootNode;
+    _node.innerHTML = "";
+    for (const child of this.children) {
       if (child instanceof ObjectDom) {
-        let childNode = child.render().build();
+        let childNode = child.render().node;
         child.update = () => {
           if (childNode) childNode.remove();
-          childNode = child.render().build();
+          childNode = child.render().node;
           _node.appendChild(childNode);
         };
         _node.appendChild(childNode);
@@ -148,16 +148,16 @@ export class GlobalDom<T extends HTMLElement = HTMLElement> extends ObjectDom<T>
   }
 
   public get children(): NodeArray {
-    return this.props.children ?? [];
+    return this._children;
   }
 
   public set children(value: NodeArray) {
-    this.props.children = value;
+    this._children = value;
     this.update();
   }
 
   public get rootNode(): T {
-    return this.props.node ?? this.render().rootNode;
+    return this.props.node ?? document.createElement("div");
   }
   public set rootNode(value: T) {
     this.props.node = value;

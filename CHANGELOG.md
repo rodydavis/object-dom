@@ -1,3 +1,8 @@
+## 0.2.1
+
+- Fixing render issue
+- Adding demo
+
 ## 0.2.0
 
 - Adding Reactive Styles and Attributes

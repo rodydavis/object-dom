@@ -53,7 +53,7 @@ export class NodeAttr<T extends string | boolean | number> {
   }
 
   public get node(): HTMLElement {
-    return this._root.build();
+    return this._root.render().node;
   }
 }
 

@@ -17,26 +17,25 @@ export interface NodeProps<T extends HTMLElement = HTMLElement> extends GlobalAt
 export interface ObjectDomProps<T extends HTMLElement = HTMLElement> extends NodeProps<T> {
     node: T;
 }
-export declare class ObjectDom<T extends HTMLElement = HTMLElement> {
-    build: () => T;
-    render: () => ObjectDom<T>;
+export declare abstract class ObjectDom<T extends HTMLElement = HTMLElement> {
+    abstract render: () => GlobalDom<T>;
     update: () => void;
 }
 export declare class GlobalDom<T extends HTMLElement = HTMLElement> extends ObjectDom<T> {
-    props: ObjectDomProps<T>;
+    private props;
     attributes: {
         [key: string]: NodeAttr<string | boolean | number>;
     };
     styles: {
         [key: string]: NodeStyle<string>;
     };
+    _children: NodeArray;
     constructor(props: ObjectDomProps<T>);
     addAttr(key: string, value: PossibleAttr): void;
     setAttr(key: string, value: AttrType): void;
     addStyle(key: string, value: PossibleStyle): void;
     setStyle(key: string, value: string): void;
     render: () => this;
-    build: () => T;
     get node(): T;
     get children(): NodeArray;
     set children(value: NodeArray);
