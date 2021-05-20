@@ -1,4 +1,4 @@
-import { ObjectDom } from '../base';
+import type { ObjectDom } from "../base";
 
 export function render(source: ObjectDom<HTMLElement>, target: HTMLElement = document.body) {
   let node = source.render().build();
