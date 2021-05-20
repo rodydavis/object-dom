@@ -1,4 +1,4 @@
-import type { NodeArray } from "../object-dom";
+import type { GlobalDom, NodeArray } from "../object-dom";
 import { Head, Body, Html, Title, Style, Script, Link, Meta } from "../dom";
 
 interface CreateProps {
@@ -13,7 +13,7 @@ interface CreateProps {
 /**
  * Creates a HTML document
  */
-export function createDocument(props: CreateProps): Html {
+export function createDocument(props: CreateProps): GlobalDom<HTMLElement> {
   return new Html({
     children: [
       new Head({
@@ -32,13 +32,4 @@ export function createDocument(props: CreateProps): Html {
       }),
     ],
   });
-}
-
-/**
- * @deprecated use `createDocument` instead
- *
- * Creates a HTML document
- */
-export function create(props: CreateProps): Html {
-  return createDocument(props);
 }

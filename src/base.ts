@@ -40,17 +40,23 @@ export abstract class ObjectDom<T extends HTMLElement = HTMLElement> {
   update: () => void = () => {};
 }
 
+interface NodeEvent {
+  callback: EventListenerOrEventListenerObject;
+  options: boolean | AddEventListenerOptions | undefined;
+}
+
 export class GlobalDom<T extends HTMLElement = HTMLElement> extends ObjectDom<T> {
   attributes: { [key: string]: NodeAttr<string | boolean | number> } = {};
   styles: { [key: string]: NodeStyle<string> } = {};
   _children: NodeArray = [];
-  constructor(private props: ObjectDomProps<T>) {
+  _node: HTMLElement;
+  _events: { [key: string]: NodeEvent[] } = {};
+
+  constructor(props: ObjectDomProps<T>) {
     super();
-    if (this.props.text) this.text = this.props.text;
-    this._children = [];
-    if (props.children) {
-      this._children = [...props.children];
-    }
+    this._node = props.node;
+    if (props.text) this.text = props.text;
+    this.children = [...(props?.children ?? [])];
     this.attributes = {
       id: new NodeAttr(this, "id", props?.id),
       className: new NodeAttr(this, "class", convertClassList(props?.className)),
@@ -73,13 +79,13 @@ export class GlobalDom<T extends HTMLElement = HTMLElement> extends ObjectDom<T>
       title: new NodeAttr<string>(this, "title", props?.title),
       translate: new NodeAttr<StringYesNo>(this, "translate", props?.translate),
     };
-    if (this.props.attributes) {
-      for (const [key, value] of Object.entries(this.props.attributes)) {
+    if (props.attributes) {
+      for (const [key, value] of Object.entries(props.attributes)) {
         this.addAttr(key, value);
       }
     }
-    if (this.props.styles) {
-      for (const [key, value] of Object.entries(this.props.styles)) {
+    if (props.styles) {
+      for (const [key, value] of Object.entries(props.styles)) {
         this.addStyle(key, value);
       }
     }
@@ -126,25 +132,7 @@ export class GlobalDom<T extends HTMLElement = HTMLElement> extends ObjectDom<T>
   render = () => this;
 
   public get node(): T {
-    const _node = this.rootNode;
-    _node.innerHTML = "";
-    for (const child of this.children) {
-      if (child instanceof ObjectDom) {
-        let childNode = child.render().node;
-        child.update = () => {
-          if (childNode) childNode.remove();
-          childNode = child.render().node;
-          _node.appendChild(childNode);
-        };
-        _node.appendChild(childNode);
-      } else {
-        _node.append(child);
-      }
-    }
-    if (this.text && this.text?.length > 0) {
-      _node.innerHTML = this.text;
-    }
-    return _node;
+    return generateNode(this) as T;
   }
 
   public get children(): NodeArray {
@@ -153,14 +141,6 @@ export class GlobalDom<T extends HTMLElement = HTMLElement> extends ObjectDom<T>
 
   public set children(value: NodeArray) {
     this._children = value;
-    this.update();
-  }
-
-  public get rootNode(): T {
-    return this.props.node ?? document.createElement("div");
-  }
-  public set rootNode(value: T) {
-    this.props.node = value;
     this.update();
   }
 
@@ -186,7 +166,7 @@ export class GlobalDom<T extends HTMLElement = HTMLElement> extends ObjectDom<T>
   }
   public set text(text: string | undefined) {
     this._text = text;
-    if (text) this.node.innerText = text;
+    if (text) this._node.innerText = text;
   }
 
   addEventListener(
@@ -194,56 +174,98 @@ export class GlobalDom<T extends HTMLElement = HTMLElement> extends ObjectDom<T>
     callback: EventListenerOrEventListenerObject,
     options: boolean | AddEventListenerOptions | undefined = undefined
   ) {
-    this.rootNode.addEventListener(type, callback, options);
-  }
-
-  removeEventListener(
-    type: string,
-    callback: EventListenerOrEventListenerObject,
-    options: boolean | AddEventListenerOptions | undefined = undefined
-  ) {
-    this.rootNode.removeEventListener(type, callback, options);
+    if (!this._events[type]) this._events[type] = [];
+    this._events[type].push({ callback, options });
   }
 
   public toString = (): string => {
-    const tab = "";
-    const sb: string[] = [];
-    sb.push(`new ${this.constructor.name}({`);
-    if (this.text) sb.push(`${tab}text: "${this.text}"`);
-    if (this.styles) {
-      const styles = Object.entries(this.styles)
-        .filter((n) => n[1].value)
-        .map(([key, value]) => `"${key}": "${value.value}"`);
-      if (styles.length > 0) {
-        sb.push(`${tab}styles: {`);
-        for (const item of styles) {
-          sb.push(`${tab}${tab}${item},`);
-        }
-        sb.push(`${tab}},`);
-      }
-    }
-    if (this.attributes) {
-      const attrs = Object.entries(this.attributes)
-        .filter((n) => n[1].value)
-        .filter((n) => n[1].value)
-        .map(([key, value]) => `"${key}": "${value.value}"`);
-      if (attrs.length > 0) {
-        sb.push(`${tab}attributes: {`);
-        for (const item of attrs) {
-          sb.push(`${tab}${tab}${item},`);
-        }
-        sb.push(`${tab}},`);
-      }
-    }
-    if (this.children && this.children.length > 0) {
-      sb.push(`${tab}children: {`);
-      for (const child of this.children) {
-        const item = child.toString();
+    return generateCode(this);
+  };
+}
+
+export function generateCode(source: GlobalDom<HTMLElement>) {
+  const tab = "";
+  const sb: string[] = [];
+  sb.push(`new ${source.constructor.name}({`);
+  if (source.text) sb.push(`${tab}text: "${source.text}"`);
+  if (source.styles) {
+    const styles = Object.entries(source.styles)
+      .filter((n) => n[1].value)
+      .map(([key, value]) => `"${key}": "${value.value}"`);
+    if (styles.length > 0) {
+      sb.push(`${tab}styles: {`);
+      for (const item of styles) {
         sb.push(`${tab}${tab}${item},`);
       }
       sb.push(`${tab}},`);
     }
-    sb.push(`})`);
-    return sb.join("");
-  };
+  }
+  if (source.attributes) {
+    const attrs = Object.entries(source.attributes)
+      .filter((n) => n[1].value)
+      .filter((n) => n[1].value)
+      .map(([key, value]) => `"${key}": "${value.value}"`);
+    if (attrs.length > 0) {
+      sb.push(`${tab}attributes: {`);
+      for (const item of attrs) {
+        sb.push(`${tab}${tab}${item},`);
+      }
+      sb.push(`${tab}},`);
+    }
+  }
+  if (source.children && source.children.length > 0) {
+    sb.push(`${tab}children: {`);
+    for (const child of source.children) {
+      const item = child.toString();
+      sb.push(`${tab}${tab}${item},`);
+    }
+    sb.push(`${tab}},`);
+  }
+  sb.push(`})`);
+  return sb.join("");
+}
+
+export function generateNode(source: GlobalDom<HTMLElement>) {
+  const result = document.createElement(source._node.tagName);
+  if (source.text) {
+    result.textContent = source.text;
+  }
+  for (const child of source.children) {
+    if (child instanceof ObjectDom) {
+      let childNode = generateNode(child.render());
+      child.update = () => {
+        if (childNode) childNode.remove();
+        childNode = generateNode(child.render());
+        result.appendChild(childNode);
+      };
+      result.appendChild(childNode);
+    } else {
+      result.append(child);
+    }
+  }
+  if (source.styles) {
+    for (const [key, value] of Object.entries(source.styles).filter((n) => n[1].value)) {
+      result.style.setProperty(key, value.value);
+    }
+  }
+  if (source.attributes) {
+    for (const [key, value] of Object.entries(source.attributes).filter((n) => n[1].value)) {
+      const val = value.value;
+      if (val) {
+        if (typeof val === "string") {
+          result.setAttribute(key, val);
+        } else if (typeof val === "number") {
+          result.setAttribute(key, `${val}`);
+        } else if (typeof val === "boolean" && val) {
+          result.setAttribute(key, key);
+        }
+      }
+    }
+  }
+  for (const [type, events] of Object.entries(source._events)) {
+    for (const event of events) {
+      result.addEventListener(type, event.callback, event.options);
+    }
+  }
+  return result;
 }

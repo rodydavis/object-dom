@@ -1,5 +1,5 @@
 // @ts-ignore
-import { ObjectDom, Div, H1, Button, Row } from "../../src/object-dom";
+import { ObjectDom, Div, H1, Button, Row } from "object-dom";
 
 export class MyApp extends ObjectDom {
   constructor() {

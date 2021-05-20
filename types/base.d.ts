@@ -21,8 +21,11 @@ export declare abstract class ObjectDom<T extends HTMLElement = HTMLElement> {
     abstract render: () => GlobalDom<T>;
     update: () => void;
 }
+interface NodeEvent {
+    callback: EventListenerOrEventListenerObject;
+    options: boolean | AddEventListenerOptions | undefined;
+}
 export declare class GlobalDom<T extends HTMLElement = HTMLElement> extends ObjectDom<T> {
-    private props;
     attributes: {
         [key: string]: NodeAttr<string | boolean | number>;
     };
@@ -30,6 +33,10 @@ export declare class GlobalDom<T extends HTMLElement = HTMLElement> extends Obje
         [key: string]: NodeStyle<string>;
     };
     _children: NodeArray;
+    _node: HTMLElement;
+    _events: {
+        [key: string]: NodeEvent[];
+    };
     constructor(props: ObjectDomProps<T>);
     addAttr(key: string, value: PossibleAttr): void;
     setAttr(key: string, value: AttrType): void;
@@ -39,14 +46,14 @@ export declare class GlobalDom<T extends HTMLElement = HTMLElement> extends Obje
     get node(): T;
     get children(): NodeArray;
     set children(value: NodeArray);
-    get rootNode(): T;
-    set rootNode(value: T);
     addChild(value: ObjectDom<HTMLElement> | string, index?: number | undefined): void;
     removeChild(index: number): void;
     private _text;
     get text(): string | undefined;
     set text(text: string | undefined);
     addEventListener(type: string, callback: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions | undefined): void;
-    removeEventListener(type: string, callback: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions | undefined): void;
     toString: () => string;
 }
+export declare function generateCode(source: GlobalDom<HTMLElement>): string;
+export declare function generateNode(source: GlobalDom<HTMLElement>): HTMLElement;
+export {};

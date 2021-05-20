@@ -7,5 +7,5 @@ import type { GlobalDom } from "../object-dom";
  * given `ObjectDom` object
  */
 export function generateHtml(source: GlobalDom<HTMLElement>): string {
-  return source.node.outerHTML;
+  return source.render().node.outerHTML;
 }

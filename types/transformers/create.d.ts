@@ -1,5 +1,5 @@
-import type { NodeArray } from "../object-dom";
-import { Html, Style, Script, Link, Meta } from "../dom";
+import type { GlobalDom, NodeArray } from "../object-dom";
+import { Style, Script, Link, Meta } from "../dom";
 interface CreateProps {
     title: string;
     styles?: Style[];
@@ -11,11 +11,5 @@ interface CreateProps {
 /**
  * Creates a HTML document
  */
-export declare function createDocument(props: CreateProps): Html;
-/**
- * @deprecated use `createDocument` instead
- *
- * Creates a HTML document
- */
-export declare function create(props: CreateProps): Html;
+export declare function createDocument(props: CreateProps): GlobalDom<HTMLElement>;
 export {};
