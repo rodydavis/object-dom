@@ -5,4 +5,4 @@ import type { GlobalDom } from "../object-dom";
  * Return all text content for a
  * given `ObjectDom` object
  */
-export declare function parseTextContent(source: GlobalDom<HTMLElement>): string;
+export declare function textContent(source: GlobalDom<HTMLElement>): string;

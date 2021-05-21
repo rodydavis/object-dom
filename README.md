@@ -2,8 +2,6 @@
 
 Declarative dom with 1:1 mapping of objects and tags, typed css, reactive updates and no bundler needed.
 
-https://www.w3schools.com/TAGS/default.ASP
-
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![Tests](https://github.com/rodydavis/object_dom/actions/workflows/tests.yml/badge.svg)](https://github.com/rodydavis/object_dom/actions/workflows/tests.yml)
 [![Published on npm](https://img.shields.io/npm/v/object-dom.svg)](https://www.npmjs.com/package/object-dom)
@@ -14,6 +12,8 @@ https://www.w3schools.com/TAGS/default.ASP
 - ✅ 100% Typescript
 
 ## Supported Tags
+
+https://www.w3schools.com/TAGS/default.ASP
 
 |Tag|Class|Description|
 | --- | --- | --- |
@@ -127,7 +127,9 @@ https://www.w3schools.com/TAGS/default.ASP
 
 - jsonTable
 - render
-- create
+- generateHtml
+- parseHtml
+- textContent
 
 ## Getting Started
 

@@ -1,4 +1,4 @@
-import type { GlobalDom } from "../object-dom";
+import type { GlobalDom, ObjectDocument } from "../object-dom";
 
 /**
  * @returns string
@@ -6,6 +6,6 @@ import type { GlobalDom } from "../object-dom";
  * Return all text content for a
  * given `ObjectDom` object
  */
-export function generateHtml(source: GlobalDom<HTMLElement>): string {
+export function generateHtml(source: GlobalDom<HTMLElement> | ObjectDocument): string {
   return source.render().node.outerHTML;
 }

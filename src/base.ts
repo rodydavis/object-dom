@@ -21,7 +21,7 @@ export type NodeStyles = {
   [key: string]: PossibleStyle;
 };
 
-export type NodeArray = Array<ObjectDom | string>;
+export type NodeArray = Array<ObjectDom | string | Comment>;
 
 export interface NodeProps<T extends HTMLElement = HTMLElement> extends GlobalAttrs {
   node?: T;

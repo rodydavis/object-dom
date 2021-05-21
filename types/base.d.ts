@@ -6,7 +6,7 @@ export declare type NodeAttrs = {
 export declare type NodeStyles = {
     [key: string]: PossibleStyle;
 };
-export declare type NodeArray = Array<ObjectDom | string>;
+export declare type NodeArray = Array<ObjectDom | string | Comment>;
 export interface NodeProps<T extends HTMLElement = HTMLElement> extends GlobalAttrs {
     node?: T;
     text?: string;

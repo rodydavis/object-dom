@@ -1,6 +1,8 @@
 // @index('./**/*.ts', f => `export * from '${f.path}';`)
 export * from './attrs';
+export * from './comment';
 export * from './custom';
+export * from './document';
 export * from './styles';
 export * from './tags/a';
 export * from './tags/abbr';

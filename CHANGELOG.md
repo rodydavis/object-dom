@@ -1,3 +1,9 @@
+## 0.2.4
+
+- Adding Typing for `Anchor`
+- Adding `ObjectDocument`
+- Adding `replace` document for `Iframe`
+
 ## 0.2.1
 
 - Fixing render issue
