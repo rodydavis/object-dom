@@ -6,6 +6,8 @@ coverage
 .vscode
 .idea
 /dist/
+/build/
+build
 compiled
 .awcache
 .rpt2_cache
