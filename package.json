@@ -58,6 +58,8 @@
     "serve": "tsc && vite preview",
     "test": "npx jest --useStderr",
     "test:watch": "npx jest --watch --onlyChanged",
+    "demo": "cd demo && npm i && npm run dev",
+    "demo:build": "cd demo && npm i && npm run build",
     "deploy": "npm run build && npm run test && npm publish"
   },
   "devDependencies": {

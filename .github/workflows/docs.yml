@@ -27,8 +27,8 @@ jobs:
          node-version: 12.x
     - run: npm install
     - run: npm run build
-    
-    - run: cd demo && npm install && npm run build
+
+    - run: npm run demo:build
 
     - name: Build
       uses: andstor/jsdoc-action@v1
@@ -37,11 +37,11 @@ jobs:
         recurse: true
         template: minami
         front_page: README.md
-        output_dir: ./demo/dist/docs
+        output_dir: ./public
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./demo/dist
+        publish_dir: ./public
 

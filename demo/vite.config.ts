@@ -5,6 +5,7 @@ import { resolve } from "path";
 export default defineConfig({
   base: "/object-dom/",
   build: {
+    outDir: "../public/demo",
     rollupOptions: {
       input: {
         main: resolve(__dirname, "index.html"),
