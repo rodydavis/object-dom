@@ -23,5 +23,3 @@ jobs:
           template: minami
           front_page: README.md
           output_dir: ./out
-
-      - run: ls out
