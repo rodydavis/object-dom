@@ -30,7 +30,9 @@ jobs:
         recurse: true
         template: minami
         front_page: README.md
-        output_dir: ./public
+        output_dir: ./out
+
+    - run: cp -R /out/* /public
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
