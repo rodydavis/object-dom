@@ -3,7 +3,7 @@ import { resolve } from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/object-dom/",
+  base: "/object-dom/demo/",
   build: {
     outDir: "../public/demo",
     rollupOptions: {
