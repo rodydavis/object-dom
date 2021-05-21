@@ -3,9 +3,9 @@ import { resolve } from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/object-dom/demo/",
+  base: "/object-dom/",
   build: {
-    outDir: "../public/demo",
+    outDir: "build",
     rollupOptions: {
       input: {
         main: resolve(__dirname, "index.html"),

@@ -1,42 +1,27 @@
-# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-
-name: Docs / Demo
+name: Docs
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js
-      uses: actions/setup-node@v1
-      with:
-         node-version: 12.x
-    - run: npm install
-    - run: npm run build
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
 
-    - run: npm run demo:build
+      - name: Build
+        uses: andstor/jsdoc-action@v1
+        with:
+          source_dir: ./src
+          recurse: true
+          template: minami
+          front_page: README.md
+          output_dir: ./out
 
-    - name: Build
-      uses: andstor/jsdoc-action@v1
-      with:
-        source_dir: ./src
-        recurse: true
-        template: minami
-        front_page: README.md
-        output_dir: ./out
-
-    - run: cp -R ./public/* ./out
-
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./out
-
+      - run: ls out
