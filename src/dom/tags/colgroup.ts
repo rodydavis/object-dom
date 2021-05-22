@@ -2,7 +2,7 @@ import type { NodeProps } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
 
 /**
- * Specifies a group of one or more 
+ * Specifies a group of one or more
  * columns in a table for formatting.
  *
  * Reference: https://www.w3schools.com/TAGS/tag_colgroup.asp

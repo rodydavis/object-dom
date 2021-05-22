@@ -2,7 +2,7 @@ import type { NodeProps } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
 
 /**
- * Defines a description/value of 
+ * Defines a description/value of
  * a term in a description list.
  *
  * Reference: https://www.w3schools.com/TAGS/tag_dd.asp

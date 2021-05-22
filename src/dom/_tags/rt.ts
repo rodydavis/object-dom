@@ -1,15 +1,13 @@
+import type { NodeProps, PossibleAttr } from "../../object-dom";
+import { GlobalDom } from "../../object-dom";
 
-    import type { NodeProps, PossibleAttr } from "../../object-dom";
-    import { GlobalDom } from "../../object-dom";
+export interface RtProps extends NodeProps<HTMLElement> {
+  attributes?: {
+    [key: string]: PossibleAttr;
+  };
+}
 
-    export interface RtProps extends NodeProps<HTMLElement> {
-        attributes?: {
-            
-            [key: string]: PossibleAttr;
-        }
-    }
-    
-    /**
+/**
      * HTML tag: `<rt>`
      * 
      * Defines an explanation/pronunciation of characters (for East Asian 
@@ -21,9 +19,8 @@ typography)
      * 
      * @see https://www.w3schools.com/TAGS/tag_rt.asp
      */
-    export class Rt extends GlobalDom<HTMLElement> {
-      constructor(props: RtProps = {}) {
-        super({ node: document.createElement("rt"), ...props });
-      }
-    }    
-    
+export class Rt extends GlobalDom<HTMLElement> {
+  constructor(props: RtProps = {}) {
+    super({ node: document.createElement("rt"), ...props });
+  }
+}

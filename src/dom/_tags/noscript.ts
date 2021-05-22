@@ -1,15 +1,13 @@
+import type { NodeProps, PossibleAttr } from "../../object-dom";
+import { GlobalDom } from "../../object-dom";
 
-    import type { NodeProps, PossibleAttr } from "../../object-dom";
-    import { GlobalDom } from "../../object-dom";
+export interface NoscriptProps extends NodeProps<HTMLElement> {
+  attributes?: {
+    [key: string]: PossibleAttr;
+  };
+}
 
-    export interface NoscriptProps extends NodeProps<HTMLElement> {
-        attributes?: {
-            
-            [key: string]: PossibleAttr;
-        }
-    }
-    
-    /**
+/**
      * HTML tag: `<noscript>`
      * 
      * Defines an alternate content for users that do not support 
@@ -21,9 +19,8 @@ client-side scripts
      * 
      * @see https://www.w3schools.com/TAGS/tag_noscript.asp
      */
-    export class Noscript extends GlobalDom<HTMLElement> {
-      constructor(props: NoscriptProps = {}) {
-        super({ node: document.createElement("noscript"), ...props });
-      }
-    }    
-    
+export class Noscript extends GlobalDom<HTMLElement> {
+  constructor(props: NoscriptProps = {}) {
+    super({ node: document.createElement("noscript"), ...props });
+  }
+}

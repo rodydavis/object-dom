@@ -2,7 +2,7 @@ import type { NodeProps } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
 
 /**
- * Defines what to show in browsers 
+ * Defines what to show in browsers
  * that do not support ruby annotations.
  *
  * Reference: https://www.w3schools.com/TAGS/tag_rp.asp

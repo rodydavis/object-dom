@@ -1,37 +1,34 @@
+import type { NodeProps, PossibleAttr } from "../../object-dom";
+import { GlobalDom } from "../../object-dom";
 
-    import type { NodeProps, PossibleAttr } from "../../object-dom";
-    import { GlobalDom } from "../../object-dom";
-
-    export interface OptgroupProps extends NodeProps<HTMLElement> {
-        attributes?: {
-            
-           /**
-            * Specifies that an option-group should be disabled
-            */
-            disabled?: string;
-
-           /**
-            * Specifies a label for an option-group
-            */
-            label?: string;
-            [key: string]: PossibleAttr;
-        }
-    }
-    
+export interface OptgroupProps extends NodeProps<HTMLElement> {
+  attributes?: {
     /**
-     * HTML tag: `<optgroup>`
-     * 
-     * Defines a group of related options in a drop-down list
-     *
-     * |  Chrome  | Firefox |  Safari   |  Edge  |
-     * | :------: | :-----: | :-------: | :----: |
-     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
-     * 
-     * @see https://www.w3schools.com/TAGS/tag_optgroup.asp
+     * Specifies that an option-group should be disabled
      */
-    export class Optgroup extends GlobalDom<HTMLElement> {
-      constructor(props: OptgroupProps = {}) {
-        super({ node: document.createElement("optgroup"), ...props });
-      }
-    }    
-    
+    disabled?: string;
+
+    /**
+     * Specifies a label for an option-group
+     */
+    label?: string;
+    [key: string]: PossibleAttr;
+  };
+}
+
+/**
+ * HTML tag: `<optgroup>`
+ *
+ * Defines a group of related options in a drop-down list
+ *
+ * |  Chrome  | Firefox |  Safari   |  Edge  |
+ * | :------: | :-----: | :-------: | :----: |
+ * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
+ *
+ * @see https://www.w3schools.com/TAGS/tag_optgroup.asp
+ */
+export class Optgroup extends GlobalDom<HTMLElement> {
+  constructor(props: OptgroupProps = {}) {
+    super({ node: document.createElement("optgroup"), ...props });
+  }
+}

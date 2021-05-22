@@ -1,15 +1,13 @@
+import type { NodeProps, PossibleAttr } from "../../object-dom";
+import { GlobalDom } from "../../object-dom";
 
-    import type { NodeProps, PossibleAttr } from "../../object-dom";
-    import { GlobalDom } from "../../object-dom";
+export interface BdiProps extends NodeProps<HTMLElement> {
+  attributes?: {
+    [key: string]: PossibleAttr;
+  };
+}
 
-    export interface BdiProps extends NodeProps<HTMLElement> {
-        attributes?: {
-            
-            [key: string]: PossibleAttr;
-        }
-    }
-    
-    /**
+/**
      * HTML tag: `<bdi>`
      * 
      * Isolates a part of text that might be formatted in a different direction 
@@ -21,9 +19,8 @@ from other text outside it
      * 
      * @see https://www.w3schools.com/TAGS/tag_bdi.asp
      */
-    export class Bdi extends GlobalDom<HTMLElement> {
-      constructor(props: BdiProps = {}) {
-        super({ node: document.createElement("bdi"), ...props });
-      }
-    }    
-    
+export class Bdi extends GlobalDom<HTMLElement> {
+  constructor(props: BdiProps = {}) {
+    super({ node: document.createElement("bdi"), ...props });
+  }
+}

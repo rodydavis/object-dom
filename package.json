@@ -56,6 +56,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "serve": "tsc && vite preview",
+    "format": "npx prettier --write src",
     "test": "npx jest --useStderr",
     "test:watch": "npx jest --watch --onlyChanged",
     "update:tags": "node scripts/tags.js",
@@ -66,10 +67,12 @@
   "devDependencies": {
     "@types/jest": "^26.0.23",
     "@types/node": "^10.11.0",
+    "change-case": "^4.1.2",
     "html-table-to-json": "^1.0.0",
     "jest": "^26.6.3",
     "jsdom": "^16.5.3",
     "node-fetch": "^2.6.1",
+    "prettier": "2.3.0",
     "ts-jest": "^26.5.6",
     "typescript": "^3.9.9",
     "vite": "^2.1.3"

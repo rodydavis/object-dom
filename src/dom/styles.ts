@@ -1,4 +1,5 @@
 import { ObjectDom } from "../object-dom";
+import { convertToPathCase } from "./utils";
 
 export interface CSSStyles {
   alignContent?: string;
@@ -317,21 +318,7 @@ export interface CSSStyles {
   zIndex?: string;
 }
 
-export function convertCssStyles(style: CSSStyles | string | undefined): string | undefined {
-  if (style) {
-    if (typeof style === "string") return style;
-    const results: string[] = [];
-    for (const [key, value] of Object.entries(style)) {
-      const _key = key
-        .split(/(?=[A-Z])/)
-        .join("-")
-        .toLowerCase();
-      results.push(`${_key}: ${value};`);
-    }
-    return results.join(" ");
-  }
-  return undefined;
-}
+
 
 export function convertClassList(value: string | string[] | undefined): string | undefined {
   if (value) {
@@ -346,7 +333,7 @@ export type PossibleStyle = string | NodeStyle<string> | undefined;
 export class NodeStyle<T extends string> {
   constructor(root: ObjectDom<HTMLElement>, key: string, value: T | undefined) {
     this._root = root;
-    this._key = key;
+    this._key = convertToPathCase(key);
     this._value = value ?? null;
     this.update();
   }

@@ -2,7 +2,7 @@ import type { NodeProps } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
 
 /**
- * Defines a container for multiple 
+ * Defines a container for multiple
  * image resources.
  *
  * Reference: https://www.w3schools.com/TAGS/tag_picture.asp

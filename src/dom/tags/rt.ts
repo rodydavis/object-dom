@@ -2,7 +2,7 @@ import type { NodeProps } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
 
 /**
- * Defines an explanation/pronunciation 
+ * Defines an explanation/pronunciation
  * of characters (for East Asian typography).
  *
  * Reference: https://www.w3schools.com/TAGS/tag_rt.asp

@@ -1,9 +1,10 @@
 import { GlobalAttrs } from "./dom/attrs";
+import { convertToPathCase } from "./dom/utils";
 import {
   AttrType,
   AutoCapitalize,
   convertClassList,
-  convertCssStyles,
+  CSSStyles,
   Direction,
   InputMode,
   NodeAttr,
@@ -268,4 +269,17 @@ export function generateNode(source: GlobalDom<HTMLElement>) {
     }
   }
   return result;
+}
+
+function convertCssStyles(style: CSSStyles | string | undefined): string | undefined {
+  if (style) {
+    if (typeof style === "string") return style;
+    const results: string[] = [];
+    for (const [key, value] of Object.entries(style)) {
+      const _key = convertToPathCase(key);
+      results.push(`${_key}: ${value};`);
+    }
+    return results.join(" ");
+  }
+  return undefined;
 }

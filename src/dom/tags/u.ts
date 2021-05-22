@@ -2,7 +2,7 @@ import type { NodeProps } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
 
 /**
- * Defines some text that is unarticulated and 
+ * Defines some text that is unarticulated and
  * styled differently from normal text.
  *
  * Reference: https://www.w3schools.com/TAGS/tag_u.asp

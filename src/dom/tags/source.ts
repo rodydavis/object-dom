@@ -2,7 +2,7 @@ import type { NodeProps } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
 
 /**
- * Defines multiple media resources for 
+ * Defines multiple media resources for
  * media elements (`<video>` and `<audio>`).
  *
  * Reference: https://www.w3schools.com/TAGS/tag_source.asp

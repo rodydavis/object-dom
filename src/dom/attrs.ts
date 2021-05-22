@@ -1,5 +1,6 @@
 import type { ObjectDom } from "../base";
 import type { CSSStyles } from "./styles";
+import { convertToPathCase } from "./utils";
 
 export type AttrType = string | number | boolean;
 export type PossibleAttr = AttrType | NodeAttr<AttrType> | undefined;
@@ -7,7 +8,7 @@ export type PossibleAttr = AttrType | NodeAttr<AttrType> | undefined;
 export class NodeAttr<T extends string | boolean | number> {
   constructor(root: ObjectDom<HTMLElement>, key: string, value: T | undefined) {
     this._root = root;
-    this._key = key;
+    this._key = convertToPathCase(key);
     this._value = value ?? null;
     this.update();
   }

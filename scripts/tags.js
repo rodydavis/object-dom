@@ -1,22 +1,22 @@
-const fs = require('fs');
-const p = require('path');
-const fetch = require('node-fetch');
+const fs = require("fs");
+const p = require("path");
+const fetch = require("node-fetch");
 const jsdom = require("jsdom");
-const HtmlTableToJson = require('html-table-to-json');
-
+const HtmlTableToJson = require("html-table-to-json");
+const { pascalCase, camelCase } = require('change-case');
 
 const All_TAGS = "https://www.w3schools.com/TAGS/default.asp";
 const TAG_LINK_PREFIX = "https://www.w3schools.com/TAGS/tag_";
 const Tags_Location = "src/dom/_tags";
 
 async function main() {
-    if (!fs.existsSync('.cache')) fs.mkdirSync('.cache');
-    const dom = await downloadWebpage(All_TAGS, 'tags');
+    if (!fs.existsSync(".cache")) fs.mkdirSync(".cache");
+    const dom = await downloadWebpage(All_TAGS, "tags");
     const doc = dom.window.document;
-    const root = doc.querySelector('#htmltags');
+    const root = doc.querySelector("#htmltags");
     for (const item of tableToJson(root.innerHTML)) {
-        if (item.Tag.startsWith('<!')) continue;
-        await processTag(item)
+        if (item.Tag.startsWith("<!")) continue;
+        await processTag(item);
     }
 }
 
@@ -45,7 +45,7 @@ async function downloadWebpage(url, name) {
 
 async function processTag(tag) {
     const { Tag, Description } = tag;
-    const tagName = Tag.replace('<', '').replace('>', '');
+    const tagName = Tag.replace("<", "").replace(">", "");
     const url = `${TAG_LINK_PREFIX}${tagName}.asp`;
     const dom = await downloadWebpage(url, tagName);
     const template = tagTemplate(tagName, Description, url, dom);
@@ -59,19 +59,19 @@ async function processTag(tag) {
  */
 function tagTemplate(name, desc, url, dom) {
     const tagName = name;
-    const className = name.charAt(0).toUpperCase() + name.slice(1);
-    const description = desc.replace('<', '`<').replace('>', '>`');
-    const s = { chrome: 'Yes', edge: 'Yes', firefox: 'Yes', safari: 'Yes' };
-    const bs = tableToJson(dom.window.document.querySelector('table.browserref')?.outerHTML);
+    const className = pascalCase(name);
+    const description = desc.replace("<", "`<").replace(">", ">`");
+    const s = { chrome: "Yes", edge: "Yes", firefox: "Yes", safari: "Yes" };
+    const bs = tableToJson(dom.window.document.querySelector("table.browserref")?.outerHTML);
     if (bs[0]) {
-        const { '2': Chrome, '3': Edge, '4': Firefox, '5': Safari } = bs[0];
+        const { 2: Chrome, 3: Edge, 4: Firefox, 5: Safari } = bs[0];
         s.chrome = Chrome;
         s.edge = Edge;
         s.firefox = Firefox;
         s.safari = Safari;
     }
     const attributes = [];
-    const attrs = tableToJson(dom.window.document.querySelector('table.w3-table-all')?.outerHTML);
+    const attrs = tableToJson(dom.window.document.querySelector("table.w3-table-all")?.outerHTML);
     if (attrs[0]?.Attribute) {
         for (const attr of attrs) {
             // console.log(tagName, 'attr', attr);
@@ -79,7 +79,7 @@ function tagTemplate(name, desc, url, dom) {
            /**
             * ${attr.Description}
             */
-            ${attr.Attribute}?: string;`);
+            ${camelCase(attr.Attribute)}?: string;`);
         }
     }
     return `
@@ -88,7 +88,7 @@ function tagTemplate(name, desc, url, dom) {
 
     export interface ${className}Props extends NodeProps<HTMLElement> {
         attributes?: {
-            ${attributes.join('\n')}
+            ${attributes.join("\n")}
             [key: string]: PossibleAttr;
         }
     }

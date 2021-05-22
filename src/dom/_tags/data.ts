@@ -1,19 +1,17 @@
+import type { NodeProps, PossibleAttr } from "../../object-dom";
+import { GlobalDom } from "../../object-dom";
 
-    import type { NodeProps, PossibleAttr } from "../../object-dom";
-    import { GlobalDom } from "../../object-dom";
-
-    export interface DataProps extends NodeProps<HTMLElement> {
-        attributes?: {
-            
-           /**
-            * Specifies the machine-readable translation of the content of the element
-            */
-            value?: string;
-            [key: string]: PossibleAttr;
-        }
-    }
-    
+export interface DataProps extends NodeProps<HTMLElement> {
+  attributes?: {
     /**
+     * Specifies the machine-readable translation of the content of the element
+     */
+    value?: string;
+    [key: string]: PossibleAttr;
+  };
+}
+
+/**
      * HTML tag: `<data>`
      * 
      * Adds a machine-readable 
@@ -25,9 +23,8 @@ translation of a given content
      * 
      * @see https://www.w3schools.com/TAGS/tag_data.asp
      */
-    export class Data extends GlobalDom<HTMLElement> {
-      constructor(props: DataProps = {}) {
-        super({ node: document.createElement("data"), ...props });
-      }
-    }    
-    
+export class Data extends GlobalDom<HTMLElement> {
+  constructor(props: DataProps = {}) {
+    super({ node: document.createElement("data"), ...props });
+  }
+}

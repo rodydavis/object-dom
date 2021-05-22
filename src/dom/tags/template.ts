@@ -2,7 +2,7 @@ import type { NodeProps } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
 
 /**
- * Defines a container for content that should 
+ * Defines a container for content that should
  * be hidden when the page loads.
  *
  * Reference: https://www.w3schools.com/TAGS/tag_template.asp
