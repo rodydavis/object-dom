@@ -1,5 +1,6 @@
 import { GlobalAttrs } from "./dom/attrs";
 import { convertToPathCase } from "./dom/utils";
+import { NodeEvents } from "./events";
 import {
   AttrType,
   AutoCapitalize,
@@ -30,6 +31,7 @@ export interface NodeProps<T extends HTMLElement = HTMLElement> extends GlobalAt
   children?: NodeArray;
   attributes?: NodeAttrs;
   styles?: NodeStyles;
+  events?: NodeEvents;
 }
 
 export interface ObjectDomProps<T extends HTMLElement = HTMLElement> extends NodeProps<T> {
@@ -88,6 +90,11 @@ export class GlobalDom<T extends HTMLElement = HTMLElement> extends ObjectDom<T>
     if (props.styles) {
       for (const [key, value] of Object.entries(props.styles)) {
         this.addStyle(key, value);
+      }
+    }
+    if (props.events) {
+      for (const [key, value] of Object.entries(props.events)) {
+        this.addEventListener(key, value);
       }
     }
   }
@@ -172,9 +179,10 @@ export class GlobalDom<T extends HTMLElement = HTMLElement> extends ObjectDom<T>
 
   addEventListener(
     type: string,
-    callback: EventListenerOrEventListenerObject,
+    callback: EventListenerOrEventListenerObject | undefined,
     options: boolean | AddEventListenerOptions | undefined = undefined
   ) {
+    if (!callback) return;
     if (!this._events[type]) this._events[type] = [];
     this._events[type].push({ callback, options });
   }

@@ -6,16 +6,16 @@ export interface TheadProps extends NodeProps<HTMLElement> {
     };
 }
 /**
- * HTML tag: `<thead>`
- *
- * Groups the header content in a table
- *
- * |  Chrome  | Firefox |  Safari   |  Edge  |
- * | :------: | :-----: | :-------: | :----: |
- * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
- *
- * @see https://www.w3schools.com/TAGS/tag_thead.asp
- */
+* `<thead>`
+*
+* Groups the header content in a table
+*
+* |  Chrome  | Firefox |  Safari   |  Edge  |
+* | :------: | :-----: | :-------: | :----: |
+* |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
+*
+@see https://www.w3schools.com/TAGS/tag_thead.asp
+*/
 export declare class Thead extends GlobalDom<HTMLElement> {
     constructor(props?: TheadProps);
 }

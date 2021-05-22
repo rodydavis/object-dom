@@ -1,10 +1,21 @@
-import type { NodeProps } from "../../object-dom";
+import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
+export interface MarkProps extends NodeProps<HTMLElement> {
+    attributes?: {
+        [key: string]: PossibleAttr;
+    };
+}
 /**
- * Defines marked/highlighted text.
- *
- * Reference: https://www.w3schools.com/TAGS/tag_mark.asp
- */
+* `<mark>`
+*
+* Defines marked/highlighted text
+*
+* |  Chrome  | Firefox |  Safari   |  Edge  |
+* | :------: | :-----: | :-------: | :----: |
+* |  **6.0**  | **4.0**  |   **5.0**   | **9.0** |
+*
+@see https://www.w3schools.com/TAGS/tag_mark.asp
+*/
 export declare class Mark extends GlobalDom<HTMLElement> {
-    constructor(props?: NodeProps<HTMLElement>);
+    constructor(props?: MarkProps);
 }

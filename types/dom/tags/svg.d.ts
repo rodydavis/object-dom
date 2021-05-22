@@ -1,18 +1,21 @@
-import { GlobalDom, NodeProps } from "../../object-dom";
-interface SvgProps extends NodeProps<HTMLElement> {
-    preserveAspectRatio?: "none" | "xMinYMin" | "xMidYMin" | "xMaxYMin" | "xMinYMid" | "xMidYMid" | "xMaxYMid" | "xMinYMax" | "xMidYMax" | "xMaxYMax";
-    viewbox?: string;
-    width?: string;
-    height?: string;
-    x?: string;
-    y?: string;
+import type { NodeProps, PossibleAttr } from "../../object-dom";
+import { GlobalDom } from "../../object-dom";
+export interface SvgProps extends NodeProps<HTMLElement> {
+    attributes?: {
+        [key: string]: PossibleAttr;
+    };
 }
 /**
- * Defines a container for SVG graphics.
- *
- * Reference: https://www.w3schools.com/TAGS/tag_svg.asp
- */
+* `<svg>`
+*
+* Defines a container for SVG graphics
+*
+* |  Chrome  | Firefox |  Safari   |  Edge  |
+* | :------: | :-----: | :-------: | :----: |
+* |  **4.0**  | **3.0**  |   **3.2**   | **9.0** |
+*
+@see https://www.w3schools.com/TAGS/tag_svg.asp
+*/
 export declare class Svg extends GlobalDom<HTMLElement> {
     constructor(props?: SvgProps);
 }
-export {};

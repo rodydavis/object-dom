@@ -6,16 +6,16 @@ export interface AudioProps extends NodeProps<HTMLElement> {
     };
 }
 /**
- * HTML tag: `<audio>`
- *
- * Defines embedded sound content
- *
- * |  Chrome  | Firefox |  Safari   |  Edge  |
- * | :------: | :-----: | :-------: | :----: |
- * |  **4.0**  | **3.5**  |   **4.0**   | **9.0** |
- *
- * @see https://www.w3schools.com/TAGS/tag_audio.asp
- */
+* `<audio>`
+*
+* Defines embedded sound content
+*
+* |  Chrome  | Firefox |  Safari   |  Edge  |
+* | :------: | :-----: | :-------: | :----: |
+* |  **4.0**  | **3.5**  |   **4.0**   | **9.0** |
+*
+@see https://www.w3schools.com/TAGS/tag_audio.asp
+*/
 export declare class Audio extends GlobalDom<HTMLElement> {
     constructor(props?: AudioProps);
 }

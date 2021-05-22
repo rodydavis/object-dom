@@ -6,16 +6,16 @@ export interface BProps extends NodeProps<HTMLElement> {
     };
 }
 /**
- * HTML tag: `<b>`
- *
- * Defines bold text
- *
- * |  Chrome  | Firefox |  Safari   |  Edge  |
- * | :------: | :-----: | :-------: | :----: |
- * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
- *
- * @see https://www.w3schools.com/TAGS/tag_b.asp
- */
+* `<b>`
+*
+* Defines bold text
+*
+* |  Chrome  | Firefox |  Safari   |  Edge  |
+* | :------: | :-----: | :-------: | :----: |
+* |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
+*
+@see https://www.w3schools.com/TAGS/tag_b.asp
+*/
 export declare class B extends GlobalDom<HTMLElement> {
     constructor(props?: BProps);
 }

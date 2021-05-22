@@ -6,16 +6,16 @@ export interface PProps extends NodeProps<HTMLElement> {
     };
 }
 /**
- * HTML tag: `<p>`
- *
- * Defines a paragraph
- *
- * |  Chrome  | Firefox |  Safari   |  Edge  |
- * | :------: | :-----: | :-------: | :----: |
- * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
- *
- * @see https://www.w3schools.com/TAGS/tag_p.asp
- */
+* `<p>`
+*
+* Defines a paragraph
+*
+* |  Chrome  | Firefox |  Safari   |  Edge  |
+* | :------: | :-----: | :-------: | :----: |
+* |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
+*
+@see https://www.w3schools.com/TAGS/tag_p.asp
+*/
 export declare class P extends GlobalDom<HTMLElement> {
     constructor(props?: PProps);
 }

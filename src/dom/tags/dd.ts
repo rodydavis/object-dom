@@ -1,14 +1,25 @@
-import type { NodeProps } from "../../object-dom";
+import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
 
+export interface DdProps extends NodeProps<HTMLElement> {
+  attributes?: {
+    [key: string]: PossibleAttr;
+  };
+}
+
 /**
- * Defines a description/value of
- * a term in a description list.
- *
- * Reference: https://www.w3schools.com/TAGS/tag_dd.asp
- */
+* `<dd>`
+* 
+* Defines a description/value of a term in a description list
+* 
+* |  Chrome  | Firefox |  Safari   |  Edge  |
+* | :------: | :-----: | :-------: | :----: |
+* |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
+* 
+@see https://www.w3schools.com/TAGS/tag_dd.asp
+*/
 export class Dd extends GlobalDom<HTMLElement> {
-  constructor(props: NodeProps<HTMLElement> = {}) {
+  constructor(props: DdProps = {}) {
     super({ node: document.createElement("dd"), ...props });
   }
 }

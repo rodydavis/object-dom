@@ -6,16 +6,16 @@ export interface LegendProps extends NodeProps<HTMLElement> {
     };
 }
 /**
- * HTML tag: `<legend>`
- *
- * Defines a caption for a `<fieldset>` element
- *
- * |  Chrome  | Firefox |  Safari   |  Edge  |
- * | :------: | :-----: | :-------: | :----: |
- * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
- *
- * @see https://www.w3schools.com/TAGS/tag_legend.asp
- */
+* `<legend>`
+*
+* Defines a caption for a `<fieldset>` element
+*
+* |  Chrome  | Firefox |  Safari   |  Edge  |
+* | :------: | :-----: | :-------: | :----: |
+* |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
+*
+@see https://www.w3schools.com/TAGS/tag_legend.asp
+*/
 export declare class Legend extends GlobalDom<HTMLElement> {
     constructor(props?: LegendProps);
 }

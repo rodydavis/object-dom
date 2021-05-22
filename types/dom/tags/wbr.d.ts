@@ -1,10 +1,21 @@
-import type { NodeProps } from "../../object-dom";
+import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
+export interface WbrProps extends NodeProps<HTMLElement> {
+    attributes?: {
+        [key: string]: PossibleAttr;
+    };
+}
 /**
- * Defines a possible line-break.
- *
- * Reference: https://www.w3schools.com/TAGS/tag_wbr.asp
- */
+* `<wbr>`
+*
+* Defines a possible line-break
+*
+* |  Chrome  | Firefox |  Safari   |  Edge  |
+* | :------: | :-----: | :-------: | :----: |
+* |  **1.0**  | **3.0**  |   **4.0**   | **12.0** |
+*
+@see https://www.w3schools.com/TAGS/tag_wbr.asp
+*/
 export declare class Wbr extends GlobalDom<HTMLElement> {
-    constructor(props?: NodeProps<HTMLElement>);
+    constructor(props?: WbrProps);
 }

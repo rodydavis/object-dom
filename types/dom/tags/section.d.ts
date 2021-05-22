@@ -1,10 +1,21 @@
-import type { NodeProps } from "../../object-dom";
+import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
+export interface SectionProps extends NodeProps<HTMLElement> {
+    attributes?: {
+        [key: string]: PossibleAttr;
+    };
+}
 /**
- * Defines a section in a document.
- *
- * Reference: https://www.w3schools.com/TAGS/tag_section.asp
- */
+* `<section>`
+*
+* Defines a section in a document
+*
+* |  Chrome  | Firefox |  Safari   |  Edge  |
+* | :------: | :-----: | :-------: | :----: |
+* |  **5.0**  | **4.0**  |   **5.0**   | **9.0** |
+*
+@see https://www.w3schools.com/TAGS/tag_section.asp
+*/
 export declare class Section extends GlobalDom<HTMLElement> {
-    constructor(props?: NodeProps<HTMLElement>);
+    constructor(props?: SectionProps);
 }

@@ -6,16 +6,16 @@ export interface FigureProps extends NodeProps<HTMLElement> {
     };
 }
 /**
- * HTML tag: `<figure>`
- *
- * Specifies self-contained content
- *
- * |  Chrome  | Firefox |  Safari   |  Edge  |
- * | :------: | :-----: | :-------: | :----: |
- * |  **8.0**  | **4.0**  |   **5.1**   | **9.0** |
- *
- * @see https://www.w3schools.com/TAGS/tag_figure.asp
- */
+* `<figure>`
+*
+* Specifies self-contained content
+*
+* |  Chrome  | Firefox |  Safari   |  Edge  |
+* | :------: | :-----: | :-------: | :----: |
+* |  **8.0**  | **4.0**  |   **5.1**   | **9.0** |
+*
+@see https://www.w3schools.com/TAGS/tag_figure.asp
+*/
 export declare class Figure extends GlobalDom<HTMLElement> {
     constructor(props?: FigureProps);
 }

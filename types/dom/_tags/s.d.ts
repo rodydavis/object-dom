@@ -6,16 +6,16 @@ export interface SProps extends NodeProps<HTMLElement> {
     };
 }
 /**
- * HTML tag: `<s>`
- *
- * Defines text that is no longer correct
- *
- * |  Chrome  | Firefox |  Safari   |  Edge  |
- * | :------: | :-----: | :-------: | :----: |
- * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
- *
- * @see https://www.w3schools.com/TAGS/tag_s.asp
- */
+* `<s>`
+*
+* Defines text that is no longer correct
+*
+* |  Chrome  | Firefox |  Safari   |  Edge  |
+* | :------: | :-----: | :-------: | :----: |
+* |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
+*
+@see https://www.w3schools.com/TAGS/tag_s.asp
+*/
 export declare class S extends GlobalDom<HTMLElement> {
     constructor(props?: SProps);
 }

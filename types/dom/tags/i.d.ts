@@ -1,11 +1,21 @@
-import type { NodeProps } from "../../object-dom";
+import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
+export interface IProps extends NodeProps<HTMLElement> {
+    attributes?: {
+        [key: string]: PossibleAttr;
+    };
+}
 /**
- * Defines a part of text in an alternate
- * voice or mood.
- *
- * Reference: https://www.w3schools.com/TAGS/tag_i.asp
- */
+* `<i>`
+*
+* Defines a part of text in an alternate voice or mood
+*
+* |  Chrome  | Firefox |  Safari   |  Edge  |
+* | :------: | :-----: | :-------: | :----: |
+* |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
+*
+@see https://www.w3schools.com/TAGS/tag_i.asp
+*/
 export declare class I extends GlobalDom<HTMLElement> {
-    constructor(props?: NodeProps<HTMLElement>);
+    constructor(props?: IProps);
 }

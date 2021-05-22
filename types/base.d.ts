@@ -1,4 +1,5 @@
 import { GlobalAttrs } from "./dom/attrs";
+import { NodeEvents } from "./events";
 import { AttrType, NodeAttr, NodeStyle, PossibleAttr, PossibleStyle } from "./object-dom";
 export declare type NodeAttrs = {
     [key: string]: PossibleAttr;
@@ -13,6 +14,7 @@ export interface NodeProps<T extends HTMLElement = HTMLElement> extends GlobalAt
     children?: NodeArray;
     attributes?: NodeAttrs;
     styles?: NodeStyles;
+    events?: NodeEvents;
 }
 export interface ObjectDomProps<T extends HTMLElement = HTMLElement> extends NodeProps<T> {
     node: T;
@@ -51,7 +53,7 @@ export declare class GlobalDom<T extends HTMLElement = HTMLElement> extends Obje
     private _text;
     get text(): string | undefined;
     set text(text: string | undefined);
-    addEventListener(type: string, callback: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions | undefined): void;
+    addEventListener(type: string, callback: EventListenerOrEventListenerObject | undefined, options?: boolean | AddEventListenerOptions | undefined): void;
     toString: () => string;
 }
 export declare function generateCode(source: GlobalDom<HTMLElement>): string;

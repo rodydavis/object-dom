@@ -6,16 +6,16 @@ export interface CaptionProps extends NodeProps<HTMLElement> {
     };
 }
 /**
- * HTML tag: `<caption>`
- *
- * Defines a table caption
- *
- * |  Chrome  | Firefox |  Safari   |  Edge  |
- * | :------: | :-----: | :-------: | :----: |
- * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
- *
- * @see https://www.w3schools.com/TAGS/tag_caption.asp
- */
+* `<caption>`
+*
+* Defines a table caption
+*
+* |  Chrome  | Firefox |  Safari   |  Edge  |
+* | :------: | :-----: | :-------: | :----: |
+* |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
+*
+@see https://www.w3schools.com/TAGS/tag_caption.asp
+*/
 export declare class Caption extends GlobalDom<HTMLElement> {
     constructor(props?: CaptionProps);
 }

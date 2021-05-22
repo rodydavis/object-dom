@@ -6,16 +6,16 @@ export interface SmallProps extends NodeProps<HTMLElement> {
     };
 }
 /**
- * HTML tag: `<small>`
- *
- * Defines smaller text
- *
- * |  Chrome  | Firefox |  Safari   |  Edge  |
- * | :------: | :-----: | :-------: | :----: |
- * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
- *
- * @see https://www.w3schools.com/TAGS/tag_small.asp
- */
+* `<small>`
+*
+* Defines smaller text
+*
+* |  Chrome  | Firefox |  Safari   |  Edge  |
+* | :------: | :-----: | :-------: | :----: |
+* |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
+*
+@see https://www.w3schools.com/TAGS/tag_small.asp
+*/
 export declare class Small extends GlobalDom<HTMLElement> {
     constructor(props?: SmallProps);
 }

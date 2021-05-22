@@ -1,12 +1,22 @@
-import type { NodeProps } from "../../object-dom";
+import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
+export interface BdiProps extends NodeProps<HTMLElement> {
+    attributes?: {
+        [key: string]: PossibleAttr;
+    };
+}
 /**
- * Isolates a part of text that might be
- * formatted in a different direction from other
- * text outside it.
- *
- * Reference: https://www.w3schools.com/TAGS/tag_bdi.asp
- */
+* `<bdi>`
+*
+* Isolates a part of text that might be formatted in a different direction
+from other text outside it
+*
+* |  Chrome  | Firefox |  Safari   |  Edge  |
+* | :------: | :-----: | :-------: | :----: |
+* |  **16.0**  | **10.0**  |   **Not supported**   | **79.0** |
+*
+@see https://www.w3schools.com/TAGS/tag_bdi.asp
+*/
 export declare class Bdi extends GlobalDom<HTMLElement> {
-    constructor(props?: NodeProps<HTMLElement>);
+    constructor(props?: BdiProps);
 }
