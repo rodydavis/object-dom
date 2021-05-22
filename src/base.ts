@@ -31,11 +31,7 @@ export interface NodeProps<T extends HTMLElement = HTMLElement> extends GlobalAt
   children?: NodeArray;
   attributes?: NodeAttrs;
   events?: NodeEvents;
-  // onCreate?: ((node: HTMLElement) => void) | undefined;
-}
-
-export interface ObjectDomProps<T extends HTMLElement = HTMLElement> extends NodeProps<T> {
-  node: T;
+  onCreate?: ((node: HTMLElement) => void) | undefined;
 }
 
 export abstract class ObjectDom<T extends HTMLElement = HTMLElement> {
@@ -56,14 +52,9 @@ export class GlobalDom<T extends HTMLElement> extends ObjectDom<T> {
   _node: HTMLElement;
   _events: { [key: string]: NodeEvent[] } = {};
 
-  constructor(props: ObjectDomProps<T>) {
+  constructor(public props: NodeProps<T>) {
     super();
-    // if (props.onCreate !== undefined) {
-    //   this.onCreate = (n) => {
-    //     props.onCreate!(n);
-    //   };
-    // }
-    this._node = props.node;
+    this._node = props.node!;
     if (props.text) this.text = props.text;
     this.children = [...(props?.children ?? [])];
     this.attributes = {
@@ -252,9 +243,9 @@ export function generateNode(source: GlobalDom<HTMLElement>) {
     if (child instanceof ObjectDom) {
       let childNode = generateNode(child.render());
       child.update = () => {
-        if (childNode) childNode.remove();
-        childNode = generateNode(child.render());
-        result.appendChild(childNode);
+        const _newNode = generateNode(child.render());
+        result?.replaceChild(_newNode, childNode);
+        childNode = _newNode;
       };
       result.appendChild(childNode);
     } else {
@@ -284,6 +275,9 @@ export function generateNode(source: GlobalDom<HTMLElement>) {
     for (const event of events) {
       result.addEventListener(type, event.callback, event.options);
     }
+  }
+  if (source.props.onCreate) {
+    source.props.onCreate(result);
   }
   return result;
 }

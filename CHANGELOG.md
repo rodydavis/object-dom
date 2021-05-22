@@ -1,3 +1,8 @@
+## 0.5.0
+
+- Fixing render call to swap nodes
+- Updating example to include canvas
+
 ## 0.4.5
 
 - Adding examples for css styles
