@@ -1,0 +1,25 @@
+
+    import type { NodeProps } from "../../object-dom";
+    import { GlobalDom } from "../../object-dom";
+
+    export interface TimeProps extends NodeProps<HTMLElement> {
+
+    }
+    
+    /**
+     * HTML tag: `<time>`
+     * 
+     * Defines a specific time (or datetime)
+     *
+     * |  Chrome  | Firefox |  Safari   |  Edge  |
+     * | :------: | :-----: | :-------: | :----: |
+     * |  **62.0**  | **22.0**  |   **7.0**   | **18.0** |
+     * 
+     * @see https://www.w3schools.com/TAGS/tag_time.asp
+     */
+    export class Time extends GlobalDom<HTMLElement> {
+      constructor(props: TimeProps = {}) {
+        super({ node: document.createElement("time"), ...props });
+      }
+    }    
+    
