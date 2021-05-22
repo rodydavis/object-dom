@@ -179,13 +179,13 @@ https://www.w3schools.com/TAGS/default.ASP
 ```js
 import { ObjectDom, Div, H1, Button, Row, render } from "object-dom";
 
-class MyApp extends ObjectDom {
-  constructor() {
-    super();
-  }
+export class MyApp extends ObjectDom {
   render = () => {
     return new Div({
-      children: [new H1({ text: "Counter Example" }), new Counter()],
+      children: [
+        new H1({ text: "Counter Example" }), 
+        new Counter()
+      ],
     });
   };
 }
@@ -194,7 +194,7 @@ class Counter extends ObjectDom {
   value = 0;
   render = () => {
     return new Div({
-      style: { padding: "5px" },
+      style: { margin: "5px" },
       children: [
         `${this.value}`,
         new Row({
