@@ -18,8 +18,7 @@ https://www.w3schools.com/TAGS/default.ASP
 <!-- BEGIN_TAGS -->
 
 | Tag            | Class      | Description                                                                                              |
-| -------------- | ---------- | -------------------------------------------------------------------------------------------------------- |
-
+| -------------- | ---------- | -------------------------------------------------------------------------- |
 | [`<a> `](https://www.w3schools.com/TAGS/tag_a.asp) | A | Defines a hyperlink |
 
 | [`<abbr> `](https://www.w3schools.com/TAGS/tag_abbr.asp) | Abbr | Defines an abbreviation or an acronym |
