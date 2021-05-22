@@ -19,9 +19,9 @@ import {
 export type NodeAttrs = {
   [key: string]: PossibleAttr;
 };
-export type NodeStyles = {
+export interface NodeStyles extends CSSStyles {
   [key: string]: PossibleStyle;
-};
+}
 
 export type NodeArray = Array<ObjectDom | string | Comment>;
 
@@ -30,7 +30,6 @@ export interface NodeProps<T extends HTMLElement = HTMLElement> extends GlobalAt
   text?: string;
   children?: NodeArray;
   attributes?: NodeAttrs;
-  styles?: NodeStyles;
   events?: NodeEvents;
 }
 
@@ -87,8 +86,8 @@ export class GlobalDom<T extends HTMLElement = HTMLElement> extends ObjectDom<T>
         this.addAttr(key, value);
       }
     }
-    if (props.styles) {
-      for (const [key, value] of Object.entries(props.styles)) {
+    if (props.style) {
+      for (const [key, value] of Object.entries(props.style)) {
         this.addStyle(key, value);
       }
     }
@@ -132,7 +131,7 @@ export class GlobalDom<T extends HTMLElement = HTMLElement> extends ObjectDom<T>
 
   setStyle(key: string, value: string) {
     if (!this.styles[key]) {
-      this.addAttr(key, value);
+      this.addStyle(key, value);
     }
     this.styles[key].value = value;
   }

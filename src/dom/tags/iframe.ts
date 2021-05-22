@@ -85,7 +85,7 @@ Example: `<img src="/w3images/wedding.jpg" alt="Wedding" style="width:100%"><img
      * Default. Loads an iframe immediately
      *
      */
-      | "eager"
+    | "eager"
       /**
        * Defer loading of iframes until some conditions are met
        *
@@ -127,7 +127,7 @@ Example: `<iframe src="https://w3schools.com/" referrerpolicy="no-referrer"></if
      * No referrer information will be sent along with a request
      *
      */
-      | "no-referrer"
+    | "no-referrer"
       /**
 * Default. The referrer header will not be sent to origins 
     without HTTPS
@@ -189,7 +189,7 @@ Example: `<iframe src="demo_iframe_sandbox.htm" sandbox></iframe>`
      * Applies all restrictions
      *
      */
-      | "(no value)"
+    | "(no value)"
       /**
        * Allows form submission
        *

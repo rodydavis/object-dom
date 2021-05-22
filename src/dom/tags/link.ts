@@ -68,7 +68,7 @@ Example: `<head>
      * Specifies an AND operator
      *
      */
-      | "and"
+    | "and"
       /**
        * Specifies a NOT operator
        *
@@ -97,7 +97,7 @@ Example: `<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"
      * No referrer information will be sent along with a request
      *
      */
-      | "no-referrer"
+    | "no-referrer"
       /**
 * Default. The referrer header will not be sent to origins 
     without HTTPS
@@ -141,7 +141,7 @@ Example: `<link rel="stylesheet" href="styles.css">`
  Example: <link rel="alternate" type="application/atom+xml" title="W3Schools News" href="/blog/news/atom">
 * 
 */
-      | "alternate"
+    | "alternate"
       /**
        * Provides a link to the author of the document
        *
@@ -238,7 +238,7 @@ Example: `<link rel="icon" href="demo_icon.gif" type="image/gif" sizes="16x16">`
       <link rel="icon" href="favicon.png" sizes="16x16 32x32"   type="image/png"> (2 sizes)
 * 
 */
-      | "HeightxWidth"
+    | "HeightxWidth"
       /**
 * Specifies that the icon is scalable (like an SVG image)Examples:
   

@@ -154,7 +154,7 @@ Example: `<table>
      * Specifies that the cell is a header for a column
      *
      */
-      | "col"
+    | "col"
       /**
        * Specifies that the cell is a header for a row
        *

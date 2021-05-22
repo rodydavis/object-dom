@@ -16,7 +16,7 @@ class Counter extends ObjectDom {
   value = 0;
   render = () => {
     return new Div({
-      style: { padding: "5px" },
+      style: { margin: "5px" },
       children: [
         `${this.value}`,
         new Row({

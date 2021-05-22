@@ -1,19 +1,18 @@
 import { GlobalAttrs } from "./dom/attrs";
 import { NodeEvents } from "./events";
-import { AttrType, NodeAttr, NodeStyle, PossibleAttr, PossibleStyle } from "./object-dom";
+import { AttrType, CSSStyles, NodeAttr, NodeStyle, PossibleAttr, PossibleStyle } from "./object-dom";
 export declare type NodeAttrs = {
     [key: string]: PossibleAttr;
 };
-export declare type NodeStyles = {
+export interface NodeStyles extends CSSStyles {
     [key: string]: PossibleStyle;
-};
+}
 export declare type NodeArray = Array<ObjectDom | string | Comment>;
 export interface NodeProps<T extends HTMLElement = HTMLElement> extends GlobalAttrs {
     node?: T;
     text?: string;
     children?: NodeArray;
     attributes?: NodeAttrs;
-    styles?: NodeStyles;
     events?: NodeEvents;
 }
 export interface ObjectDomProps<T extends HTMLElement = HTMLElement> extends NodeProps<T> {

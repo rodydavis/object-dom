@@ -59,7 +59,7 @@ Example: `<form action="/action_page.php" method="get" autocomplete="on">
      * Default. The browser will automatically complete values based on values that the user has entered before
      *
      */
-      | "on"
+    | "on"
       /**
        * The user must enter a value into each field for every use. The browser does not automatically complete entries
        *
@@ -89,7 +89,7 @@ Example: `<form action="/action_page_binary.asp"
      * Default. All characters are encoded before sent (spaces are converted to "+" symbols, and special characters are converted to ASCII HEX values)
      *
      */
-      | "application/x-www-form-urlencoded"
+    | "application/x-www-form-urlencoded"
       /**
 * This value is necessary if the user will upload a file through the 
     form
@@ -126,7 +126,7 @@ Example: `<form
      * Default. Appends the form-data to the URL in name/value pairs: URL?name=value&name=value
      *
      */
-      | "get"
+    | "get"
       /**
        * Sends the form-data as an HTTP post transaction
        *
@@ -192,7 +192,7 @@ Example: `<form rel="value">`
      * Specifies that the referenced document is not a part of the current site
      *
      */
-      | "external"
+    | "external"
       /**
        * Links to a help document
        *
@@ -259,7 +259,7 @@ Example: `<form action="/action_page.php"
      * The response is displayed in a new window or tab
      *
      */
-      | "_blank"
+    | "_blank"
       /**
        * The response is displayed in the same frame (this is default)
        *

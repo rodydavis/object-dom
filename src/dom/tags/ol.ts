@@ -71,7 +71,7 @@ Example: `<ol type="I">
      * Default. Decimal numbers (1, 2, 3, 4)
      *
      */
-      | "1"
+    | "1"
       /**
        * Alphabetically ordered list, lowercase (a, b, c, d)
        *

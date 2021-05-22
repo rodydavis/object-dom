@@ -45,7 +45,7 @@ Example: `<map
      * Specifies the coordinates of the top-left and bottom-right corner of the rectangle (shape="rect")
      *
      */
-      | "x1,y1,x2,y2"
+    | "x1,y1,x2,y2"
       /**
        * Specifies the coordinates of the circle center and the radius (shape="circle")
        *
@@ -133,7 +133,7 @@ Example: `<map name="planetmap">
      * Specifies an AND operator
      *
      */
-      | "and"
+    | "and"
       /**
        * Specifies a NOT operator
        *
@@ -177,7 +177,7 @@ Example: `<map name="planetmap">
      * Links to an alternate version of the document (i.e. print page, translated or mirror)
      *
      */
-      | "alternate"
+    | "alternate"
       /**
        * Links to the author of the document
        *
@@ -257,7 +257,7 @@ Example: `<map
      * Specifies the entire region
      *
      */
-      | "default"
+    | "default"
       /**
        * Defines a rectangular region
        *
@@ -297,7 +297,7 @@ Example: `<map
      * Opens the linked document in a new window or tab
      *
      */
-      | "_blank"
+    | "_blank"
       /**
        * Opens the linked document in the same frame as it was clicked
        *

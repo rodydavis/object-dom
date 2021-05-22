@@ -67,7 +67,7 @@ Example: `<a href="att_a_media.asp?output=print"
      * Specifies an AND operator
      *
      */
-      | "and"
+    | "and"
       /**
        * Specifies a NOT operator
        *
@@ -126,7 +126,7 @@ Example: `<a rel="nofollow" href="http://www.functravel.com/">Cheap Flights</a>`
      * Provides a link to an alternate representation of the document (i.e. print page, translated or mirror)
      *
      */
-      | "alternate"
+    | "alternate"
       /**
        * Provides a link to the author of the document
        *
@@ -207,7 +207,7 @@ Example: `<a href="https://www.w3schools.com" target="_blank">Visit W3Schools</a
      * Opens the linked document in a new window or tab
      *
      */
-      | "_blank"
+    | "_blank"
       /**
        * Opens the linked document in the same frame as it was clicked (this is default)
        *

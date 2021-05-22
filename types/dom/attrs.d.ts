@@ -30,7 +30,7 @@ export interface GlobalAttrs {
     part?: string;
     slot?: string;
     spellcheck?: StringBool;
-    style?: CSSStyles | string;
+    style?: CSSStyles;
     tabindex?: number;
     title?: string;
     translate?: StringYesNo;

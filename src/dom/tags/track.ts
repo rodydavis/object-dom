@@ -45,7 +45,7 @@ Example: `<video width="320" height="240" controls>
      * The track defines translation of dialogue and sound effects (suitable for deaf users)
      *
      */
-      | "captions"
+    | "captions"
       /**
        * The track defines chapter titles (suitable for navigating the media resource)
        *

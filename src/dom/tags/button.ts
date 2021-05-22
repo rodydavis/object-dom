@@ -97,7 +97,7 @@ Example: `<form action="/action_page_binary.asp" method="post">
      * Default. All characters will be encoded before sent
      *
      */
-      | "application/x-www-form-urlencoded"
+    | "application/x-www-form-urlencoded"
       /**
 * This value is necessary if the user will upload a file through the 
     form
@@ -135,7 +135,7 @@ Example: `<form action="/action_page.php" method="get">
      * Appends the form-data to the URL: URL?name=value&name=value
      *
      */
-      | "get"
+    | "get"
       /**
        * Sends the form-data as an HTTP post transaction
        *
@@ -188,7 +188,7 @@ Example: `<form action="/action_page.php" method="get">
      * Loads the response in a new window/tab
      *
      */
-      | "_blank"
+    | "_blank"
       /**
        * Loads the response in the same frame (this is default)
        *
@@ -255,7 +255,7 @@ Example: `<form action="/action_page.php" method="get">
      * The button is a clickable button
      *
      */
-      | "button"
+    | "button"
       /**
        * The button is a submit button (submits form-data)
        *

@@ -5,6 +5,7 @@ const jsdom = require("jsdom");
 const HtmlTableToJson = require("html-table-to-json");
 const { pascalCase, camelCase } = require('change-case');
 
+const ALL_CSS = "https://www.w3schools.com/cssref/default.asp";
 const All_TAGS = "https://www.w3schools.com/TAGS/default.asp";
 const ALL_EVENTS = "https://www.w3schools.com/jsref/dom_obj_event.asp";
 const TAG_LINK_PREFIX = "https://www.w3schools.com/TAGS/tag_";

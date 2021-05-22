@@ -220,7 +220,7 @@ Example: `<textarea rows="2" cols="20" wrap="hard">
      * The text in the textarea is not wrapped when submitted in a form.  This is default
      *
      */
-      | "soft"
+    | "soft"
       /**
 * The text in the textarea is wrapped (contains newlines) when submitted in a form.
   When "hard" is used, the cols attribute must be specified
