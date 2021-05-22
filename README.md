@@ -9,9 +9,9 @@ Declarative dom with 1:1 mapping of objects and tags, typed css, reactive update
 - ✅ No Dependencies
 - ✅ ES Modules
 - ✅ Full Browser Support
-- ✅ Fully typing for CSS
-- ✅ Fully typing for DOM Events
-- ✅ Fully typing for Attributes
+- ✅ Full types for CSS
+- ✅ Full types for DOM Events
+- ✅ Full types for Attributes
 - ✅ 100% Typescript
 
 ## Supported Tags
