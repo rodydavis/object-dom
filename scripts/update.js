@@ -113,7 +113,7 @@ async function tagTemplate(name, desc, url, dom, tags) {
     let className = pascalCase(name);
     if (className === 'Object') className = 'Obj';
     const description = desc.replace("<", "`<").replace(">", ">`");
-    tags.push({ tagName, url, description, className})
+    tags.push({ tagName, url, description: description.split('\n').join(' '), className})
     const browserSupport = getBrowserSupport(dom.window.document.querySelector("table.browserref"));
     const attributes = [];
     const attrs = tableToJson(dom.window.document.querySelector("table.w3-table-all")?.outerHTML);

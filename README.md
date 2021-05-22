@@ -28,8 +28,7 @@ https://www.w3schools.com/TAGS/default.ASP
 | [`<audio> `](https://www.w3schools.com/TAGS/tag_audio.asp) | Audio | Defines embedded sound content |
 | [`<b> `](https://www.w3schools.com/TAGS/tag_b.asp) | B | Defines bold text |
 | [`<base> `](https://www.w3schools.com/TAGS/tag_base.asp) | Base | Specifies the base URL/target for all relative URLs in a document |
-| [`<bdi> `](https://www.w3schools.com/TAGS/tag_bdi.asp) | Bdi | Isolates a part of text that might be formatted in a different direction 
-from other text outside it |
+| [`<bdi> `](https://www.w3schools.com/TAGS/tag_bdi.asp) | Bdi | Isolates a part of text that might be formatted in a different direction  from other text outside it |
 | [`<bdo> `](https://www.w3schools.com/TAGS/tag_bdo.asp) | Bdo | Overrides the current text direction |
 | [`<blockquote> `](https://www.w3schools.com/TAGS/tag_blockquote.asp) | Blockquote | Defines a section that is quoted from another source |
 | [`<body> `](https://www.w3schools.com/TAGS/tag_body.asp) | Body | Defines the document's body |
@@ -41,8 +40,7 @@ from other text outside it |
 | [`<code> `](https://www.w3schools.com/TAGS/tag_code.asp) | Code | Defines a piece of computer code |
 | [`<col> `](https://www.w3schools.com/TAGS/tag_col.asp) | Col | Specifies column properties for each column within a `<colgroup>` element |
 | [`<colgroup> `](https://www.w3schools.com/TAGS/tag_colgroup.asp) | Colgroup | Specifies a group of one or more columns in a table for formatting |
-| [`<data> `](https://www.w3schools.com/TAGS/tag_data.asp) | Data | Adds a machine-readable 
-translation of a given content |
+| [`<data> `](https://www.w3schools.com/TAGS/tag_data.asp) | Data | Adds a machine-readable  translation of a given content |
 | [`<datalist> `](https://www.w3schools.com/TAGS/tag_datalist.asp) | Datalist | Specifies a list of pre-defined options for input controls |
 | [`<dd> `](https://www.w3schools.com/TAGS/tag_dd.asp) | Dd | Defines a description/value of a term in a description list |
 | [`<del> `](https://www.w3schools.com/TAGS/tag_del.asp) | Del | Defines text that has been deleted from a document |
@@ -78,16 +76,14 @@ translation of a given content |
 | [`<label> `](https://www.w3schools.com/TAGS/tag_label.asp) | Label | Defines a label for an `<input>` element |
 | [`<legend> `](https://www.w3schools.com/TAGS/tag_legend.asp) | Legend | Defines a caption for a `<fieldset>` element |
 | [`<li> `](https://www.w3schools.com/TAGS/tag_li.asp) | Li | Defines a list item |
-| [`<link> `](https://www.w3schools.com/TAGS/tag_link.asp) | Link | Defines the relationship between a document and an external resource (most 
-used to link to style sheets) |
+| [`<link> `](https://www.w3schools.com/TAGS/tag_link.asp) | Link | Defines the relationship between a document and an external resource (most  used to link to style sheets) |
 | [`<main> `](https://www.w3schools.com/TAGS/tag_main.asp) | Main | Specifies the main content of a document |
 | [`<map> `](https://www.w3schools.com/TAGS/tag_map.asp) | Map | Defines an image map |
 | [`<mark> `](https://www.w3schools.com/TAGS/tag_mark.asp) | Mark | Defines marked/highlighted text |
 | [`<meta> `](https://www.w3schools.com/TAGS/tag_meta.asp) | Meta | Defines metadata about an HTML document |
 | [`<meter> `](https://www.w3schools.com/TAGS/tag_meter.asp) | Meter | Defines a scalar measurement within a known range (a gauge) |
 | [`<nav> `](https://www.w3schools.com/TAGS/tag_nav.asp) | Nav | Defines navigation links |
-| [`<noscript> `](https://www.w3schools.com/TAGS/tag_noscript.asp) | Noscript | Defines an alternate content for users that do not support 
-client-side scripts |
+| [`<noscript> `](https://www.w3schools.com/TAGS/tag_noscript.asp) | Noscript | Defines an alternate content for users that do not support  client-side scripts |
 | [`<object> `](https://www.w3schools.com/TAGS/tag_object.asp) | Obj | Defines a container for an external application |
 | [`<ol> `](https://www.w3schools.com/TAGS/tag_ol.asp) | Ol | Defines an ordered list |
 | [`<optgroup> `](https://www.w3schools.com/TAGS/tag_optgroup.asp) | Optgroup | Defines a group of related options in a drop-down list |
@@ -100,8 +96,7 @@ client-side scripts |
 | [`<progress> `](https://www.w3schools.com/TAGS/tag_progress.asp) | Progress | Represents the progress of a task |
 | [`<q> `](https://www.w3schools.com/TAGS/tag_q.asp) | Q | Defines a short quotation |
 | [`<rp> `](https://www.w3schools.com/TAGS/tag_rp.asp) | Rp | Defines what to show in browsers that do not support ruby annotations |
-| [`<rt> `](https://www.w3schools.com/TAGS/tag_rt.asp) | Rt | Defines an explanation/pronunciation of characters (for East Asian 
-typography) |
+| [`<rt> `](https://www.w3schools.com/TAGS/tag_rt.asp) | Rt | Defines an explanation/pronunciation of characters (for East Asian  typography) |
 | [`<ruby> `](https://www.w3schools.com/TAGS/tag_ruby.asp) | Ruby | Defines a ruby annotation (for East Asian typography) |
 | [`<s> `](https://www.w3schools.com/TAGS/tag_s.asp) | S | Defines text that is no longer correct |
 | [`<samp> `](https://www.w3schools.com/TAGS/tag_samp.asp) | Samp | Defines sample output from a computer program |
@@ -129,8 +124,7 @@ typography) |
 | [`<title> `](https://www.w3schools.com/TAGS/tag_title.asp) | Title | Defines a title for the document |
 | [`<tr> `](https://www.w3schools.com/TAGS/tag_tr.asp) | Tr | Defines a row in a table |
 | [`<track> `](https://www.w3schools.com/TAGS/tag_track.asp) | Track | Defines text tracks for media elements (`<video>` and <audio>) |
-| [`<u> `](https://www.w3schools.com/TAGS/tag_u.asp) | U | Defines some text that is unarticulated and styled differently from normal 
-text |
+| [`<u> `](https://www.w3schools.com/TAGS/tag_u.asp) | U | Defines some text that is unarticulated and styled differently from normal  text |
 | [`<ul> `](https://www.w3schools.com/TAGS/tag_ul.asp) | Ul | Defines an unordered list |
 | [`<var> `](https://www.w3schools.com/TAGS/tag_var.asp) | Var | Defines a variable |
 | [`<video> `](https://www.w3schools.com/TAGS/tag_video.asp) | Video | Defines embedded video content |
