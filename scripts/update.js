@@ -13,18 +13,6 @@ const SRC_LOCATION = "src";
 const Tags_Location = `${SRC_LOCATION}/dom/tags`;
 
 async function main() {
-    let readme = fs.readFileSync('README.md').toString();
-    const start_tag = '<!-- BEGIN_TAGS -->';
-    const end_tag = '<!-- END_TAGS -->';
-    const startIdx = readme.indexOf(start_tag);
-    const endIdx = readme.indexOf(end_tag);
-    const prefix = readme.slice(0, startIdx + start_tag.length);
-    const suffix = readme.slice(endIdx, readme.length);
-    readme = prefix + '\n';
-    readme += `
-| Tag            | Class      | Description                                                                                              |
-| -------------- | ---------- | -------------------------------------------------------------------------------------------------------- |`  ;
-
     if (!fs.existsSync(".cache")) fs.mkdirSync(".cache");
     if (!fs.existsSync(Tags_Location)) fs.mkdirSync(Tags_Location);
 
@@ -113,12 +101,38 @@ async function main() {
         }
         await processTag(item, tags);
     }
-    for (const item of tags) {
-        readme += `
-| [\`<${item.tagName}> \`](${item.url}) | ${item.className} | ${item.description} |`;
-    }
-    readme += '\n' + suffix;
-    fs.writeFileSync('README.md', readme);
+
+    updateFile('README.md', '<!-- BEGIN_TAGS -->', '<!-- END_TAGS -->', `
+| Tag            | Class      | Description                                                                                              |
+| -------------- | ---------- | -------------------------------------------------------------------------------------------------------- |` + tags.map((item) => `
+| [\`<${item.tagName}> \`](${item.url}) | ${item.className} | ${item.description} |`).join('')
+    );
+
+    updateFile('src/transformers/parse.ts', '// -- BEGIN_TAGS --', '// -- END_TAGS --', tags.map((item) => `
+case "${item.tagName}":
+    base = new tags.${item.className}({});
+    break;`).join('')
+    );
+
+    updateFile('test/dom.test.ts', '// -- BEGIN_TAGS --', '// -- END_TAGS --', tags.map((item) => `
+    testComponent("${item.tagName}", new tags.${item.className}());`).join('')
+    );
+}
+
+// case "wbr":
+//     base = new tags.Wbr({});
+//     break;
+
+function updateFile(path, start_tag, end_tag, replace) {
+    let content = fs.readFileSync(path).toString();
+    const startIdx = content.indexOf(start_tag);
+    const endIdx = content.indexOf(end_tag);
+    const prefix = content.slice(0, startIdx + start_tag.length);
+    const suffix = content.slice(endIdx, content.length);
+    content = prefix + '\n';
+    content += replace;
+    content += '\n' + suffix;
+    fs.writeFileSync(path, content);
 }
 
 function tableToJson(content) {

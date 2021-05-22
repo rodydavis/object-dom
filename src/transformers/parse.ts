@@ -25,6 +25,8 @@ export function parseHtml(source: string, type: DocType = "text/html"): GlobalDo
 function parseNode(node: Element): GlobalDom<HTMLElement> {
   let base: GlobalDom<HTMLElement>;
   switch (node.tagName.toLowerCase()) {
+    // -- BEGIN_TAGS --
+
     case "a":
       base = new tags.A({});
       break;
@@ -355,6 +357,7 @@ function parseNode(node: Element): GlobalDom<HTMLElement> {
     case "wbr":
       base = new tags.Wbr({});
       break;
+    // -- END_TAGS --
     default:
       base = new tags.Custom(node.tagName, {});
       break;
