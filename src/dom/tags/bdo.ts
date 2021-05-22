@@ -20,7 +20,7 @@ Example: `<p>Hello world. <bdo dir="rtl">Hello world</bdo></p>`
      * Left-to-right text direction
      *
      */
-    | "ltr"
+      | "ltr"
       /**
        * Right-to-left text direction
        *

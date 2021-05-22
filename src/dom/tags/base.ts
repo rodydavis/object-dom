@@ -41,7 +41,7 @@ Example: `<head>
      * Opens the link in a new window or tab
      *
      */
-    | "_blank"
+      | "_blank"
       /**
        * Default. Opens the link in the same frame as it was clicked
        *

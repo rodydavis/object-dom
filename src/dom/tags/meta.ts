@@ -78,7 +78,7 @@ Example: `<head>
      * Specifies the name of the Web application that the page represents
      *
      */
-    | "application-name"
+      | "application-name"
       /**
 * Specifies the name of the author of the document. Example:
   

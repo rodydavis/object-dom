@@ -49,10 +49,14 @@ async function main() {
     for (const section of sections) {
         for (const item of tableToJson(section?.outerHTML)) {
             const [ Name, Description ] = Object.values(item);
+            const url = `https://www.w3schools.com/cssref/css3_pr_${Name}.asp`;
+            const cssDetailsDom = await downloadWebpage(url, `css-${Name}`);
+            const cssSupport = getBrowserSupport(cssDetailsDom.window.document.querySelector("table.browserref"));
             css.push(`
             ${commentTemplate({
                 description: Description,
-                url: `https://www.w3schools.com/cssref/css3_pr_${Name}.asp`
+                url,
+                ...cssSupport,
             })}
             ${camelCase(Name)}?: PossibleStyle;
             `);
