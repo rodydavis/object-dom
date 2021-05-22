@@ -154,17 +154,20 @@ Example: `<table>
      * Specifies that the cell is a header for a column
      *
      */
-      | "col"
+    | "col"
+
       /**
        * Specifies that the cell is a header for a row
        *
        */
       | "row"
+
       /**
        * Specifies that the cell is a header for a group of columns
        *
        */
       | "colgroup"
+
       /**
        * Specifies that the cell is a header for a group of rows
        *

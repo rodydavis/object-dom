@@ -48,17 +48,52 @@ async function main() {
     const sections = cssDom.window.document.querySelectorAll("table.w3-table-all");
     for (const section of sections) {
         for (const item of tableToJson(section?.outerHTML)) {
-            const [ Name, Description ] = Object.values(item);
+            const [Name, Description] = Object.values(item);
             const url = `https://www.w3schools.com/cssref/css3_pr_${Name}.asp`;
             const cssDetailsDom = await downloadWebpage(url, `css-${Name}`);
             const cssSupport = getBrowserSupport(cssDetailsDom.window.document.querySelector("table.browserref"));
+            const tables = cssDetailsDom.window.document.querySelectorAll("table.w3-table-all");
+            const cssProperties = tables[1];
+            const values = [];
+            if (cssProperties) {
+                const cssValues = tableToJson(cssProperties?.outerHTML);
+                // console.log(Name, 'cssValues', cssValues);
+                if (cssValues && cssValues.length > 0 && cssValues[0]?.Value) {
+                    let needsFallback = false;
+                    for (const val of cssValues) {
+                        const { Value, Description } = val;
+                        if (!Value) continue;
+                        const ValName = Value.split('\n').join('');
+                        if (ValName.includes('(') && ValName.includes(')')) {
+                            needsFallback = true;
+                            values.push(`
+                            ${commentTemplate({
+                                example: ValName,
+                                description: Description
+                            })}
+                            ${values.length > 0 ? '|' : ''} "${ValName.split('(')[0]}"
+                            `);
+                        } else {
+                            values.push(`
+                            ${commentTemplate({
+                                description: Description
+                            })}
+                            ${values.length > 0 ? '|' : ''} "${ValName}"`);
+                        }
+                    }
+                    if (needsFallback) {
+                        values.push(` | PossibleStyle`);
+                    }
+                }
+            }
             css.push(`
             ${commentTemplate({
+                name: Name,
                 description: Description,
                 url,
                 ...cssSupport,
             })}
-            ${camelCase(Name)}?: PossibleStyle;
+            ${camelCase(Name)}?: ${values.length > 1 ? values.join('\n') : 'PossibleStyle'};
             `);
         }
     }
@@ -169,9 +204,11 @@ async function tagTemplate(name, desc, url, dom, tags) {
                 for (const val of attrValues) {
                     const { Value, Description } = val;
                     if (!Value) continue;
-                    values.push(`${commentTemplate({
+                    values.push(`
+                    ${commentTemplate({
                         description: Description
-                    })}${values.length > 0 ? '|' : ''} "${Value}"`);
+                    })}
+                    ${values.length > 0 ? '|' : ''} "${Value}"`);
                 }
             }
             attributes.push(`

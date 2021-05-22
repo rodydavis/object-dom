@@ -25,22 +25,26 @@ Example: `<form action="/action_page.php">
     pick from
 * 
 */
-      | "file_extension"
+    | "file_extension"
+
       /**
        * The user can pick all sound files
        *
        */
       | "audio/*"
+
       /**
        * The user can pick all video files
        *
        */
       | "video/*"
+
       /**
        * The user can pick all image files
        *
        */
       | "image/*"
+
       /**
 * A valid media type, with no parameters. Look at
  IANA Media Types for a complete list of standard media types
@@ -91,7 +95,8 @@ Example: `<form action="/action_page.php" autocomplete="on">
      * Default. Specifies that autocomplete is on (enabled)
      *
      */
-      | "on"
+    | "on"
+
       /**
        * Specifies that autocomplete is off (disabled)
        *
@@ -241,13 +246,15 @@ Example: `<form action="/action_page_binary.asp" method="post">
      * Default. All characters are encoded before sent (spaces are  converted to "+" symbols, and special characters are converted to ASCII HEX values)
      *
      */
-      | "application/x-www-form-urlencoded"
+    | "application/x-www-form-urlencoded"
+
       /**
 * This value is necessary if the user will upload a file through the 
     form
 * 
 */
       | "multipart/form-data"
+
       /**
        * Sends data without any encoding at all. Not recommended
        *
@@ -277,7 +284,8 @@ Example: `<form action="/action_page.php" method="get">
      * Default. Appends the form-data to the URL in name/value pairs: URL?name=value&name=value
      *
      */
-      | "get"
+    | "get"
+
       /**
        * Sends the form-data as an HTTP post transaction
        *
@@ -329,22 +337,26 @@ Example: `<form action="/action_page.php">
      * The response is displayed in a new window or tab
      *
      */
-      | "_blank"
+    | "_blank"
+
       /**
        * The response is displayed in the same frame (this is default)
        *
        */
       | "_self"
+
       /**
        * The response is displayed in the parent frame
        *
        */
       | "_parent"
+
       /**
        * The response is displayed in the full body of the window
        *
        */
       | "_top"
+
       /**
        * The response is displayed in a named iframe
        *
@@ -422,7 +434,8 @@ Example: `<form action="/action_page.php">
      * Specifies the maximum value allowed
      *
      */
-      | "number"
+    | "number"
+
       /**
        * Specifies the maximum date allowed
        *
@@ -474,7 +487,8 @@ Example: `<form action="/action_page.php">
      * Specifies the minimum value allowed
      *
      */
-      | "number"
+    | "number"
+
       /**
        * Specifies the minimum date allowed
        *
@@ -677,7 +691,8 @@ Example: `<form action="/action_page.php">
      * Specifies the interval between legal numbers in the input field. Default is  1
      *
      */
-      | "number"
+    | "number"
+
       /**
        */
       | "any";
@@ -705,107 +720,128 @@ Example: `<form action="/action_page.php">
      * Defines a clickable button (mostly used with a JavaScript to activate a script)
      *
      */
-      | "button"
+    | "button"
+
       /**
        * Defines a checkbox
        *
        */
       | "checkbox"
+
       /**
        * Defines a color picker
        *
        */
       | "color"
+
       /**
        * Defines a date control (year, month, day (no time))
        *
        */
       | "date"
+
       /**
        * Defines a date and time control (year,  month, day, time (no timezone)
        *
        */
       | "datetime-local"
+
       /**
        * Defines a field for an e-mail address
        *
        */
       | "email"
+
       /**
        * Defines a file-select field and a "Browse" button (for file uploads)
        *
        */
       | "file"
+
       /**
        * Defines a hidden input field
        *
        */
       | "hidden"
+
       /**
        * Defines an image as the submit button
        *
        */
       | "image"
+
       /**
        * Defines a month and year control (no timezone)
        *
        */
       | "month"
+
       /**
        * Defines a field for entering a number
        *
        */
       | "number"
+
       /**
        * Defines a password field
        *
        */
       | "password"
+
       /**
        * Defines a radio button
        *
        */
       | "radio"
+
       /**
        * Defines a range control (like a slider control)
        *
        */
       | "range"
+
       /**
        * Defines a reset button
        *
        */
       | "reset"
+
       /**
        * Defines a text field for entering a search string
        *
        */
       | "search"
+
       /**
        * Defines a submit button
        *
        */
       | "submit"
+
       /**
        * Defines a field for entering a telephone number
        *
        */
       | "tel"
+
       /**
        * Default. Defines a single-line text field
        *
        */
       | "text"
+
       /**
        * Defines a control for entering a time (no timezone)
        *
        */
       | "time"
+
       /**
        * Defines a field for entering a URL
        *
        */
       | "url"
+
       /**
        * Defines a week and year control (no timezone)
        *

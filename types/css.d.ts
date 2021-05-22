@@ -1,6 +1,8 @@
 import { PossibleStyle } from "./dom/styles";
 export interface CSSStyles {
     /**
+  * align-items
+  *
   * Specifies the alignment for items inside a flexible container
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -9,8 +11,40 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_align-items.asp
   */
-    alignItems?: PossibleStyle;
+    alignItems?: "stretch"
     /**
+     * Items are positioned at the center of the container
+     *
+     */
+     | "center"
+    /**
+     * Items are positioned at the beginning of the container
+     *
+     */
+     | "flex-start"
+    /**
+     * Items are positioned at the end of the container
+     *
+     */
+     | "flex-end"
+    /**
+     * Items are positioned at the baseline of the container
+     *
+     */
+     | "baseline"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * align-self
+  *
   * Specifies the alignment for selected items inside a flexible container
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -19,8 +53,45 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_align-self.asp
   */
-    alignSelf?: PossibleStyle;
+    alignSelf?: "auto"
     /**
+     * The element is positioned to fit the container
+     *
+     */
+     | "stretch"
+    /**
+     * The element is positioned at the center of the container
+     *
+     */
+     | "center"
+    /**
+     * The element is positioned at the beginning of the container
+     *
+     */
+     | "flex-start"
+    /**
+     * The element is positioned at the end of the container
+     *
+     */
+     | "flex-end"
+    /**
+     * The element is positioned at the baseline of the container
+     *
+     */
+     | "baseline"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * all
+  *
   * Resets all properties (except unicode-bidi and direction)
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -29,8 +100,20 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_all.asp
   */
-    all?: PossibleStyle;
+    all?: "initial"
     /**
+     * Changes all the properties applied to the element or the element's parent to their parent value
+     *
+     */
+     | "inherit"
+    /**
+     * Changes all the properties applied to the element or the element's parent to their parent value if they are inheritable or to their initial value if not
+     *
+     */
+     | "unset";
+    /**
+  * animation
+  *
   * A shorthand property for all the animation-* properties
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -39,8 +122,55 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_animation.asp
   */
-    animation?: PossibleStyle;
+    animation?: "animation-name"
     /**
+     * Specifies how many seconds or milliseconds an animation takes to complete
+     *
+     */
+     | "animation-duration"
+    /**
+     * Specifies the speed curve of the animation
+     *
+     */
+     | "animation-timing-function"
+    /**
+     * Specifies a delay before the animation will start
+     *
+     */
+     | "animation-delay"
+    /**
+     * Specifies how many times an animation should be played
+     *
+     */
+     | "animation-iteration-count"
+    /**
+     * Specifies whether or not the animation should play in reverse on alternate cycles
+     *
+     */
+     | "animation-direction"
+    /**
+     * Specifies what values are applied by the animation outside the time it is executing
+     *
+     */
+     | "animation-fill-mode"
+    /**
+     * Specifies whether the animation is running or paused
+     *
+     */
+     | "animation-play-state"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * animation-delay
+  *
   * Specifies a delay for the start of an animation
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -49,8 +179,20 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_animation-delay.asp
   */
-    animationDelay?: PossibleStyle;
+    animationDelay?: "time"
     /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * animation-direction
+  *
   * Specifies whether an animation should be played forwards, backwards or
       in alternate cycles
   *
@@ -60,8 +202,35 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_animation-direction.asp
   */
-    animationDirection?: PossibleStyle;
+    animationDirection?: "normal"
     /**
+     * The animation is played in reverse direction (backwards)
+     *
+     */
+     | "reverse"
+    /**
+     * The animation is played forwards first, then backwards
+     *
+     */
+     | "alternate"
+    /**
+     * The animation is played backwards first, then forwards
+     *
+     */
+     | "alternate-reverse"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * animation-duration
+  *
   * Specifies how long an animation should take to complete one cycle
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -70,8 +239,20 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_animation-duration.asp
   */
-    animationDuration?: PossibleStyle;
+    animationDuration?: "time"
     /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * animation-fill-mode
+  *
   * Specifies a style for the element when the animation is not playing (before
       it starts, after it ends, or both)
   *
@@ -81,8 +262,37 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_animation-fill-mode.asp
   */
-    animationFillMode?: PossibleStyle;
+    animationFillMode?: "none"
     /**
+     * The element will retain the style values that is set by the last keyframe (depends on animation-direction and animation-iteration-count)
+     *
+     */
+     | "forwards"
+    /**
+* The element will get the style values that is set by the first keyframe (depends on animation-direction), and retain this during
+    the
+    animation-delay period
+*
+*/
+     | "backwards"
+    /**
+     * The animation will follow the rules for both forwards and backwards, extending the animation properties in both directions
+     *
+     */
+     | "both"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * animation-iteration-count
+  *
   * Specifies the number of times an animation should be played
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -91,8 +301,25 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_animation-iteration-count.asp
   */
-    animationIterationCount?: PossibleStyle;
+    animationIterationCount?: "number"
     /**
+     * Specifies that the animation should be played infinite times (for ever)
+     *
+     */
+     | "infinite"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * animation-name
+  *
   * Specifies a name for the @keyframes animation
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -101,8 +328,25 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_animation-name.asp
   */
-    animationName?: PossibleStyle;
+    animationName?: "keyframename"
     /**
+     * Default value. Specifies that there will be no animation (can be used to override animations coming from the cascade)
+     *
+     */
+     | "none"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * animation-play-state
+  *
   * Specifies whether the animation is running or paused
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -111,8 +355,25 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_animation-play-state.asp
   */
-    animationPlayState?: PossibleStyle;
+    animationPlayState?: "paused"
     /**
+     * Default value. Specifies that the animation is running
+     *
+     */
+     | "running"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * animation-timing-function
+  *
   * Specifies the speed curve of an animation
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -121,8 +382,65 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_animation-timing-function.asp
   */
-    animationTimingFunction?: PossibleStyle;
+    animationTimingFunction?: "linear"
     /**
+     * Default value. The animation has a slow start, then fast, before it ends slowly
+     *
+     */
+     | "ease"
+    /**
+     * The animation has a slow start
+     *
+     */
+     | "ease-in"
+    /**
+     * The animation has a slow end
+     *
+     */
+     | "ease-out"
+    /**
+     * The animation has both a slow start and a slow end
+     *
+     */
+     | "ease-in-out"
+    /**
+     * Equivalent to steps(1, start)
+     *
+     */
+     | "step-start"
+    /**
+     * Equivalent to steps(1, end)
+     *
+     */
+     | "step-end"
+    /**
+* Specifies a stepping function, with two parameters. The first parameter specifies the number of intervals in the function. It must be a positive integer (greater than 0). The second parameter, which is optional, is either the value "start" or "end", and specifies the point at which the change of values occur within the interval. If the second parameter is omitted, it is given the value "end"
+*
+Example: `steps(int,start|end)`
+*
+*/
+     | "steps"
+    /**
+* Define your own values in the cubic-bezier function
+ Possible values are numeric values from 0 to 1
+*
+Example: `cubic-bezier(n,n,n,n)`
+*
+*/
+     | "cubic-bezier"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit" | PossibleStyle;
+    /**
+  * background
+  *
   * A shorthand property for all the background-* properties
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -131,8 +449,55 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_background.asp
   */
-    background?: PossibleStyle;
+    background?: "background-color"
     /**
+     * Specifies ONE or MORE background images to be used
+     *
+     */
+     | "background-image"
+    /**
+     * Specifies the position of the background images
+     *
+     */
+     | "background-position"
+    /**
+     * Specifies the size of the background images
+     *
+     */
+     | "background-size"
+    /**
+     * Specifies how to repeat the background images
+     *
+     */
+     | "background-repeat"
+    /**
+     * Specifies the positioning area of the background images
+     *
+     */
+     | "background-origin"
+    /**
+     * Specifies the painting area of the background images
+     *
+     */
+     | "background-clip"
+    /**
+     * Specifies whether the background images are fixed or scrolls with the rest of the page
+     *
+     */
+     | "background-attachment"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * background-attachment
+  *
   * Sets whether a background image scrolls with the rest of the page, or is fixed
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -143,6 +508,8 @@ export interface CSSStyles {
   */
     backgroundAttachment?: PossibleStyle;
     /**
+  * background-blend-mode
+  *
   * Specifies the blending mode of each background layer (color/image)
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -153,6 +520,8 @@ export interface CSSStyles {
   */
     backgroundBlendMode?: PossibleStyle;
     /**
+  * background-clip
+  *
   * Defines how far the background (color or image) should extend within an
       element
   *
@@ -162,8 +531,30 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_background-clip.asp
   */
-    backgroundClip?: PossibleStyle;
+    backgroundClip?: "border-box"
     /**
+     * The background extends to the inside edge of the border
+     *
+     */
+     | "padding-box"
+    /**
+     * The background extends to the edge of the content box
+     *
+     */
+     | "content-box"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * background-color
+  *
   * Specifies the background color of an element
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -174,6 +565,8 @@ export interface CSSStyles {
   */
     backgroundColor?: PossibleStyle;
     /**
+  * background-image
+  *
   * Specifies one or more background images for an element
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -184,6 +577,8 @@ export interface CSSStyles {
   */
     backgroundImage?: PossibleStyle;
     /**
+  * background-origin
+  *
   * Specifies the origin position of a background image
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -192,8 +587,30 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_background-origin.asp
   */
-    backgroundOrigin?: PossibleStyle;
+    backgroundOrigin?: "padding-box"
     /**
+     * The background image starts from the upper left corner of the border
+     *
+     */
+     | "border-box"
+    /**
+     * The background image starts from the upper left corner of the content
+     *
+     */
+     | "content-box"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * background-position
+  *
   * Specifies the position of a background image
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -204,6 +621,8 @@ export interface CSSStyles {
   */
     backgroundPosition?: PossibleStyle;
     /**
+  * background-repeat
+  *
   * Sets if/how a background image will be repeated
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -214,6 +633,8 @@ export interface CSSStyles {
   */
     backgroundRepeat?: PossibleStyle;
     /**
+  * background-size
+  *
   * Specifies the size of the background images
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -222,8 +643,41 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_background-size.asp
   */
-    backgroundSize?: PossibleStyle;
+    backgroundSize?: "auto"
     /**
+     * Sets the width and height of the background image. The first value sets the width, the second value sets the height. If only one value is given, the second is set to "auto". Read about length units
+     *
+     */
+     | "length"
+    /**
+     * Sets the width and height of the background image in percent of the parent element. The first value sets the width, the second value sets the height. If only one value is given, the second is set to "auto"
+     *
+     */
+     | "percentage"
+    /**
+* Resize the background image to cover the entire container, even if it
+    has to stretch the image or cut a little bit off one of the edges
+*
+*/
+     | "cover"
+    /**
+     * Resize the background image to make sure the image is fully visible
+     *
+     */
+     | "contain"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * border
+  *
   * A shorthand property for border-width, border-style and border-color
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -234,6 +688,8 @@ export interface CSSStyles {
   */
     border?: PossibleStyle;
     /**
+  * border-bottom
+  *
   * A shorthand property for border-bottom-width, border-bottom-style
       and border-bottom-color
   *
@@ -245,6 +701,8 @@ export interface CSSStyles {
   */
     borderBottom?: PossibleStyle;
     /**
+  * border-bottom-color
+  *
   * Sets the color of the bottom border
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -255,6 +713,8 @@ export interface CSSStyles {
   */
     borderBottomColor?: PossibleStyle;
     /**
+  * border-bottom-left-radius
+  *
   * Defines the radius of the border of the bottom-left corner
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -263,8 +723,25 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_border-bottom-left-radius.asp
   */
-    borderBottomLeftRadius?: PossibleStyle;
+    borderBottomLeftRadius?: "length"
     /**
+     * Defines the shape of the bottom-left corner in %
+     *
+     */
+     | "%"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * border-bottom-right-radius
+  *
   * Defines the radius of the border of the bottom-right corner
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -273,8 +750,25 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_border-bottom-right-radius.asp
   */
-    borderBottomRightRadius?: PossibleStyle;
+    borderBottomRightRadius?: "length"
     /**
+     * Defines the shape of the bottom-right corner in %
+     *
+     */
+     | "%"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * border-bottom-style
+  *
   * Sets the style of the bottom border
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -285,6 +779,8 @@ export interface CSSStyles {
   */
     borderBottomStyle?: PossibleStyle;
     /**
+  * border-bottom-width
+  *
   * Sets the width of the bottom border
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -295,6 +791,8 @@ export interface CSSStyles {
   */
     borderBottomWidth?: PossibleStyle;
     /**
+  * border-collapse
+  *
   * Sets whether table borders should collapse into a single border or be separated
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -305,6 +803,8 @@ export interface CSSStyles {
   */
     borderCollapse?: PossibleStyle;
     /**
+  * border-color
+  *
   * Sets the color of the four borders
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -315,6 +815,8 @@ export interface CSSStyles {
   */
     borderColor?: PossibleStyle;
     /**
+  * border-image
+  *
   * A shorthand property for all the border-image-* properties
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -323,8 +825,40 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_border-image.asp
   */
-    borderImage?: PossibleStyle;
+    borderImage?: "border-image-source"
     /**
+     * How to slice the border image
+     *
+     */
+     | "border-image-slice"
+    /**
+     * The width of the border image
+     *
+     */
+     | "border-image-width"
+    /**
+     * The amount by which the border image area extends beyond the border box
+     *
+     */
+     | "border-image-outset"
+    /**
+     * Whether the border image should be repeated, rounded or stretched
+     *
+     */
+     | "border-image-repeat"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * border-image-outset
+  *
   * Specifies the amount by which the border image area extends beyond the border box
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -333,8 +867,25 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_border-image-outset.asp
   */
-    borderImageOutset?: PossibleStyle;
+    borderImageOutset?: "length"
     /**
+     * Represent multiples of the corresponding border-width
+     *
+     */
+     | "number"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * border-image-repeat
+  *
   * Specifies whether the border image should be repeated, rounded or stretched
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -343,8 +894,35 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_border-image-repeat.asp
   */
-    borderImageRepeat?: PossibleStyle;
+    borderImageRepeat?: "stretch"
     /**
+     * The image is tiled (repeated) to fill the area
+     *
+     */
+     | "repeat"
+    /**
+     * The image is tiled (repeated) to fill the area. If it does not fill the area with a whole number of tiles, the image is rescaled so it fits
+     *
+     */
+     | "round"
+    /**
+     * The image is tiled (repeated) to fill the area. If it does not fill the area with a whole number of tiles, the extra space is distributed around the tiles
+     *
+     */
+     | "space"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * border-image-slice
+  *
   * Specifies how to slice the border image
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -353,8 +931,30 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_border-image-slice.asp
   */
-    borderImageSlice?: PossibleStyle;
+    borderImageSlice?: "number"
     /**
+     * Percentages are relative to the height or width of the image
+     *
+     */
+     | "%"
+    /**
+     * Causes the middle part of the image to be displayed
+     *
+     */
+     | "fill"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * border-image-source
+  *
   * Specifies the path to the image to be used as a border
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -363,8 +963,25 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_border-image-source.asp
   */
-    borderImageSource?: PossibleStyle;
+    borderImageSource?: "none"
     /**
+     * The path to the image to be used as a border
+     *
+     */
+     | "image"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * border-image-width
+  *
   * Specifies the width of the border image
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -373,8 +990,35 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_border-image-width.asp
   */
-    borderImageWidth?: PossibleStyle;
+    borderImageWidth?: "length"
     /**
+     * Default value 1. Represents multiples of the corresponding border-width
+     *
+     */
+     | "number"
+    /**
+     * Refers to the size of the border image area: the width of the area for horizontal offsets, the height for vertical offsets
+     *
+     */
+     | "%"
+    /**
+     * If specified, the width is the intrinsic width or height of the corresponding image slice
+     *
+     */
+     | "auto"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * border-left
+  *
   * A shorthand property for all the border-left-* properties
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -385,6 +1029,8 @@ export interface CSSStyles {
   */
     borderLeft?: PossibleStyle;
     /**
+  * border-left-color
+  *
   * Sets the color of the left border
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -395,6 +1041,8 @@ export interface CSSStyles {
   */
     borderLeftColor?: PossibleStyle;
     /**
+  * border-left-style
+  *
   * Sets the style of the left border
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -405,6 +1053,8 @@ export interface CSSStyles {
   */
     borderLeftStyle?: PossibleStyle;
     /**
+  * border-left-width
+  *
   * Sets the width of the left border
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -415,6 +1065,8 @@ export interface CSSStyles {
   */
     borderLeftWidth?: PossibleStyle;
     /**
+  * border-radius
+  *
   * A shorthand property for the four border-*-radius properties
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -423,8 +1075,25 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_border-radius.asp
   */
-    borderRadius?: PossibleStyle;
+    borderRadius?: "length"
     /**
+     * Defines the shape of the corners in %
+     *
+     */
+     | "%"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * border-right
+  *
   * A shorthand property for all the border-right-* properties
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -435,6 +1104,8 @@ export interface CSSStyles {
   */
     borderRight?: PossibleStyle;
     /**
+  * border-right-color
+  *
   * Sets the color of the right border
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -445,6 +1116,8 @@ export interface CSSStyles {
   */
     borderRightColor?: PossibleStyle;
     /**
+  * border-right-style
+  *
   * Sets the style of the right border
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -455,6 +1128,8 @@ export interface CSSStyles {
   */
     borderRightStyle?: PossibleStyle;
     /**
+  * border-right-width
+  *
   * Sets the width of the right border
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -465,6 +1140,8 @@ export interface CSSStyles {
   */
     borderRightWidth?: PossibleStyle;
     /**
+  * border-spacing
+  *
   * Sets the distance between the borders of adjacent cells
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -475,6 +1152,8 @@ export interface CSSStyles {
   */
     borderSpacing?: PossibleStyle;
     /**
+  * border-style
+  *
   * Sets the style of the four borders
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -485,6 +1164,8 @@ export interface CSSStyles {
   */
     borderStyle?: PossibleStyle;
     /**
+  * border-top
+  *
   * A shorthand property for border-top-width, border-top-style and
       border-top-color
   *
@@ -496,6 +1177,8 @@ export interface CSSStyles {
   */
     borderTop?: PossibleStyle;
     /**
+  * border-top-color
+  *
   * Sets the color of the top border
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -506,6 +1189,8 @@ export interface CSSStyles {
   */
     borderTopColor?: PossibleStyle;
     /**
+  * border-top-left-radius
+  *
   * Defines the radius of the border of the top-left corner
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -514,8 +1199,25 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_border-top-left-radius.asp
   */
-    borderTopLeftRadius?: PossibleStyle;
+    borderTopLeftRadius?: "length"
     /**
+     * Defines the shape of the top-left corner in %
+     *
+     */
+     | "%"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * border-top-right-radius
+  *
   * Defines the radius of the border of the top-right corner
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -524,8 +1226,25 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_border-top-right-radius.asp
   */
-    borderTopRightRadius?: PossibleStyle;
+    borderTopRightRadius?: "length"
     /**
+     * Defines the shape of the top-right corner in %
+     *
+     */
+     | "%"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * border-top-style
+  *
   * Sets the style of the top border
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -536,6 +1255,8 @@ export interface CSSStyles {
   */
     borderTopStyle?: PossibleStyle;
     /**
+  * border-top-width
+  *
   * Sets the width of the top border
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -546,6 +1267,8 @@ export interface CSSStyles {
   */
     borderTopWidth?: PossibleStyle;
     /**
+  * border-width
+  *
   * Sets the width of the four borders
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -556,6 +1279,8 @@ export interface CSSStyles {
   */
     borderWidth?: PossibleStyle;
     /**
+  * bottom
+  *
   * Sets the elements position, from the bottom of its parent element
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -566,6 +1291,8 @@ export interface CSSStyles {
   */
     bottom?: PossibleStyle;
     /**
+  * box-decoration-break
+  *
   * Sets the behavior of the background and border of an element at page-break, or, for  in-line elements, at line-break.
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -574,8 +1301,28 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_box-decoration-break.asp
   */
-    boxDecorationBreak?: PossibleStyle;
+    boxDecorationBreak?: "slice"
     /**
+* Box decorations apply to each fragment of the element as if the
+    fragments were individual elements. Borders wrap the four edges of
+    each fragment of the element, and backgrounds are redrawn in full for each
+    fragment
+*
+*/
+     | "clone"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * box-shadow
+  *
   * Attaches one or more shadows to an element
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -584,8 +1331,55 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_box-shadow.asp
   */
-    boxShadow?: PossibleStyle;
+    boxShadow?: "none"
     /**
+* Required. The horizontal offset of the shadow. A positive value puts the
+    shadow on the right side of the box, a negative value puts the shadow on the
+    left side of the box
+*
+*/
+     | "h-offset"
+    /**
+* Required. The vertical offset of the shadow. A positive value puts the
+    shadow below the box, a negative value puts the shadow above the box
+*
+*/
+     | "v-offset"
+    /**
+* Optional. The blur radius. The higher the number, the more blurred the
+    shadow will be
+*
+*/
+     | "blur"
+    /**
+* Optional. The spread radius. A positive value increases the size of the
+    shadow, a negative value decreases the size of the shadow
+*
+*/
+     | "spread"
+    /**
+     * Optional. The color of the shadow. The default value is the text color. Look at CSS Color Values for a complete list of possible color values.Note: In Safari (on PC) the color parameter is required. If you do not specify the color, the shadow is not displayed at all.
+     *
+     */
+     | "color"
+    /**
+     * Optional. Changes the shadow from an outer shadow (outset) to an inner shadow
+     *
+     */
+     | "inset"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * box-sizing
+  *
   * Defines how the width and height of an element are calculated: should
       they include padding and borders, or not
   *
@@ -595,8 +1389,26 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_box-sizing.asp
   */
-    boxSizing?: PossibleStyle;
+    boxSizing?: "content-box"
     /**
+* The width and height properties (and min/max properties) includes
+    content, padding and border
+*
+*/
+     | "border-box"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * break-after
+  *
   * Specifies whether or not a page-, column-, or region-break should occur
       after the specified element
   *
@@ -608,6 +1420,8 @@ export interface CSSStyles {
   */
     breakAfter?: PossibleStyle;
     /**
+  * break-before
+  *
   * Specifies whether or not a page-, column-, or region-break should occur
       before the specified element
   *
@@ -619,6 +1433,8 @@ export interface CSSStyles {
   */
     breakBefore?: PossibleStyle;
     /**
+  * break-inside
+  *
   * Specifies whether or not a page-, column-, or region-break should occur
       inside the specified element
   *
@@ -630,6 +1446,8 @@ export interface CSSStyles {
   */
     breakInside?: PossibleStyle;
     /**
+  * caret-color
+  *
   * Specifies the color of the cursor (caret) in inputs, textareas, or any
       element that is editable
   *
@@ -639,8 +1457,27 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_caret-color.asp
   */
-    caretColor?: PossibleStyle;
+    caretColor?: "auto"
     /**
+* Specifies a color to use for the caret. All legal color values can be used (rgb,
+    hex, named-color, etc). For more information on legal values, read our CSS
+    Colors Tutorial
+*
+*/
+     | "color"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * @charset
+  *
   * Specifies the character encoding used in the style sheet
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -651,6 +1488,8 @@ export interface CSSStyles {
   */
     charset?: PossibleStyle;
     /**
+  * clear
+  *
   * Specifies on which sides of an element floating elements are not allowed to float
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -661,6 +1500,8 @@ export interface CSSStyles {
   */
     clear?: PossibleStyle;
     /**
+  * clip
+  *
   * Clips an absolutely positioned element
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -671,6 +1512,8 @@ export interface CSSStyles {
   */
     clip?: PossibleStyle;
     /**
+  * color
+  *
   * Sets the color of text
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -681,6 +1524,8 @@ export interface CSSStyles {
   */
     color?: PossibleStyle;
     /**
+  * column-count
+  *
   * Specifies the number of columns an element should be divided into
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -689,8 +1534,25 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_column-count.asp
   */
-    columnCount?: PossibleStyle;
+    columnCount?: "number"
     /**
+     * Default value. The number of columns will be determined by other properties, like e.g. "column-width"
+     *
+     */
+     | "auto"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * column-fill
+  *
   * Specifies how to fill columns, balanced or not
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -699,8 +1561,27 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_column-fill.asp
   */
-    columnFill?: PossibleStyle;
+    columnFill?: "balance"
     /**
+* Fills each column until it reaches the height, and do this until it runs
+    out of content (so, this value will not necessarily fill all the columns nor
+    fill them evenly)
+*
+*/
+     | "auto"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * column-gap
+  *
   * Specifies the gap between the columns
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -709,8 +1590,25 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_column-gap.asp
   */
-    columnGap?: PossibleStyle;
+    columnGap?: "length"
     /**
+     * Default value. Specifies a normal gap between the columns. W3C suggests a value of 1em
+     *
+     */
+     | "normal"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * column-rule
+  *
   * A shorthand property for all the column-rule-* properties
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -719,8 +1617,30 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_column-rule.asp
   */
-    columnRule?: PossibleStyle;
+    columnRule?: "column-rule-width"
     /**
+     * Sets the style of the rule between columns. Default value is none
+     *
+     */
+     | "column-rule-style"
+    /**
+     * Sets the color of the rule between columns. Default value is the color of the element
+     *
+     */
+     | "column-rule-color"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * column-rule-color
+  *
   * Specifies the color of the rule between columns
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -729,8 +1649,20 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_column-rule-color.asp
   */
-    columnRuleColor?: PossibleStyle;
+    columnRuleColor?: "color"
     /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * column-rule-style
+  *
   * Specifies the style of the rule between columns
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -739,8 +1671,65 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_column-rule-style.asp
   */
-    columnRuleStyle?: PossibleStyle;
+    columnRuleStyle?: "none"
     /**
+     * Defines a hidden rule
+     *
+     */
+     | "hidden"
+    /**
+     * Defines a dotted rule
+     *
+     */
+     | "dotted"
+    /**
+     * Defines a dashed rule
+     *
+     */
+     | "dashed"
+    /**
+     * Defines a solid rule
+     *
+     */
+     | "solid"
+    /**
+     * Defines a double rule
+     *
+     */
+     | "double"
+    /**
+     * Specifies a 3D grooved rule. The effect depends on the width and color values
+     *
+     */
+     | "groove"
+    /**
+     * Specifies a 3D ridged rule. The effect depends on the width and color values
+     *
+     */
+     | "ridge"
+    /**
+     * Specifies a 3D inset rule. The effect depends on the width and color values
+     *
+     */
+     | "inset"
+    /**
+     * Specifies a 3D outset rule. The effect depends on the width and color values
+     *
+     */
+     | "outset"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * column-rule-width
+  *
   * Specifies the width of the rule between columns
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -749,8 +1738,35 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_column-rule-width.asp
   */
-    columnRuleWidth?: PossibleStyle;
+    columnRuleWidth?: "medium"
     /**
+     * Defines a thin rule
+     *
+     */
+     | "thin"
+    /**
+     * Defines a thick rule
+     *
+     */
+     | "thick"
+    /**
+     * Specifies the width of the rule
+     *
+     */
+     | "length"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * column-span
+  *
   * Specifies how many columns an element should span across
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -759,8 +1775,25 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_column-span.asp
   */
-    columnSpan?: PossibleStyle;
+    columnSpan?: "none"
     /**
+     * The element should span across all columns
+     *
+     */
+     | "all"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * column-width
+  *
   * Specifies the column width
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -769,8 +1802,27 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_column-width.asp
   */
-    columnWidth?: PossibleStyle;
+    columnWidth?: "auto"
     /**
+* A length that specifies the width of the columns. The number of columns
+    will be the minimum number of columns needed to show all the content across
+    the element. Read about length units
+*
+*/
+     | "length"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * columns
+  *
   * A shorthand property for column-width and column-count
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -779,8 +1831,30 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_columns.asp
   */
-    columns?: PossibleStyle;
+    columns?: "auto"
     /**
+     * Defines the minimum width for each column
+     *
+     */
+     | "column-width"
+    /**
+     * Defines the maximum number of columns
+     *
+     */
+     | "column-count"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * content
+  *
   * Used with the :before and :after pseudo-elements, to insert generated content
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -791,6 +1865,8 @@ export interface CSSStyles {
   */
     content?: PossibleStyle;
     /**
+  * counter-increment
+  *
   * Increases or decreases the value of one or more CSS counters
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -801,6 +1877,8 @@ export interface CSSStyles {
   */
     counterIncrement?: PossibleStyle;
     /**
+  * counter-reset
+  *
   * Creates or resets one or more CSS counters
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -811,6 +1889,8 @@ export interface CSSStyles {
   */
     counterReset?: PossibleStyle;
     /**
+  * cursor
+  *
   * Specifies the mouse cursor to be displayed when pointing over an element
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -821,6 +1901,8 @@ export interface CSSStyles {
   */
     cursor?: PossibleStyle;
     /**
+  * display
+  *
   * Specifies how a certain HTML element should be displayed
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -831,6 +1913,8 @@ export interface CSSStyles {
   */
     display?: PossibleStyle;
     /**
+  * flex
+  *
   * A shorthand property for the flex-grow, flex-shrink, and the
       flex-basis
       properties
@@ -841,8 +1925,40 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_flex.asp
   */
-    flex?: PossibleStyle;
+    flex?: "flex-grow"
     /**
+     * A number specifying how much the item will shrink relative to the rest of the flexible items
+     *
+     */
+     | "flex-shrink"
+    /**
+     * The length of the item. Legal values: "auto", "inherit", or a number followed by "%", "px", "em" or any other length unit
+     *
+     */
+     | "flex-basis"
+    /**
+     * Same as 1 1 auto.
+     *
+     */
+     | "auto"
+    /**
+     * Same as 0 1 auto. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Same as 0 0 auto.
+     *
+     */
+     | "none"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * flex-basis
+  *
   * Specifies the initial length of a flexible item
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -851,8 +1967,25 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_flex-basis.asp
   */
-    flexBasis?: PossibleStyle;
+    flexBasis?: "number"
     /**
+     * Default value. The length is equal to the length of the flexible item. If the item has no length specified, the length will be according to its content
+     *
+     */
+     | "auto"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * flex-direction
+  *
   * Specifies the direction of the flexible items
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -861,8 +1994,35 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_flex-direction.asp
   */
-    flexDirection?: PossibleStyle;
+    flexDirection?: "row"
     /**
+     * Same as row, but in reverse order
+     *
+     */
+     | "row-reverse"
+    /**
+     * The flexible items are displayed vertically, as a column
+     *
+     */
+     | "column"
+    /**
+     * Same as column, but in reverse order
+     *
+     */
+     | "column-reverse"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * flex-flow
+  *
   * A shorthand property for the flex-direction and the flex-wrap properties
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -871,8 +2031,28 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_flex-flow.asp
   */
-    flexFlow?: PossibleStyle;
+    flexFlow?: "flex-direction"
     /**
+* Possible values:nowrapwrapwrap-reverseinitialinherit
+  Default value is "nowrap".
+
+  Specifying whether the flexible items should wrap or not
+*
+*/
+     | "flex-wrap"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * flex-grow
+  *
   * Specifies how much the item will grow relative to the rest
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -881,8 +2061,20 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_flex-grow.asp
   */
-    flexGrow?: PossibleStyle;
+    flexGrow?: "number"
     /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * flex-shrink
+  *
   * Specifies how the item will shrink relative to the rest
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -891,8 +2083,20 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_flex-shrink.asp
   */
-    flexShrink?: PossibleStyle;
+    flexShrink?: "number"
     /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * flex-wrap
+  *
   * Specifies whether the flexible items should wrap or not
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -901,8 +2105,30 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_flex-wrap.asp
   */
-    flexWrap?: PossibleStyle;
+    flexWrap?: "nowrap"
     /**
+     * Specifies that the flexible items will wrap if necessary
+     *
+     */
+     | "wrap"
+    /**
+     * Specifies that the flexible items will wrap, if necessary, in reverse order
+     *
+     */
+     | "wrap-reverse"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * float
+  *
   * Specifies whether or not a box should float
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -913,6 +2139,8 @@ export interface CSSStyles {
   */
     float?: PossibleStyle;
     /**
+  * font
+  *
   * A shorthand property for the font-style, font-variant, font-weight,
       font-size/line-height, and the font-family properties
   *
@@ -924,6 +2152,8 @@ export interface CSSStyles {
   */
     font?: PossibleStyle;
     /**
+  * @font-face
+  *
   * A rule that allows websites to download and use fonts other than the "web-safe" fonts
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -934,6 +2164,8 @@ export interface CSSStyles {
   */
     fontFace?: PossibleStyle;
     /**
+  * font-family
+  *
   * Specifies the font family for text
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -944,6 +2176,8 @@ export interface CSSStyles {
   */
     fontFamily?: PossibleStyle;
     /**
+  * font-feature-settings
+  *
   * Allows control over advanced typographic features in OpenType fonts
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -952,8 +2186,15 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_font-feature-settings.asp
   */
-    fontFeatureSettings?: PossibleStyle;
+    fontFeatureSettings?: "normal"
     /**
+     * Format: string [1|0|on|off] Always a string of 4 ASCII characters.
+     *
+     */
+     | "feature-value";
+    /**
+  * @font-feature-values
+  *
   * Allows authors to use a common name in font-variant-alternate for feature activated differently in OpenType
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -964,6 +2205,8 @@ export interface CSSStyles {
   */
     fontFeatureValues?: PossibleStyle;
     /**
+  * font-kerning
+  *
   * Controls the usage of the kerning information (how letters are spaced)
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -972,8 +2215,20 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_font-kerning.asp
   */
-    fontKerning?: PossibleStyle;
+    fontKerning?: "auto"
     /**
+     * Specifies that font kerning is applied
+     *
+     */
+     | "normal"
+    /**
+     * Specifies that font kerning is not applied
+     *
+     */
+     | "none";
+    /**
+  * font-language-override
+  *
   * Controls the usage of language-specific glyphs in a typeface
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -982,8 +2237,16 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_font-language-override.asp
   */
-    fontLanguageOverride?: PossibleStyle;
+    fontLanguageOverride?: "normal"
     /**
+* The browser will use font glyphs that are appropriate for the language
+    defined by string
+*
+*/
+     | "string";
+    /**
+  * font-size
+  *
   * Specifies the font size of text
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -994,6 +2257,8 @@ export interface CSSStyles {
   */
     fontSize?: PossibleStyle;
     /**
+  * font-size-adjust
+  *
   * Preserves the readability of text when font fallback occurs
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1002,8 +2267,25 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_font-size-adjust.asp
   */
-    fontSizeAdjust?: PossibleStyle;
+    fontSizeAdjust?: "number"
     /**
+     * Default value. No font size adjustment
+     *
+     */
+     | "none"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * font-stretch
+  *
   * Selects a normal, condensed, or expanded face from a font family
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1012,8 +2294,60 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_font-stretch.asp
   */
-    fontStretch?: PossibleStyle;
+    fontStretch?: "ultra-condensed"
     /**
+     * Makes the text narrower than condensed, but not as narrow as ultra-condensed
+     *
+     */
+     | "extra-condensed"
+    /**
+     * Makes the text narrower than semi-condensed, but not as narrow as extra-condensed
+     *
+     */
+     | "condensed"
+    /**
+     * Makes the text narrower than normal, but not as narrow as condensed
+     *
+     */
+     | "semi-condensed"
+    /**
+     * Default value. No font stretching
+     *
+     */
+     | "normal"
+    /**
+     * Makes the text wider than normal, but not as wide as expanded
+     *
+     */
+     | "semi-expanded"
+    /**
+     * Makes the text wider than semi-expanded, but not as wide as extra-expanded
+     *
+     */
+     | "expanded"
+    /**
+     * Makes the text wider than expanded, but not as wide as ultra-expanded
+     *
+     */
+     | "extra-expanded"
+    /**
+     * Makes the text as wide as it gets
+     *
+     */
+     | "ultra-expanded"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * font-style
+  *
   * Specifies the font style for text
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1024,6 +2358,8 @@ export interface CSSStyles {
   */
     fontStyle?: PossibleStyle;
     /**
+  * font-synthesis
+  *
   * Controls which missing typefaces (bold or italic) may be synthesized by the browser
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1034,6 +2370,8 @@ export interface CSSStyles {
   */
     fontSynthesis?: PossibleStyle;
     /**
+  * font-variant
+  *
   * Specifies whether or not a text should be displayed in a small-caps font
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1044,6 +2382,8 @@ export interface CSSStyles {
   */
     fontVariant?: PossibleStyle;
     /**
+  * font-variant-alternates
+  *
   * Controls the usage of alternate glyphs associated to alternative names defined in @font-feature-values
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1054,6 +2394,8 @@ export interface CSSStyles {
   */
     fontVariantAlternates?: PossibleStyle;
     /**
+  * font-variant-caps
+  *
   * Controls the usage of alternate glyphs for capital letters
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1062,8 +2404,54 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_font-variant-caps.asp
   */
-    fontVariantCaps?: PossibleStyle;
+    fontVariantCaps?: "normal"
     /**
+     * Displays small capitals
+     *
+     */
+     | "small-caps"
+    /**
+     * Displays small capitals for both upper and lowercase letters
+     *
+     */
+     | "all-small-caps"
+    /**
+     * Displays petite capitals
+     *
+     */
+     | "petite-caps"
+    /**
+     * Displays petite capitals for both upper and lowercase letters
+     *
+     */
+     | "all-petite-caps"
+    /**
+* Displays a mix of small capitals for uppercase letters with normal
+    lowercase letters
+*
+*/
+     | "unicase"
+    /**
+     * Displays titling capitals
+     *
+     */
+     | "titling-caps"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit"
+    /**
+     */
+     | "unset";
+    /**
+  * font-variant-east-asian
+  *
   * Controls the usage of alternate glyphs for East Asian scripts (e.g Japanese and Chinese)
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1072,8 +2460,26 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_font-variant-east-asian.asp
   */
-    fontVariantEastAsian?: PossibleStyle;
+    fontVariantEastAsian?: "normal"
     /**
+     */
+     | "ruby"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit"
+    /**
+     */
+     | "unset";
+    /**
+  * font-variant-ligatures
+  *
   * Controls which ligatures and contextual forms are used in textual content of the elements it applies to
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1084,6 +2490,8 @@ export interface CSSStyles {
   */
     fontVariantLigatures?: PossibleStyle;
     /**
+  * font-variant-numeric
+  *
   * Controls the usage of alternate glyphs for numbers, fractions, and ordinal markers
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1094,6 +2502,8 @@ export interface CSSStyles {
   */
     fontVariantNumeric?: PossibleStyle;
     /**
+  * font-variant-position
+  *
   * Controls the usage of alternate glyphs of smaller size positioned as superscript or subscript regarding the baseline of the font
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1104,6 +2514,8 @@ export interface CSSStyles {
   */
     fontVariantPosition?: PossibleStyle;
     /**
+  * font-weight
+  *
   * Specifies the weight of a font
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1114,6 +2526,8 @@ export interface CSSStyles {
   */
     fontWeight?: PossibleStyle;
     /**
+  * grid
+  *
   * A shorthand property for the grid-template-rows,
       grid-template-columns, grid-template-areas, grid-auto-rows,
       grid-auto-columns, and the grid-auto-flow properties
@@ -1126,6 +2540,8 @@ export interface CSSStyles {
   */
     grid?: PossibleStyle;
     /**
+  * grid-area
+  *
   * Either specifies a name for the grid item, or this property is a shorthand property for the grid-row-start, grid-column-start, grid-row-end, and grid-column-end properties
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1136,6 +2552,8 @@ export interface CSSStyles {
   */
     gridArea?: PossibleStyle;
     /**
+  * grid-auto-columns
+  *
   * Specifies a default column size
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1146,6 +2564,8 @@ export interface CSSStyles {
   */
     gridAutoColumns?: PossibleStyle;
     /**
+  * grid-auto-flow
+  *
   * Specifies how auto-placed items are inserted in the grid
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1156,6 +2576,8 @@ export interface CSSStyles {
   */
     gridAutoFlow?: PossibleStyle;
     /**
+  * grid-auto-rows
+  *
   * Specifies a default row size
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1166,6 +2588,8 @@ export interface CSSStyles {
   */
     gridAutoRows?: PossibleStyle;
     /**
+  * grid-column
+  *
   * A shorthand property for the grid-column-start and the grid-column-end properties
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1176,6 +2600,8 @@ export interface CSSStyles {
   */
     gridColumn?: PossibleStyle;
     /**
+  * grid-column-end
+  *
   * Specifies where to end the grid item
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1186,6 +2612,8 @@ export interface CSSStyles {
   */
     gridColumnEnd?: PossibleStyle;
     /**
+  * grid-column-gap
+  *
   * Specifies the size of the gap between columns
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1196,6 +2624,8 @@ export interface CSSStyles {
   */
     gridColumnGap?: PossibleStyle;
     /**
+  * grid-column-start
+  *
   * Specifies where to start the grid item
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1206,6 +2636,8 @@ export interface CSSStyles {
   */
     gridColumnStart?: PossibleStyle;
     /**
+  * grid-gap
+  *
   * A shorthand property for the grid-row-gap and grid-column-gap properties
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1216,6 +2648,8 @@ export interface CSSStyles {
   */
     gridGap?: PossibleStyle;
     /**
+  * grid-row
+  *
   * A shorthand property for the grid-row-start and the grid-row-end properties
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1226,6 +2660,8 @@ export interface CSSStyles {
   */
     gridRow?: PossibleStyle;
     /**
+  * grid-row-end
+  *
   * Specifies where to end the grid item
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1236,6 +2672,8 @@ export interface CSSStyles {
   */
     gridRowEnd?: PossibleStyle;
     /**
+  * grid-row-gap
+  *
   * Specifies the size of the gap between rows
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1246,6 +2684,8 @@ export interface CSSStyles {
   */
     gridRowGap?: PossibleStyle;
     /**
+  * grid-row-start
+  *
   * Specifies where to start the grid item
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1256,6 +2696,8 @@ export interface CSSStyles {
   */
     gridRowStart?: PossibleStyle;
     /**
+  * grid-template
+  *
   * A shorthand property for the grid-template-rows, grid-template-columns
       and grid-areas properties
   *
@@ -1267,6 +2709,8 @@ export interface CSSStyles {
   */
     gridTemplate?: PossibleStyle;
     /**
+  * grid-template-areas
+  *
   * Specifies how to display columns and rows, using named grid items
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1277,6 +2721,8 @@ export interface CSSStyles {
   */
     gridTemplateAreas?: PossibleStyle;
     /**
+  * grid-template-columns
+  *
   * Specifies the size of the columns, and how many columns in a grid layout
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1287,6 +2733,8 @@ export interface CSSStyles {
   */
     gridTemplateColumns?: PossibleStyle;
     /**
+  * grid-template-rows
+  *
   * Specifies the size of the rows in a grid layout
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1297,6 +2745,8 @@ export interface CSSStyles {
   */
     gridTemplateRows?: PossibleStyle;
     /**
+  * height
+  *
   * Sets the height of an element
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1307,6 +2757,8 @@ export interface CSSStyles {
   */
     height?: PossibleStyle;
     /**
+  * hyphens
+  *
   * Sets how to split words to improve the layout of paragraphs
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1315,8 +2767,30 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_hyphens.asp
   */
-    hyphens?: PossibleStyle;
+    hyphens?: "none"
     /**
+     * Default. Words are only hyphenated at &hyphen; or &shy; (if needed)
+     *
+     */
+     | "manual"
+    /**
+     * Words are hyphenated where the algorithm is deciding (if needed)
+     *
+     */
+     | "auto"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * @import
+  *
   * Allows you to import a style sheet into another style sheet
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1327,6 +2801,8 @@ export interface CSSStyles {
   */
     import?: PossibleStyle;
     /**
+  * isolation
+  *
   * Defines whether an element must create a new stacking content
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1335,8 +2811,25 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_isolation.asp
   */
-    isolation?: PossibleStyle;
+    isolation?: "auto"
     /**
+     * A new stacking context must be created
+     *
+     */
+     | "isolate"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * letter-spacing
+  *
   * Increases or decreases the space between characters in a text
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1347,6 +2840,8 @@ export interface CSSStyles {
   */
     letterSpacing?: PossibleStyle;
     /**
+  * line-break
+  *
   * Specifies how/if to break lines
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1357,6 +2852,8 @@ export interface CSSStyles {
   */
     lineBreak?: PossibleStyle;
     /**
+  * line-height
+  *
   * Sets the line height
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1367,6 +2864,8 @@ export interface CSSStyles {
   */
     lineHeight?: PossibleStyle;
     /**
+  * list-style
+  *
   * Sets all the properties for a list in one declaration
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1377,6 +2876,8 @@ export interface CSSStyles {
   */
     listStyle?: PossibleStyle;
     /**
+  * list-style-image
+  *
   * Specifies an image as the list-item marker
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1387,6 +2888,8 @@ export interface CSSStyles {
   */
     listStyleImage?: PossibleStyle;
     /**
+  * list-style-position
+  *
   * Specifies the position of the list-item markers (bullet points)
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1397,6 +2900,8 @@ export interface CSSStyles {
   */
     listStylePosition?: PossibleStyle;
     /**
+  * list-style-type
+  *
   * Specifies the type of list-item marker
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1407,6 +2912,8 @@ export interface CSSStyles {
   */
     listStyleType?: PossibleStyle;
     /**
+  * margin-bottom
+  *
   * Sets the bottom margin of an element
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1417,6 +2924,8 @@ export interface CSSStyles {
   */
     marginBottom?: PossibleStyle;
     /**
+  * margin-left
+  *
   * Sets the left margin of an element
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1427,6 +2936,8 @@ export interface CSSStyles {
   */
     marginLeft?: PossibleStyle;
     /**
+  * margin-right
+  *
   * Sets the right margin of an element
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1437,6 +2948,8 @@ export interface CSSStyles {
   */
     marginRight?: PossibleStyle;
     /**
+  * margin-top
+  *
   * Sets the top margin of an element
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1447,6 +2960,8 @@ export interface CSSStyles {
   */
     marginTop?: PossibleStyle;
     /**
+  * mask
+  *
   * Hides an element by masking or clipping the image at specific places
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1457,6 +2972,8 @@ export interface CSSStyles {
   */
     mask?: PossibleStyle;
     /**
+  * mask-type
+  *
   * Specifies whether a mask element is used as a luminance or an alpha mask
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1467,6 +2984,8 @@ export interface CSSStyles {
   */
     maskType?: PossibleStyle;
     /**
+  * max-height
+  *
   * Sets the maximum height of an element
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1477,6 +2996,8 @@ export interface CSSStyles {
   */
     maxHeight?: PossibleStyle;
     /**
+  * max-width
+  *
   * Sets the maximum width of an element
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1487,6 +3008,8 @@ export interface CSSStyles {
   */
     maxWidth?: PossibleStyle;
     /**
+  * @media
+  *
   * Sets the style rules for different media types/devices/sizes
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1497,6 +3020,8 @@ export interface CSSStyles {
   */
     media?: PossibleStyle;
     /**
+  * min-height
+  *
   * Sets the minimum height of an element
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1507,6 +3032,8 @@ export interface CSSStyles {
   */
     minHeight?: PossibleStyle;
     /**
+  * min-width
+  *
   * Sets the minimum width of an element
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1517,6 +3044,8 @@ export interface CSSStyles {
   */
     minWidth?: PossibleStyle;
     /**
+  * mix-blend-mode
+  *
   * Specifies how an element's content should blend with its direct parent background
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1527,6 +3056,8 @@ export interface CSSStyles {
   */
     mixBlendMode?: PossibleStyle;
     /**
+  * object-position
+  *
   * Specifies the alignment of the replaced element inside its box
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1535,8 +3066,20 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_object-position.asp
   */
-    objectPosition?: PossibleStyle;
+    objectPosition?: "position"
     /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * opacity
+  *
   * Sets the opacity level for an element
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1545,8 +3088,20 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_opacity.asp
   */
-    opacity?: PossibleStyle;
+    opacity?: "number"
     /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * order
+  *
   * Sets the order of the flexible item, relative to the rest
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1555,8 +3110,20 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_order.asp
   */
-    order?: PossibleStyle;
+    order?: "number"
     /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * orphans
+  *
   * Sets the minimum number of lines that must be left at the bottom of a page when a page break occurs inside an element
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1567,6 +3134,8 @@ export interface CSSStyles {
   */
     orphans?: PossibleStyle;
     /**
+  * outline
+  *
   * A shorthand property for the outline-width, outline-style, and
       the outline-color properties
   *
@@ -1578,6 +3147,8 @@ export interface CSSStyles {
   */
     outline?: PossibleStyle;
     /**
+  * outline-color
+  *
   * Sets the color of an outline
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1588,6 +3159,8 @@ export interface CSSStyles {
   */
     outlineColor?: PossibleStyle;
     /**
+  * outline-offset
+  *
   * Offsets an outline, and draws it beyond the border edge
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1596,8 +3169,20 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_outline-offset.asp
   */
-    outlineOffset?: PossibleStyle;
+    outlineOffset?: "length"
     /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * outline-style
+  *
   * Sets the style of an outline
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1608,6 +3193,8 @@ export interface CSSStyles {
   */
     outlineStyle?: PossibleStyle;
     /**
+  * outline-width
+  *
   * Sets the width of an outline
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1618,6 +3205,8 @@ export interface CSSStyles {
   */
     outlineWidth?: PossibleStyle;
     /**
+  * overflow
+  *
   * Specifies what happens if content overflows an element's box
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1628,6 +3217,8 @@ export interface CSSStyles {
   */
     overflow?: PossibleStyle;
     /**
+  * overflow-wrap
+  *
   * Specifies whether or not the browser may break lines within words in order to prevent overflow (when a string is too long to fit its containing box)
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1638,6 +3229,8 @@ export interface CSSStyles {
   */
     overflowWrap?: PossibleStyle;
     /**
+  * overflow-x
+  *
   * Specifies whether or not to clip the left/right edges of the content, if it overflows the element's content area
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1646,8 +3239,35 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_overflow-x.asp
   */
-    overflowX?: PossibleStyle;
+    overflowX?: "visible"
     /**
+     * The content is clipped - and no scrolling mechanism is provided
+     *
+     */
+     | "hidden"
+    /**
+     * The content is clipped and a scrolling mechanism is provided
+     *
+     */
+     | "scroll"
+    /**
+     * Should cause a scrolling mechanism to be provided for overflowing boxes
+     *
+     */
+     | "auto"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * overflow-y
+  *
   * Specifies whether or not to clip the top/bottom edges of the content, if it overflows the element's content area
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1656,8 +3276,35 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_overflow-y.asp
   */
-    overflowY?: PossibleStyle;
+    overflowY?: "visible"
     /**
+     * The content is clipped - and no scrolling mechanism is provided
+     *
+     */
+     | "hidden"
+    /**
+     * The content is clipped and a scrolling mechanism is provided
+     *
+     */
+     | "scroll"
+    /**
+     * Should cause a scrolling mechanism to be provided for overflowing boxes
+     *
+     */
+     | "auto"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * padding-bottom
+  *
   * Sets the bottom padding of an element
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1668,6 +3315,8 @@ export interface CSSStyles {
   */
     paddingBottom?: PossibleStyle;
     /**
+  * padding-left
+  *
   * Sets the left padding of an element
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1678,6 +3327,8 @@ export interface CSSStyles {
   */
     paddingLeft?: PossibleStyle;
     /**
+  * padding-right
+  *
   * Sets the right padding of an element
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1688,6 +3339,8 @@ export interface CSSStyles {
   */
     paddingRight?: PossibleStyle;
     /**
+  * padding-top
+  *
   * Sets the top padding of an element
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1698,6 +3351,8 @@ export interface CSSStyles {
   */
     paddingTop?: PossibleStyle;
     /**
+  * page-break-after
+  *
   * Sets the page-break behavior after an element
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1708,6 +3363,8 @@ export interface CSSStyles {
   */
     pageBreakAfter?: PossibleStyle;
     /**
+  * page-break-before
+  *
   * Sets the page-break behavior before an element
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1718,6 +3375,8 @@ export interface CSSStyles {
   */
     pageBreakBefore?: PossibleStyle;
     /**
+  * page-break-inside
+  *
   * Sets the page-break behavior inside an element
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1728,6 +3387,8 @@ export interface CSSStyles {
   */
     pageBreakInside?: PossibleStyle;
     /**
+  * perspective
+  *
   * Gives a 3D-positioned element some perspective
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1738,6 +3399,8 @@ export interface CSSStyles {
   */
     perspective?: PossibleStyle;
     /**
+  * perspective-origin
+  *
   * Defines at which position the user is looking at the 3D-positioned element
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1748,6 +3411,8 @@ export interface CSSStyles {
   */
     perspectiveOrigin?: PossibleStyle;
     /**
+  * pointer-events
+  *
   * Defines whether or not an element reacts to pointer events
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1758,6 +3423,8 @@ export interface CSSStyles {
   */
     pointerEvents?: PossibleStyle;
     /**
+  * position
+  *
   * Specifies the type of positioning method used for an element (static, relative, absolute or fixed)
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1768,6 +3435,8 @@ export interface CSSStyles {
   */
     position?: PossibleStyle;
     /**
+  * right
+  *
   * Specifies the right position of a positioned element
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1778,6 +3447,8 @@ export interface CSSStyles {
   */
     right?: PossibleStyle;
     /**
+  * row-gap
+  *
   * Specifies the gap between the grid rows
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1786,8 +3457,25 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_row-gap.asp
   */
-    rowGap?: PossibleStyle;
+    rowGap?: "length"
     /**
+     * Default value. Specifies a normal gap between the rows
+     *
+     */
+     | "normal"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * table-layout
+  *
   * Defines the algorithm used to lay out table cells, rows, and columns
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1798,6 +3486,8 @@ export interface CSSStyles {
   */
     tableLayout?: PossibleStyle;
     /**
+  * text-align
+  *
   * Specifies the horizontal alignment of text
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1808,6 +3498,8 @@ export interface CSSStyles {
   */
     textAlign?: PossibleStyle;
     /**
+  * text-align-last
+  *
   * Describes how the last line of a block or a line right before a forced line break is aligned when text-align is "justify"
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1816,8 +3508,50 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_text-align-last.asp
   */
-    textAlignLast?: PossibleStyle;
+    textAlignLast?: "auto"
     /**
+     * The last line is aligned to the left
+     *
+     */
+     | "left"
+    /**
+     * The last line is aligned to the right
+     *
+     */
+     | "right"
+    /**
+     * The last line is center-aligned
+     *
+     */
+     | "center"
+    /**
+     * The last line is justified as the rest of the lines
+     *
+     */
+     | "justify"
+    /**
+     * The last line is aligned at the beginning of the line (left if the text-direction is left-to-right, and right is the text-direction is right-to-left)
+     *
+     */
+     | "start"
+    /**
+     * The last line is aligned at the end of the line (right if the text-direction is left-to-right, and left is the text-direction is right-to-left)
+     *
+     */
+     | "end"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * text-combine-upright
+  *
   * Specifies the combination of multiple characters into the space of a single character
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1828,6 +3562,8 @@ export interface CSSStyles {
   */
     textCombineUpright?: PossibleStyle;
     /**
+  * text-decoration
+  *
   * Specifies the decoration added to text
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1838,6 +3574,8 @@ export interface CSSStyles {
   */
     textDecoration?: PossibleStyle;
     /**
+  * text-decoration-color
+  *
   * Specifies the color of the text-decoration
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1846,8 +3584,20 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_text-decoration-color.asp
   */
-    textDecorationColor?: PossibleStyle;
+    textDecorationColor?: "color"
     /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * text-decoration-line
+  *
   * Specifies the type of line in a text-decoration
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1856,8 +3606,35 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_text-decoration-line.asp
   */
-    textDecorationLine?: PossibleStyle;
+    textDecorationLine?: "none"
     /**
+     * Specifies that a line will be displayed under the text
+     *
+     */
+     | "underline"
+    /**
+     * Specifies that a line will be displayed over the text
+     *
+     */
+     | "overline"
+    /**
+     * Specifies that a line will be displayed through the text
+     *
+     */
+     | "line-through"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * text-decoration-style
+  *
   * Specifies the style of the line in a text decoration
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1866,8 +3643,40 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_text-decoration-style.asp
   */
-    textDecorationStyle?: PossibleStyle;
+    textDecorationStyle?: "solid"
     /**
+     * The line will display as a double line
+     *
+     */
+     | "double"
+    /**
+     * The line will display as a dotted line
+     *
+     */
+     | "dotted"
+    /**
+     * The line will display as a dashed line
+     *
+     */
+     | "dashed"
+    /**
+     * The line will display as a wavy line
+     *
+     */
+     | "wavy"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * text-indent
+  *
   * Specifies the indentation of the first line in a text-block
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1878,6 +3687,8 @@ export interface CSSStyles {
   */
     textIndent?: PossibleStyle;
     /**
+  * text-justify
+  *
   * Specifies the justification method used when text-align is "justify"
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1886,8 +3697,35 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_text-justify.asp
   */
-    textJustify?: PossibleStyle;
+    textJustify?: "auto"
     /**
+     * Increases/Decreases the space between words
+     *
+     */
+     | "inter-word"
+    /**
+     * Increases/Decreases the space between characters
+     *
+     */
+     | "inter-character"
+    /**
+     * Disables justification methods
+     *
+     */
+     | "none"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * text-orientation
+  *
   * Defines the orientation of the text in a line
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1898,6 +3736,8 @@ export interface CSSStyles {
   */
     textOrientation?: PossibleStyle;
     /**
+  * text-overflow
+  *
   * Specifies what should happen when text overflows the containing element
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1906,8 +3746,30 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_text-overflow.asp
   */
-    textOverflow?: PossibleStyle;
+    textOverflow?: "clip"
     /**
+     * Render an ellipsis ("...") to represent the clipped text
+     *
+     */
+     | "ellipsis"
+    /**
+     * Render the given string to represent the clipped text
+     *
+     */
+     | "string"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * text-shadow
+  *
   * Adds shadow to text
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1916,8 +3778,40 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_text-shadow.asp
   */
-    textShadow?: PossibleStyle;
+    textShadow?: "h-shadow"
     /**
+     * Required. The position of the vertical shadow. Negative values are allowed
+     *
+     */
+     | "v-shadow"
+    /**
+     * Optional. The blur radius. Default value is 0
+     *
+     */
+     | "blur-radius"
+    /**
+     * Optional. The color of the shadow. Look at CSS Color Values for a complete list of possible color values
+     *
+     */
+     | "color"
+    /**
+     * Default value. No shadow
+     *
+     */
+     | "none"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * text-transform
+  *
   * Controls the capitalization of text
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1928,6 +3822,8 @@ export interface CSSStyles {
   */
     textTransform?: PossibleStyle;
     /**
+  * text-underline-position
+  *
   * Specifies the position of the underline which is set using the text-decoration property
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1938,6 +3834,8 @@ export interface CSSStyles {
   */
     textUnderlinePosition?: PossibleStyle;
     /**
+  * top
+  *
   * Specifies the top position of a positioned element
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1948,6 +3846,8 @@ export interface CSSStyles {
   */
     top?: PossibleStyle;
     /**
+  * transform
+  *
   * Applies a 2D or 3D transformation to an element
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1956,8 +3856,167 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_transform.asp
   */
-    transform?: PossibleStyle;
+    transform?: "none"
     /**
+* Defines a 2D transformation, using a matrix of six values
+*
+Example: `matrix(n,n,n,n,n,n)`
+*
+*/
+     | "matrix"
+    /**
+* Defines a 3D transformation, using a 4x4 matrix of 16 values
+*
+Example: `matrix3d (n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n)`
+*
+*/
+     | "matrix3d "
+    /**
+* Defines a 2D translation
+*
+Example: `translate(x,y)`
+*
+*/
+     | "translate"
+    /**
+* Defines a 3D translation
+*
+Example: `translate3d(x,y,z)`
+*
+*/
+     | "translate3d"
+    /**
+* Defines a translation, using only the value for the X-axis
+*
+Example: `translateX(x)`
+*
+*/
+     | "translateX"
+    /**
+* Defines a translation, using only the value for the Y-axis
+*
+Example: `translateY(y)`
+*
+*/
+     | "translateY"
+    /**
+* Defines a 3D translation, using only the value for the Z-axis
+*
+Example: `translateZ(z)`
+*
+*/
+     | "translateZ"
+    /**
+* Defines a 2D scale transformation
+*
+Example: `scale(x,y)`
+*
+*/
+     | "scale"
+    /**
+* Defines a 3D scale transformation
+*
+Example: `scale3d(x,y,z)`
+*
+*/
+     | "scale3d"
+    /**
+* Defines a scale transformation by giving a value for the X-axis
+*
+Example: `scaleX(x)`
+*
+*/
+     | "scaleX"
+    /**
+* Defines a scale transformation by giving a value for the Y-axis
+*
+Example: `scaleY(y)`
+*
+*/
+     | "scaleY"
+    /**
+* Defines a 3D scale transformation by giving a value for the Z-axis
+*
+Example: `scaleZ(z)`
+*
+*/
+     | "scaleZ"
+    /**
+* Defines a 2D rotation, the angle is specified in the  parameter
+*
+Example: `rotate(angle)`
+*
+*/
+     | "rotate"
+    /**
+* Defines a 3D rotation
+*
+Example: `rotate3d(x,y,z,angle)`
+*
+*/
+     | "rotate3d"
+    /**
+* Defines a 3D rotation along the X-axis
+*
+Example: `rotateX(angle)`
+*
+*/
+     | "rotateX"
+    /**
+* Defines a 3D rotation along the Y-axis
+*
+Example: `rotateY(angle)`
+*
+*/
+     | "rotateY"
+    /**
+* Defines a 3D rotation along the Z-axis
+*
+Example: `rotateZ(angle)`
+*
+*/
+     | "rotateZ"
+    /**
+* Defines a 2D skew transformation along the X- and the Y-axis
+*
+Example: `skew(x-angle,y-angle)`
+*
+*/
+     | "skew"
+    /**
+* Defines a 2D skew transformation along the X-axis
+*
+Example: `skewX(angle)`
+*
+*/
+     | "skewX"
+    /**
+* Defines a 2D skew transformation along the Y-axis
+*
+Example: `skewY(angle)`
+*
+*/
+     | "skewY"
+    /**
+* Defines a perspective view for a 3D transformed element
+*
+Example: `perspective(n)`
+*
+*/
+     | "perspective"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit" | PossibleStyle;
+    /**
+  * transform-origin
+  *
   * Allows you to change the position on transformed elements
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1968,6 +4027,8 @@ export interface CSSStyles {
   */
     transformOrigin?: PossibleStyle;
     /**
+  * transform-style
+  *
   * Specifies how nested elements are rendered in 3D space
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1978,6 +4039,8 @@ export interface CSSStyles {
   */
     transformStyle?: PossibleStyle;
     /**
+  * transition
+  *
   * A shorthand property for all the transition-* properties
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1986,8 +4049,35 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_transition.asp
   */
-    transition?: PossibleStyle;
+    transition?: "transition-property"
     /**
+     * Specifies how many seconds or milliseconds the transition effect takes to complete
+     *
+     */
+     | "transition-duration"
+    /**
+     * Specifies the speed curve of the transition effect
+     *
+     */
+     | "transition-timing-function"
+    /**
+     * Defines when the transition effect will start
+     *
+     */
+     | "transition-delay"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * transition-delay
+  *
   * Specifies when the transition effect will start
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -1996,8 +4086,20 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_transition-delay.asp
   */
-    transitionDelay?: PossibleStyle;
+    transitionDelay?: "time"
     /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * transition-duration
+  *
   * Specifies how many seconds or milliseconds a transition effect takes to complete
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -2006,8 +4108,20 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_transition-duration.asp
   */
-    transitionDuration?: PossibleStyle;
+    transitionDuration?: "time"
     /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * transition-property
+  *
   * Specifies the name of the CSS property the transition effect is for
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -2016,8 +4130,30 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_transition-property.asp
   */
-    transitionProperty?: PossibleStyle;
+    transitionProperty?: "none"
     /**
+     * Default value. All properties will get a transition effect
+     *
+     */
+     | "all"
+    /**
+     * Defines a comma separated list of CSS property names the transition effect is for
+     *
+     */
+     | "property"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * transition-timing-function
+  *
   * Specifies the speed curve of the transition effect
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -2026,8 +4162,65 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_transition-timing-function.asp
   */
-    transitionTimingFunction?: PossibleStyle;
+    transitionTimingFunction?: "ease"
     /**
+     * Specifies a transition effect with the same speed from start to end (equivalent to cubic-bezier(0,0,1,1))
+     *
+     */
+     | "linear"
+    /**
+     * Specifies a transition effect with a slow start (equivalent to cubic-bezier(0.42,0,1,1))
+     *
+     */
+     | "ease-in"
+    /**
+     * Specifies a transition effect with a slow end (equivalent to cubic-bezier(0,0,0.58,1))
+     *
+     */
+     | "ease-out"
+    /**
+     * Specifies a transition effect with a slow start and end (equivalent to cubic-bezier(0.42,0,0.58,1))
+     *
+     */
+     | "ease-in-out"
+    /**
+     * Equivalent to steps(1, start)
+     *
+     */
+     | "step-start"
+    /**
+     * Equivalent to steps(1, end)
+     *
+     */
+     | "step-end"
+    /**
+* Specifies a stepping function, with two parameters. The first parameter specifies the number of intervals in the function. It must be a positive integer (greater than 0). The second parameter, which is optional, is either the value "start" or "end", and specifies the point at which the change of values occur within the interval. If the second parameter is omitted, it is given the value "end"
+*
+Example: `steps(int,start|end)`
+*
+*/
+     | "steps"
+    /**
+* Define your own values in the cubic-bezier function.
+ Possible values are numeric values from 0 to 1
+*
+Example: `cubic-bezier(n,n,n,n)`
+*
+*/
+     | "cubic-bezier"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit" | PossibleStyle;
+    /**
+  * user-select
+  *
   * Specifies whether the text of an element can be selected
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -2036,8 +4229,25 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_user-select.asp
   */
-    userSelect?: PossibleStyle;
+    userSelect?: "auto"
     /**
+     * Prevent text selection
+     *
+     */
+     | "none"
+    /**
+     * The text can be selected by the user
+     *
+     */
+     | "text"
+    /**
+     * Text selection is made with one click instead of a double-click
+     *
+     */
+     | "all";
+    /**
+  * visibility
+  *
   * Specifies whether or not an element is visible
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -2048,6 +4258,8 @@ export interface CSSStyles {
   */
     visibility?: PossibleStyle;
     /**
+  * widows
+  *
   * Sets the minimum number of lines that must be left at the top of a page when a page break occurs inside an element
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -2058,6 +4270,8 @@ export interface CSSStyles {
   */
     widows?: PossibleStyle;
     /**
+  * width
+  *
   * Sets the width of an element
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -2068,6 +4282,8 @@ export interface CSSStyles {
   */
     width?: PossibleStyle;
     /**
+  * word-break
+  *
   * Specifies how words should break when reaching the end of a line
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -2076,8 +4292,36 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_word-break.asp
   */
-    wordBreak?: PossibleStyle;
+    wordBreak?: "normal"
     /**
+     * To prevent overflow, word may be broken at any character
+     *
+     */
+     | "break-all"
+    /**
+* Word breaks should not be used for Chinese/Japanese/Korean (CJK) text.
+    Non-CJK text behavior is the same as value "normal"
+*
+*/
+     | "keep-all"
+    /**
+     * To prevent overflow, word may be broken at arbitrary points
+     *
+     */
+     | "break-word"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * word-spacing
+  *
   * Increases or decreases the space between words in a text
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -2088,6 +4332,8 @@ export interface CSSStyles {
   */
     wordSpacing?: PossibleStyle;
     /**
+  * word-wrap
+  *
   * Allows long, unbreakable words to be broken and wrap to the next line
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -2096,8 +4342,25 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_word-wrap.asp
   */
-    wordWrap?: PossibleStyle;
+    wordWrap?: "normal"
     /**
+     * Allows unbreakable words to be broken
+     *
+     */
+     | "break-word"
+    /**
+     * Sets this property to its default value. Read about initial
+     *
+     */
+     | "initial"
+    /**
+     * Inherits this property from its parent element. Read about inherit
+     *
+     */
+     | "inherit";
+    /**
+  * writing-mode
+  *
   * Specifies whether lines of text are laid out horizontally or vertically
   *
   * |  Chrome  | Firefox |  Safari   |  Edge  |
@@ -2106,6 +4369,18 @@ export interface CSSStyles {
   *
   @see https://www.w3schools.com/cssref/css3_pr_writing-mode.asp
   */
-    writingMode?: PossibleStyle;
+    writingMode?: "horizontal-tb"
+    /**
+* Let the content flow vertically from top to bottom, horizontally from
+    right to left
+*
+*/
+     | "vertical-rl"
+    /**
+* Let the content flow vertically from top to bottom, horizontally from
+    left to right
+*
+*/
+     | "vertical-lr";
     [key: string]: PossibleStyle | undefined;
 }

@@ -85,7 +85,8 @@ Example: `<img src="/w3images/wedding.jpg" alt="Wedding" style="width:100%"><img
      * Default. Loads an iframe immediately
      *
      */
-      | "eager"
+    | "eager"
+
       /**
        * Defer loading of iframes until some conditions are met
        *
@@ -127,18 +128,21 @@ Example: `<iframe src="https://w3schools.com/" referrerpolicy="no-referrer"></if
      * No referrer information will be sent along with a request
      *
      */
-      | "no-referrer"
+    | "no-referrer"
+
       /**
 * Default. The referrer header will not be sent to origins 
     without HTTPS
 * 
 */
       | "no-referrer-when-downgrade"
+
       /**
        * Send only scheme, host, and port to the request client
        *
        */
       | "origin"
+
       /**
 * For cross-origin requests: Send only scheme, 
     host, and port. For same-origin requests: Also include 
@@ -146,18 +150,21 @@ Example: `<iframe src="https://w3schools.com/" referrerpolicy="no-referrer"></if
 * 
 */
       | "origin-when-cross-origin"
+
       /**
 * For same-origin requests: Referrer info will be sent. For cross-origin 
     requests: No referrer info will be sent
 * 
 */
       | "same-origin"
+
       /**
 * Only send referrer info if the security level is the same (e.g. HTTPS to 
     HTTPS). Do not send to a less secure destination (e.g. HTTPS to HTTP)
 * 
 */
       | "strict-origin"
+
       /**
 * Send full path when performing a same-origin request. Send only origin 
     when the security level stays the same (e.g. HTTPS to HTTPS). Send no header 
@@ -165,6 +172,7 @@ Example: `<iframe src="https://w3schools.com/" referrerpolicy="no-referrer"></if
 * 
 */
       | "strict-origin-when-cross-origin"
+
       /**
 * Send origin, path and query string (but not fragment, password, or username). This 
     value is considered unsafe
@@ -189,57 +197,68 @@ Example: `<iframe src="demo_iframe_sandbox.htm" sandbox></iframe>`
      * Applies all restrictions
      *
      */
-      | "(no value)"
+    | "(no value)"
+
       /**
        * Allows form submission
        *
        */
       | "allow-forms"
+
       /**
        * Allows to open modal windows
        *
        */
       | "allow-modals"
+
       /**
        * Allows to lock the screen orientation
        *
        */
       | "allow-orientation-lock"
+
       /**
        * Allows to use the Pointer Lock API
        *
        */
       | "allow-pointer-lock"
+
       /**
        * Allows popups
        *
        */
       | "allow-popups"
+
       /**
        * Allows popups to open new windows without inheriting the sandboxing
        *
        */
       | "allow-popups-to-escape-sandbox"
+
       /**
        * Allows to start a presentation session
        *
        */
       | "allow-presentation"
+
       /**
        * Allows the iframe content to be treated as being from the same  origin
        *
        */
       | "allow-same-origin"
+
       /**
        * Allows to run scripts
        *
        */
       | "allow-scripts"
+
       /**
        * Allows the iframe content to navigate its top-level browsing context
        *
        */
       | "allow-top-navigation"
+
       /**
 * Allows the iframe content to navigate its top-level browsing context, 
     but only if initiated by user

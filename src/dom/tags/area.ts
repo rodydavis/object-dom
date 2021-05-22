@@ -45,12 +45,14 @@ Example: `<map
      * Specifies the coordinates of the top-left and bottom-right corner of the rectangle (shape="rect")
      *
      */
-      | "x1,y1,x2,y2"
+    | "x1,y1,x2,y2"
+
       /**
        * Specifies the coordinates of the circle center and the radius (shape="circle")
        *
        */
       | "x,y,radius"
+
       /**
        * Specifies the coordinates of the edges of the polygon. If the first and last coordinate pairs are not the same, the browser will add the last coordinate pair to close the polygon (shape="poly")
        *
@@ -133,12 +135,14 @@ Example: `<map name="planetmap">
      * Specifies an AND operator
      *
      */
-      | "and"
+    | "and"
+
       /**
        * Specifies a NOT operator
        *
        */
       | "not"
+
       /**
        * Specifies an OR operator
        *
@@ -177,58 +181,69 @@ Example: `<map name="planetmap">
      * Links to an alternate version of the document (i.e. print page, translated or mirror)
      *
      */
-      | "alternate"
+    | "alternate"
+
       /**
        * Links to the author of the document
        *
        */
       | "author"
+
       /**
        * Permanent URL used for bookmarking
        *
        */
       | "bookmark"
+
       /**
        * Links to a help document
        *
        */
       | "help"
+
       /**
        * Links to copyright information for the document
        *
        */
       | "license"
+
       /**
        * The next document in a selection
        *
        */
       | "next"
+
       /**
 * Links to an unendorsed document, like a paid link.
  ("nofollow" is used by Google, to specify that the Google search spider should not follow that link)
 * 
 */
       | "nofollow"
+
       /**
        * Specifies that the browser should not send a HTTP referer header if the user follows the hyperlink
        *
        */
       | "noreferrer"
+
       /**
        * Specifies that the target document should be cached
        *
        */
       | "prefetch"
+
       /**
        * The previous document in a selection
        *
        */
       | "prev"
+
       /**
        * Links to a search tool for the document
        *
        */
       | "search"
+
       /**
        * A tag (keyword) for the current document
        *
@@ -257,17 +272,20 @@ Example: `<map
      * Specifies the entire region
      *
      */
-      | "default"
+    | "default"
+
       /**
        * Defines a rectangular region
        *
        */
       | "rect"
+
       /**
        * Defines a circular region
        *
        */
       | "circle"
+
       /**
        * Defines a polygonal region
        *
@@ -297,22 +315,26 @@ Example: `<map
      * Opens the linked document in a new window or tab
      *
      */
-      | "_blank"
+    | "_blank"
+
       /**
        * Opens the linked document in the same frame as it was clicked
        *
        */
       | "_self"
+
       /**
        * Opens the linked document in the parent frame
        *
        */
       | "_parent"
+
       /**
        * Opens the linked document in the full body of the window
        *
        */
       | "_top"
+
       /**
        * Opens the linked document in a named iframe
        *

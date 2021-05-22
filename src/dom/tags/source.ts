@@ -22,12 +22,14 @@ Example: `<picture>  <source media="(min-width:650px)" srcset="img_pink_flowers
      * Specifies an AND operator
      *
      */
-      | "and"
+    | "and"
+
       /**
        * Specifies a NOT operator
        *
        */
       | "not"
+
       /**
        * Specifies an OR operator
        *

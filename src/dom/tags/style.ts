@@ -25,12 +25,14 @@ Example: `<style media="print">
      * Specifies an AND operator
      *
      */
-      | "and"
+    | "and"
+
       /**
        * Specifies a NOT operator
        *
        */
       | "not"
+
       /**
        * Specifies an OR operator
        *

@@ -67,12 +67,14 @@ Example: `<a href="att_a_media.asp?output=print"
      * Specifies an AND operator
      *
      */
-      | "and"
+    | "and"
+
       /**
        * Specifies a NOT operator
        *
        */
       | "not"
+
       /**
        * Specifies an OR operator
        *
@@ -126,64 +128,76 @@ Example: `<a rel="nofollow" href="http://www.functravel.com/">Cheap Flights</a>`
      * Provides a link to an alternate representation of the document (i.e. print page, translated or mirror)
      *
      */
-      | "alternate"
+    | "alternate"
+
       /**
        * Provides a link to the author of the document
        *
        */
       | "author"
+
       /**
        * Permanent URL used for bookmarking
        *
        */
       | "bookmark"
+
       /**
        * Indicates that the referenced document is not part of the same site as the current document
        *
        */
       | "external"
+
       /**
        * Provides a link to a help document
        *
        */
       | "help"
+
       /**
        * Provides a link to licensing information for the document
        *
        */
       | "license"
+
       /**
        * Provides a link to the next document in the series
        *
        */
       | "next"
+
       /**
 * Links to an unendorsed document, like a paid link.
  ("nofollow" is used by Google, to specify that the Google search spider should not follow that link)
 * 
 */
       | "nofollow"
+
       /**
        * Requires that any browsing context created by following the hyperlink must not have an opener browsing context
        *
        */
       | "noopener"
+
       /**
 * Makes the referrer unknown. No referer header will be included when the user 
     clicks the hyperlink
 * 
 */
       | "noreferrer"
+
       /**
        * The previous document in a selection
        *
        */
       | "prev"
+
       /**
        * Links to a search tool for the document
        *
        */
       | "search"
+
       /**
        * A tag (keyword) for the current document
        *
@@ -207,22 +221,26 @@ Example: `<a href="https://www.w3schools.com" target="_blank">Visit W3Schools</a
      * Opens the linked document in a new window or tab
      *
      */
-      | "_blank"
+    | "_blank"
+
       /**
        * Opens the linked document in the same frame as it was clicked (this is default)
        *
        */
       | "_self"
+
       /**
        * Opens the linked document in the parent frame
        *
        */
       | "_parent"
+
       /**
        * Opens the linked document in the full body of the window
        *
        */
       | "_top"
+
       /**
        * Opens the linked document in the named iframe
        *

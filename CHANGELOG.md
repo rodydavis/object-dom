@@ -1,3 +1,8 @@
+## 0.4.2
+
+- Adding CSS types for values
+- Adding CSS browser support
+
 ## 0.4.0
 
 - Adding typings for CSS

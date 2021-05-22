@@ -68,12 +68,14 @@ Example: `<head>
      * Specifies an AND operator
      *
      */
-      | "and"
+    | "and"
+
       /**
        * Specifies a NOT operator
        *
        */
       | "not"
+
       /**
        * Specifies an OR operator
        *
@@ -97,18 +99,21 @@ Example: `<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"
      * No referrer information will be sent along with a request
      *
      */
-      | "no-referrer"
+    | "no-referrer"
+
       /**
 * Default. The referrer header will not be sent to origins 
     without HTTPS
 * 
 */
       | "no-referrer-when-downgrade"
+
       /**
        * Send only scheme, host, and port to the request client
        *
        */
       | "origin"
+
       /**
 * For cross-origin requests: Send only scheme, 
     host, and port. For same-origin requests: Also include 
@@ -116,6 +121,7 @@ Example: `<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"
 * 
 */
       | "origin-when-cross-origin"
+
       /**
 * Send origin, path and query string (but not fragment, password, or username). This 
     value is considered unsafe
@@ -141,57 +147,68 @@ Example: `<link rel="stylesheet" href="styles.css">`
  Example: <link rel="alternate" type="application/atom+xml" title="W3Schools News" href="/blog/news/atom">
 * 
 */
-      | "alternate"
+    | "alternate"
+
       /**
        * Provides a link to the author of the document
        *
        */
       | "author"
+
       /**
        * Specifies that the browser should preemptively perform DNS resolution for the target resource's origin
        *
        */
       | "dns-prefetch"
+
       /**
        * Provides a link to a help document. Example: <link rel="help" href="/help/">
        *
        */
       | "help"
+
       /**
        * Imports an icon to represent the document.Example: <link rel="icon" href="/favicon.ico" type="image/x-icon">
        *
        */
       | "icon"
+
       /**
        * Provides a link to copyright information for the document
        *
        */
       | "license"
+
       /**
        * Provides a link to the next document in the series
        *
        */
       | "next"
+
       /**
        * Provides the address of the pingback server that handles pingbacks to the current document
        *
        */
       | "pingback"
+
       /**
        * Specifies that the browser should preemptively connect to the target resource's origin.
        *
        */
       | "preconnect"
+
       /**
        * Specifies that the browser should preemptively fetch and cache the target resource as it is likely to be required for a follow-up navigation
        *
        */
       | "prefetch"
+
       /**
        * Specifies that the browser agent must preemptively fetch and cache the target resource for current navigation according to the destination given by the "as" attribute (and the priority associated with that destination).
        *
        */
       | "preload"
+
       /**
 * Specifies that the browser should pre-render (load) the specified 
     webpage in the background. So, if the user navigates to this page, it speeds 
@@ -201,16 +218,19 @@ Example: `<link rel="stylesheet" href="styles.css">`
 * 
 */
       | "prerender"
+
       /**
        * Indicates that the document is a part of a series, and that the previous document in the series is the referenced document
        *
        */
       | "prev"
+
       /**
        * Provides a link to a resource that can be used to search through the current document and its related pages.
        *
        */
       | "search"
+
       /**
        * Imports a style sheet
        *
@@ -238,7 +258,8 @@ Example: `<link rel="icon" href="demo_icon.gif" type="image/gif" sizes="16x16">`
       <link rel="icon" href="favicon.png" sizes="16x16 32x32"   type="image/png"> (2 sizes)
 * 
 */
-      | "HeightxWidth"
+    | "HeightxWidth"
+
       /**
 * Specifies that the icon is scalable (like an SVG image)Examples:
   

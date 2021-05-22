@@ -78,7 +78,8 @@ Example: `<head>
      * Specifies the name of the Web application that the page represents
      *
      */
-      | "application-name"
+    | "application-name"
+
       /**
 * Specifies the name of the author of the document. Example:
   
@@ -86,6 +87,7 @@ Example: `<head>
 * 
 */
       | "author"
+
       /**
 * Specifies a description of the page. Search engines can pick up this description to show with the results of searches. Example:
   
@@ -93,6 +95,7 @@ Example: `<head>
 * 
 */
       | "description"
+
       /**
 * Specifies one of the software packages used to generate the document  (not used on hand-authored pages). Example:
   
@@ -100,6 +103,7 @@ Example: `<head>
 * 
 */
       | "generator"
+
       /**
 * Specifies a comma-separated list of keywords - relevant to the page  (Informs search engines what the page is about).
   Tip: Always specify keywords (needed by search engines to catalogize the page). Example:
@@ -108,6 +112,7 @@ Example: `<head>
 * 
 */
       | "keywords"
+
       /**
 * Controls the viewport (the user's visible area of a web page).
   
