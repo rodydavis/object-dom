@@ -10,8 +10,7 @@ export interface RtProps extends NodeProps<HTMLElement> {
 /**
 * `<rt>`
 * 
-* Defines an explanation/pronunciation of characters (for East Asian 
-typography)
+* Defines an explanation/pronunciation of characters (for East Asian  typography)
 * 
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |

@@ -23,8 +23,7 @@ export interface DataProps extends NodeProps<HTMLElement> {
 /**
 * `<data>`
 * 
-* Adds a machine-readable 
-translation of a given content
+* Adds a machine-readable  translation of a given content
 * 
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |

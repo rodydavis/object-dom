@@ -10,8 +10,7 @@ export interface BdiProps extends NodeProps<HTMLElement> {
 /**
 * `<bdi>`
 * 
-* Isolates a part of text that might be formatted in a different direction 
-from other text outside it
+* Isolates a part of text that might be formatted in a different direction  from other text outside it
 * 
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |

@@ -10,8 +10,7 @@ export interface UProps extends NodeProps<HTMLElement> {
 /**
 * `<u>`
 * 
-* Defines some text that is unarticulated and styled differently from normal 
-text
+* Defines some text that is unarticulated and styled differently from normal  text
 * 
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |

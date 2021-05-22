@@ -306,8 +306,7 @@ Example: `<head>
 /**
 * `<link>`
 * 
-* Defines the relationship between a document and an external resource (most 
-used to link to style sheets)
+* Defines the relationship between a document and an external resource (most  used to link to style sheets)
 * 
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |

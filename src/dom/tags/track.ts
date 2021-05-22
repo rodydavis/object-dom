@@ -138,7 +138,7 @@ Example: `<video width="320" height="240" controls>
 /**
 * `<track>`
 * 
-* Defines text tracks for media elements (`<video>` and <audio>)
+* Defines text tracks for media elements (`<video>` and `<audio>`)
 * 
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |

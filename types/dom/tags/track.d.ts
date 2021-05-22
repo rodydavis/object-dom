@@ -123,7 +123,7 @@ export interface TrackProps extends NodeProps<HTMLElement> {
 /**
 * `<track>`
 *
-* Defines text tracks for media elements (`<video>` and <audio>)
+* Defines text tracks for media elements (`<video>` and `<audio>`)
 *
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |

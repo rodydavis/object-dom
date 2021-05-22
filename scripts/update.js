@@ -105,7 +105,7 @@ async function main() {
     updateFile('README.md', '<!-- BEGIN_TAGS -->', '<!-- END_TAGS -->', `
 | Tag            | Class      | Description                                                                                              |
 | -------------- | ---------- | -------------------------------------------------------------------------------------------------------- |` + tags.map((item) => `
-| [\`<${item.tagName}> \`](${item.url}) | ${item.className} | ${item.description} |`).join('')
+| [\`<${item.tagName}>\`](${item.url}) | ${item.className} | ${item.description} |`).join('')
     );
 
     updateFile('src/transformers/parse.ts', '// -- BEGIN_TAGS --', '// -- END_TAGS --', tags.map((item) => `
@@ -197,11 +197,11 @@ async function cssTemplate(items) {
  * @param {string} desc
  */
 async function tagTemplate(name, desc, url, dom, tags) {
-    const tagName = name;
+    const tagName = name.trim();
     let className = pascalCase(name);
     if (className === 'Object') className = 'Obj';
-    const description = desc.replace("<", "`<").replace(">", ">`");
-    tags.push({ tagName, url, description: description.split('\n').join(' '), className })
+    const description = desc.split('\n').join(' ').split('<').join('\`<').split('>').join('>\`');
+    tags.push({ tagName, url, description: description, className })
     const browserSupport = getBrowserSupport(dom.window.document.querySelector("table.browserref"));
     const attributes = [];
     const attrs = tableToJson(dom.window.document.querySelector("table.w3-table-all")?.outerHTML);

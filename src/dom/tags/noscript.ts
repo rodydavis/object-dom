@@ -10,8 +10,7 @@ export interface NoscriptProps extends NodeProps<HTMLElement> {
 /**
 * `<noscript>`
 * 
-* Defines an alternate content for users that do not support 
-client-side scripts
+* Defines an alternate content for users that do not support  client-side scripts
 * 
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |

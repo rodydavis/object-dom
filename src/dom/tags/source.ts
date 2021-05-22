@@ -112,7 +112,7 @@ Example: `<audio controls>
 /**
 * `<source>`
 * 
-* Defines multiple media resources for media elements (`<video>` and <audio>)
+* Defines multiple media resources for media elements (`<video>` and `<audio>`)
 * 
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
