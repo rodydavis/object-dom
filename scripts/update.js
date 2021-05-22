@@ -27,6 +27,8 @@ async function main() {
 
     if (!fs.existsSync(".cache")) fs.mkdirSync(".cache");
     if (!fs.existsSync(Tags_Location)) fs.mkdirSync(Tags_Location);
+
+    // Process Events
     const eventsDom = await downloadWebpage(ALL_EVENTS, "events");
     const events = [];
     for (const item of tableToJson(eventsDom.window.document.querySelector("table.w3-table-all")?.outerHTML)) {
@@ -38,7 +40,26 @@ async function main() {
         ${camelCase(Event)}?: EventListenerOrEventListenerObject;
         `);
     }
-    await eventsTemplate(events)
+    await eventsTemplate(events);
+
+    // Process CSS
+    const cssDom = await downloadWebpage(ALL_CSS, "css");
+    const css = [];
+    const sections = cssDom.window.document.querySelectorAll("table.w3-table-all");
+    for (const section of sections) {
+        for (const item of tableToJson(section?.outerHTML)) {
+            const [ Name, Description ] = Object.values(item);
+            css.push(`
+            ${commentTemplate({
+                description: Description,
+                url: `https://www.w3schools.com/cssref/css3_pr_${Name}.asp`
+            })}
+            ${camelCase(Name)}?: PossibleStyle;
+            `);
+        }
+    }
+    await cssTemplate(css);
+
     const tagsDom = await downloadWebpage(All_TAGS, "tags");
     const tags = [];
     for (const item of tableToJson(tagsDom.window.document.querySelector("#htmltags")?.innerHTML)) {
@@ -94,15 +115,28 @@ async function processTag(tag, tags) {
     fs.writeFileSync(tagPath, template);
 }
 
-async function eventsTemplate(events) {
+async function eventsTemplate(items) {
     const template = `
     export interface NodeEvents {
-        ${events.join('\n')}
+        ${items.join('\n')}
 
         [key: string]: EventListenerOrEventListenerObject | undefined;
     }
     `
     fs.writeFileSync(p.join(SRC_LOCATION, 'events.ts'), template);
+}
+
+async function cssTemplate(items) {
+    const template = `
+    import { PossibleStyle } from "./dom/styles";
+
+    export interface CSSStyles {
+        ${items.join('\n')}
+
+        [key: string]: PossibleStyle | undefined;
+    }
+    `
+    fs.writeFileSync(p.join(SRC_LOCATION, 'css.ts'), template);
 }
 
 /**
@@ -114,7 +148,7 @@ async function tagTemplate(name, desc, url, dom, tags) {
     let className = pascalCase(name);
     if (className === 'Object') className = 'Obj';
     const description = desc.replace("<", "`<").replace(">", ">`");
-    tags.push({ tagName, url, description: description.split('\n').join(' '), className})
+    tags.push({ tagName, url, description: description.split('\n').join(' '), className })
     const browserSupport = getBrowserSupport(dom.window.document.querySelector("table.browserref"));
     const attributes = [];
     const attrs = tableToJson(dom.window.document.querySelector("table.w3-table-all")?.outerHTML);

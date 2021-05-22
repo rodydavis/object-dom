@@ -1,3 +1,7 @@
+## 0.4.0
+
+- Adding typings for CSS
+
 ## 0.3.0
 
 - Generating all tags and attributes from w3schools.com

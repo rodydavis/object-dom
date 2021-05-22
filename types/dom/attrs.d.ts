@@ -1,5 +1,5 @@
 import type { ObjectDom } from "../base";
-import type { CSSStyles } from "./styles";
+import type { CSSStyles } from "../css";
 export declare type AttrType = string | number | boolean;
 export declare type PossibleAttr = AttrType | NodeAttr<AttrType> | undefined;
 export declare class NodeAttr<T extends string | boolean | number> {

@@ -1,5 +1,5 @@
 import type { ObjectDom } from "../base";
-import type { CSSStyles } from "./styles";
+import type { CSSStyles } from "../css";
 import { convertToPathCase } from "./utils";
 
 export type AttrType = string | number | boolean;
