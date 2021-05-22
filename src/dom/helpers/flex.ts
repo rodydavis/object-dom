@@ -1,71 +1,82 @@
 import { Div, DivProps } from "../tags/div";
 
+interface DisplayProps extends DivProps {
+  styles?: {
+    display?: string;
+  };
+}
+
 class Display extends Div {
-  constructor(display: string, props: DivProps = {}) {
+  constructor(props: DisplayProps = { styles: { display: "unset" } }) {
     super(props);
-    this.addStyle("display", display);
   }
 }
 
 export class Grid extends Display {
-  constructor(props: DivProps = {}) {
-    super("grid", props);
+  constructor(props: DisplayProps = { styles: { display: "grid" } }) {
+    super(props);
   }
 }
 
 export class Block extends Display {
-  constructor(props: DivProps = {}) {
-    super("block", props);
+  constructor(props: DisplayProps = { styles: { display: "block" } }) {
+    super(props);
   }
 }
 
 export class Inline extends Display {
-  constructor(props: DivProps = {}) {
-    super("inline", props);
+  constructor(props: DisplayProps = { styles: { display: "inline" } }) {
+    super(props);
   }
 }
 
 export class InlineBlock extends Display {
-  constructor(props: DivProps = {}) {
-    super("inline-block", props);
+  constructor(props: DisplayProps = { styles: { display: "inline-block" } }) {
+    super(props);
   }
 }
 
 export class Flex extends Display {
-  constructor(props: DivProps = {}) {
-    super("flex", props);
+  constructor(props: DisplayProps = { styles: { display: "flex" } }) {
+    super(props);
   }
 }
 
-interface RowProps extends DivProps {
-  direction?: "row-reversed" | "row";
+interface RowProps extends DisplayProps {
+  styles?: {
+    display?: string;
+    flexDirection?: "row-reversed" | "row";
+  };
 }
 
 export class Row extends Flex {
-  constructor(props: RowProps = {}) {
+  constructor(props: RowProps = { styles: { flexDirection: "row", display: "flex" } }) {
     super(props);
-    this.addStyle("flex-direction", props?.direction);
   }
 }
 
-interface ColumnProps extends DivProps {
-  direction?: "column-reversed" | "column";
+interface ColumnProps extends DisplayProps {
+  styles?: {
+    display?: string;
+    flexDirection?: "column-reversed" | "column";
+  };
 }
 
 export class Column extends Flex {
-  constructor(props: ColumnProps = {}) {
+  constructor(props: ColumnProps = { styles: { flexDirection: "column", display: "flex" } }) {
     super(props);
-    this.addStyle("flex-direction", props?.direction);
   }
 }
 
-interface WrapProps extends DivProps {
-  direction?: "wrap-reversed" | "wrap" | "nowrap";
+interface WrapProps extends DisplayProps {
+  styles?: {
+    display?: string;
+    flexWrap?: "wrap-reversed" | "wrap" | "nowrap";
+  };
 }
 
 export class Wrap extends Flex {
-  constructor(props: WrapProps = {}) {
+  constructor(props: WrapProps = { styles: { flexWrap: "wrap", display: "flex" } }) {
     super(props);
-    this.addStyle("flex-wrap", props?.direction);
   }
 }
