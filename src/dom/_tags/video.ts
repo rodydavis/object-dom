@@ -8,16 +8,16 @@ export interface VideoProps extends NodeProps<HTMLElement> {
 }
 
 /**
- * HTML tag: `<video>`
- *
- * Defines embedded video content
- *
- * |  Chrome  | Firefox |  Safari   |  Edge  |
- * | :------: | :-----: | :-------: | :----: |
- * |  **4.0**  | **3.5**  |   **3.1**   | **9.0** |
- *
- * @see https://www.w3schools.com/TAGS/tag_video.asp
- */
+* `<video>`
+* 
+* Defines embedded video content
+* 
+* |  Chrome  | Firefox |  Safari   |  Edge  |
+* | :------: | :-----: | :-------: | :----: |
+* |  **4.0**  | **3.5**  |   **3.1**   | **9.0** |
+* 
+@see https://www.w3schools.com/TAGS/tag_video.asp
+*/
 export class Video extends GlobalDom<HTMLElement> {
   constructor(props: VideoProps = {}) {
     super({ node: document.createElement("video"), ...props });

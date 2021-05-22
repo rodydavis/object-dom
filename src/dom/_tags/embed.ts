@@ -4,39 +4,79 @@ import { GlobalDom } from "../../object-dom";
 export interface EmbedProps extends NodeProps<HTMLElement> {
   attributes?: {
     /**
-     * Specifies the height of the embedded content
-     */
+* `<embed height>`
+* 
+* Specifies the height of the embedded content
+* 
+* |  Chrome  | Firefox |  Safari   |  Edge  |
+* | :------: | :-----: | :-------: | :----: |
+* |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
+* 
+Example: `<embed src="pic_trulli.jpg" width="200" height="200">`
+* 
+@see https://www.w3schools.com/TAGS/att_embed_height.asp
+*/
     height?: string;
 
     /**
-     * Specifies the address of the external file to embed
-     */
+* `<embed src>`
+* 
+* Specifies the address of the external file to embed
+* 
+* |  Chrome  | Firefox |  Safari   |  Edge  |
+* | :------: | :-----: | :-------: | :----: |
+* |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
+* 
+Example: `<embed src="pic_trulli.jpg">`
+* 
+@see https://www.w3schools.com/TAGS/att_embed_src.asp
+*/
     src?: string;
 
     /**
-     * Specifies the media type of the embedded content
-     */
+* `<embed type>`
+* 
+* Specifies the media type of the embedded content
+* 
+* |  Chrome  | Firefox |  Safari   |  Edge  |
+* | :------: | :-----: | :-------: | :----: |
+* |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
+* 
+Example: `<embed type="image/jpg" src="pic_trulli.jpg">`
+* 
+@see https://www.w3schools.com/TAGS/att_embed_type.asp
+*/
     type?: string;
 
     /**
-     * Specifies the width of the embedded content
-     */
+* `<embed width>`
+* 
+* Specifies the width of the embedded content
+* 
+* |  Chrome  | Firefox |  Safari   |  Edge  |
+* | :------: | :-----: | :-------: | :----: |
+* |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
+* 
+Example: `<embed src="pic_trulli.jpg" width="200" height="200">`
+* 
+@see https://www.w3schools.com/TAGS/att_embed_width.asp
+*/
     width?: string;
     [key: string]: PossibleAttr;
   };
 }
 
 /**
- * HTML tag: `<embed>`
- *
- * Defines a container for an external application
- *
- * |  Chrome  | Firefox |  Safari   |  Edge  |
- * | :------: | :-----: | :-------: | :----: |
- * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
- *
- * @see https://www.w3schools.com/TAGS/tag_embed.asp
- */
+* `<embed>`
+* 
+* Defines a container for an external application
+* 
+* |  Chrome  | Firefox |  Safari   |  Edge  |
+* | :------: | :-----: | :-------: | :----: |
+* |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
+* 
+@see https://www.w3schools.com/TAGS/tag_embed.asp
+*/
 export class Embed extends GlobalDom<HTMLElement> {
   constructor(props: EmbedProps = {}) {
     super({ node: document.createElement("embed"), ...props });

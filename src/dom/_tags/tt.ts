@@ -8,16 +8,16 @@ export interface TtProps extends NodeProps<HTMLElement> {
 }
 
 /**
- * HTML tag: `<tt>`
- *
- * Not supported in HTML5. Use CSS instead.Defines teletype text
- *
- * |  Chrome  | Firefox |  Safari   |  Edge  |
- * | :------: | :-----: | :-------: | :----: |
- * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
- *
- * @see https://www.w3schools.com/TAGS/tag_tt.asp
- */
+* `<tt>`
+* 
+* Not supported in HTML5. Use CSS instead.Defines teletype text
+* 
+* |  Chrome  | Firefox |  Safari   |  Edge  |
+* | :------: | :-----: | :-------: | :----: |
+* |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
+* 
+@see https://www.w3schools.com/TAGS/tag_tt.asp
+*/
 export class Tt extends GlobalDom<HTMLElement> {
   constructor(props: TtProps = {}) {
     super({ node: document.createElement("tt"), ...props });

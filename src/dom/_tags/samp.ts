@@ -8,16 +8,16 @@ export interface SampProps extends NodeProps<HTMLElement> {
 }
 
 /**
- * HTML tag: `<samp>`
- *
- * Defines sample output from a computer program
- *
- * |  Chrome  | Firefox |  Safari   |  Edge  |
- * | :------: | :-----: | :-------: | :----: |
- * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
- *
- * @see https://www.w3schools.com/TAGS/tag_samp.asp
- */
+* `<samp>`
+* 
+* Defines sample output from a computer program
+* 
+* |  Chrome  | Firefox |  Safari   |  Edge  |
+* | :------: | :-----: | :-------: | :----: |
+* |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
+* 
+@see https://www.w3schools.com/TAGS/tag_samp.asp
+*/
 export class Samp extends GlobalDom<HTMLElement> {
   constructor(props: SampProps = {}) {
     super({ node: document.createElement("samp"), ...props });

@@ -318,8 +318,6 @@ export interface CSSStyles {
   zIndex?: string;
 }
 
-
-
 export function convertClassList(value: string | string[] | undefined): string | undefined {
   if (value) {
     if (typeof value === "string") return value;

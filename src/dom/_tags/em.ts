@@ -8,16 +8,16 @@ export interface EmProps extends NodeProps<HTMLElement> {
 }
 
 /**
- * HTML tag: `<em>`
- *
- * Defines emphasized text
- *
- * |  Chrome  | Firefox |  Safari   |  Edge  |
- * | :------: | :-----: | :-------: | :----: |
- * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
- *
- * @see https://www.w3schools.com/TAGS/tag_em.asp
- */
+* `<em>`
+* 
+* Defines emphasized text
+* 
+* |  Chrome  | Firefox |  Safari   |  Edge  |
+* | :------: | :-----: | :-------: | :----: |
+* |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
+* 
+@see https://www.w3schools.com/TAGS/tag_em.asp
+*/
 export class Em extends GlobalDom<HTMLElement> {
   constructor(props: EmProps = {}) {
     super({ node: document.createElement("em"), ...props });

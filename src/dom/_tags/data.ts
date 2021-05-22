@@ -4,25 +4,33 @@ import { GlobalDom } from "../../object-dom";
 export interface DataProps extends NodeProps<HTMLElement> {
   attributes?: {
     /**
-     * Specifies the machine-readable translation of the content of the element
-     */
+* `<data value>`
+* 
+* Specifies the machine-readable translation of the content of the element
+* 
+* |  Chrome  | Firefox |  Safari   |  Edge  |
+* | :------: | :-----: | :-------: | :----: |
+* |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
+* 
+@see https://www.w3schools.com/TAGS/att_data_value.asp
+*/
     value?: string;
     [key: string]: PossibleAttr;
   };
 }
 
 /**
-     * HTML tag: `<data>`
-     * 
-     * Adds a machine-readable 
+* `<data>`
+* 
+* Adds a machine-readable 
 translation of a given content
-     *
-     * |  Chrome  | Firefox |  Safari   |  Edge  |
-     * | :------: | :-----: | :-------: | :----: |
-     * |  **62.0**  | **22.0**  |   **Not supported**   | **13.0** |
-     * 
-     * @see https://www.w3schools.com/TAGS/tag_data.asp
-     */
+* 
+* |  Chrome  | Firefox |  Safari   |  Edge  |
+* | :------: | :-----: | :-------: | :----: |
+* |  **62.0**  | **22.0**  |   **Not supported**   | **13.0** |
+* 
+@see https://www.w3schools.com/TAGS/tag_data.asp
+*/
 export class Data extends GlobalDom<HTMLElement> {
   constructor(props: DataProps = {}) {
     super({ node: document.createElement("data"), ...props });

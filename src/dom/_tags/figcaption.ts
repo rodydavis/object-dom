@@ -8,16 +8,16 @@ export interface FigcaptionProps extends NodeProps<HTMLElement> {
 }
 
 /**
- * HTML tag: `<figcaption>`
- *
- * Defines a caption for a `<figure>` element
- *
- * |  Chrome  | Firefox |  Safari   |  Edge  |
- * | :------: | :-----: | :-------: | :----: |
- * |  **8.0**  | **4.0**  |   **5.1**   | **9.0** |
- *
- * @see https://www.w3schools.com/TAGS/tag_figcaption.asp
- */
+* `<figcaption>`
+* 
+* Defines a caption for a `<figure>` element
+* 
+* |  Chrome  | Firefox |  Safari   |  Edge  |
+* | :------: | :-----: | :-------: | :----: |
+* |  **8.0**  | **4.0**  |   **5.1**   | **9.0** |
+* 
+@see https://www.w3schools.com/TAGS/tag_figcaption.asp
+*/
 export class Figcaption extends GlobalDom<HTMLElement> {
   constructor(props: FigcaptionProps = {}) {
     super({ node: document.createElement("figcaption"), ...props });
