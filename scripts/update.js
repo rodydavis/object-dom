@@ -22,8 +22,7 @@ async function main() {
     readme = prefix + '\n';
     readme += `
 | Tag            | Class      | Description                                                                                              |
-| -------------- | ---------- | -------------------------------------------------------------------------------------------------------- |
-`  ;
+| -------------- | ---------- | -------------------------------------------------------------------------------------------------------- |`  ;
 
     if (!fs.existsSync(".cache")) fs.mkdirSync(".cache");
     if (!fs.existsSync(Tags_Location)) fs.mkdirSync(Tags_Location);
@@ -55,8 +54,7 @@ async function main() {
     }
     for (const item of tags) {
         readme += `
-| [\`<${item.tagName}> \`](${item.url}) | ${item.className} | ${item.description} |
-`;
+| [\`<${item.tagName}> \`](${item.url}) | ${item.className} | ${item.description} |`;
     }
     readme += '\n' + suffix;
     fs.writeFileSync('README.md', readme);
