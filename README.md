@@ -167,9 +167,9 @@ https://www.w3schools.com/TAGS/default.ASP
       }),
     ],
   });
-  button.onClick = () => {
-    label.text = "New Update!";
-  };
+  button.addEventListener('click', () => {
+     label.text = "New Update!";
+  }, false);
   render(app, document.body.querySelector("#root"));
 </script>
 ```
@@ -202,17 +202,21 @@ class Counter extends ObjectDom {
             new Button({
               text: "-",
               style: { width: "50px" },
-              onClick: () => {
-                this.value -= 1;
-                this.update();
+              events: {
+                click: () => {
+                  this.value -= 1;
+                  this.update();
+                },
               },
             }),
             new Button({
               text: "+",
               style: { width: "50px", marginLeft: "5px" },
-              onClick: () => {
-                this.value += 1;
-                this.update();
+              events: {
+                click: () => {
+                  this.value += 1;
+                  this.update();
+                },
               },
             }),
           ],
