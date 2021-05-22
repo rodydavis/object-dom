@@ -25,7 +25,7 @@ Example: `<form action="/action_page.php">
     pick from
 * 
 */
-    | "file_extension"
+      | "file_extension"
       /**
        * The user can pick all sound files
        *
@@ -91,7 +91,7 @@ Example: `<form action="/action_page.php" autocomplete="on">
      * Default. Specifies that autocomplete is on (enabled)
      *
      */
-    | "on"
+      | "on"
       /**
        * Specifies that autocomplete is off (disabled)
        *
@@ -241,7 +241,7 @@ Example: `<form action="/action_page_binary.asp" method="post">
      * Default. All characters are encoded before sent (spaces are  converted to "+" symbols, and special characters are converted to ASCII HEX values)
      *
      */
-    | "application/x-www-form-urlencoded"
+      | "application/x-www-form-urlencoded"
       /**
 * This value is necessary if the user will upload a file through the 
     form
@@ -277,7 +277,7 @@ Example: `<form action="/action_page.php" method="get">
      * Default. Appends the form-data to the URL in name/value pairs: URL?name=value&name=value
      *
      */
-    | "get"
+      | "get"
       /**
        * Sends the form-data as an HTTP post transaction
        *
@@ -329,7 +329,7 @@ Example: `<form action="/action_page.php">
      * The response is displayed in a new window or tab
      *
      */
-    | "_blank"
+      | "_blank"
       /**
        * The response is displayed in the same frame (this is default)
        *
@@ -422,7 +422,7 @@ Example: `<form action="/action_page.php">
      * Specifies the maximum value allowed
      *
      */
-    | "number"
+      | "number"
       /**
        * Specifies the maximum date allowed
        *
@@ -474,7 +474,7 @@ Example: `<form action="/action_page.php">
      * Specifies the minimum value allowed
      *
      */
-    | "number"
+      | "number"
       /**
        * Specifies the minimum date allowed
        *
@@ -677,7 +677,7 @@ Example: `<form action="/action_page.php">
      * Specifies the interval between legal numbers in the input field. Default is  1
      *
      */
-    | "number"
+      | "number"
       /**
        */
       | "any";
@@ -705,7 +705,7 @@ Example: `<form action="/action_page.php">
      * Defines a clickable button (mostly used with a JavaScript to activate a script)
      *
      */
-    | "button"
+      | "button"
       /**
        * Defines a checkbox
        *

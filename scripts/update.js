@@ -12,6 +12,19 @@ const SRC_LOCATION = "src";
 const Tags_Location = `${SRC_LOCATION}/dom/tags`;
 
 async function main() {
+    let readme = fs.readFileSync('README.md').toString();
+    const start_tag = '<!-- BEGIN_TAGS -->';
+    const end_tag = '<!-- END_TAGS -->';
+    const startIdx = readme.indexOf(start_tag);
+    const endIdx = readme.indexOf(end_tag);
+    const prefix = readme.slice(0, startIdx + start_tag.length);
+    const suffix = readme.slice(endIdx, readme.length);
+    readme = prefix + '\n';
+    readme += `
+| Tag            | Class      | Description                                                                                              |
+| -------------- | ---------- | -------------------------------------------------------------------------------------------------------- |
+`  ;
+
     if (!fs.existsSync(".cache")) fs.mkdirSync(".cache");
     if (!fs.existsSync(Tags_Location)) fs.mkdirSync(Tags_Location);
     const eventsDom = await downloadWebpage(ALL_EVENTS, "events");
@@ -27,17 +40,26 @@ async function main() {
     }
     await eventsTemplate(events)
     const tagsDom = await downloadWebpage(All_TAGS, "tags");
+    const tags = [];
     for (const item of tableToJson(tagsDom.window.document.querySelector("#htmltags")?.innerHTML)) {
         if (item.Tag.startsWith("<!")) continue;
         if (item.Description.includes("Not supported")) continue;
         if (item.Tag.includes(" to ")) {
             for (let i = 1; i <= 6; i++) {
-                await processTag({ Tag: `h${i}`, Description: item.Description });
+                const meta = { Tag: `h${i}`, Description: item.Description };
+                await processTag(meta, tags);
             }
             continue;
         }
-        await processTag(item);
+        await processTag(item, tags);
     }
+    for (const item of tags) {
+        readme += `
+| [\`<${item.tagName}> \`](${item.url}) | ${item.className} | ${item.description} |
+`;
+    }
+    readme += '\n' + suffix;
+    fs.writeFileSync('README.md', readme);
 }
 
 function tableToJson(content) {
@@ -63,12 +85,12 @@ async function downloadWebpage(url, name) {
     return jsdom.JSDOM.fromFile(cachePath);
 }
 
-async function processTag(tag) {
+async function processTag(tag, tags) {
     const { Tag, Description } = tag;
     const tagName = Tag.replace("<", "").replace(">", "");
     const url = `${TAG_LINK_PREFIX}${tagName}.asp`;
     const dom = await downloadWebpage(url, tagName);
-    const template = await tagTemplate(tagName, Description, url, dom);
+    const template = await tagTemplate(tagName, Description, url, dom, tags);
     const tagPath = p.join(Tags_Location, `${tagName}.ts`);
     fs.writeFileSync(tagPath, template);
 }
@@ -88,11 +110,12 @@ async function eventsTemplate(events) {
  * @param {string} name
  * @param {string} desc
  */
-async function tagTemplate(name, desc, url, dom) {
+async function tagTemplate(name, desc, url, dom, tags) {
     const tagName = name;
     let className = pascalCase(name);
     if (className === 'Object') className = 'Obj';
     const description = desc.replace("<", "`<").replace(">", ">`");
+    tags.push({ tagName, url, description, className})
     const browserSupport = getBrowserSupport(dom.window.document.querySelector("table.browserref"));
     const attributes = [];
     const attrs = tableToJson(dom.window.document.querySelector("table.w3-table-all")?.outerHTML);

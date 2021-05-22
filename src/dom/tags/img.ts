@@ -89,7 +89,7 @@ Example: `<img src="/w3images/wedding.jpg" alt="Wedding" style="width:100%"><img
      * Default. Loads an image immediately
      *
      */
-    | "eager"
+      | "eager"
       /**
        * Defer loading of images until some conditions are met
        *
