@@ -1,9 +1,16 @@
 
-    import type { NodeProps } from "../../object-dom";
+    import type { NodeProps, PossibleAttr } from "../../object-dom";
     import { GlobalDom } from "../../object-dom";
 
     export interface QProps extends NodeProps<HTMLElement> {
-
+        attributes?: {
+            
+           /**
+            * Specifies the source URL of the quote
+            */
+            cite?: string;
+            [key: string]: PossibleAttr;
+        }
     }
     
     /**

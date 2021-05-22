@@ -1,9 +1,16 @@
 
-    import type { NodeProps } from "../../object-dom";
+    import type { NodeProps, PossibleAttr } from "../../object-dom";
     import { GlobalDom } from "../../object-dom";
 
     export interface BlockquoteProps extends NodeProps<HTMLElement> {
-
+        attributes?: {
+            
+           /**
+            * Specifies the source of the quotation
+            */
+            cite?: string;
+            [key: string]: PossibleAttr;
+        }
     }
     
     /**

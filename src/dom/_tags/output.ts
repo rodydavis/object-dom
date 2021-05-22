@@ -1,9 +1,26 @@
 
-    import type { NodeProps } from "../../object-dom";
+    import type { NodeProps, PossibleAttr } from "../../object-dom";
     import { GlobalDom } from "../../object-dom";
 
     export interface OutputProps extends NodeProps<HTMLElement> {
+        attributes?: {
+            
+           /**
+            * Specifies the relationship between the result of the calculation, and the elements used in the calculation
+            */
+            for?: string;
 
+           /**
+            * Specifies which form the output element belongs to
+            */
+            form?: string;
+
+           /**
+            * Specifies a name for the output element
+            */
+            name?: string;
+            [key: string]: PossibleAttr;
+        }
     }
     
     /**

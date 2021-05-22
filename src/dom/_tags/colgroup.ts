@@ -1,9 +1,16 @@
 
-    import type { NodeProps } from "../../object-dom";
+    import type { NodeProps, PossibleAttr } from "../../object-dom";
     import { GlobalDom } from "../../object-dom";
 
     export interface ColgroupProps extends NodeProps<HTMLElement> {
-
+        attributes?: {
+            
+           /**
+            * Specifies the number of columns a column group should span
+            */
+            span?: string;
+            [key: string]: PossibleAttr;
+        }
     }
     
     /**

@@ -1,9 +1,21 @@
 
-    import type { NodeProps } from "../../object-dom";
+    import type { NodeProps, PossibleAttr } from "../../object-dom";
     import { GlobalDom } from "../../object-dom";
 
     export interface CanvasProps extends NodeProps<HTMLElement> {
+        attributes?: {
+            
+           /**
+            * Specifies the height of the canvas. Default value is 150
+            */
+            height?: string;
 
+           /**
+            * Specifies the width of the canvas Default value is 300
+            */
+            width?: string;
+            [key: string]: PossibleAttr;
+        }
     }
     
     /**

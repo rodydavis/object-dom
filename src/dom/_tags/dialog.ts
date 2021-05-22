@@ -1,9 +1,16 @@
 
-    import type { NodeProps } from "../../object-dom";
+    import type { NodeProps, PossibleAttr } from "../../object-dom";
     import { GlobalDom } from "../../object-dom";
 
     export interface DialogProps extends NodeProps<HTMLElement> {
-
+        attributes?: {
+            
+           /**
+            * Specifies that the dialog element is active and that the user can interact with it
+            */
+            open?: string;
+            [key: string]: PossibleAttr;
+        }
     }
     
     /**

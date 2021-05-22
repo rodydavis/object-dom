@@ -1,9 +1,21 @@
 
-    import type { NodeProps } from "../../object-dom";
+    import type { NodeProps, PossibleAttr } from "../../object-dom";
     import { GlobalDom } from "../../object-dom";
 
     export interface LabelProps extends NodeProps<HTMLElement> {
+        attributes?: {
+            
+           /**
+            * Specifies the id of the form element the label should be bound to
+            */
+            for?: string;
 
+           /**
+            * Specifies which form the label belongs to
+            */
+            form?: string;
+            [key: string]: PossibleAttr;
+        }
     }
     
     /**

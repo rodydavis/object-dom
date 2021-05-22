@@ -1,9 +1,36 @@
 
-    import type { NodeProps } from "../../object-dom";
+    import type { NodeProps, PossibleAttr } from "../../object-dom";
     import { GlobalDom } from "../../object-dom";
 
     export interface ThProps extends NodeProps<HTMLElement> {
+        attributes?: {
+            
+           /**
+            * Specifies an abbreviated version of the content in a header cell
+            */
+            abbr?: string;
 
+           /**
+            * Specifies the number of columns a header cell should span
+            */
+            colspan?: string;
+
+           /**
+            * Specifies one or more header cells a cell is related to
+            */
+            headers?: string;
+
+           /**
+            * Specifies the number of rows a header cell should span
+            */
+            rowspan?: string;
+
+           /**
+            * Specifies whether a header cell is a header for a column, row, or group of columns or rows
+            */
+            scope?: string;
+            [key: string]: PossibleAttr;
+        }
     }
     
     /**

@@ -1,9 +1,21 @@
 
-    import type { NodeProps } from "../../object-dom";
+    import type { NodeProps, PossibleAttr } from "../../object-dom";
     import { GlobalDom } from "../../object-dom";
 
     export interface DelProps extends NodeProps<HTMLElement> {
+        attributes?: {
+            
+           /**
+            * Specifies a URL to a document that explains the reason why the text was deleted/changed
+            */
+            cite?: string;
 
+           /**
+            * Specifies the date and time of when the text was deleted/changed
+            */
+            datetime?: string;
+            [key: string]: PossibleAttr;
+        }
     }
     
     /**

@@ -1,9 +1,21 @@
 
-    import type { NodeProps } from "../../object-dom";
+    import type { NodeProps, PossibleAttr } from "../../object-dom";
     import { GlobalDom } from "../../object-dom";
 
     export interface InsProps extends NodeProps<HTMLElement> {
+        attributes?: {
+            
+           /**
+            * Specifies a URL to a document that explains the reason why the text was inserted/changed
+            */
+            cite?: string;
 
+           /**
+            * Specifies the date and time when the text was inserted/changed
+            */
+            datetime?: string;
+            [key: string]: PossibleAttr;
+        }
     }
     
     /**

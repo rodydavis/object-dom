@@ -1,9 +1,31 @@
 
-    import type { NodeProps } from "../../object-dom";
+    import type { NodeProps, PossibleAttr } from "../../object-dom";
     import { GlobalDom } from "../../object-dom";
 
     export interface MetaProps extends NodeProps<HTMLElement> {
+        attributes?: {
+            
+           /**
+            * Specifies the character encoding for the HTML document
+            */
+            charset?: string;
 
+           /**
+            * Specifies the value associated with the http-equiv or name attribute
+            */
+            content?: string;
+
+           /**
+            * Provides an HTTP header for the information/value of the content attribute
+            */
+            http-equiv?: string;
+
+           /**
+            * Specifies a name for the metadata
+            */
+            name?: string;
+            [key: string]: PossibleAttr;
+        }
     }
     
     /**

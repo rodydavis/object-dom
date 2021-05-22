@@ -1,9 +1,16 @@
 
-    import type { NodeProps } from "../../object-dom";
+    import type { NodeProps, PossibleAttr } from "../../object-dom";
     import { GlobalDom } from "../../object-dom";
 
     export interface HtmlProps extends NodeProps<HTMLElement> {
-
+        attributes?: {
+            
+           /**
+            * Specifies the XML namespace attribute (If you need your content to conform to XHTML)
+            */
+            xmlns?: string;
+            [key: string]: PossibleAttr;
+        }
     }
     
     /**

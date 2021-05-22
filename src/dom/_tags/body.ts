@@ -1,9 +1,12 @@
 
-    import type { NodeProps } from "../../object-dom";
+    import type { NodeProps, PossibleAttr } from "../../object-dom";
     import { GlobalDom } from "../../object-dom";
 
     export interface BodyProps extends NodeProps<HTMLElement> {
-
+        attributes?: {
+            
+            [key: string]: PossibleAttr;
+        }
     }
     
     /**

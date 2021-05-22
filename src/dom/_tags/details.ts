@@ -1,9 +1,16 @@
 
-    import type { NodeProps } from "../../object-dom";
+    import type { NodeProps, PossibleAttr } from "../../object-dom";
     import { GlobalDom } from "../../object-dom";
 
     export interface DetailsProps extends NodeProps<HTMLElement> {
-
+        attributes?: {
+            
+           /**
+            * Specifies that the details should be visible (open) to the user
+            */
+            open?: string;
+            [key: string]: PossibleAttr;
+        }
     }
     
     /**

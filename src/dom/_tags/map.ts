@@ -1,9 +1,16 @@
 
-    import type { NodeProps } from "../../object-dom";
+    import type { NodeProps, PossibleAttr } from "../../object-dom";
     import { GlobalDom } from "../../object-dom";
 
     export interface MapProps extends NodeProps<HTMLElement> {
-
+        attributes?: {
+            
+           /**
+            * Required. Specifies the name of the image map
+            */
+            name?: string;
+            [key: string]: PossibleAttr;
+        }
     }
     
     /**

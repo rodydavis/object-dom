@@ -1,9 +1,16 @@
 
-    import type { NodeProps } from "../../object-dom";
+    import type { NodeProps, PossibleAttr } from "../../object-dom";
     import { GlobalDom } from "../../object-dom";
 
     export interface TimeProps extends NodeProps<HTMLElement> {
-
+        attributes?: {
+            
+           /**
+            * Represent a machine-readable format of the <time> element
+            */
+            datetime?: string;
+            [key: string]: PossibleAttr;
+        }
     }
     
     /**

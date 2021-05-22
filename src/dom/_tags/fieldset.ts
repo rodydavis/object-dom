@@ -1,9 +1,26 @@
 
-    import type { NodeProps } from "../../object-dom";
+    import type { NodeProps, PossibleAttr } from "../../object-dom";
     import { GlobalDom } from "../../object-dom";
 
     export interface FieldsetProps extends NodeProps<HTMLElement> {
+        attributes?: {
+            
+           /**
+            * Specifies that a group of related form elements should be disabled
+            */
+            disabled?: string;
 
+           /**
+            * Specifies which form the fieldset belongs to
+            */
+            form?: string;
+
+           /**
+            * Specifies a name for the fieldset
+            */
+            name?: string;
+            [key: string]: PossibleAttr;
+        }
     }
     
     /**

@@ -1,9 +1,21 @@
 
-    import type { NodeProps } from "../../object-dom";
+    import type { NodeProps, PossibleAttr } from "../../object-dom";
     import { GlobalDom } from "../../object-dom";
 
     export interface OptgroupProps extends NodeProps<HTMLElement> {
+        attributes?: {
+            
+           /**
+            * Specifies that an option-group should be disabled
+            */
+            disabled?: string;
 
+           /**
+            * Specifies a label for an option-group
+            */
+            label?: string;
+            [key: string]: PossibleAttr;
+        }
     }
     
     /**

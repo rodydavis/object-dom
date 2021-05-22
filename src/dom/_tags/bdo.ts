@@ -1,9 +1,16 @@
 
-    import type { NodeProps } from "../../object-dom";
+    import type { NodeProps, PossibleAttr } from "../../object-dom";
     import { GlobalDom } from "../../object-dom";
 
     export interface BdoProps extends NodeProps<HTMLElement> {
-
+        attributes?: {
+            
+           /**
+            * Required. Specifies the text direction of the text inside the <bdo> element
+            */
+            dir?: string;
+            [key: string]: PossibleAttr;
+        }
     }
     
     /**

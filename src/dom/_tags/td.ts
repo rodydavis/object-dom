@@ -1,9 +1,26 @@
 
-    import type { NodeProps } from "../../object-dom";
+    import type { NodeProps, PossibleAttr } from "../../object-dom";
     import { GlobalDom } from "../../object-dom";
 
     export interface TdProps extends NodeProps<HTMLElement> {
+        attributes?: {
+            
+           /**
+            * Specifies the number of columns a cell should span
+            */
+            colspan?: string;
 
+           /**
+            * Specifies one or more header cells a cell is related to
+            */
+            headers?: string;
+
+           /**
+            * Sets the number of rows a cell should span
+            */
+            rowspan?: string;
+            [key: string]: PossibleAttr;
+        }
     }
     
     /**

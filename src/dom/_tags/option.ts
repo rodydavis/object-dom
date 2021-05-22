@@ -1,9 +1,31 @@
 
-    import type { NodeProps } from "../../object-dom";
+    import type { NodeProps, PossibleAttr } from "../../object-dom";
     import { GlobalDom } from "../../object-dom";
 
     export interface OptionProps extends NodeProps<HTMLElement> {
+        attributes?: {
+            
+           /**
+            * Specifies that an option should be disabled
+            */
+            disabled?: string;
 
+           /**
+            * Specifies a shorter label for an option
+            */
+            label?: string;
+
+           /**
+            * Specifies that an option should be pre-selected when the page loads
+            */
+            selected?: string;
+
+           /**
+            * Specifies the value to be sent to a server
+            */
+            value?: string;
+            [key: string]: PossibleAttr;
+        }
     }
     
     /**

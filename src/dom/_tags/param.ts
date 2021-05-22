@@ -1,9 +1,21 @@
 
-    import type { NodeProps } from "../../object-dom";
+    import type { NodeProps, PossibleAttr } from "../../object-dom";
     import { GlobalDom } from "../../object-dom";
 
     export interface ParamProps extends NodeProps<HTMLElement> {
+        attributes?: {
+            
+           /**
+            * Specifies the name of a parameter
+            */
+            name?: string;
 
+           /**
+            * Specifies the value of the parameter
+            */
+            value?: string;
+            [key: string]: PossibleAttr;
+        }
     }
     
     /**
