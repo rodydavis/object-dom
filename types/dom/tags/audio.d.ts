@@ -1,6 +1,6 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
-export interface AudioProps extends NodeProps<HTMLElement> {
+export interface AudioProps extends NodeProps<HTMLAudioElement> {
     attributes?: {
         [key: string]: PossibleAttr;
     };
@@ -16,6 +16,6 @@ export interface AudioProps extends NodeProps<HTMLElement> {
 *
 @see https://www.w3schools.com/TAGS/tag_audio.asp
 */
-export declare class Audio extends GlobalDom<HTMLElement> {
+export declare class Audio extends GlobalDom<HTMLAudioElement> {
     constructor(props?: AudioProps);
 }

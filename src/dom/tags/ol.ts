@@ -1,7 +1,7 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
 
-export interface OlProps extends NodeProps<HTMLElement> {
+export interface OlProps extends NodeProps<HTMLOListElement> {
   attributes?: {
     /**
 * `<ol reversed>`
@@ -12,14 +12,7 @@ export interface OlProps extends NodeProps<HTMLElement> {
 * | :------: | :-----: | :-------: | :----: |
 * |  **18.0**  | **18.0**  |   **6.0**   | **79.0** |
 * 
-Example: `<ol reversed>
-  
- <li>Coffee</li>
-  
- <li>Tea</li>
-  
- <li>Milk</li>
- </ol>`
+Example: <ol reversed>     <li>Coffee<\/li>     <li>Tea<\/li>     <li>Milk<\/li>  <\/ol>
 * 
 @see https://www.w3schools.com/TAGS/att_ol_reversed.asp
 */
@@ -34,14 +27,7 @@ Example: `<ol reversed>
 * | :------: | :-----: | :-------: | :----: |
 * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
 * 
-Example: `<ol start="50">
-       
-      <li>Coffee</li>
-       
-      <li>Tea</li>
-       
-      <li>Milk</li>
-      </ol>`
+Example: <ol start="50">               <li>Coffee<\/li>               <li>Tea<\/li>               <li>Milk<\/li>       <\/ol>
 * 
 @see https://www.w3schools.com/TAGS/att_ol_start.asp
 */
@@ -56,14 +42,7 @@ Example: `<ol start="50">
 * | :------: | :-----: | :-------: | :----: |
 * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
 * 
-Example: `<ol type="I">
-       
-      <li>Coffee</li>
-       
-      <li>Tea</li>
-       
-      <li>Milk</li>
-      </ol>`
+Example: <ol type="I">               <li>Coffee<\/li>               <li>Tea<\/li>               <li>Milk<\/li>       <\/ol>
 * 
 @see https://www.w3schools.com/TAGS/att_ol_type.asp
 */
@@ -112,7 +91,7 @@ Example: `<ol type="I">
 * 
 @see https://www.w3schools.com/TAGS/tag_ol.asp
 */
-export class Ol extends GlobalDom<HTMLElement> {
+export class Ol extends GlobalDom<HTMLOListElement> {
   constructor(props: OlProps = {}) {
     super({ node: document.createElement("ol"), ...props });
   }

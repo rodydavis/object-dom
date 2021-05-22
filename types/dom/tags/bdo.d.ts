@@ -11,7 +11,7 @@ export interface BdoProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<p>Hello world. <bdo dir="rtl">Hello world</bdo></p>`
+    Example: <p>Hello world. <bdo dir="rtl">Hello world<\/bdo><\/p>
     *
     @see https://www.w3schools.com/TAGS/att_bdo_dir.asp
     */

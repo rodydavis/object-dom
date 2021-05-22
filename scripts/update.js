@@ -47,41 +47,30 @@ async function main() {
                 const cssValues = tableToJson(cssProperties?.outerHTML);
                 // console.log(Name, 'cssValues', cssValues);
                 if (cssValues && cssValues.length > 0 && cssValues[0]?.Value) {
-                    let needsFallback = false;
                     for (const val of cssValues) {
                         const { Value, Description } = val;
                         if (!Value) continue;
                         const ValName = Value.split('\n').join('');
-                        if (ValName.includes('(') && ValName.includes(')')) {
-                            needsFallback = true;
-                            values.push(`
-                            ${commentTemplate({
-                                example: ValName,
-                                description: Description
-                            })}
-                            ${values.length > 0 ? '|' : ''} "${ValName.split('(')[0]}"
-                            `);
-                        } else {
-                            values.push(`
-                            ${commentTemplate({
-                                description: Description
-                            })}
-                            ${values.length > 0 ? '|' : ''} "${ValName}"`);
-                        }
+                        values.push(`
+                        ${commentTemplate({
+                            description: Description,
+                        })}
+                        ${values.length > 0 ? '|' : ''} "${ValName}"`);
                     }
-                    if (needsFallback) {
-                        values.push(` | PossibleStyle`);
-                    }
+                    values.push(` 
+                    | PossibleStyle`);
                 }
             }
+            const example = cssDetailsDom.window.document.querySelector("div.w3-code")?.textContent;
             css.push(`
             ${commentTemplate({
                 name: Name,
                 description: Description,
+                example,
                 url,
                 ...cssSupport,
             })}
-            ${camelCase(Name)}?: ${values.length > 1 ? values.join('\n') : 'PossibleStyle'};
+            ${camelCase(Name)}?: ${values.length > 1 ? values.join('\n\n') : 'PossibleStyle'};
             `);
         }
     }
@@ -198,6 +187,8 @@ async function cssTemplate(items) {
  */
 async function tagTemplate(name, desc, url, dom, tags) {
     const tagName = name.trim();
+    const elem = new jsdom.JSDOM('').window.document.createElement(tagName);
+    const domClassName = elem.constructor.name;
     let className = pascalCase(name);
     if (className === 'Object') className = 'Obj';
     const description = desc.split('\n').join(' ').split('<').join('\`<').split('>').join('>\`');
@@ -240,7 +231,7 @@ async function tagTemplate(name, desc, url, dom, tags) {
     import type { NodeProps, PossibleAttr } from "../../object-dom";
     import { GlobalDom } from "../../object-dom";
 
-    export interface ${className}Props extends NodeProps<HTMLElement> {
+    export interface ${className}Props extends NodeProps<${domClassName}> {
         attributes?: {
             ${attributes.join("\n")}
 
@@ -254,7 +245,7 @@ async function tagTemplate(name, desc, url, dom, tags) {
         url,
         ...browserSupport,
     })}
-    export class ${className} extends GlobalDom<HTMLElement> {
+    export class ${className} extends GlobalDom<${domClassName}> {
       constructor(props: ${className}Props = {}) {
         super({ node: document.createElement("${tagName}"), ...props });
       }
@@ -292,7 +283,12 @@ function commentTemplate(options) {
         sb.push(`* `);
     }
     if (options.example) {
-        sb.push(`Example: \`${options.example.trim()}\``);
+        sb.push(`Example: ${options.example.split('\n').join(' ')
+            .split('\/').join('\\/')
+            .split('\\').join('\\')
+            .split('\{').join('\\{')
+            .split('\}').join('\\}')
+            .trim()}`);
         sb.push(`* `);
     }
     if (options.url) {

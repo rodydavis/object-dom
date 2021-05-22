@@ -1,6 +1,6 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
-export interface BrProps extends NodeProps<HTMLElement> {
+export interface BrProps extends NodeProps<HTMLBRElement> {
     attributes?: {
         [key: string]: PossibleAttr;
     };
@@ -16,6 +16,6 @@ export interface BrProps extends NodeProps<HTMLElement> {
 *
 @see https://www.w3schools.com/TAGS/tag_br.asp
 */
-export declare class Br extends GlobalDom<HTMLElement> {
+export declare class Br extends GlobalDom<HTMLBRElement> {
     constructor(props?: BrProps);
 }

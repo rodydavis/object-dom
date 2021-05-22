@@ -1,7 +1,7 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
 
-export interface DataProps extends NodeProps<HTMLElement> {
+export interface DataProps extends NodeProps<HTMLDataElement> {
   attributes?: {
     /**
 * `<data value>`
@@ -31,7 +31,7 @@ export interface DataProps extends NodeProps<HTMLElement> {
 * 
 @see https://www.w3schools.com/TAGS/tag_data.asp
 */
-export class Data extends GlobalDom<HTMLElement> {
+export class Data extends GlobalDom<HTMLDataElement> {
   constructor(props: DataProps = {}) {
     super({ node: document.createElement("data"), ...props });
   }

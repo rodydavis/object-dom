@@ -10,6 +10,8 @@ export interface CSSStyles {
 * | :------: | :-----: | :-------: | :----: |
 * |  **21.0**  | **20.0**  |   **9.07.0 -webkit-**   | **11.0** |
 * 
+Example: div  \{    display: flex;  align-items: center;  \}
+* 
 @see https://www.w3schools.com/cssref/css3_pr_align-items.asp
 */
   alignItems?: /**
@@ -52,7 +54,8 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * align-self
@@ -62,6 +65,8 @@ export interface CSSStyles {
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **21.0**  | **20.0**  |   **9.07.0 -webkit-**   | **11.0** |
+* 
+Example: #myBlueDiv  \{        align-self: center;\}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_align-self.asp
 */
@@ -111,7 +116,8 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * all
@@ -121,6 +127,8 @@ export interface CSSStyles {
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **37.0**  | **27.0**  |   **9.1**   | **79.0** |
+* 
+Example: div  \{  background-color: yellow;  color: red;  all: initial;\}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_all.asp
 */
@@ -140,7 +148,8 @@ export interface CSSStyles {
      * Changes all the properties applied to the element or the element's parent to their parent value if they are inheritable or to their initial value if not
      *
      */
-    | "unset";
+    | "unset"
+    | PossibleStyle;
 
   /**
 * animation
@@ -150,6 +159,8 @@ export interface CSSStyles {
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **43.04.0 -webkit-**  | **16.05.0 -moz-**  |   **9.04.0 -webkit-**   | **10.0** |
+* 
+Example: div  \{    animation: mymove 5s infinite;  \}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_animation.asp
 */
@@ -211,7 +222,8 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * animation-delay
@@ -221,6 +233,8 @@ export interface CSSStyles {
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **43.04.0 -webkit-**  | **16.05.0 -moz-**  |   **9.04.0 -webkit-**   | **10.0** |
+* 
+Example: div \{  animation-delay: 2s;\}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_animation-delay.asp
 */
@@ -242,7 +256,8 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * animation-direction
@@ -253,6 +268,8 @@ export interface CSSStyles {
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **43.04.0 -webkit-**  | **16.05.0 -moz-**  |   **9.04.0 -webkit-**   | **10.0** |
+* 
+Example: div \{  animation-direction: alternate;\}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_animation-direction.asp
 */
@@ -290,7 +307,8 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * animation-duration
@@ -300,6 +318,8 @@ export interface CSSStyles {
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **43.03.0 -webkit-**  | **16.05.0 -moz-**  |   **9.04.0 -webkit-**   | **10.0** |
+* 
+Example: div \{  animation-duration: 3s; \}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_animation-duration.asp
 */
@@ -321,7 +341,8 @@ animation should take to complete one cycle. This can be specified in seconds or
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * animation-fill-mode
@@ -332,6 +353,8 @@ animation should take to complete one cycle. This can be specified in seconds or
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **43.04.0 -webkit-**  | **16.05.0 -moz-**  |   **9.04.0 -webkit-**   | **10.0** |
+* 
+Example: div \{  animation-fill-mode: forwards;\}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_animation-fill-mode.asp
 */
@@ -371,7 +394,8 @@ animation should take to complete one cycle. This can be specified in seconds or
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * animation-iteration-count
@@ -381,6 +405,8 @@ animation should take to complete one cycle. This can be specified in seconds or
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **43.04.0 -webkit-**  | **16.05.0 -moz-**  |   **9.04.0 -webkit-**   | **10.0** |
+* 
+Example: div \{  animation-iteration-count: 2;\}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_animation-iteration-count.asp
 */
@@ -406,7 +432,8 @@ animation should take to complete one cycle. This can be specified in seconds or
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * animation-name
@@ -416,6 +443,8 @@ animation should take to complete one cycle. This can be specified in seconds or
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **43.04.0 -webkit-**  | **16.05.0 -moz-**  |   **9.04.0 -webkit-**   | **10.0** |
+* 
+Example: div \{  animation-name: mymove; \}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_animation-name.asp
 */
@@ -441,7 +470,8 @@ animation should take to complete one cycle. This can be specified in seconds or
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * animation-play-state
@@ -451,6 +481,8 @@ animation should take to complete one cycle. This can be specified in seconds or
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **43.04.0 -webkit-**  | **16.05.0 -moz-**  |   **9.04.0 -webkit-**   | **10.0** |
+* 
+Example: div \{  animation-play-state: paused; \}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_animation-play-state.asp
 */
@@ -476,7 +508,8 @@ animation should take to complete one cycle. This can be specified in seconds or
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * animation-timing-function
@@ -486,6 +519,8 @@ animation should take to complete one cycle. This can be specified in seconds or
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **43.04.0 -webkit-**  | **16.05.0 -moz-**  |   **9.04.0 -webkit-**   | **10.0** |
+* 
+Example: div \{      animation-timing-function: linear;\}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_animation-timing-function.asp
 */
@@ -532,21 +567,17 @@ animation should take to complete one cycle. This can be specified in seconds or
     | "step-end"
 
     /**
-* Specifies a stepping function, with two parameters. The first parameter specifies the number of intervals in the function. It must be a positive integer (greater than 0). The second parameter, which is optional, is either the value "start" or "end", and specifies the point at which the change of values occur within the interval. If the second parameter is omitted, it is given the value "end"
-* 
-Example: `steps(int,start|end)`
-* 
-*/
-    | "steps"
+     * Specifies a stepping function, with two parameters. The first parameter specifies the number of intervals in the function. It must be a positive integer (greater than 0). The second parameter, which is optional, is either the value "start" or "end", and specifies the point at which the change of values occur within the interval. If the second parameter is omitted, it is given the value "end"
+     *
+     */
+    | "steps(int,start|end)"
 
     /**
 * Define your own values in the cubic-bezier function
  Possible values are numeric values from 0 to 1
 * 
-Example: `cubic-bezier(n,n,n,n)`
-* 
 */
-    | "cubic-bezier"
+    | "cubic-bezier(n,n,n,n)"
 
     /**
      * Sets this property to its default value. Read about initial
@@ -569,6 +600,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **1.0**  | **1.0**  |   **1.0**   | **4.0** |
+* 
+Example: body  \{     background: lightblue url("img_tree.gif") no-repeat fixed center;   \}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_background.asp
 */
@@ -630,7 +663,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * background-attachment
@@ -668,6 +702,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * | :------: | :-----: | :-------: | :----: |
 * |  **4.0**  | **4.0**  |   **3.0**   | **9.0** |
 * 
+Example: div  \{    border: 10px dotted black;  padding: 15px;  background:      lightblue;  background-clip:      padding-box;\}
+* 
 @see https://www.w3schools.com/cssref/css3_pr_background-clip.asp
 */
   backgroundClip?: /**
@@ -698,7 +734,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * background-color
@@ -735,6 +772,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * | :------: | :-----: | :-------: | :----: |
 * |  **4.0**  | **4.0**  |   **3.0**   | **9.0** |
 * 
+Example: #example1 \{    border: 10px dashed black;  padding:      25px;  background: url(paper.gif);       background-repeat: no-repeat;  background-origin:      content-box;\}
+* 
 @see https://www.w3schools.com/cssref/css3_pr_background-origin.asp
 */
   backgroundOrigin?: /**
@@ -765,7 +804,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * background-position
@@ -801,6 +841,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **4.01.0 -webkit-**  | **4.03.6 -moz-**  |   **4.13.0 -webkit-**   | **9.0** |
+* 
+Example: #example1 \{  background: url(mountain.jpg);       background-repeat: no-repeat;  background-size: auto;     \}#example2 \{       background: url(mountain.jpg);  background-repeat:      no-repeat;  background-size: 300px 100px;\}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_background-size.asp
 */
@@ -845,7 +887,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * border
@@ -896,6 +939,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * | :------: | :-----: | :-------: | :----: |
 * |  **5.04.0 -webkit-**  | **4.03.0 -moz-**  |   **5.03.1 -webkit-**   | **9.0** |
 * 
+Example: #example1 \{  border: 2px solid red;       border-bottom-left-radius: 25px;\}#example2 \{       border: 2px solid red;  border-bottom-left-radius: 50px      20px;\}
+* 
 @see https://www.w3schools.com/cssref/css3_pr_border-bottom-left-radius.asp
 */
   borderBottomLeftRadius?: /**
@@ -920,7 +965,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * border-bottom-right-radius
@@ -930,6 +976,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **5.04.0 -webkit-**  | **4.03.0 -moz-**  |   **5.03.1 -webkit-**   | **9.0** |
+* 
+Example: #example1 \{  border: 2px solid red;       border-bottom-right-radius: 25px;\}#example2 \{       border: 2px solid red;  border-bottom-right-radius: 50px      20px;\}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_border-bottom-right-radius.asp
 */
@@ -955,7 +1003,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * border-bottom-style
@@ -1018,6 +1067,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * | :------: | :-----: | :-------: | :----: |
 * |  **16.04.0 -webkit-**  | **15.03.5 -moz-**  |   **6.03.1 -webkit-**   | **11.0** |
 * 
+Example: #borderimg \{   border-image: url(border.png) 30 round;\}
+* 
 @see https://www.w3schools.com/cssref/css3_pr_border-image.asp
 */
   borderImage?: /**
@@ -1060,7 +1111,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * border-image-outset
@@ -1070,6 +1122,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **15.0**  | **15.0**  |   **6.0**   | **11.0** |
+* 
+Example: #borderimg  \{        border-image-source: url(border.png);        border-image-outset: 10px;  \}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_border-image-outset.asp
 */
@@ -1095,7 +1149,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * border-image-repeat
@@ -1105,6 +1160,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **15.0**  | **15.0**  |   **6.0**   | **11.0** |
+* 
+Example: #borderimg  \{    border-image-source: url(border.png);    border-image-repeat: repeat;  \}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_border-image-repeat.asp
 */
@@ -1142,7 +1199,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * border-image-slice
@@ -1152,6 +1210,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **15.0**  | **15.0**  |   **6.0**   | **11.0** |
+* 
+Example: #borderimg \{   border-image-slice: 30%;  \}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_border-image-slice.asp
 */
@@ -1183,7 +1243,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * border-image-source
@@ -1193,6 +1254,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **15.0**  | **15.0**  |   **6.0**   | **11.0** |
+* 
+Example: #borderimg  \{    border-image-source: url(border.png);  \}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_border-image-source.asp
 */
@@ -1218,7 +1281,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * border-image-width
@@ -1228,6 +1292,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **15.0**  | **13.0**  |   **6.0**   | **11.0** |
+* 
+Example: #borderimg  \{    border-image-source: url(border.png);    border-image-width: 10px;  \}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_border-image-width.asp
 */
@@ -1265,7 +1331,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * border-left
@@ -1328,6 +1395,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * | :------: | :-----: | :-------: | :----: |
 * |  **5.04.0 -webkit-**  | **4.03.0 -moz-**  |   **5.03.1 -webkit-**   | **9.0** |
 * 
+Example: #example1 \{  border: 2px solid red;       border-radius: 25px;\}#example2 \{       border: 2px solid red;  border-radius: 50px      20px;\}
+* 
 @see https://www.w3schools.com/cssref/css3_pr_border-radius.asp
 */
   borderRadius?: /**
@@ -1352,7 +1421,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * border-right
@@ -1468,6 +1538,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * | :------: | :-----: | :-------: | :----: |
 * |  **5.04.0 -webkit-**  | **4.03.0 -moz-**  |   **5.03.1 -webkit-**   | **9.0** |
 * 
+Example: #example1 \{  border: 2px solid red;  border-top-left-radius: 25px;\}#example2 \{  border: 2px solid red;  border-top-left-radius: 50px      20px;\}
+* 
 @see https://www.w3schools.com/cssref/css3_pr_border-top-left-radius.asp
 */
   borderTopLeftRadius?: /**
@@ -1492,7 +1564,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * border-top-right-radius
@@ -1502,6 +1575,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **5.04.0 -webkit-**  | **4.03.0 -moz-**  |   **5.03.1 -webkit-**   | **9.0** |
+* 
+Example: #example1 \{  border: 2px solid red;  border-top-right-radius: 25px;\}#example2 \{            border: 2px solid red;  border-top-right-radius: 50px      20px;\}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_border-top-right-radius.asp
 */
@@ -1527,7 +1602,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * border-top-style
@@ -1590,6 +1666,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * | :------: | :-----: | :-------: | :----: |
 * |  **22.0 -webkit-**  | **32.0**  |   **6.1 -webkit-**   | **79.0** |
 * 
+Example: span.ex1 \{   -webkit-box-decoration-break: clone;  -o-box-decoration-break: clone;       box-decoration-break:      clone;\}     span.ex2 \{   -webkit-box-decoration-break: slice;  -o-box-decoration-break: slice;  box-decoration-break:      slice;\}
+* 
 @see https://www.w3schools.com/cssref/css3_pr_box-decoration-break.asp
 */
   boxDecorationBreak?: /**
@@ -1618,7 +1696,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * box-shadow
@@ -1628,6 +1707,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **10.04.0 -webkit-**  | **4.03.5 -moz-**  |   **5.13.1 -webkit-**   | **9.0** |
+* 
+Example: #example1 \{  box-shadow: 5px 10px;\}#example2 \{  box-shadow:      5px 10px #888888;     \}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_box-shadow.asp
 */
@@ -1688,7 +1769,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * box-sizing
@@ -1699,6 +1781,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **10.04.0 -webkit-**  | **29.02.0 -moz-**  |   **5.13.2 -webkit-**   | **8.0** |
+* 
+Example: #example1 \{  box-sizing: border-box;\}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_box-sizing.asp
 */
@@ -1726,7 +1810,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * break-after
@@ -1780,6 +1865,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * | :------: | :-----: | :-------: | :----: |
 * |  **57.0**  | **53.0**  |   **11.1**   | **79.0** |
 * 
+Example: input \{   caret-color: red;\}
+* 
 @see https://www.w3schools.com/cssref/css3_pr_caret-color.asp
 */
   caretColor?: /**
@@ -1806,7 +1893,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * @charset
@@ -1869,6 +1957,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * | :------: | :-----: | :-------: | :----: |
 * |  **50.04.0 -webkit-**  | **52.02.0 -moz-**  |   **9.03.1 -webkit-**   | **10.0** |
 * 
+Example: div  \{        column-count: 3;  \}
+* 
 @see https://www.w3schools.com/cssref/css3_pr_column-count.asp
 */
   columnCount?: /**
@@ -1893,7 +1983,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * column-fill
@@ -1903,6 +1994,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **50.0**  | **52.013.0 -moz-**  |   **10.07.0 -webkit-**   | **10.0** |
+* 
+Example: .newspaper1 \{       column-fill: auto;\}.newspaper2 \{  column-fill: balance;\}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_column-fill.asp
 */
@@ -1933,7 +2026,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * column-gap
@@ -1943,6 +2037,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **50**  | **52**  |   **10**   | **10** |
+* 
+Example: div  \{        column-gap: 40px;  \}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_column-gap.asp
 */
@@ -1968,7 +2064,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * column-rule
@@ -1978,6 +2075,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **50.04.0 -webkit-**  | **52.02.0 -moz-**  |   **9.03.1 -webkit-**   | **10.0** |
+* 
+Example: div  \{  column-rule: 4px double #ff00ff;  \}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_column-rule.asp
 */
@@ -2009,7 +2108,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * column-rule-color
@@ -2019,6 +2119,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **50.04.0 -webkit-**  | **52.02.0 -moz-**  |   **9.03.1 -webkit-**   | **10.0** |
+* 
+Example: div  \{    column-rule-color: #ff0000;  \}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_column-rule-color.asp
 */
@@ -2038,7 +2140,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * column-rule-style
@@ -2048,6 +2151,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **50.04.0 -webkit-**  | **52.02.0 -moz-**  |   **9.03.1 -webkit-**   | **10.0** |
+* 
+Example: div  \{        column-rule-style: dotted;  \}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_column-rule-style.asp
 */
@@ -2121,7 +2226,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * column-rule-width
@@ -2131,6 +2237,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **50.04.0 -webkit-**  | **52.02.0 -moz-**  |   **9.03.1 -webkit-**   | **10.0** |
+* 
+Example: div  \{    column-rule-width: 10px;  \}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_column-rule-width.asp
 */
@@ -2168,7 +2276,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * column-span
@@ -2178,6 +2287,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **50.04.0 -webkit-**  | **71.0**  |   **9.03.1 -webkit-**   | **10.0** |
+* 
+Example: h2  \{   column-span: all;  \}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_column-span.asp
 */
@@ -2203,7 +2314,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * column-width
@@ -2213,6 +2325,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **50.04.0 -webkit-**  | **52.02.0 -moz-**  |   **9.03.1 -webkit-**   | **10.0** |
+* 
+Example: div  \{    column-width: 100px;   \}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_column-width.asp
 */
@@ -2240,7 +2354,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * columns
@@ -2250,6 +2365,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **50.04.0 -webkit-**  | **52.09.0 -moz-**  |   **9.03.1 -webkit-**   | **10.0** |
+* 
+Example: div  \{  columns: 100px 3;    \}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_columns.asp
 */
@@ -2281,7 +2398,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * content
@@ -2359,6 +2477,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * | :------: | :-----: | :-------: | :----: |
 * |  **29.021.0 -webkit-**  | **28.018.0 -moz-**  |   **9.06.1 -webkit-**   | **11.010.0 -ms-** |
 * 
+Example: #main div \{  -ms-flex: 1; \/* IE 10 *\/        flex: 1;\}
+* 
 @see https://www.w3schools.com/cssref/css3_pr_flex.asp
 */
   flex?: /**
@@ -2401,7 +2521,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * flex-basis
@@ -2411,6 +2532,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **29.021.0 -webkit-**  | **28.018.0 -moz-**  |   **9.06.1 -webkit-**   | **11.0** |
+* 
+Example: div:nth-of-type(2) \{  flex-basis:    100px;\}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_flex-basis.asp
 */
@@ -2436,7 +2559,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * flex-direction
@@ -2446,6 +2570,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **29.021.0 -webkit-**  | **28.018.0 -moz-**  |   **9.06.1 -webkit-**   | **11.0** |
+* 
+Example: div \{       display: flex;     flex-direction: row-reverse;  \}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_flex-direction.asp
 */
@@ -2483,7 +2609,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * flex-flow
@@ -2493,6 +2620,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **29.021.0 -webkit-**  | **28.018.0 -moz-**  |   **9.06.1 -webkit-**   | **11.0** |
+* 
+Example: div \{   display: flex;  flex-flow: row-reverse wrap;\}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_flex-flow.asp
 */
@@ -2523,7 +2652,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * flex-grow
@@ -2533,6 +2663,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **29.021.0 -webkit-**  | **28.018.0 -moz-**  |   **9.06.1 -webkit-**   | **11.0** |
+* 
+Example: div:nth-of-type(1) \{flex-grow: 1;\} div:nth-of-type(2) \{flex-grow: 3;\} div:nth-of-type(3) \{flex-grow: 1;\}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_flex-grow.asp
 */
@@ -2552,7 +2684,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * flex-shrink
@@ -2562,6 +2695,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **29.021.0 -webkit-**  | **28.018.0 -moz-**  |   **9.06.1 -webkit-**   | **11.0** |
+* 
+Example: div:nth-of-type(2) \{  flex-shrink: 3;\}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_flex-shrink.asp
 */
@@ -2581,7 +2716,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * flex-wrap
@@ -2591,6 +2727,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **29.021.0 -webkit-**  | **28.018.0 -moz-**  |   **9.06.1 -webkit-**   | **11.0** |
+* 
+Example: div \{      display: flex;     flex-wrap: wrap;\}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_flex-wrap.asp
 */
@@ -2622,7 +2760,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * float
@@ -2686,6 +2825,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * | :------: | :-----: | :-------: | :----: |
 * |  **48.016.0 -webkit-**  | **34.015.0 -moz-**  |   **9.1**   | **10.0** |
 * 
+Example: \/* enable small-caps *\/.ex1 \{ font-feature-settings: "smcp" on; \}     \/* convert both upper and lowercase to small caps *\/.ex2 \{      font-feature-settings: "c2sc", "smcp"; \}\/* no common ligatures *\/     .ex3 \{ font-feature-settings: "liga" 0; \}\/* enable automatic      fractions *\/.ex4 \{ font-feature-settings: "frac"; \}
+* 
 @see https://www.w3schools.com/cssref/css3_pr_font-feature-settings.asp
 */
   fontFeatureSettings?: /**
@@ -2698,7 +2839,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Format: string [1|0|on|off] Always a string of 4 ASCII characters.
      *
      */
-    | "feature-value";
+    | "feature-value"
+    | PossibleStyle;
 
   /**
 * @font-feature-values
@@ -2722,6 +2864,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * | :------: | :-----: | :-------: | :----: |
 * |  **33.029.0 -webkit-**  | **34.0**  |   **9.17.0 -webkit-**   | **79.0** |
 * 
+Example: .ex1 \{   font-kerning: normal;\}
+* 
 @see https://www.w3schools.com/cssref/css3_pr_font-kerning.asp
 */
   fontKerning?: /**
@@ -2741,7 +2885,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Specifies that font kerning is not applied
      *
      */
-    | "none";
+    | "none"
+    | PossibleStyle;
 
   /**
 * font-language-override
@@ -2751,6 +2896,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **Not supported**  | **34.0**  |   **Not supported**   | **Not supported** |
+* 
+Example: div1 \{   font-language-override: normal;\}div2 \{        font-language-override:      NOR;\}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_font-language-override.asp
 */
@@ -2766,7 +2913,8 @@ Example: `cubic-bezier(n,n,n,n)`
     defined by string
 * 
 */
-    | "string";
+    | "string"
+    | PossibleStyle;
 
   /**
 * font-size
@@ -2789,6 +2937,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **Not supported**  | **3.0**  |   **Not supported**   | **Not supported** |
+* 
+Example: div  \{    font-size-adjust: 0.58;  \}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_font-size-adjust.asp
 */
@@ -2814,7 +2964,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * font-stretch
@@ -2824,6 +2975,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **48.0**  | **9.0**  |   **11.0**   | **9.0** |
+* 
+Example: div  \{  font-family: sans-serif, "Helvetica Neue", "Lucida Grande", Arial;    font-stretch: expanded;  \}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_font-stretch.asp
 */
@@ -2891,7 +3044,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * font-style
@@ -2954,6 +3108,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * | :------: | :-----: | :-------: | :----: |
 * |  **52.0**  | **34.0**  |   **Not supported**   | **79.0** |
 * 
+Example: p.normal \{font-variant-caps: normal;\}p.small \{font-variant-caps:      small-caps;\}p.allsmall \{font-variant-caps: all-small-caps;\}p.petite      \{font-variant-caps: petite-caps;\}p.allpetite \{font-variant-caps:      all-petite-caps;\}p.unicase \{font-variant-caps: unicase;\}p.titling      \{font-variant-caps: titling-caps;\}
+* 
 @see https://www.w3schools.com/cssref/css3_pr_font-variant-caps.asp
 */
   fontVariantCaps?: /**
@@ -3013,7 +3169,8 @@ Example: `cubic-bezier(n,n,n,n)`
 
     /**
      */
-    | "unset";
+    | "unset"
+    | PossibleStyle;
 
   /**
 * font-variant-east-asian
@@ -3023,6 +3180,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **63.0**  | **34.0**  |   **Not supported**   | **Not supported** |
+* 
+Example: p.normal \{font-variant-caps: normal;\}p.small \{font-variant-caps:      small-caps;\}p.allsmall \{font-variant-caps: all-small-caps;\}p.petite      \{font-variant-caps: petite-caps;\}p.allpetite \{font-variant-caps:      all-petite-caps;\}p.unicase \{font-variant-caps: unicase;\}p.titling      \{font-variant-caps: titling-caps;\}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_font-variant-east-asian.asp
 */
@@ -3050,7 +3209,8 @@ Example: `cubic-bezier(n,n,n,n)`
 
     /**
      */
-    | "unset";
+    | "unset"
+    | PossibleStyle;
 
   /**
 * font-variant-ligatures
@@ -3363,6 +3523,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * | :------: | :-----: | :-------: | :----: |
 * |  **55.0**  | **43.0**  |   **5.1 -webkit-**   | **79.010.0 -ms-** |
 * 
+Example: div.a \{  -webkit-hyphens: none;  -ms-hyphens: none;     hyphens: none;\}div.b \{  -webkit-hyphens: manual;  -ms-hyphens:    manual;  hyphens: manual;\}div.c \{  -webkit-hyphens:    auto;  -ms-hyphens: auto;  hyphens: auto;\}
+* 
 @see https://www.w3schools.com/cssref/css3_pr_hyphens.asp
 */
   hyphens?: /**
@@ -3393,7 +3555,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * @import
@@ -3416,6 +3579,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **41.0**  | **36.0**  |   **Yes**   | **79.0** |
+* 
+Example: #e \{  isolation: isolate;\}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_isolation.asp
 */
@@ -3441,7 +3606,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * letter-spacing
@@ -3699,6 +3865,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * | :------: | :-----: | :-------: | :----: |
 * |  **31.0**  | **36.0**  |   **10.0**   | **16.0** |
 * 
+Example: img.a \{  width: 200px;  height:      400px;  object-fit: none;  object-position: 5px 10%;  border: 5px solid red;\}
+* 
 @see https://www.w3schools.com/cssref/css3_pr_object-position.asp
 */
   objectPosition?: /**
@@ -3719,7 +3887,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * opacity
@@ -3729,6 +3898,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **4.0**  | **2.0**  |   **3.1**   | **9.0** |
+* 
+Example: div  \{    opacity: 0.5;  \}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_opacity.asp
 */
@@ -3748,7 +3919,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * order
@@ -3758,6 +3930,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **29.021.0 -webkit-**  | **28.018.0 -moz-**  |   **9.06.1 -webkit-**   | **11.0** |
+* 
+Example: div#myRedDIV \{order: 2;\}div#myBlueDIV \{order: 4;\}div#myGreenDIV \{order: 3;\}div#myPinkDIV \{order: 1;\}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_order.asp
 */
@@ -3777,7 +3951,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * orphans
@@ -3828,6 +4003,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * | :------: | :-----: | :-------: | :----: |
 * |  **4.0**  | **3.5**  |   **3.1**   | **15.0** |
 * 
+Example: div  \{    outline: 4px solid red;    outline-offset: 15px;  \}
+* 
 @see https://www.w3schools.com/cssref/css3_pr_outline-offset.asp
 */
   outlineOffset?: /**
@@ -3846,7 +4023,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * outline-style
@@ -3909,6 +4087,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * | :------: | :-----: | :-------: | :----: |
 * |  **4.0**  | **3.5**  |   **3.0**   | **9.08.0 -ms-** |
 * 
+Example: div.ex1 \{  overflow-x: scroll;\}div.ex2 \{       overflow-x: hidden;\}div.ex3 \{  overflow-x:      auto;\}div.ex4 \{  overflow-x: visible;\}
+* 
 @see https://www.w3schools.com/cssref/css3_pr_overflow-x.asp
 */
   overflowX?: /**
@@ -3946,7 +4126,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * overflow-y
@@ -3956,6 +4137,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **4.0**  | **1.5**  |   **3.0**   | **9.08.0 -ms-** |
+* 
+Example: div.ex1 \{  overflow-y: scroll;\}div.ex2 \{  overflow-y: hidden;\}div.ex3 \{  overflow-y:      auto;\}div.ex4 \{  overflow-y: visible;\}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_overflow-y.asp
 */
@@ -3994,7 +4177,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * padding-bottom
@@ -4096,6 +4280,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * | :------: | :-----: | :-------: | :----: |
 * |  **36.012.0 -webkit-**  | **16.010.0 -moz-**  |   **9.04.0.3 -webkit-**   | **10.0** |
 * 
+Example: #div1  \{      perspective: 100px;  \}
+* 
 @see https://www.w3schools.com/cssref/css3_pr_perspective.asp
 */
   perspective?: PossibleStyle;
@@ -4109,6 +4295,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * | :------: | :-----: | :-------: | :----: |
 * |  **36.012.0 -webkit-**  | **16.010.0 -moz-**  |   **9.04.0.3 -webkit-**   | **10.0** |
 * 
+Example: #div1  \{        perspective: 100px;        perspective-origin: left;  \}
+* 
 @see https://www.w3schools.com/cssref/css3_pr_perspective-origin.asp
 */
   perspectiveOrigin?: PossibleStyle;
@@ -4121,6 +4309,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **2.0**  | **3.6**  |   **4.0**   | **11.0** |
+* 
+Example: div.ex1 \{  pointer-events: none;\}div.ex2 \{  pointer-events: auto;\}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_pointer-events.asp
 */
@@ -4161,6 +4351,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * | :------: | :-----: | :-------: | :----: |
 * |  **66**  | **61**  |   **12.1**   | **16** |
 * 
+Example: div  \{       display: grid;  row-gap: 50px;  \}
+* 
 @see https://www.w3schools.com/cssref/css3_pr_row-gap.asp
 */
   rowGap?: /**
@@ -4185,7 +4377,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * table-layout
@@ -4221,6 +4414,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **47.0**  | **49.012.0 -moz-**  |   **Not supported**   | **5.5*** |
+* 
+Example: div.a \{   text-align: justify;  \/* For Edge *\/  text-align-last: right; \}div.b \{     text-align: justify; \/* For Edge *\/   text-align-last: center; \}div.c \{     text-align: justify; \/* For Edge *\/   text-align-last: justify; \}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_text-align-last.asp
 */
@@ -4276,7 +4471,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * text-combine-upright
@@ -4313,6 +4509,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * | :------: | :-----: | :-------: | :----: |
 * |  **57.0**  | **36.06.0 -moz-**  |   **7.1 -webkit-**   | **79.0** |
 * 
+Example: p \{     text-decoration: underline;  text-decoration-color: red; \}
+* 
 @see https://www.w3schools.com/cssref/css3_pr_text-decoration-color.asp
 */
   textDecorationColor?: /**
@@ -4331,7 +4529,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * text-decoration-line
@@ -4341,6 +4540,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **57.0**  | **36.06.0 -moz-**  |   **7.1 -webkit-**   | **79.0** |
+* 
+Example: div.a \{  text-decoration-line: overline; \}div.b \{  text-decoration-line: underline; \}div.c \{  text-decoration-line: line-through; \}div.d \{  text-decoration-line: overline underline; \}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_text-decoration-line.asp
 */
@@ -4378,7 +4579,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * text-decoration-style
@@ -4388,6 +4590,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **57.0**  | **36.06.0 -moz-**  |   **12.1**   | **79.0** |
+* 
+Example: div.a \{  text-decoration-line: underline;  text-decoration-style: solid; \}div.b \{  text-decoration-line: underline;     text-decoration-style: wavy; \}div.c \{  text-decoration-line: underline;     text-decoration-style: double; \}div.d \{  text-decoration-line: overline underline;     text-decoration-style: wavy; \}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_text-decoration-style.asp
 */
@@ -4431,7 +4635,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * text-indent
@@ -4454,6 +4659,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **Yes***  | **55.0**  |   **10.0.3**   | **11.0** |
+* 
+Example: div  \{     text-align: justify;        text-justify: inter-word;  \}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_text-justify.asp
 */
@@ -4491,7 +4698,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * text-orientation
@@ -4514,6 +4722,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **4.0**  | **7.0**  |   **3.1**   | **6.0** |
+* 
+Example: div  \{  white-space: nowrap;   overflow:      hidden;   text-overflow: ellipsis;  \}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_text-overflow.asp
 */
@@ -4545,7 +4755,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * text-shadow
@@ -4555,6 +4766,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **4.0**  | **3.5**  |   **4.0**   | **10.0** |
+* 
+Example: h1  \{        text-shadow: 2px 2px #ff0000;  \}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_text-shadow.asp
 */
@@ -4598,7 +4811,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * text-transform
@@ -4648,6 +4862,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * | :------: | :-----: | :-------: | :----: |
 * |  **36.04.0 -webkit-**  | **16.03.5 -moz-**  |   **9.03.2 -webkit-**   | **10.09.0 -ms-** |
 * 
+Example: div.a \{  transform: rotate(20deg);\}div.b \{       transform: skewY(20deg);\}div.c \{       transform: scaleY(1.5);\}
+* 
 @see https://www.w3schools.com/cssref/css3_pr_transform.asp
 */
   transform?: /**
@@ -4657,172 +4873,130 @@ Example: `cubic-bezier(n,n,n,n)`
   | "none"
 
     /**
-* Defines a 2D transformation, using a matrix of six values
-* 
-Example: `matrix(n,n,n,n,n,n)`
-* 
-*/
-    | "matrix"
+     * Defines a 2D transformation, using a matrix of six values
+     *
+     */
+    | "matrix(n,n,n,n,n,n)"
 
     /**
-* Defines a 3D transformation, using a 4x4 matrix of 16 values
-* 
-Example: `matrix3d (n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n)`
-* 
-*/
-    | "matrix3d "
+     * Defines a 3D transformation, using a 4x4 matrix of 16 values
+     *
+     */
+    | "matrix3d (n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n)"
 
     /**
-* Defines a 2D translation
-* 
-Example: `translate(x,y)`
-* 
-*/
-    | "translate"
+     * Defines a 2D translation
+     *
+     */
+    | "translate(x,y)"
 
     /**
-* Defines a 3D translation
-* 
-Example: `translate3d(x,y,z)`
-* 
-*/
-    | "translate3d"
+     * Defines a 3D translation
+     *
+     */
+    | "translate3d(x,y,z)"
 
     /**
-* Defines a translation, using only the value for the X-axis
-* 
-Example: `translateX(x)`
-* 
-*/
-    | "translateX"
+     * Defines a translation, using only the value for the X-axis
+     *
+     */
+    | "translateX(x)"
 
     /**
-* Defines a translation, using only the value for the Y-axis
-* 
-Example: `translateY(y)`
-* 
-*/
-    | "translateY"
+     * Defines a translation, using only the value for the Y-axis
+     *
+     */
+    | "translateY(y)"
 
     /**
-* Defines a 3D translation, using only the value for the Z-axis
-* 
-Example: `translateZ(z)`
-* 
-*/
-    | "translateZ"
+     * Defines a 3D translation, using only the value for the Z-axis
+     *
+     */
+    | "translateZ(z)"
 
     /**
-* Defines a 2D scale transformation
-* 
-Example: `scale(x,y)`
-* 
-*/
-    | "scale"
+     * Defines a 2D scale transformation
+     *
+     */
+    | "scale(x,y)"
 
     /**
-* Defines a 3D scale transformation
-* 
-Example: `scale3d(x,y,z)`
-* 
-*/
-    | "scale3d"
+     * Defines a 3D scale transformation
+     *
+     */
+    | "scale3d(x,y,z)"
 
     /**
-* Defines a scale transformation by giving a value for the X-axis
-* 
-Example: `scaleX(x)`
-* 
-*/
-    | "scaleX"
+     * Defines a scale transformation by giving a value for the X-axis
+     *
+     */
+    | "scaleX(x)"
 
     /**
-* Defines a scale transformation by giving a value for the Y-axis
-* 
-Example: `scaleY(y)`
-* 
-*/
-    | "scaleY"
+     * Defines a scale transformation by giving a value for the Y-axis
+     *
+     */
+    | "scaleY(y)"
 
     /**
-* Defines a 3D scale transformation by giving a value for the Z-axis
-* 
-Example: `scaleZ(z)`
-* 
-*/
-    | "scaleZ"
+     * Defines a 3D scale transformation by giving a value for the Z-axis
+     *
+     */
+    | "scaleZ(z)"
 
     /**
-* Defines a 2D rotation, the angle is specified in the  parameter
-* 
-Example: `rotate(angle)`
-* 
-*/
-    | "rotate"
+     * Defines a 2D rotation, the angle is specified in the  parameter
+     *
+     */
+    | "rotate(angle)"
 
     /**
-* Defines a 3D rotation
-* 
-Example: `rotate3d(x,y,z,angle)`
-* 
-*/
-    | "rotate3d"
+     * Defines a 3D rotation
+     *
+     */
+    | "rotate3d(x,y,z,angle)"
 
     /**
-* Defines a 3D rotation along the X-axis
-* 
-Example: `rotateX(angle)`
-* 
-*/
-    | "rotateX"
+     * Defines a 3D rotation along the X-axis
+     *
+     */
+    | "rotateX(angle)"
 
     /**
-* Defines a 3D rotation along the Y-axis
-* 
-Example: `rotateY(angle)`
-* 
-*/
-    | "rotateY"
+     * Defines a 3D rotation along the Y-axis
+     *
+     */
+    | "rotateY(angle)"
 
     /**
-* Defines a 3D rotation along the Z-axis
-* 
-Example: `rotateZ(angle)`
-* 
-*/
-    | "rotateZ"
+     * Defines a 3D rotation along the Z-axis
+     *
+     */
+    | "rotateZ(angle)"
 
     /**
-* Defines a 2D skew transformation along the X- and the Y-axis
-* 
-Example: `skew(x-angle,y-angle)`
-* 
-*/
-    | "skew"
+     * Defines a 2D skew transformation along the X- and the Y-axis
+     *
+     */
+    | "skew(x-angle,y-angle)"
 
     /**
-* Defines a 2D skew transformation along the X-axis
-* 
-Example: `skewX(angle)`
-* 
-*/
-    | "skewX"
+     * Defines a 2D skew transformation along the X-axis
+     *
+     */
+    | "skewX(angle)"
 
     /**
-* Defines a 2D skew transformation along the Y-axis
-* 
-Example: `skewY(angle)`
-* 
-*/
-    | "skewY"
+     * Defines a 2D skew transformation along the Y-axis
+     *
+     */
+    | "skewY(angle)"
 
     /**
-* Defines a perspective view for a 3D transformed element
-* 
-Example: `perspective(n)`
-* 
-*/
-    | "perspective"
+     * Defines a perspective view for a 3D transformed element
+     *
+     */
+    | "perspective(n)"
 
     /**
      * Sets this property to its default value. Read about initial
@@ -4846,6 +5020,8 @@ Example: `perspective(n)`
 * | :------: | :-----: | :-------: | :----: |
 * |  **36.04.0 -webkit-**  | **16.03.5 -moz-**  |   **9.03.2 -webkit-**   | **10.09.0 -ms-** |
 * 
+Example: div  \{   transform: rotate(45deg);        transform-origin: 20% 40%;  \}
+* 
 @see https://www.w3schools.com/cssref/css3_pr_transform-origin.asp
 */
   transformOrigin?: PossibleStyle;
@@ -4859,6 +5035,8 @@ Example: `perspective(n)`
 * | :------: | :-----: | :-------: | :----: |
 * |  **36.012.0 -webkit-**  | **16.010.0 -moz-**  |   **9.04.0 -webkit-**   | **11.0** |
 * 
+Example: div  \{    transform: rotateY(60deg);        transform-style: preserve-3d;  \}
+* 
 @see https://www.w3schools.com/cssref/css3_pr_transform-style.asp
 */
   transformStyle?: PossibleStyle;
@@ -4871,6 +5049,8 @@ Example: `perspective(n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **26.04.0 -webkit-**  | **16.04.0 -moz-**  |   **6.13.1 -webkit-**   | **10.0** |
+* 
+Example: div  \{    width: 100px;  transition: width 2s;  \}  div:hover \{  width: 300px;\}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_transition.asp
 */
@@ -4908,7 +5088,8 @@ Example: `perspective(n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * transition-delay
@@ -4918,6 +5099,8 @@ Example: `perspective(n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **26.04.0 -webkit-**  | **16.04.0 -moz-**  |   **6.13.1 -webkit-**   | **10.0** |
+* 
+Example: div \{      transition-delay: 2s;\}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_transition-delay.asp
 */
@@ -4937,7 +5120,8 @@ Example: `perspective(n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * transition-duration
@@ -4947,6 +5131,8 @@ Example: `perspective(n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **26.04.0 -webkit-**  | **16.04.0 -moz-**  |   **6.13.1 -webkit-**   | **10.0** |
+* 
+Example: div \{  transition-duration: 5s;     \}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_transition-duration.asp
 */
@@ -4966,7 +5152,8 @@ Example: `perspective(n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * transition-property
@@ -4976,6 +5163,8 @@ Example: `perspective(n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **26.04.0 -webkit-**  | **16.04.0 -moz-**  |   **6.13.1 -webkit-**   | **10.0** |
+* 
+Example: div  \{        transition-property: width;  \}div:hover \{  width: 300px;\}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_transition-property.asp
 */
@@ -5007,7 +5196,8 @@ Example: `perspective(n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * transition-timing-function
@@ -5017,6 +5207,8 @@ Example: `perspective(n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **26.04.0 -webkit-**  | **16.04.0 -moz-**  |   **6.13.1 -webkit-**   | **10.0** |
+* 
+Example: div \{  transition-timing-function: linear;     \}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_transition-timing-function.asp
 */
@@ -5063,21 +5255,17 @@ Example: `perspective(n)`
     | "step-end"
 
     /**
-* Specifies a stepping function, with two parameters. The first parameter specifies the number of intervals in the function. It must be a positive integer (greater than 0). The second parameter, which is optional, is either the value "start" or "end", and specifies the point at which the change of values occur within the interval. If the second parameter is omitted, it is given the value "end"
-* 
-Example: `steps(int,start|end)`
-* 
-*/
-    | "steps"
+     * Specifies a stepping function, with two parameters. The first parameter specifies the number of intervals in the function. It must be a positive integer (greater than 0). The second parameter, which is optional, is either the value "start" or "end", and specifies the point at which the change of values occur within the interval. If the second parameter is omitted, it is given the value "end"
+     *
+     */
+    | "steps(int,start|end)"
 
     /**
 * Define your own values in the cubic-bezier function.
  Possible values are numeric values from 0 to 1
 * 
-Example: `cubic-bezier(n,n,n,n)`
-* 
 */
-    | "cubic-bezier"
+    | "cubic-bezier(n,n,n,n)"
 
     /**
      * Sets this property to its default value. Read about initial
@@ -5100,6 +5288,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **54.06.0 -webkit-**  | **69.02.0 -moz-**  |   **3.1 -webkit-**   | **79.010.0 -ms-** |
+* 
+Example: div  \{       -webkit-user-select: none; \/* Safari *\/  -ms-user-select:      none; \/* IE 10 and IE 11 *\/  user-select: none; \/* Standard      syntax *\/  \}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_user-select.asp
 */
@@ -5125,7 +5315,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Text selection is made with one click instead of a double-click
      *
      */
-    | "all";
+    | "all"
+    | PossibleStyle;
 
   /**
 * visibility
@@ -5175,6 +5366,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * | :------: | :-----: | :-------: | :----: |
 * |  **4.0**  | **15.0**  |   **3.1**   | **5.5** |
 * 
+Example: p.a \{  word-break: break-all;\}
+* 
 @see https://www.w3schools.com/cssref/css3_pr_word-break.asp
 */
   wordBreak?: /**
@@ -5212,7 +5405,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * word-spacing
@@ -5235,6 +5429,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **4.0**  | **3.5**  |   **3.1**   | **5.5** |
+* 
+Example: div \{  word-wrap: break-word;\}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_word-wrap.asp
 */
@@ -5260,7 +5456,8 @@ Example: `cubic-bezier(n,n,n,n)`
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit";
+    | "inherit"
+    | PossibleStyle;
 
   /**
 * writing-mode
@@ -5270,6 +5467,8 @@ Example: `cubic-bezier(n,n,n,n)`
 * |  Chrome  | Firefox |  Safari   |  Edge  |
 * | :------: | :-----: | :-------: | :----: |
 * |  **48.0**  | **41.0**  |   **11.0**   | **12.0** |
+* 
+Example: p.test1 \{  writing-mode: horizontal-tb; \}p.test2 \{       writing-mode: vertical-rl; \}span.test2 \{  writing-mode:      vertical-rl; \}
 * 
 @see https://www.w3schools.com/cssref/css3_pr_writing-mode.asp
 */
@@ -5292,7 +5491,8 @@ Example: `cubic-bezier(n,n,n,n)`
     left to right
 * 
 */
-    | "vertical-lr";
+    | "vertical-lr"
+    | PossibleStyle;
 
   [key: string]: PossibleStyle | undefined;
 }

@@ -1,7 +1,7 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
 
-export interface DialogProps extends NodeProps<HTMLElement> {
+export interface DialogProps extends NodeProps<HTMLDialogElement> {
   attributes?: {
     /**
 * `<dialog open>`
@@ -12,7 +12,7 @@ export interface DialogProps extends NodeProps<HTMLElement> {
 * | :------: | :-----: | :-------: | :----: |
 * |  **37.0**  | **53.0***  |   **Not supported**   | **79.0** |
 * 
-Example: `<dialog open>This is an open dialog window</dialog>`
+Example: <dialog open>This is an open dialog window<\/dialog>
 * 
 @see https://www.w3schools.com/TAGS/att_dialog_open.asp
 */
@@ -33,7 +33,7 @@ Example: `<dialog open>This is an open dialog window</dialog>`
 * 
 @see https://www.w3schools.com/TAGS/tag_dialog.asp
 */
-export class Dialog extends GlobalDom<HTMLElement> {
+export class Dialog extends GlobalDom<HTMLDialogElement> {
   constructor(props: DialogProps = {}) {
     super({ node: document.createElement("dialog"), ...props });
   }

@@ -1,6 +1,6 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
-export interface IframeProps extends NodeProps<HTMLElement> {
+export interface IframeProps extends NodeProps<HTMLIFrameElement> {
     attributes?: {
         /**
     * `<iframe allow>`
@@ -49,8 +49,7 @@ export interface IframeProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<iframe src="/default.asp" width="200" height="200">
-     </iframe>`
+    Example: <iframe src="\/default.asp" width="200" height="200">  <\/iframe>
     *
     @see https://www.w3schools.com/TAGS/att_iframe_height.asp
     */
@@ -65,14 +64,7 @@ export interface IframeProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **77.0**  | **Not Supported**  |   **Not Supported**   | **79.0** |
     *
-    Example: `<img src="/w3images/wedding.jpg" alt="Wedding" style="width:100%"><img
-        src="/w3images/rocks.jpg" alt="Rocks" style="width:100%"><!--
-        off-screen images --><img src="/w3images/paris.jpg" alt="Paris"
-        style="width:100%" loading="lazy"><img src="/w3images/nature.jpg"
-        alt="Nature" style="width:100%" loading="lazy"><img src="/w3images/underwater.jpg"
-        alt="Underwater" style="width:100%" loading="lazy"><img src="/w3images/ocean.jpg"
-        alt="Ocean" style="width:100%" loading="lazy"><img src="/w3images/mountainskies.jpg"
-        alt="Mountains" style="width:100%" loading="lazy">`
+    Example: <img src="\/w3images\/wedding.jpg" alt="Wedding" style="width:100%"><img      src="\/w3images\/rocks.jpg" alt="Rocks" style="width:100%"><!--      off-screen images --><img src="\/w3images\/paris.jpg" alt="Paris"      style="width:100%" loading="lazy"><img src="\/w3images\/nature.jpg"      alt="Nature" style="width:100%" loading="lazy"><img src="\/w3images\/underwater.jpg"      alt="Underwater" style="width:100%" loading="lazy"><img src="\/w3images\/ocean.jpg"      alt="Ocean" style="width:100%" loading="lazy"><img src="\/w3images\/mountainskies.jpg"      alt="Mountains" style="width:100%" loading="lazy">
     *
     @see https://www.w3schools.com/TAGS/att_iframe_loading.asp
     */
@@ -91,9 +83,7 @@ export interface IframeProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<iframe src="demo_iframe.htm" name="iframe_a"></iframe>
-     
-     <a href="https://www.w3schools.com" target="iframe_a">W3Schools.com</a>`
+    Example: <iframe src="demo_iframe.htm" name="iframe_a"><\/iframe>    <a href="https:\/\/www.w3schools.com" target="iframe_a">W3Schools.com<\/a>
     *
     @see https://www.w3schools.com/TAGS/att_iframe_name.asp
     */
@@ -108,7 +98,7 @@ export interface IframeProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **51.0**  | **50.0**  |   **11.1**   | **79.0** |
     *
-    Example: `<iframe src="https://w3schools.com/" referrerpolicy="no-referrer"></iframe>`
+    Example: <iframe src="https:\/\/w3schools.com\/" referrerpolicy="no-referrer"><\/iframe>
     *
     @see https://www.w3schools.com/TAGS/att_iframe_referrerpolicy.asp
     */
@@ -165,7 +155,7 @@ export interface IframeProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **4.0**  | **17.0**  |   **5.0**   | **10.0** |
     *
-    Example: `<iframe src="demo_iframe_sandbox.htm" sandbox></iframe>`
+    Example: <iframe src="demo_iframe_sandbox.htm" sandbox><\/iframe>
     *
     @see https://www.w3schools.com/TAGS/att_iframe_sandbox.asp
     */
@@ -235,7 +225,7 @@ export interface IframeProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<iframe src="/default.asp"></iframe>`
+    Example: <iframe src="\/default.asp"><\/iframe>
     *
     @see https://www.w3schools.com/TAGS/att_iframe_src.asp
     */
@@ -249,7 +239,7 @@ export interface IframeProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **20.0**  | **25.0**  |   **6.0**   | **79.0** |
     *
-    Example: `<iframe srcdoc="<p>Hello world!</p>" src="demo_iframe_srcdoc.htm"></iframe>`
+    Example: <iframe srcdoc="<p>Hello world!<\/p>" src="demo_iframe_srcdoc.htm"><\/iframe>
     *
     @see https://www.w3schools.com/TAGS/att_iframe_srcdoc.asp
     */
@@ -263,7 +253,7 @@ export interface IframeProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<iframe src="/default.asp" width="200" height="200"></iframe>`
+    Example: <iframe src="\/default.asp" width="200" height="200"><\/iframe>
     *
     @see https://www.w3schools.com/TAGS/att_iframe_width.asp
     */
@@ -282,6 +272,6 @@ export interface IframeProps extends NodeProps<HTMLElement> {
 *
 @see https://www.w3schools.com/TAGS/tag_iframe.asp
 */
-export declare class Iframe extends GlobalDom<HTMLElement> {
+export declare class Iframe extends GlobalDom<HTMLIFrameElement> {
     constructor(props?: IframeProps);
 }

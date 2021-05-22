@@ -1,6 +1,6 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
-export interface BaseProps extends NodeProps<HTMLElement> {
+export interface BaseProps extends NodeProps<HTMLBaseElement> {
     attributes?: {
         /**
     * `<base href>`
@@ -11,10 +11,7 @@ export interface BaseProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<head>
-      
-     <base href="https://www.w3schools.com/images/">
-     </head>`
+    Example: <head>     <base href="https:\/\/www.w3schools.com\/images\/">  <\/head>
     *
     @see https://www.w3schools.com/TAGS/att_base_href.asp
     */
@@ -28,10 +25,7 @@ export interface BaseProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<head>
-      
-     <base target="_blank">
-     </head>`
+    Example: <head>     <base target="_blank">  <\/head>
     *
     @see https://www.w3schools.com/TAGS/att_base_target.asp
     */
@@ -65,6 +59,6 @@ export interface BaseProps extends NodeProps<HTMLElement> {
 *
 @see https://www.w3schools.com/TAGS/tag_base.asp
 */
-export declare class Base extends GlobalDom<HTMLElement> {
+export declare class Base extends GlobalDom<HTMLBaseElement> {
     constructor(props?: BaseProps);
 }

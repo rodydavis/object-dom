@@ -1,6 +1,6 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
-export interface TextareaProps extends NodeProps<HTMLElement> {
+export interface TextareaProps extends NodeProps<HTMLTextAreaElement> {
     attributes?: {
         /**
     * `<textarea autofocus>`
@@ -11,9 +11,7 @@ export interface TextareaProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **4.0**  |   **Yes**   | **10.0** |
     *
-    Example: `<textarea autofocus>
-     At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies.
-     </textarea>`
+    Example: <textarea autofocus>  At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies.   <\/textarea>
     *
     @see https://www.w3schools.com/TAGS/att_textarea_autofocus.asp
     */
@@ -27,9 +25,7 @@ export interface TextareaProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<textarea rows="4" cols="50">
-     At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies.
-     </textarea>`
+    Example: <textarea rows="4" cols="50">  At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies.   <\/textarea>
     *
     @see https://www.w3schools.com/TAGS/att_textarea_cols.asp
     */
@@ -43,11 +39,7 @@ export interface TextareaProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **No**  |   **Yes**   | **79.0** |
     *
-    Example: `<form action="/action_page.php">
-      
-     Text:  <textarea name="explanation" dirname="explanation.dir"></textarea>
-       <input type="submit" value="Submit">
-     </form>`
+    Example: <form action="\/action_page.php">     Text:  <textarea name="explanation" dirname="explanation.dir"><\/textarea>    <input type="submit" value="Submit">  <\/form>
     *
     @see https://www.w3schools.com/TAGS/att_textarea_dirname.asp
     */
@@ -61,9 +53,7 @@ export interface TextareaProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<textarea disabled>
-     At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies.
-     </textarea>`
+    Example: <textarea disabled>  At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies.   <\/textarea>
     *
     @see https://www.w3schools.com/TAGS/att_textarea_disabled.asp
     */
@@ -77,14 +67,7 @@ export interface TextareaProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **11.0** |
     *
-    Example: `<form action="/action_page.php" id="usrform">
-      
-     Name: <input type="text" name="usrname">
-      
-     <input type="submit">
-     </form>
-     
-     <textarea name="comment" form="usrform">Enter text here...</textarea>`
+    Example: <form action="\/action_page.php" id="usrform">     Name: <input type="text" name="usrname">     <input type="submit">  <\/form>    <textarea name="comment" form="usrform">Enter text here...<\/textarea>
     *
     @see https://www.w3schools.com/TAGS/att_textarea_form.asp
     */
@@ -98,9 +81,7 @@ export interface TextareaProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **4.0**  |   **Yes**   | **10.0** |
     *
-    Example: `<textarea maxlength="50">
-     Enter text here...
-     </textarea>`
+    Example: <textarea maxlength="50">  Enter text here...  <\/textarea>
     *
     @see https://www.w3schools.com/TAGS/att_textarea_maxlength.asp
     */
@@ -114,12 +95,7 @@ export interface TextareaProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<form action="/action_page.php">
-      
-     <textarea name="comment">Enter text here...</textarea>
-      
-     <input type="submit">
-     </form>`
+    Example: <form action="\/action_page.php">     <textarea name="comment">Enter text here...<\/textarea>     <input type="submit">  <\/form>
     *
     @see https://www.w3schools.com/TAGS/att_textarea_name.asp
     */
@@ -133,7 +109,7 @@ export interface TextareaProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **4.0**  |   **5.0**   | **10.0** |
     *
-    Example: `<textarea placeholder="Describe yourself here..."></textarea>`
+    Example: <textarea placeholder="Describe yourself here..."><\/textarea>
     *
     @see https://www.w3schools.com/TAGS/att_textarea_placeholder.asp
     */
@@ -147,9 +123,7 @@ export interface TextareaProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<textarea readonly>
-     At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies.
-     </textarea>`
+    Example: <textarea readonly>  At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies.   <\/textarea>
     *
     @see https://www.w3schools.com/TAGS/att_textarea_readonly.asp
     */
@@ -163,12 +137,7 @@ export interface TextareaProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **4.0**  |   **Yes**   | **10.0** |
     *
-    Example: `<form action="/action_page.php">
-      
-     <textarea name="comment" required></textarea>
-      
-     <input type="submit">
-     </form>`
+    Example: <form action="\/action_page.php">     <textarea name="comment" required><\/textarea>     <input type="submit">  <\/form>
     *
     @see https://www.w3schools.com/TAGS/att_textarea_required.asp
     */
@@ -182,9 +151,7 @@ export interface TextareaProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<textarea rows="4" cols="50">
-     At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies.
-     </textarea>`
+    Example: <textarea rows="4" cols="50">  At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies.   <\/textarea>
     *
     @see https://www.w3schools.com/TAGS/att_textarea_rows.asp
     */
@@ -198,9 +165,7 @@ export interface TextareaProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<textarea rows="2" cols="20" wrap="hard">
-     At W3Schools you will find free Web-building tutorials.
-     </textarea>`
+    Example: <textarea rows="2" cols="20" wrap="hard">  At W3Schools you will find free Web-building tutorials.   <\/textarea>
     *
     @see https://www.w3schools.com/TAGS/att_textarea_wrap.asp
     */
@@ -225,6 +190,6 @@ export interface TextareaProps extends NodeProps<HTMLElement> {
 *
 @see https://www.w3schools.com/TAGS/tag_textarea.asp
 */
-export declare class Textarea extends GlobalDom<HTMLElement> {
+export declare class Textarea extends GlobalDom<HTMLTextAreaElement> {
     constructor(props?: TextareaProps);
 }

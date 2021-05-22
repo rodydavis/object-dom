@@ -1,7 +1,7 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
 
-export interface AreaProps extends NodeProps<HTMLElement> {
+export interface AreaProps extends NodeProps<HTMLAreaElement> {
   attributes?: {
     /**
 * `<area alt>`
@@ -12,12 +12,7 @@ export interface AreaProps extends NodeProps<HTMLElement> {
 * | :------: | :-----: | :-------: | :----: |
 * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
 * 
-Example: `<map 
-      name="planetmap">
-      <area shape="rect" coords="0,0,82,126" href="sun.htm" alt="Sun">
-      <area shape="circle" coords="90,58,3" href="mercur.htm" alt="Mercury">
-      <area shape="circle" coords="124,58,8" href="venus.htm" alt="Venus">
-      </map>`
+Example: <map        name="planetmap">       <area shape="rect" coords="0,0,82,126" href="sun.htm" alt="Sun">       <area shape="circle" coords="90,58,3" href="mercur.htm" alt="Mercury">       <area shape="circle" coords="124,58,8" href="venus.htm" alt="Venus">       <\/map>
 * 
 @see https://www.w3schools.com/TAGS/att_area_alt.asp
 */
@@ -32,12 +27,7 @@ Example: `<map
 * | :------: | :-----: | :-------: | :----: |
 * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
 * 
-Example: `<map 
-      name="planetmap">
-      <area shape="rect" coords="0,0,82,126" href="sun.htm" alt="Sun">
-      <area shape="circle" coords="90,58,3" href="mercur.htm" alt="Mercury">
-      <area shape="circle" coords="124,58,8" href="venus.htm" alt="Venus">
-      </map>`
+Example: <map        name="planetmap">       <area shape="rect" coords="0,0,82,126" href="sun.htm" alt="Sun">       <area shape="circle" coords="90,58,3" href="mercur.htm" alt="Mercury">       <area shape="circle" coords="124,58,8" href="venus.htm" alt="Venus">       <\/map>
 * 
 @see https://www.w3schools.com/TAGS/att_area_coords.asp
 */
@@ -68,8 +58,7 @@ Example: `<map
 * | :------: | :-----: | :-------: | :----: |
 * |  **14.0***  | **20.0***  |   **10.1**   | **18.0** |
 * 
-Example: `<map name="planetmap"><area shape="rect" coords="0,0,82,126" alt="Sun" href="info_about_the_sun.htm" download="sun"><area shape="circle" coords="90,58,3" alt="Mercury" href="merglobe.gif" download="mercury">
- <area shape="circle" coords="124,58,8" alt="Venus" href="information_about_the_planet_venus.txt" download="venus"></map>`
+Example: <map name="planetmap"><area shape="rect" coords="0,0,82,126" alt="Sun" href="info_about_the_sun.htm" download="sun"><area shape="circle" coords="90,58,3" alt="Mercury" href="merglobe.gif" download="mercury">  <area shape="circle" coords="124,58,8" alt="Venus" href="information_about_the_planet_venus.txt" download="venus"><\/map>
 * 
 @see https://www.w3schools.com/TAGS/att_area_download.asp
 */
@@ -84,12 +73,7 @@ Example: `<map name="planetmap"><area shape="rect" coords="0,0,82,126" alt="Sun"
 * | :------: | :-----: | :-------: | :----: |
 * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
 * 
-Example: `<map 
-      name="planetmap">
-      <area shape="rect" coords="0,0,82,126" href="sun.htm" alt="Sun">
-      <area shape="circle" coords="90,58,3" href="mercur.htm" alt="Mercury">
-      <area shape="circle" coords="124,58,8" href="venus.htm" alt="Venus">
-      </map>`
+Example: <map        name="planetmap">       <area shape="rect" coords="0,0,82,126" href="sun.htm" alt="Sun">       <area shape="circle" coords="90,58,3" href="mercur.htm" alt="Mercury">       <area shape="circle" coords="124,58,8" href="venus.htm" alt="Venus">       <\/map>
 * 
 @see https://www.w3schools.com/TAGS/att_area_href.asp
 */
@@ -104,10 +88,7 @@ Example: `<map
 * | :------: | :-----: | :-------: | :----: |
 * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
 * 
-Example: `<map name="planetmap">
- <area shape="rect" coords="0,0,82,126" alt="Sun"
- href="sun.htm" hreflang="en">
-  </map>`
+Example: <map name="planetmap">  <area shape="rect" coords="0,0,82,126" alt="Sun"  href="sun.htm" hreflang="en">   <\/map>
 * 
 @see https://www.w3schools.com/TAGS/att_area_hreflang.asp
 */
@@ -122,12 +103,7 @@ Example: `<map name="planetmap">
 * | :------: | :-----: | :-------: | :----: |
 * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
 * 
-Example: `<map name="planetmap">
-  
- <area shape="rect" coords="0,0,82,126" alt="Sun"
-  
- href="sun.htm" media="screen and (min-color-index:256)">
-  </map>`
+Example: <map name="planetmap">     <area shape="rect" coords="0,0,82,126" alt="Sun"     href="sun.htm" media="screen and (min-color-index:256)">   <\/map>
 * 
 @see https://www.w3schools.com/TAGS/att_area_media.asp
 */
@@ -171,9 +147,7 @@ Example: `<map name="planetmap">
 * | :------: | :-----: | :-------: | :----: |
 * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
 * 
-Example: `<map name="planetmap">
- <area shape="rect" coords="0,0,82,126" alt="Sun" href="sun.htm" rel="alternate">
-  </map>`
+Example: <map name="planetmap">  <area shape="rect" coords="0,0,82,126" alt="Sun" href="sun.htm" rel="alternate">   <\/map>
 * 
 @see https://www.w3schools.com/TAGS/att_area_rel.asp
 */
@@ -259,12 +233,7 @@ Example: `<map name="planetmap">
 * | :------: | :-----: | :-------: | :----: |
 * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
 * 
-Example: `<map 
-      name="planetmap">
-      <area shape="rect" coords="0,0,82,126" href="sun.htm" alt="Sun">
-      <area shape="circle" coords="90,58,3" href="mercur.htm" alt="Mercury">
-      <area shape="circle" coords="124,58,8" href="venus.htm" alt="Venus">
-      </map>`
+Example: <map        name="planetmap">       <area shape="rect" coords="0,0,82,126" href="sun.htm" alt="Sun">       <area shape="circle" coords="90,58,3" href="mercur.htm" alt="Mercury">       <area shape="circle" coords="124,58,8" href="venus.htm" alt="Venus">       <\/map>
 * 
 @see https://www.w3schools.com/TAGS/att_area_shape.asp
 */
@@ -301,13 +270,7 @@ Example: `<map
 * | :------: | :-----: | :-------: | :----: |
 * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
 * 
-Example: `<map 
-      name="planetmap">
-      <area shape="rect" coords="0,0,82,126" href="sun.htm" alt="Sun"
- target="_blank">
-      <area shape="circle" coords="90,58,3" href="mercur.htm" alt="Mercury">
-      <area shape="circle" coords="124,58,8" href="venus.htm" alt="Venus">
-      </map>`
+Example: <map        name="planetmap">       <area shape="rect" coords="0,0,82,126" href="sun.htm" alt="Sun"  target="_blank">       <area shape="circle" coords="90,58,3" href="mercur.htm" alt="Mercury">       <area shape="circle" coords="124,58,8" href="venus.htm" alt="Venus">       <\/map>
 * 
 @see https://www.w3schools.com/TAGS/att_area_target.asp
 */
@@ -350,11 +313,7 @@ Example: `<map
 * | :------: | :-----: | :-------: | :----: |
 * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
 * 
-Example: `<map name="planetmap">
-  
- <area shape="rect" coords="0,0,82,126" alt="Sun" 
- href="/images/sun.gif" type="image/gif">
-  </map>`
+Example: <map name="planetmap">     <area shape="rect" coords="0,0,82,126" alt="Sun"   href="\/images\/sun.gif" type="image\/gif">   <\/map>
 * 
 @see https://www.w3schools.com/TAGS/att_area_type.asp
 */
@@ -375,7 +334,7 @@ Example: `<map name="planetmap">
 * 
 @see https://www.w3schools.com/TAGS/tag_area.asp
 */
-export class Area extends GlobalDom<HTMLElement> {
+export class Area extends GlobalDom<HTMLAreaElement> {
   constructor(props: AreaProps = {}) {
     super({ node: document.createElement("area"), ...props });
   }

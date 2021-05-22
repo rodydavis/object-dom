@@ -1,7 +1,7 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
 
-export interface OutputProps extends NodeProps<HTMLElement> {
+export interface OutputProps extends NodeProps<HTMLOutputElement> {
   attributes?: {
     /**
 * `<output for>`
@@ -12,11 +12,7 @@ export interface OutputProps extends NodeProps<HTMLElement> {
 * | :------: | :-----: | :-------: | :----: |
 * |  **10.0**  | **4.0**  |   **7.0**   | **13.0** |
 * 
-Example: `<form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
-      <input type="range" id="a" value="50">
-  +<input type="number" id="b" value="25">
-  =<output name="x" for="a b"></output>
- </form>`
+Example: <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">       <input type="range" id="a" value="50">   +<input type="number" id="b" value="25">   =<output name="x" for="a b"><\/output>  <\/form>
 * 
 @see https://www.w3schools.com/TAGS/att_output_for.asp
 */
@@ -31,13 +27,7 @@ Example: `<form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
 * | :------: | :-----: | :-------: | :----: |
 * |  **Not supported**  | **Not supported**  |   **Not supported**   | **Not supported** |
 * 
-Example: `<form action="/action_page.php" id="numform"
- oninput="x.value=parseInt(a.value)+parseInt(b.value)"><input type="range" id="a" name="a" value="50">
- + <input type="number" id="b" name="b" value="25">
- <input type="submit">
- </form>
- 
- <output form="numform" id="x" name="x" for="a+b"></output>`
+Example: <form action="\/action_page.php" id="numform"  oninput="x.value=parseInt(a.value)+parseInt(b.value)"><input type="range" id="a" name="a" value="50">  + <input type="number" id="b" name="b" value="25">  <input type="submit">  <\/form>    <output form="numform" id="x" name="x" for="a+b"><\/output>
 * 
 @see https://www.w3schools.com/TAGS/att_output_form.asp
 */
@@ -52,11 +42,7 @@ Example: `<form action="/action_page.php" id="numform"
 * | :------: | :-----: | :-------: | :----: |
 * |  **10.0**  | **4.0**  |   **7.0**   | **13.0** |
 * 
-Example: `<form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
-      <input type="range" id="a" value="50">
-  +<input type="number" id="b" value="25">
-  =<output name="x" for="a b"></output>
- </form>`
+Example: <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">       <input type="range" id="a" value="50">   +<input type="number" id="b" value="25">   =<output name="x" for="a b"><\/output>  <\/form>
 * 
 @see https://www.w3schools.com/TAGS/att_output_name.asp
 */
@@ -77,7 +63,7 @@ Example: `<form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
 * 
 @see https://www.w3schools.com/TAGS/tag_output.asp
 */
-export class Output extends GlobalDom<HTMLElement> {
+export class Output extends GlobalDom<HTMLOutputElement> {
   constructor(props: OutputProps = {}) {
     super({ node: document.createElement("output"), ...props });
   }

@@ -1,6 +1,6 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
-export interface ImgProps extends NodeProps<HTMLElement> {
+export interface ImgProps extends NodeProps<HTMLImageElement> {
     attributes?: {
         /**
     * `<img alt>`
@@ -11,7 +11,7 @@ export interface ImgProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<img src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600">`
+    Example: <img src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600">
     *
     @see https://www.w3schools.com/TAGS/att_img_alt.asp
     */
@@ -37,7 +37,7 @@ export interface ImgProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<img src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600">`
+    Example: <img src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600">
     *
     @see https://www.w3schools.com/TAGS/att_img_height.asp
     */
@@ -51,10 +51,7 @@ export interface ImgProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<a href="/action_page.php">
-      
-     <img src="w3html.gif" alt="W3Schools.com" ismap>
-     </a>`
+    Example: <a href="\/action_page.php">     <img src="w3html.gif" alt="W3Schools.com" ismap>  <\/a>
     *
     @see https://www.w3schools.com/TAGS/att_img_ismap.asp
     */
@@ -69,14 +66,7 @@ export interface ImgProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **77.0**  | **75.0**  |   **Not Supported**   | **79.0** |
     *
-    Example: `<img src="/w3images/wedding.jpg" alt="Wedding" style="width:100%"><img
-        src="/w3images/rocks.jpg" alt="Rocks" style="width:100%"><!--
-        off-screen images --><img src="/w3images/paris.jpg" alt="Paris"
-        style="width:100%" loading="lazy"><img src="/w3images/nature.jpg"
-        alt="Nature" style="width:100%" loading="lazy"><img src="/w3images/underwater.jpg"
-        alt="Underwater" style="width:100%" loading="lazy"><img src="/w3images/ocean.jpg"
-        alt="Ocean" style="width:100%" loading="lazy"><img src="/w3images/mountainskies.jpg"
-        alt="Mountains" style="width:100%" loading="lazy">`
+    Example: <img src="\/w3images\/wedding.jpg" alt="Wedding" style="width:100%"><img      src="\/w3images\/rocks.jpg" alt="Rocks" style="width:100%"><!--      off-screen images --><img src="\/w3images\/paris.jpg" alt="Paris"      style="width:100%" loading="lazy"><img src="\/w3images\/nature.jpg"      alt="Nature" style="width:100%" loading="lazy"><img src="\/w3images\/underwater.jpg"      alt="Underwater" style="width:100%" loading="lazy"><img src="\/w3images\/ocean.jpg"      alt="Ocean" style="width:100%" loading="lazy"><img src="\/w3images\/mountainskies.jpg"      alt="Mountains" style="width:100%" loading="lazy">
     *
     @see https://www.w3schools.com/TAGS/att_img_loading.asp
     */
@@ -95,10 +85,7 @@ export interface ImgProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Not supported**  | **Not supported**  |   **Not supported**   | **Not supported** |
     *
-    Example: `<!-- The description is on the same page as the image --><img src="w3html.gif" alt="W3Schools.com" width="100" height="132" longdesc="#w3htmlExplained">
-     <!-- The description is in an external page --><img src="w3html.gif" alt="W3Schools.com" width="100" height="132" longdesc="w3html.txt">
-     <!-- The description is one of several within an external page --><img src="w3html.gif" alt="W3Schools.com" width="100" height="132" longdesc="http://example.com/desc#item3">
-     <!-- The description is included in a data:URI --><img src="w3html.gif" alt="W3Schools.com" width="100" height="132" longdesc="data:text/html;charset=utf-8;,%3C!DOCTYPE%20html%3E%3Chtml%3E%3Chead%3E%3Ctitle%3EDescription%20of%20the%20Logo%3C/title%3E%3C/head%3E%3Cbody%3E%3Cp%3ESome%20description%20goes%20here%3C/body%3E%3C/html%3E">`
+    Example: <!-- The description is on the same page as the image --><img src="w3html.gif" alt="W3Schools.com" width="100" height="132" longdesc="#w3htmlExplained">  <!-- The description is in an external page --><img src="w3html.gif" alt="W3Schools.com" width="100" height="132" longdesc="w3html.txt">  <!-- The description is one of several within an external page --><img src="w3html.gif" alt="W3Schools.com" width="100" height="132" longdesc="http:\/\/example.com\/desc#item3">  <!-- The description is included in a data:URI --><img src="w3html.gif" alt="W3Schools.com" width="100" height="132" longdesc="data:text\/html;charset=utf-8;,%3C!DOCTYPE%20html%3E%3Chtml%3E%3Chead%3E%3Ctitle%3EDescription%20of%20the%20Logo%3C\/title%3E%3C\/head%3E%3Cbody%3E%3Cp%3ESome%20description%20goes%20here%3C\/body%3E%3C\/html%3E">
     *
     @see https://www.w3schools.com/TAGS/att_img_longdesc.asp
     */
@@ -136,7 +123,7 @@ export interface ImgProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<img src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600">`
+    Example: <img src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600">
     *
     @see https://www.w3schools.com/TAGS/att_img_src.asp
     */
@@ -162,12 +149,7 @@ export interface ImgProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<img src="workplace.jpg" alt="Workplace" usemap="#workmap" width="400"
-        height="379"><map name="workmap">  <area shape="rect"
-        coords="34,44,270,350" alt="Computer" href="computer.htm">  <area
-        shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
-        <area shape="circle" coords="337,300,44" alt="Cup of coffee" href="coffee.htm">
-        </map>`
+    Example: <img src="workplace.jpg" alt="Workplace" usemap="#workmap" width="400"      height="379"><map name="workmap">  <area shape="rect"      coords="34,44,270,350" alt="Computer" href="computer.htm">  <area      shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">       <area shape="circle" coords="337,300,44" alt="Cup of coffee" href="coffee.htm">     <\/map>
     *
     @see https://www.w3schools.com/TAGS/att_img_usemap.asp
     */
@@ -181,7 +163,7 @@ export interface ImgProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<img src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600">`
+    Example: <img src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600">
     *
     @see https://www.w3schools.com/TAGS/att_img_width.asp
     */
@@ -200,6 +182,6 @@ export interface ImgProps extends NodeProps<HTMLElement> {
 *
 @see https://www.w3schools.com/TAGS/tag_img.asp
 */
-export declare class Img extends GlobalDom<HTMLElement> {
+export declare class Img extends GlobalDom<HTMLImageElement> {
     constructor(props?: ImgProps);
 }

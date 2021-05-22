@@ -1,6 +1,6 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
-export interface DlProps extends NodeProps<HTMLElement> {
+export interface DlProps extends NodeProps<HTMLDListElement> {
     attributes?: {
         [key: string]: PossibleAttr;
     };
@@ -16,6 +16,6 @@ export interface DlProps extends NodeProps<HTMLElement> {
 *
 @see https://www.w3schools.com/TAGS/tag_dl.asp
 */
-export declare class Dl extends GlobalDom<HTMLElement> {
+export declare class Dl extends GlobalDom<HTMLDListElement> {
     constructor(props?: DlProps);
 }

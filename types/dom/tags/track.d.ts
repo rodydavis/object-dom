@@ -1,6 +1,6 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
-export interface TrackProps extends NodeProps<HTMLElement> {
+export interface TrackProps extends NodeProps<HTMLTrackElement> {
     attributes?: {
         /**
     * `<track default>`
@@ -11,12 +11,7 @@ export interface TrackProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **23.0**  | **31.0**  |   **6.0**   | **10.0** |
     *
-    Example: `<video width="320" height="240" controls>
-      <source src="forrest_gump.mp4" type="video/mp4">
-      <source src="forrest_gump.ogg" type="video/ogg">
-      <track src="fgsubtitles_en.vtt" kind="subtitles" srclang="en" label="English" default>
-      <track src="fgsubtitles_no.vtt" kind="subtitles" srclang="no" label="Norwegian">
-     </video>`
+    Example: <video width="320" height="240" controls>   <source src="forrest_gump.mp4" type="video\/mp4">   <source src="forrest_gump.ogg" type="video\/ogg">   <track src="fgsubtitles_en.vtt" kind="subtitles" srclang="en" label="English" default>   <track src="fgsubtitles_no.vtt" kind="subtitles" srclang="no" label="Norwegian">  <\/video>
     *
     @see https://www.w3schools.com/TAGS/att_track_default.asp
     */
@@ -30,12 +25,7 @@ export interface TrackProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **23.0**  | **31.0**  |   **6.0**   | **10.0** |
     *
-    Example: `<video width="320" height="240" controls>
-      <source src="forrest_gump.mp4" type="video/mp4">
-      <source src="forrest_gump.ogg" type="video/ogg">
-      <track src="fgsubtitles_en.vtt" kind="subtitles" srclang="en" label="English">
-      <track src="fgsubtitles_no.vtt" kind="subtitles" srclang="no" label="Norwegian">
-     </video>`
+    Example: <video width="320" height="240" controls>   <source src="forrest_gump.mp4" type="video\/mp4">   <source src="forrest_gump.ogg" type="video\/ogg">   <track src="fgsubtitles_en.vtt" kind="subtitles" srclang="en" label="English">   <track src="fgsubtitles_no.vtt" kind="subtitles" srclang="no" label="Norwegian">  <\/video>
     *
     @see https://www.w3schools.com/TAGS/att_track_kind.asp
     */
@@ -69,12 +59,7 @@ export interface TrackProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **23.0**  | **31.0**  |   **6.0**   | **10.0** |
     *
-    Example: `<video width="320" height="240" controls>
-      <source src="forrest_gump.mp4" type="video/mp4">
-      <source src="forrest_gump.ogg" type="video/ogg">
-      <track src="fgsubtitles_en.vtt" kind="subtitles" srclang="en" label="English">
-      <track src="fgsubtitles_no.vtt" kind="subtitles" srclang="no" label="Norwegian">
-     </video>`
+    Example: <video width="320" height="240" controls>   <source src="forrest_gump.mp4" type="video\/mp4">   <source src="forrest_gump.ogg" type="video\/ogg">   <track src="fgsubtitles_en.vtt" kind="subtitles" srclang="en" label="English">   <track src="fgsubtitles_no.vtt" kind="subtitles" srclang="no" label="Norwegian">  <\/video>
     *
     @see https://www.w3schools.com/TAGS/att_track_label.asp
     */
@@ -88,12 +73,7 @@ export interface TrackProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **23.0**  | **31.0**  |   **6.0**   | **10.0** |
     *
-    Example: `<video width="320" height="240" controls>
-      <source src="forrest_gump.mp4" type="video/mp4">
-      <source src="forrest_gump.ogg" type="video/ogg">
-      <track src="fgsubtitles_en.vtt" kind="subtitles" srclang="en" label="English">
-      <track src="fgsubtitles_no.vtt" kind="subtitles" srclang="no" label="Norwegian">
-     </video>`
+    Example: <video width="320" height="240" controls>   <source src="forrest_gump.mp4" type="video\/mp4">   <source src="forrest_gump.ogg" type="video\/ogg">   <track src="fgsubtitles_en.vtt" kind="subtitles" srclang="en" label="English">   <track src="fgsubtitles_no.vtt" kind="subtitles" srclang="no" label="Norwegian">  <\/video>
     *
     @see https://www.w3schools.com/TAGS/att_track_src.asp
     */
@@ -107,12 +87,7 @@ export interface TrackProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **23.0**  | **31.0**  |   **6.0**   | **10.0** |
     *
-    Example: `<video width="320" height="240" controls>
-      <source src="forrest_gump.mp4" type="video/mp4">
-      <source src="forrest_gump.ogg" type="video/ogg">
-      <track src="fgsubtitles_en.vtt" kind="subtitles" srclang="en" label="English">
-      <track src="fgsubtitles_no.vtt" kind="subtitles" srclang="no" label="Norwegian">
-     </video>`
+    Example: <video width="320" height="240" controls>   <source src="forrest_gump.mp4" type="video\/mp4">   <source src="forrest_gump.ogg" type="video\/ogg">   <track src="fgsubtitles_en.vtt" kind="subtitles" srclang="en" label="English">   <track src="fgsubtitles_no.vtt" kind="subtitles" srclang="no" label="Norwegian">  <\/video>
     *
     @see https://www.w3schools.com/TAGS/att_track_srclang.asp
     */
@@ -131,6 +106,6 @@ export interface TrackProps extends NodeProps<HTMLElement> {
 *
 @see https://www.w3schools.com/TAGS/tag_track.asp
 */
-export declare class Track extends GlobalDom<HTMLElement> {
+export declare class Track extends GlobalDom<HTMLTrackElement> {
     constructor(props?: TrackProps);
 }

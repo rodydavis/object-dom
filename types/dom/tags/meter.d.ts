@@ -1,6 +1,6 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
-export interface MeterProps extends NodeProps<HTMLElement> {
+export interface MeterProps extends NodeProps<HTMLMeterElement> {
     attributes?: {
         /**
     * `<meter form>`
@@ -11,15 +11,7 @@ export interface MeterProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Not supported**  | **Not supported**  |   **Not supported**   | **Not supported** |
     *
-    Example: `<form action="/action_page.php" method="get" id="form1">
-      
-     First name: <input type="text" name="fname"><br>
-      
-     <input type="submit" value="Submit">
-     </form>
-        <p><label for="anna">Anna's score:</label><meter id="anna"
-        form="form1" name="anna" min="0" low="40" high="90" max="100"
-        value="95"></meter></p>`
+    Example: <form action="\/action_page.php" method="get" id="form1">     First name: <input type="text" name="fname"><br>     <input type="submit" value="Submit">  <\/form>     <p><label for="anna">Anna's score:<\/label><meter id="anna"      form="form1" name="anna" min="0" low="40" high="90" max="100"      value="95"><\/meter><\/p>
     *
     @see https://www.w3schools.com/TAGS/att_meter_form.asp
     */
@@ -33,12 +25,7 @@ export interface MeterProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **8.0**  | **16.0**  |   **6.0**   | **13.0** |
     *
-    Example: `<p><label for="anna">Anna's score:</label><meter id="anna" min="0"
-        low="40" high="90" max="100" value="95"></meter></p><p><label
-        for="peter">Peter's score:</label><meter id="peter" min="0" low="40"
-        high="90" max="100" value="65"></meter></p><p><label for="linda">Linda's
-        score:</label><meter id="linda" min="0" low="40" high="90" max="100"
-        value="35"></meter></p>`
+    Example: <p><label for="anna">Anna's score:<\/label><meter id="anna" min="0"      low="40" high="90" max="100" value="95"><\/meter><\/p><p><label      for="peter">Peter's score:<\/label><meter id="peter" min="0" low="40"      high="90" max="100" value="65"><\/meter><\/p><p><label for="linda">Linda's      score:<\/label><meter id="linda" min="0" low="40" high="90" max="100"      value="35"><\/meter><\/p>
     *
     @see https://www.w3schools.com/TAGS/att_meter_high.asp
     */
@@ -52,12 +39,7 @@ export interface MeterProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **8.0**  | **16.0**  |   **6.0**   | **13.0** |
     *
-    Example: `<p><label for="anna">Anna's score:</label><meter id="anna" min="0"
-        low="40" high="90" max="100" value="95"></meter></p><p><label
-        for="peter">Peter's score:</label><meter id="peter" min="0" low="40"
-        high="90" max="100" value="65"></meter></p><p><label for="linda">Linda's
-        score:</label><meter id="linda" min="0" low="40" high="90" max="100"
-        value="35"></meter></p>`
+    Example: <p><label for="anna">Anna's score:<\/label><meter id="anna" min="0"      low="40" high="90" max="100" value="95"><\/meter><\/p><p><label      for="peter">Peter's score:<\/label><meter id="peter" min="0" low="40"      high="90" max="100" value="65"><\/meter><\/p><p><label for="linda">Linda's      score:<\/label><meter id="linda" min="0" low="40" high="90" max="100"      value="35"><\/meter><\/p>
     *
     @see https://www.w3schools.com/TAGS/att_meter_low.asp
     */
@@ -71,12 +53,7 @@ export interface MeterProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **8.0**  | **16.0**  |   **6.0**   | **13.0** |
     *
-    Example: `<p><label for="anna">Anna's score:</label><meter id="anna" min="0"
-        low="40" high="90" max="100" value="95"></meter></p><p><label
-        for="peter">Peter's score:</label><meter id="peter" min="0" low="40"
-        high="90" max="100" value="65"></meter></p><p><label for="linda">Linda's
-        score:</label><meter id="linda" min="0" low="40" high="90" max="100"
-        value="35"></meter></p>`
+    Example: <p><label for="anna">Anna's score:<\/label><meter id="anna" min="0"      low="40" high="90" max="100" value="95"><\/meter><\/p><p><label      for="peter">Peter's score:<\/label><meter id="peter" min="0" low="40"      high="90" max="100" value="65"><\/meter><\/p><p><label for="linda">Linda's      score:<\/label><meter id="linda" min="0" low="40" high="90" max="100"      value="35"><\/meter><\/p>
     *
     @see https://www.w3schools.com/TAGS/att_meter_max.asp
     */
@@ -90,12 +67,7 @@ export interface MeterProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **8.0**  | **16.0**  |   **6.0**   | **13.0** |
     *
-    Example: `<p><label for="anna">Anna's score:</label><meter id="anna" min="0"
-        low="40" high="90" max="100" value="95"></meter></p><p><label
-        for="peter">Peter's score:</label><meter id="peter" min="0" low="40"
-        high="90" max="100" value="65"></meter></p><p><label for="linda">Linda's
-        score:</label><meter id="linda" min="0" low="40" high="90" max="100"
-        value="35"></meter></p>`
+    Example: <p><label for="anna">Anna's score:<\/label><meter id="anna" min="0"      low="40" high="90" max="100" value="95"><\/meter><\/p><p><label      for="peter">Peter's score:<\/label><meter id="peter" min="0" low="40"      high="90" max="100" value="65"><\/meter><\/p><p><label for="linda">Linda's      score:<\/label><meter id="linda" min="0" low="40" high="90" max="100"      value="35"><\/meter><\/p>
     *
     @see https://www.w3schools.com/TAGS/att_meter_min.asp
     */
@@ -109,8 +81,7 @@ export interface MeterProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **8.0**  | **16.0**  |   **6.0**   | **13.0** |
     *
-    Example: `<p><label for="yinyang">Yin Yang:</label><meter id="yinyang" value="0.3"
-        high="0.9" low="0.1" optimum="0.5"></meter></p>`
+    Example: <p><label for="yinyang">Yin Yang:<\/label><meter id="yinyang" value="0.3"      high="0.9" low="0.1" optimum="0.5"><\/meter><\/p>
     *
     @see https://www.w3schools.com/TAGS/att_meter_optimum.asp
     */
@@ -124,12 +95,7 @@ export interface MeterProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **8.0**  | **16.0**  |   **6.0**   | **13.0** |
     *
-    Example: `<p><label for="anna">Anna's score:</label><meter id="anna" min="0"
-        low="40" high="90" max="100" value="95"></meter></p><p><label
-        for="peter">Peter's score:</label><meter id="peter" min="0" low="40"
-        high="90" max="100" value="65"></meter></p><p><label for="linda">Linda's
-        score:</label><meter id="linda" min="0" low="40" high="90" max="100"
-        value="35"></meter></p>`
+    Example: <p><label for="anna">Anna's score:<\/label><meter id="anna" min="0"      low="40" high="90" max="100" value="95"><\/meter><\/p><p><label      for="peter">Peter's score:<\/label><meter id="peter" min="0" low="40"      high="90" max="100" value="65"><\/meter><\/p><p><label for="linda">Linda's      score:<\/label><meter id="linda" min="0" low="40" high="90" max="100"      value="35"><\/meter><\/p>
     *
     @see https://www.w3schools.com/TAGS/att_meter_value.asp
     */
@@ -148,6 +114,6 @@ export interface MeterProps extends NodeProps<HTMLElement> {
 *
 @see https://www.w3schools.com/TAGS/tag_meter.asp
 */
-export declare class Meter extends GlobalDom<HTMLElement> {
+export declare class Meter extends GlobalDom<HTMLMeterElement> {
     constructor(props?: MeterProps);
 }

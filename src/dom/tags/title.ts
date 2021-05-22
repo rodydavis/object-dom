@@ -1,7 +1,7 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
 
-export interface TitleProps extends NodeProps<HTMLElement> {
+export interface TitleProps extends NodeProps<HTMLTitleElement> {
   attributes?: {
     [key: string]: PossibleAttr;
   };
@@ -18,7 +18,7 @@ export interface TitleProps extends NodeProps<HTMLElement> {
 * 
 @see https://www.w3schools.com/TAGS/tag_title.asp
 */
-export class Title extends GlobalDom<HTMLElement> {
+export class Title extends GlobalDom<HTMLTitleElement> {
   constructor(props: TitleProps = {}) {
     super({ node: document.createElement("title"), ...props });
   }

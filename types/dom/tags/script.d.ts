@@ -1,6 +1,6 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
-export interface ScriptProps extends NodeProps<HTMLElement> {
+export interface ScriptProps extends NodeProps<HTMLScriptElement> {
     attributes?: {
         /**
     * `<script async>`
@@ -11,7 +11,7 @@ export interface ScriptProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **8.0**  | **3.6**  |   **5.1**   | **10.0** |
     *
-    Example: `<script src="demo_async.js" async></script>`
+    Example: <script src="demo_async.js" async><\/script>
     *
     @see https://www.w3schools.com/TAGS/att_script_async.asp
     */
@@ -25,9 +25,7 @@ export interface ScriptProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **30.0**  | **13.0**  |   **13.0**   | **18.0** |
     *
-    Example: `<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>`
+    Example: <script src="https:\/\/code.jquery.com\/jquery-3.3.1.slim.min.js"     integrity="sha384-q8i\/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"     crossorigin="anonymous"><\/script>
     *
     @see https://www.w3schools.com/TAGS/att_script_crossorigin.asp
     */
@@ -41,7 +39,7 @@ export interface ScriptProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **8.0**  | **3.5**  |   **5.0**   | **10.0** |
     *
-    Example: `<script src="demo_defer.js" defer></script>`
+    Example: <script src="demo_defer.js" defer><\/script>
     *
     @see https://www.w3schools.com/TAGS/att_script_defer.asp
     */
@@ -56,9 +54,7 @@ export interface ScriptProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **45.0**  | **43.0**  |   **13.0**   | **17.0** |
     *
-    Example: `<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>`
+    Example: <script src="https:\/\/code.jquery.com\/jquery-3.3.1.slim.min.js"     integrity="sha384-q8i\/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"     crossorigin="anonymous"><\/script>
     *
     @see https://www.w3schools.com/TAGS/att_script_integrity.asp
     */
@@ -97,7 +93,7 @@ export interface ScriptProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<script src="myscripts.js"></script>`
+    Example: <script src="myscripts.js"><\/script>
     *
     @see https://www.w3schools.com/TAGS/att_script_src.asp
     */
@@ -111,8 +107,7 @@ export interface ScriptProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<script type="application/javascript">
-          document.getElementById("demo").innerHTML = "Hello JavaScript!";</script>`
+    Example: <script type="application\/javascript">       document.getElementById("demo").innerHTML = "Hello JavaScript!";<\/script>
     *
     @see https://www.w3schools.com/TAGS/att_script_type.asp
     */
@@ -131,6 +126,6 @@ export interface ScriptProps extends NodeProps<HTMLElement> {
 *
 @see https://www.w3schools.com/TAGS/tag_script.asp
 */
-export declare class Script extends GlobalDom<HTMLElement> {
+export declare class Script extends GlobalDom<HTMLScriptElement> {
     constructor(props?: ScriptProps);
 }

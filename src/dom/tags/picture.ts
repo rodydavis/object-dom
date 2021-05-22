@@ -1,7 +1,7 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
 
-export interface PictureProps extends NodeProps<HTMLElement> {
+export interface PictureProps extends NodeProps<HTMLPictureElement> {
   attributes?: {
     [key: string]: PossibleAttr;
   };
@@ -18,7 +18,7 @@ export interface PictureProps extends NodeProps<HTMLElement> {
 * 
 @see https://www.w3schools.com/TAGS/tag_picture.asp
 */
-export class Picture extends GlobalDom<HTMLElement> {
+export class Picture extends GlobalDom<HTMLPictureElement> {
   constructor(props: PictureProps = {}) {
     super({ node: document.createElement("picture"), ...props });
   }

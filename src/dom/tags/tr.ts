@@ -1,7 +1,7 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
 
-export interface TrProps extends NodeProps<HTMLElement> {
+export interface TrProps extends NodeProps<HTMLTableRowElement> {
   attributes?: {
     [key: string]: PossibleAttr;
   };
@@ -18,7 +18,7 @@ export interface TrProps extends NodeProps<HTMLElement> {
 * 
 @see https://www.w3schools.com/TAGS/tag_tr.asp
 */
-export class Tr extends GlobalDom<HTMLElement> {
+export class Tr extends GlobalDom<HTMLTableRowElement> {
   constructor(props: TrProps = {}) {
     super({ node: document.createElement("tr"), ...props });
   }

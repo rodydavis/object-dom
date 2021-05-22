@@ -1,6 +1,6 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
-export interface ButtonProps extends NodeProps<HTMLElement> {
+export interface ButtonProps extends NodeProps<HTMLButtonElement> {
     attributes?: {
         /**
     * `<button autofocus>`
@@ -11,7 +11,7 @@ export interface ButtonProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **5.0**  | **4.0**  |   **5.0**   | **10.0** |
     *
-    Example: `<button type="button" autofocus>Click Me!</button>`
+    Example: <button type="button" autofocus>Click Me!<\/button>
     *
     @see https://www.w3schools.com/TAGS/att_button_autofocus.asp
     */
@@ -25,7 +25,7 @@ export interface ButtonProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<button type="button" disabled>Click Me!</button>`
+    Example: <button type="button" disabled>Click Me!<\/button>
     *
     @see https://www.w3schools.com/TAGS/att_button_disabled.asp
     */
@@ -39,11 +39,7 @@ export interface ButtonProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **10.0**  | **4.0**  |   **5.1**   | **16.0** |
     *
-    Example: `<form action="/action_page.php" method="get" id="form1"><label for="fname">First
-        name:</label><input type="text" id="fname" name="fname"><br><br>
-        <label for="lname">Last name:</label><input type="text" id="lname"
-        name="lname"></form><button type="submit" form="form1"
-        value="Submit">Submit</button>`
+    Example: <form action="\/action_page.php" method="get" id="form1"><label for="fname">First      name:<\/label><input type="text" id="fname" name="fname"><br><br>     <label for="lname">Last name:<\/label><input type="text" id="lname"      name="lname"><\/form><button type="submit" form="form1"      value="Submit">Submit<\/button>
     *
     @see https://www.w3schools.com/TAGS/att_button_form.asp
     */
@@ -57,14 +53,7 @@ export interface ButtonProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **9.0**  | **4.0**  |   **5.1**   | **10.0** |
     *
-    Example: `<form action="/action_page.php" method="get">
-       <label for="fname">First name:</label>  <input type="text" id="fname"
-        name="fname"><br><br>  <label for="lname">Last name:</label>
-        <input type="text" id="lname" name="lname"><br><br>  <button
-        type="submit">Submit</button>
-      
-     <button type="submit" formaction="/action_page2.php">Submit to another page</button>
-     </form>`
+    Example: <form action="\/action_page.php" method="get">    <label for="fname">First name:<\/label>  <input type="text" id="fname"      name="fname"><br><br>  <label for="lname">Last name:<\/label>       <input type="text" id="lname" name="lname"><br><br>  <button      type="submit">Submit<\/button>     <button type="submit" formaction="\/action_page2.php">Submit to another page<\/button>  <\/form>
     *
     @see https://www.w3schools.com/TAGS/att_button_formaction.asp
     */
@@ -78,13 +67,7 @@ export interface ButtonProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **9.0**  | **4.0**  |   **5.1**   | **10.0** |
     *
-    Example: `<form action="/action_page_binary.asp" method="post">
-       <label for="fname">First name:</label>  <input type="text" id="fname"
-        name="fname" value="Ståle"><br><br>
-     <button type="submit">Submit with character encoding</button>
-      
-     <button type="submit" formenctype="text/plain">Submit without character encoding</button>
-     </form>`
+    Example: <form action="\/action_page_binary.asp" method="post">    <label for="fname">First name:<\/label>  <input type="text" id="fname"      name="fname" value="Ståle"><br><br>   <button type="submit">Submit with character encoding<\/button>     <button type="submit" formenctype="text\/plain">Submit without character encoding<\/button>  <\/form>
     *
     @see https://www.w3schools.com/TAGS/att_button_formenctype.asp
     */
@@ -109,15 +92,7 @@ export interface ButtonProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **9.0**  | **4.0**  |   **5.1**   | **10.0** |
     *
-    Example: `<form action="/action_page.php" method="get">
-       <label for="fname">First name:</label>  <input type="text" id="fname"
-        name="fname"><br><br>  <label for="lname">Last name:</label>
-        <input type="text" id="lname" name="lname"><br><br>
-      
-     <button type="submit">Submit</button>
-      
-     <button type="submit" formmethod="post">Submit using POST</button>
-     </form>`
+    Example: <form action="\/action_page.php" method="get">    <label for="fname">First name:<\/label>  <input type="text" id="fname"      name="fname"><br><br>  <label for="lname">Last name:<\/label>       <input type="text" id="lname" name="lname"><br><br>     <button type="submit">Submit<\/button>     <button type="submit" formmethod="post">Submit using POST<\/button>  <\/form>
     *
     @see https://www.w3schools.com/TAGS/att_button_formmethod.asp
     */
@@ -136,13 +111,7 @@ export interface ButtonProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **6.0**  | **4.0**  |   **Yes**   | **11.0** |
     *
-    Example: `<form action="/action_page.php" method="get">
-       <label for="email">Enter your email:</label>  <input
-        type="email" id="email" name="email"><br><br>
-          <button type="submit">Submit</button>
-      
-     <button type="submit" formnovalidate>Submit without validation</button>
-     </form>`
+    Example: <form action="\/action_page.php" method="get">    <label for="email">Enter your email:<\/label>  <input      type="email" id="email" name="email"><br><br>       <button type="submit">Submit<\/button>     <button type="submit" formnovalidate>Submit without validation<\/button>  <\/form>
     *
     @see https://www.w3schools.com/TAGS/att_button_formnovalidate.asp
     */
@@ -156,15 +125,7 @@ export interface ButtonProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **9.0**  | **4.0**  |   **5.1**   | **10.0** |
     *
-    Example: `<form action="/action_page.php" method="get">
-       <label for="fname">First name:</label>  <input type="text" id="fname"
-        name="fname"><br><br>  <label for="lname">Last name:</label>
-        <input type="text" id="lname" name="lname"><br><br>
-      
-     <button type="submit" >Submit</button>
-      
-     <button type="submit" formtarget="_blank">Submit to a new window</button>
-     </form>`
+    Example: <form action="\/action_page.php" method="get">    <label for="fname">First name:<\/label>  <input type="text" id="fname"      name="fname"><br><br>  <label for="lname">Last name:<\/label>       <input type="text" id="lname" name="lname"><br><br>     <button type="submit" >Submit<\/button>     <button type="submit" formtarget="_blank">Submit to a new window<\/button>  <\/form>
     *
     @see https://www.w3schools.com/TAGS/att_button_formtarget.asp
     */
@@ -198,14 +159,7 @@ export interface ButtonProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<form action="/action_page.php" method="get">
-      
-     Choose your favorite subject:
-      
-     <button name="subject" type="submit" value="HTML">HTML</button>
-      
-     <button name="subject" type="submit" value="CSS">CSS</button>
-     </form>`
+    Example: <form action="\/action_page.php" method="get">     Choose your favorite subject:     <button name="subject" type="submit" value="HTML">HTML<\/button>     <button name="subject" type="submit" value="CSS">CSS<\/button>  <\/form>
     *
     @see https://www.w3schools.com/TAGS/att_button_name.asp
     */
@@ -219,13 +173,7 @@ export interface ButtonProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<form action="/action_page.php" method="get">
-      <label for="fname">First name:</label>  <input type="text" id="fname"
-        name="fname"><br><br>  <label for="lname">Last name:</label>
-        <input type="text" id="lname" name="lname"><br><br>
-      <button type="submit" value="Submit">Submit</button>
-      <button type="reset" value="Reset">Reset</button>
-     </form>`
+    Example: <form action="\/action_page.php" method="get">   <label for="fname">First name:<\/label>  <input type="text" id="fname"      name="fname"><br><br>  <label for="lname">Last name:<\/label>       <input type="text" id="lname" name="lname"><br><br>   <button type="submit" value="Submit">Submit<\/button>   <button type="reset" value="Reset">Reset<\/button>  <\/form>
     *
     @see https://www.w3schools.com/TAGS/att_button_type.asp
     */
@@ -249,14 +197,7 @@ export interface ButtonProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<form action="/action_page.php" method="get">
-      
-     Choose your favorite subject:
-      
-     <button name="subject" type="submit" value="fav_HTML">HTML</button>
-      
-     <button name="subject" type="submit" value="fav_CSS">CSS</button>
-     </form>`
+    Example: <form action="\/action_page.php" method="get">     Choose your favorite subject:     <button name="subject" type="submit" value="fav_HTML">HTML<\/button>     <button name="subject" type="submit" value="fav_CSS">CSS<\/button>  <\/form>
     *
     @see https://www.w3schools.com/TAGS/att_button_value.asp
     */
@@ -275,6 +216,6 @@ export interface ButtonProps extends NodeProps<HTMLElement> {
 *
 @see https://www.w3schools.com/TAGS/tag_button.asp
 */
-export declare class Button extends GlobalDom<HTMLElement> {
+export declare class Button extends GlobalDom<HTMLButtonElement> {
     constructor(props?: ButtonProps);
 }

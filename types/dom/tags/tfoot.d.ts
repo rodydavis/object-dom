@@ -1,6 +1,6 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
-export interface TfootProps extends NodeProps<HTMLElement> {
+export interface TfootProps extends NodeProps<HTMLTableSectionElement> {
     attributes?: {
         [key: string]: PossibleAttr;
     };
@@ -16,6 +16,6 @@ export interface TfootProps extends NodeProps<HTMLElement> {
 *
 @see https://www.w3schools.com/TAGS/tag_tfoot.asp
 */
-export declare class Tfoot extends GlobalDom<HTMLElement> {
+export declare class Tfoot extends GlobalDom<HTMLTableSectionElement> {
     constructor(props?: TfootProps);
 }

@@ -1,6 +1,6 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
-export interface VideoProps extends NodeProps<HTMLElement> {
+export interface VideoProps extends NodeProps<HTMLVideoElement> {
     attributes?: {
         [key: string]: PossibleAttr;
     };
@@ -16,6 +16,6 @@ export interface VideoProps extends NodeProps<HTMLElement> {
 *
 @see https://www.w3schools.com/TAGS/tag_video.asp
 */
-export declare class Video extends GlobalDom<HTMLElement> {
+export declare class Video extends GlobalDom<HTMLVideoElement> {
     constructor(props?: VideoProps);
 }

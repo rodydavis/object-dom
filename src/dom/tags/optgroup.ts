@@ -1,7 +1,7 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
 
-export interface OptgroupProps extends NodeProps<HTMLElement> {
+export interface OptgroupProps extends NodeProps<HTMLOptGroupElement> {
   attributes?: {
     /**
 * `<optgroup disabled>`
@@ -12,17 +12,7 @@ export interface OptgroupProps extends NodeProps<HTMLElement> {
 * | :------: | :-----: | :-------: | :----: |
 * |  **Yes**  | **Yes**  |   **Yes**   | **8.0** |
 * 
-Example: `<label for="cars">Choose a car:</label><select  
-    name="cars" id="cars">
-       
-      <optgroup label="German Cars" disabled>
-         
-      <option value="mercedes">Mercedes</option>
-         
-      <option value="audi">Audi</option>
-       
-      </optgroup>
-      </select>`
+Example: <label for="cars">Choose a car:<\/label><select       name="cars" id="cars">               <optgroup label="German Cars" disabled>                 <option value="mercedes">Mercedes<\/option>                 <option value="audi">Audi<\/option>               <\/optgroup>       <\/select>
 * 
 @see https://www.w3schools.com/TAGS/att_optgroup_disabled.asp
 */
@@ -37,25 +27,7 @@ Example: `<label for="cars">Choose a car:</label><select 
 * | :------: | :-----: | :-------: | :----: |
 * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
 * 
-Example: `<label for="cars">Choose a car:</label><select  
-    name="cars" id="cars">
-       
-      <optgroup label="Swedish Cars">
-         
-      <option value="volvo">Volvo</option>
-         
-      <option value="saab">Saab</option>
-       
-      </optgroup>
-       
-      <optgroup label="German Cars">
-         
-      <option value="mercedes">Mercedes</option>
-         
-      <option value="audi">Audi</option>
-       
-      </optgroup>
-      </select>`
+Example: <label for="cars">Choose a car:<\/label><select       name="cars" id="cars">               <optgroup label="Swedish Cars">                 <option value="volvo">Volvo<\/option>                 <option value="saab">Saab<\/option>               <\/optgroup>               <optgroup label="German Cars">                 <option value="mercedes">Mercedes<\/option>                 <option value="audi">Audi<\/option>               <\/optgroup>       <\/select>
 * 
 @see https://www.w3schools.com/TAGS/att_optgroup_label.asp
 */
@@ -76,7 +48,7 @@ Example: `<label for="cars">Choose a car:</label><select 
 * 
 @see https://www.w3schools.com/TAGS/tag_optgroup.asp
 */
-export class Optgroup extends GlobalDom<HTMLElement> {
+export class Optgroup extends GlobalDom<HTMLOptGroupElement> {
   constructor(props: OptgroupProps = {}) {
     super({ node: document.createElement("optgroup"), ...props });
   }

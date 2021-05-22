@@ -1,7 +1,7 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
 
-export interface DatalistProps extends NodeProps<HTMLElement> {
+export interface DatalistProps extends NodeProps<HTMLDataListElement> {
   attributes?: {
     [key: string]: PossibleAttr;
   };
@@ -18,7 +18,7 @@ export interface DatalistProps extends NodeProps<HTMLElement> {
 * 
 @see https://www.w3schools.com/TAGS/tag_datalist.asp
 */
-export class Datalist extends GlobalDom<HTMLElement> {
+export class Datalist extends GlobalDom<HTMLDataListElement> {
   constructor(props: DatalistProps = {}) {
     super({ node: document.createElement("datalist"), ...props });
   }

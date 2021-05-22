@@ -1,7 +1,7 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
 
-export interface TdProps extends NodeProps<HTMLElement> {
+export interface TdProps extends NodeProps<HTMLTableCellElement> {
   attributes?: {
     /**
 * `<td colspan>`
@@ -12,23 +12,7 @@ export interface TdProps extends NodeProps<HTMLElement> {
 * | :------: | :-----: | :-------: | :----: |
 * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
 * 
-Example: `<table>
-  <tr>
-    <th>Month</th>
-    <th>Savings</th>
-  </tr>
-  <tr>
-    <td>January</td>
-    <td>$100</td>
-  </tr>
-  <tr>
-    <td>February</td>
-    <td>$80</td>
-  </tr>
-  <tr>
-    <td colspan="2">Sum: $180</td>
-  </tr>
- </table>`
+Example: <table>   <tr>     <th>Month<\/th>     <th>Savings<\/th>   <\/tr>   <tr>     <td>January<\/td>     <td>$100<\/td>   <\/tr>   <tr>     <td>February<\/td>     <td>$80<\/td>   <\/tr>   <tr>     <td colspan="2">Sum: $180<\/td>   <\/tr>  <\/table>
 * 
 @see https://www.w3schools.com/TAGS/att_td_colspan.asp
 */
@@ -43,20 +27,7 @@ Example: `<table>
 * | :------: | :-----: | :-------: | :----: |
 * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
 * 
-Example: `<table>
-  <tr>
-    <th id="name">Name</th>
-    <th id="email">Email</th>
-    <th id="phone">Phone</th>
-    <th id="addr">Address</th>
-  </tr>
-  <tr>
-    <td headers="name">John Doe</td>
-    <td headers="email">someone@example.com</td>
-    <td headers="phone">+45342323</td>
-    <td headers="addr">Rosevn 56,4300 Sandnes,Norway</td>
-  </tr>
- </table>`
+Example: <table>   <tr>     <th id="name">Name<\/th>     <th id="email">Email<\/th>     <th id="phone">Phone<\/th>     <th id="addr">Address<\/th>   <\/tr>   <tr>     <td headers="name">John Doe<\/td>     <td headers="email">someone@example.com<\/td>     <td headers="phone">+45342323<\/td>     <td headers="addr">Rosevn 56,4300 Sandnes,Norway<\/td>   <\/tr>  <\/table>
 * 
 @see https://www.w3schools.com/TAGS/att_td_headers.asp
 */
@@ -71,22 +42,7 @@ Example: `<table>
 * | :------: | :-----: | :-------: | :----: |
 * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
 * 
-Example: `<table>
-        <tr>
-    <th>Month</th>
-    <th>Savings</th>
-    <th>Savings for holiday!</th>
-  </tr>
-  <tr>
-    <td>January</td>
-    <td>$100</td>
-    <td rowspan="2">$50</td>
-  </tr>
-  <tr>
-    <td>February</td>
-    <td>$80</td>
-  </tr>
- </table>`
+Example: <table>         <tr>     <th>Month<\/th>     <th>Savings<\/th>     <th>Savings for holiday!<\/th>   <\/tr>   <tr>     <td>January<\/td>     <td>$100<\/td>     <td rowspan="2">$50<\/td>   <\/tr>   <tr>     <td>February<\/td>     <td>$80<\/td>   <\/tr>  <\/table>
 * 
 @see https://www.w3schools.com/TAGS/att_td_rowspan.asp
 */
@@ -107,7 +63,7 @@ Example: `<table>
 * 
 @see https://www.w3schools.com/TAGS/tag_td.asp
 */
-export class Td extends GlobalDom<HTMLElement> {
+export class Td extends GlobalDom<HTMLTableCellElement> {
   constructor(props: TdProps = {}) {
     super({ node: document.createElement("td"), ...props });
   }

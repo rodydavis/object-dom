@@ -1,7 +1,7 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
 
-export interface HrProps extends NodeProps<HTMLElement> {
+export interface HrProps extends NodeProps<HTMLHRElement> {
   attributes?: {
     [key: string]: PossibleAttr;
   };
@@ -18,7 +18,7 @@ export interface HrProps extends NodeProps<HTMLElement> {
 * 
 @see https://www.w3schools.com/TAGS/tag_hr.asp
 */
-export class Hr extends GlobalDom<HTMLElement> {
+export class Hr extends GlobalDom<HTMLHRElement> {
   constructor(props: HrProps = {}) {
     super({ node: document.createElement("hr"), ...props });
   }

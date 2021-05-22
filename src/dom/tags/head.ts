@@ -1,7 +1,7 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
 
-export interface HeadProps extends NodeProps<HTMLElement> {
+export interface HeadProps extends NodeProps<HTMLHeadElement> {
   attributes?: {
     [key: string]: PossibleAttr;
   };
@@ -18,7 +18,7 @@ export interface HeadProps extends NodeProps<HTMLElement> {
 * 
 @see https://www.w3schools.com/TAGS/tag_head.asp
 */
-export class Head extends GlobalDom<HTMLElement> {
+export class Head extends GlobalDom<HTMLHeadElement> {
   constructor(props: HeadProps = {}) {
     super({ node: document.createElement("head"), ...props });
   }

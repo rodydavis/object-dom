@@ -1,7 +1,7 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
 
-export interface LabelProps extends NodeProps<HTMLElement> {
+export interface LabelProps extends NodeProps<HTMLLabelElement> {
   attributes?: {
     /**
 * `<label for>`
@@ -12,9 +12,7 @@ export interface LabelProps extends NodeProps<HTMLElement> {
 * | :------: | :-----: | :-------: | :----: |
 * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
 * 
-Example: `<form action="/action_page.php">
-   <label for="male">Male</label>  <input type="radio" name="gender" id="male" value="male"><br>  <label for="female">Female</label>  <input type="radio" name="gender" id="female" value="female"><br>  <label for="other">Other</label>  <input type="radio" name="gender" id="other" value="other"><br><br>  <input type="submit" value="Submit">
- </form>`
+Example: <form action="\/action_page.php">    <label for="male">Male<\/label>  <input type="radio" name="gender" id="male" value="male"><br>  <label for="female">Female<\/label>  <input type="radio" name="gender" id="female" value="female"><br>  <label for="other">Other<\/label>  <input type="radio" name="gender" id="other" value="other"><br><br>  <input type="submit" value="Submit">  <\/form>
 * 
 @see https://www.w3schools.com/TAGS/att_label_for.asp
 */
@@ -29,10 +27,7 @@ Example: `<form action="/action_page.php">
 * | :------: | :-----: | :-------: | :----: |
 * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
 * 
-Example: `<form action="/action_page.php" id="form1">
-  <input type="radio" name="gender" id="male" value="male"><br>  <label for="female">Female</label>  <input type="radio" name="gender" id="female" value="female"><br>  <label for="other">Other</label>  <input type="radio" name="gender" id="other" value="other"><br><br>  <input type="submit" value="Submit">
- </form>
- <label for="male" form="form1">Male</label>`
+Example: <form action="\/action_page.php" id="form1">   <input type="radio" name="gender" id="male" value="male"><br>  <label for="female">Female<\/label>  <input type="radio" name="gender" id="female" value="female"><br>  <label for="other">Other<\/label>  <input type="radio" name="gender" id="other" value="other"><br><br>  <input type="submit" value="Submit">  <\/form>  <label for="male" form="form1">Male<\/label>
 * 
 @see https://www.w3schools.com/TAGS/att_label_form.asp
 */
@@ -53,7 +48,7 @@ Example: `<form action="/action_page.php" id="form1">
 * 
 @see https://www.w3schools.com/TAGS/tag_label.asp
 */
-export class Label extends GlobalDom<HTMLElement> {
+export class Label extends GlobalDom<HTMLLabelElement> {
   constructor(props: LabelProps = {}) {
     super({ node: document.createElement("label"), ...props });
   }

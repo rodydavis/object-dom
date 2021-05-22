@@ -1,7 +1,7 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
 
-export interface DetailsProps extends NodeProps<HTMLElement> {
+export interface DetailsProps extends NodeProps<HTMLDetailsElement> {
   attributes?: {
     /**
 * `<details open>`
@@ -12,10 +12,7 @@ export interface DetailsProps extends NodeProps<HTMLElement> {
 * | :------: | :-----: | :-------: | :----: |
 * |  **12.0**  | **49.0**  |   **6.0**   | **79.0** |
 * 
-Example: `<details open>  <summary>Epcot Center</summary>  <p>Epcot is a 
-    theme park at Walt Disney World Resort featuring exciting attractions, 
-    international pavilions, award-winning fireworks and seasonal special 
-    events.</p></details>`
+Example: <details open>  <summary>Epcot Center<\/summary>  <p>Epcot is a      theme park at Walt Disney World Resort featuring exciting attractions,      international pavilions, award-winning fireworks and seasonal special      events.<\/p><\/details>
 * 
 @see https://www.w3schools.com/TAGS/att_details_open.asp
 */
@@ -36,7 +33,7 @@ Example: `<details open>  <summary>Epcot Center</summary>  <p>Epcot is a
 * 
 @see https://www.w3schools.com/TAGS/tag_details.asp
 */
-export class Details extends GlobalDom<HTMLElement> {
+export class Details extends GlobalDom<HTMLDetailsElement> {
   constructor(props: DetailsProps = {}) {
     super({ node: document.createElement("details"), ...props });
   }

@@ -1,7 +1,7 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
 
-export interface ObjProps extends NodeProps<HTMLElement> {
+export interface ObjProps extends NodeProps<HTMLObjectElement> {
   attributes?: {
     /**
 * `<object data>`
@@ -12,7 +12,7 @@ export interface ObjProps extends NodeProps<HTMLElement> {
 * | :------: | :-----: | :-------: | :----: |
 * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
 * 
-Example: `<object data="pic_trulli.jpg" width="300" height="200"</object>`
+Example: <object data="pic_trulli.jpg" width="300" height="200"<\/object>
 * 
 @see https://www.w3schools.com/TAGS/att_object_data.asp
 */
@@ -27,14 +27,7 @@ Example: `<object data="pic_trulli.jpg" width="300" height="200"</object>`
 * | :------: | :-----: | :-------: | :----: |
 * |  **Not supported**  | **Not supported**  |   **Not supported**   | **Not supported** |
 * 
-Example: `<form action="/action_page.php" id="form1">
-  
- First name: <input type="text" name="fname"><br>
-  
- <input type="submit" value="Submit">
- </form>
- 
-    <object data="pic_trulli.jpg" width="300" height="200"></object>`
+Example: <form action="\/action_page.php" id="form1">     First name: <input type="text" name="fname"><br>     <input type="submit" value="Submit">  <\/form>       <object data="pic_trulli.jpg" width="300" height="200"><\/object>
 * 
 @see https://www.w3schools.com/TAGS/att_object_form.asp
 */
@@ -49,7 +42,7 @@ Example: `<form action="/action_page.php" id="form1">
 * | :------: | :-----: | :-------: | :----: |
 * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
 * 
-Example: `<object data="pic_trulli.jpg" height="300" width="200"></object>`
+Example: <object data="pic_trulli.jpg" height="300" width="200"><\/object>
 * 
 @see https://www.w3schools.com/TAGS/att_object_height.asp
 */
@@ -64,8 +57,7 @@ Example: `<object data="pic_trulli.jpg" height="300" width="200"></object>`
 * | :------: | :-----: | :-------: | :----: |
 * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
 * 
-Example: `<object data="pic_trulli.jpg" width="300" height="200"
-name="obj1"></object>`
+Example: <object data="pic_trulli.jpg" width="300" height="200" name="obj1"><\/object>
 * 
 @see https://www.w3schools.com/TAGS/att_object_name.asp
 */
@@ -80,7 +72,7 @@ name="obj1"></object>`
 * | :------: | :-----: | :-------: | :----: |
 * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
 * 
-Example: `<object data="pic_trulli.jpg" type="image/jpg" width="400" height="400"></object>`
+Example: <object data="pic_trulli.jpg" type="image\/jpg" width="400" height="400"><\/object>
 * 
 @see https://www.w3schools.com/TAGS/att_object_type.asp
 */
@@ -109,7 +101,7 @@ Example: `<object data="pic_trulli.jpg" type="image/jpg" width="400" height="400
 * | :------: | :-----: | :-------: | :----: |
 * |  **Not supported**  | **Yes**  |   **Not supported**   | **Not supported** |
 * 
-Example: `<object data="planets.gif" width="145" height="126" usemap="#planetmap"></object>`
+Example: <object data="planets.gif" width="145" height="126" usemap="#planetmap"><\/object>
 * 
 @see https://www.w3schools.com/TAGS/att_object_usemap.asp
 */
@@ -124,7 +116,7 @@ Example: `<object data="planets.gif" width="145" height="126" usemap="#planetmap
 * | :------: | :-----: | :-------: | :----: |
 * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
 * 
-Example: `<object data="pic_trulli.jpg" width="200" height="300"></object>`
+Example: <object data="pic_trulli.jpg" width="200" height="300"><\/object>
 * 
 @see https://www.w3schools.com/TAGS/att_object_width.asp
 */
@@ -145,7 +137,7 @@ Example: `<object data="pic_trulli.jpg" width="200" height="300"></object>`
 * 
 @see https://www.w3schools.com/TAGS/tag_object.asp
 */
-export class Obj extends GlobalDom<HTMLElement> {
+export class Obj extends GlobalDom<HTMLObjectElement> {
   constructor(props: ObjProps = {}) {
     super({ node: document.createElement("object"), ...props });
   }

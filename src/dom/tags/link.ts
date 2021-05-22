@@ -1,7 +1,7 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
 
-export interface LinkProps extends NodeProps<HTMLElement> {
+export interface LinkProps extends NodeProps<HTMLLinkElement> {
   attributes?: {
     /**
 * `<link crossorigin>`
@@ -25,7 +25,7 @@ export interface LinkProps extends NodeProps<HTMLElement> {
 * | :------: | :-----: | :-------: | :----: |
 * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
 * 
-Example: `<link rel="stylesheet" href="styles.css">`
+Example: <link rel="stylesheet" href="styles.css">
 * 
 @see https://www.w3schools.com/TAGS/att_link_href.asp
 */
@@ -40,7 +40,7 @@ Example: `<link rel="stylesheet" href="styles.css">`
 * | :------: | :-----: | :-------: | :----: |
 * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
 * 
-Example: `<link href="tag_link.asp" rel="parent" rev="subsection" hreflang="en">`
+Example: <link href="tag_link.asp" rel="parent" rev="subsection" hreflang="en">
 * 
 @see https://www.w3schools.com/TAGS/att_link_hreflang.asp
 */
@@ -55,12 +55,7 @@ Example: `<link href="tag_link.asp" rel="parent" rev="subsection" hreflang="en">
 * | :------: | :-----: | :-------: | :----: |
 * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
 * 
-Example: `<head>
-       
-      <link rel="stylesheet" type="text/css" href="theme.css">
-  
- <link rel="stylesheet" type="text/css" href="print.css" media="print">
-    </head>`
+Example: <head>               <link rel="stylesheet" type="text\/css" href="theme.css">     <link rel="stylesheet" type="text\/css" href="print.css" media="print">     <\/head>
 * 
 @see https://www.w3schools.com/TAGS/att_link_media.asp
 */
@@ -91,7 +86,7 @@ Example: `<head>
 * | :------: | :-----: | :-------: | :----: |
 * |  **51.0**  | **50.0**  |   **11.1**   | **79.0** |
 * 
-Example: `<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" referrerpolicy="no-referrer">`
+Example: <link rel="stylesheet" href="https:\/\/www.w3schools.com\/w3css\/4\/w3.css" referrerpolicy="no-referrer">
 * 
 @see https://www.w3schools.com/TAGS/att_link_referrerpolicy.asp
 */
@@ -138,7 +133,7 @@ Example: `<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"
 * | :------: | :-----: | :-------: | :----: |
 * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
 * 
-Example: `<link rel="stylesheet" href="styles.css">`
+Example: <link rel="stylesheet" href="styles.css">
 * 
 @see https://www.w3schools.com/TAGS/att_link_rel.asp
 */
@@ -246,7 +241,7 @@ Example: `<link rel="stylesheet" href="styles.css">`
 * | :------: | :-----: | :-------: | :----: |
 * |  **Not supported**  | **Not supported**  |   **Not supported**   | **Not supported** |
 * 
-Example: `<link rel="icon" href="demo_icon.gif" type="image/gif" sizes="16x16">`
+Example: <link rel="icon" href="demo_icon.gif" type="image\/gif" sizes="16x16">
 * 
 @see https://www.w3schools.com/TAGS/att_link_sizes.asp
 */
@@ -290,10 +285,7 @@ Example: `<link rel="icon" href="demo_icon.gif" type="image/gif" sizes="16x16">`
 * | :------: | :-----: | :-------: | :----: |
 * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
 * 
-Example: `<head>
-       
-      <link rel="stylesheet" type="text/css" href="styles.css">
-    </head>`
+Example: <head>               <link rel="stylesheet" type="text\/css" href="styles.css">     <\/head>
 * 
 @see https://www.w3schools.com/TAGS/att_link_type.asp
 */
@@ -314,7 +306,7 @@ Example: `<head>
 * 
 @see https://www.w3schools.com/TAGS/tag_link.asp
 */
-export class Link extends GlobalDom<HTMLElement> {
+export class Link extends GlobalDom<HTMLLinkElement> {
   constructor(props: LinkProps = {}) {
     super({ node: document.createElement("link"), ...props });
   }

@@ -1,3 +1,7 @@
+## 0.4.5
+
+- Adding examples for css styles
+
 ## 0.4.3
 
 - Generating tests and parser

@@ -1,7 +1,7 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
 
-export interface PreProps extends NodeProps<HTMLElement> {
+export interface PreProps extends NodeProps<HTMLPreElement> {
   attributes?: {
     [key: string]: PossibleAttr;
   };
@@ -18,7 +18,7 @@ export interface PreProps extends NodeProps<HTMLElement> {
 * 
 @see https://www.w3schools.com/TAGS/tag_pre.asp
 */
-export class Pre extends GlobalDom<HTMLElement> {
+export class Pre extends GlobalDom<HTMLPreElement> {
   constructor(props: PreProps = {}) {
     super({ node: document.createElement("pre"), ...props });
   }

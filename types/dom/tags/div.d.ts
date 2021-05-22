@@ -1,6 +1,6 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
-export interface DivProps extends NodeProps<HTMLElement> {
+export interface DivProps extends NodeProps<HTMLDivElement> {
     attributes?: {
         [key: string]: PossibleAttr;
     };
@@ -16,6 +16,6 @@ export interface DivProps extends NodeProps<HTMLElement> {
 *
 @see https://www.w3schools.com/TAGS/tag_div.asp
 */
-export declare class Div extends GlobalDom<HTMLElement> {
+export declare class Div extends GlobalDom<HTMLDivElement> {
     constructor(props?: DivProps);
 }

@@ -1,7 +1,7 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
 
-export interface SourceProps extends NodeProps<HTMLElement> {
+export interface SourceProps extends NodeProps<HTMLSourceElement> {
   attributes?: {
     /**
 * `<source media>`
@@ -12,9 +12,7 @@ export interface SourceProps extends NodeProps<HTMLElement> {
 * | :------: | :-----: | :-------: | :----: |
 * |  **38.0**  | **15.0**  |   **9.1**   | **9.0** |
 * 
-Example: `<picture>  <source media="(min-width:650px)" srcset="img_pink_flowers.jpg">  
-  <source media="(min-width:465px)" srcset="img_white_flower.jpg">  <img 
-  src="img_orange_flowers.jpg" alt="Flowers" style="width:auto;"></picture>`
+Example: <picture>  <source media="(min-width:650px)" srcset="img_pink_flowers.jpg">     <source media="(min-width:465px)" srcset="img_white_flower.jpg">  <img    src="img_orange_flowers.jpg" alt="Flowers" style="width:auto;"><\/picture>
 * 
 @see https://www.w3schools.com/TAGS/att_source_media.asp
 */
@@ -58,11 +56,7 @@ Example: `<picture>  <source media="(min-width:650px)" srcset="img_pink_flowers
 * | :------: | :-----: | :-------: | :----: |
 * |  **4.0**  | **3.5**  |   **4.0**   | **9.0** |
 * 
-Example: `<audio controls>
-   <source src="horse.ogg" type="audio/ogg">
-   <source src="horse.mp3" type="audio/mpeg">
- Your browser does not support the audio element.
- </audio>`
+Example: <audio controls>    <source src="horse.ogg" type="audio\/ogg">    <source src="horse.mp3" type="audio\/mpeg">  Your browser does not support the audio element.  <\/audio>
 * 
 @see https://www.w3schools.com/TAGS/att_source_src.asp
 */
@@ -78,9 +72,7 @@ Example: `<audio controls>
 * | :------: | :-----: | :-------: | :----: |
 * |  **38.0**  | **38.0**  |   **9.1**   | **13.0** |
 * 
-Example: `<picture>  <source media="(min-width:650px)" srcset="img_pink_flowers.jpg">  
-  <source media="(min-width:465px)" srcset="img_white_flower.jpg">  <img 
-  src="img_orange_flowers.jpg" alt="Flowers" style="width:auto;"></picture>`
+Example: <picture>  <source media="(min-width:650px)" srcset="img_pink_flowers.jpg">     <source media="(min-width:465px)" srcset="img_white_flower.jpg">  <img    src="img_orange_flowers.jpg" alt="Flowers" style="width:auto;"><\/picture>
 * 
 @see https://www.w3schools.com/TAGS/att_source_srcset.asp
 */
@@ -95,11 +87,7 @@ Example: `<picture>  <source media="(min-width:650px)" srcset="img_pink_flowers
 * | :------: | :-----: | :-------: | :----: |
 * |  **4.0**  | **3.5**  |   **4.0**   | **9.0** |
 * 
-Example: `<audio controls>
-   <source src="horse.ogg" type="audio/ogg">
-   <source src="horse.mp3" type="audio/mpeg">
- Your browser does not support the audio element.
- </audio>`
+Example: <audio controls>    <source src="horse.ogg" type="audio\/ogg">    <source src="horse.mp3" type="audio\/mpeg">  Your browser does not support the audio element.  <\/audio>
 * 
 @see https://www.w3schools.com/TAGS/att_source_type.asp
 */
@@ -120,7 +108,7 @@ Example: `<audio controls>
 * 
 @see https://www.w3schools.com/TAGS/tag_source.asp
 */
-export class Source extends GlobalDom<HTMLElement> {
+export class Source extends GlobalDom<HTMLSourceElement> {
   constructor(props: SourceProps = {}) {
     super({ node: document.createElement("source"), ...props });
   }

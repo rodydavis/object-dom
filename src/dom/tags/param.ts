@@ -1,7 +1,7 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
 
-export interface ParamProps extends NodeProps<HTMLElement> {
+export interface ParamProps extends NodeProps<HTMLParamElement> {
   attributes?: {
     /**
 * `<param name>`
@@ -12,9 +12,7 @@ export interface ParamProps extends NodeProps<HTMLElement> {
 * | :------: | :-----: | :-------: | :----: |
 * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
 * 
-Example: `<object data="horse.wav">
-  <param name="autoplay" value="true">
- </object>`
+Example: <object data="horse.wav">   <param name="autoplay" value="true">  <\/object>
 * 
 @see https://www.w3schools.com/TAGS/att_param_name.asp
 */
@@ -29,9 +27,7 @@ Example: `<object data="horse.wav">
 * | :------: | :-----: | :-------: | :----: |
 * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
 * 
-Example: `<object data="horse.wav">
-  <param name="autoplay" value="true">
- </object>`
+Example: <object data="horse.wav">   <param name="autoplay" value="true">  <\/object>
 * 
 @see https://www.w3schools.com/TAGS/att_param_value.asp
 */
@@ -52,7 +48,7 @@ Example: `<object data="horse.wav">
 * 
 @see https://www.w3schools.com/TAGS/tag_param.asp
 */
-export class Param extends GlobalDom<HTMLElement> {
+export class Param extends GlobalDom<HTMLParamElement> {
   constructor(props: ParamProps = {}) {
     super({ node: document.createElement("param"), ...props });
   }

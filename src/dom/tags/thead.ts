@@ -1,7 +1,7 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
 
-export interface TheadProps extends NodeProps<HTMLElement> {
+export interface TheadProps extends NodeProps<HTMLTableSectionElement> {
   attributes?: {
     [key: string]: PossibleAttr;
   };
@@ -18,7 +18,7 @@ export interface TheadProps extends NodeProps<HTMLElement> {
 * 
 @see https://www.w3schools.com/TAGS/tag_thead.asp
 */
-export class Thead extends GlobalDom<HTMLElement> {
+export class Thead extends GlobalDom<HTMLTableSectionElement> {
   constructor(props: TheadProps = {}) {
     super({ node: document.createElement("thead"), ...props });
   }

@@ -1,7 +1,7 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
 
-export interface OptionProps extends NodeProps<HTMLElement> {
+export interface OptionProps extends NodeProps<HTMLOptionElement> {
   attributes?: {
     /**
 * `<option disabled>`
@@ -12,16 +12,7 @@ export interface OptionProps extends NodeProps<HTMLElement> {
 * | :------: | :-----: | :-------: | :----: |
 * |  **Yes**  | **Yes**  |   **Yes**   | **8.0** |
 * 
-Example: `<label for="cars">Choose a car:</label><select id="cars">
-  
- <option value="volvo" disabled>Volvo</option>
-  
- <option value="saab">Saab</option>
-  
- <option value="vw">VW</option>
-  
- <option value="audi">Audi</option>
- </select>`
+Example: <label for="cars">Choose a car:<\/label><select id="cars">     <option value="volvo" disabled>Volvo<\/option>     <option value="saab">Saab<\/option>     <option value="vw">VW<\/option>     <option value="audi">Audi<\/option>  <\/select>
 * 
 @see https://www.w3schools.com/TAGS/att_option_disabled.asp
 */
@@ -36,16 +27,7 @@ Example: `<label for="cars">Choose a car:</label><select id="cars">
 * | :------: | :-----: | :-------: | :----: |
 * |  **Yes**  | **Not supported**  |   **Yes**   | **8.0** |
 * 
-Example: `<label for="cars">Choose a car:</label><select id="cars">
-  
- <option label="Volvo">Volvo (Latin for "I roll")</option>
-  
- <option label="Saab">Saab (Swedish Aeroplane AB)</option>
-  
- <option label="Mercedes">Mercedes (Mercedes-Benz)</option>
-  
- <option label="Audi">Audi (Auto Union Deutschland Ingolstadt)</option>
- </select>`
+Example: <label for="cars">Choose a car:<\/label><select id="cars">     <option label="Volvo">Volvo (Latin for "I roll")<\/option>     <option label="Saab">Saab (Swedish Aeroplane AB)<\/option>     <option label="Mercedes">Mercedes (Mercedes-Benz)<\/option>     <option label="Audi">Audi (Auto Union Deutschland Ingolstadt)<\/option>  <\/select>
 * 
 @see https://www.w3schools.com/TAGS/att_option_label.asp
 */
@@ -60,16 +42,7 @@ Example: `<label for="cars">Choose a car:</label><select id="cars">
 * | :------: | :-----: | :-------: | :----: |
 * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
 * 
-Example: `<label for="cars">Choose a car:</label><select id="cars">
-  
- <option value="volvo">Volvo</option>
-  
- <option value="saab">Saab</option>
-  
- <option value="vw">VW</option>
-  
- <option value="audi" selected>Audi</option>
- </select>`
+Example: <label for="cars">Choose a car:<\/label><select id="cars">     <option value="volvo">Volvo<\/option>     <option value="saab">Saab<\/option>     <option value="vw">VW<\/option>     <option value="audi" selected>Audi<\/option>  <\/select>
 * 
 @see https://www.w3schools.com/TAGS/att_option_selected.asp
 */
@@ -84,21 +57,7 @@ Example: `<label for="cars">Choose a car:</label><select id="cars">
 * | :------: | :-----: | :-------: | :----: |
 * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
 * 
-Example: `<form action="/action_page.php">
-   <label for="cars">Choose a car:</label>  <select id="cars" name="cars">
-    
- <option value="volvo">Volvo XC90</option>
-    
- <option value="saab">Saab 95</option>
-    
- <option value="mercedes">Mercedes SLK</option>
-    
- <option value="audi">Audi TT</option>
-  
- </select>
-  
- <input type="submit" value="Submit">
- </form>`
+Example: <form action="\/action_page.php">    <label for="cars">Choose a car:<\/label>  <select id="cars" name="cars">       <option value="volvo">Volvo XC90<\/option>       <option value="saab">Saab 95<\/option>       <option value="mercedes">Mercedes SLK<\/option>       <option value="audi">Audi TT<\/option>     <\/select>     <input type="submit" value="Submit">  <\/form>
 * 
 @see https://www.w3schools.com/TAGS/att_option_value.asp
 */
@@ -119,7 +78,7 @@ Example: `<form action="/action_page.php">
 * 
 @see https://www.w3schools.com/TAGS/tag_option.asp
 */
-export class Option extends GlobalDom<HTMLElement> {
+export class Option extends GlobalDom<HTMLOptionElement> {
   constructor(props: OptionProps = {}) {
     super({ node: document.createElement("option"), ...props });
   }

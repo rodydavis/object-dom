@@ -1,7 +1,7 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
 
-export interface UlProps extends NodeProps<HTMLElement> {
+export interface UlProps extends NodeProps<HTMLUListElement> {
   attributes?: {
     [key: string]: PossibleAttr;
   };
@@ -18,7 +18,7 @@ export interface UlProps extends NodeProps<HTMLElement> {
 * 
 @see https://www.w3schools.com/TAGS/tag_ul.asp
 */
-export class Ul extends GlobalDom<HTMLElement> {
+export class Ul extends GlobalDom<HTMLUListElement> {
   constructor(props: UlProps = {}) {
     super({ node: document.createElement("ul"), ...props });
   }

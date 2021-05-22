@@ -1,7 +1,7 @@
 import { ObjectDom } from "../object-dom";
 import { convertToPathCase } from "./utils";
 
-export type PossibleStyle = string | NodeStyle<string> | undefined;
+export type PossibleStyle = NodeStyle<string> | "unset" | string | undefined;
 
 export function convertClassList(value: string | string[] | undefined): string | undefined {
   if (value) {

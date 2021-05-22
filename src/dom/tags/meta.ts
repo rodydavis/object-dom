@@ -1,7 +1,7 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
 
-export interface MetaProps extends NodeProps<HTMLElement> {
+export interface MetaProps extends NodeProps<HTMLMetaElement> {
   attributes?: {
     /**
 * `<meta charset>`
@@ -12,10 +12,7 @@ export interface MetaProps extends NodeProps<HTMLElement> {
 * | :------: | :-----: | :-------: | :----: |
 * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
 * 
-Example: `<head>
-   
-  <meta charset="UTF-8">
-  </head>`
+Example: <head>       <meta charset="UTF-8">   <\/head>
 * 
 @see https://www.w3schools.com/TAGS/att_meta_charset.asp
 */
@@ -30,12 +27,7 @@ Example: `<head>
 * | :------: | :-----: | :-------: | :----: |
 * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
 * 
-Example: `<head>
-  
- <meta name="description" content="Free Web tutorials">
-  
- <meta name="keywords" content="HTML,CSS,XML,JavaScript">
- </head>`
+Example: <head>     <meta name="description" content="Free Web tutorials">     <meta name="keywords" content="HTML,CSS,XML,JavaScript">  <\/head>
 * 
 @see https://www.w3schools.com/TAGS/att_meta_content.asp
 */
@@ -63,14 +55,7 @@ Example: `<head>
 * | :------: | :-----: | :-------: | :----: |
 * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
 * 
-Example: `<head>
-  
- <meta name="description" content="Free Web tutorials">
-  
- <meta name="keywords" content="HTML,CSS,JavaScript">
-   <meta name="author" content="John Doe">  <meta 
-    name="viewport" content="width=device-width, initial-scale=1.0">
- </head>`
+Example: <head>     <meta name="description" content="Free Web tutorials">     <meta name="keywords" content="HTML,CSS,JavaScript">    <meta name="author" content="John Doe">  <meta      name="viewport" content="width=device-width, initial-scale=1.0">  <\/head>
 * 
 @see https://www.w3schools.com/TAGS/att_meta_name.asp
 */
@@ -164,7 +149,7 @@ You can read more about the viewport in our Responsive Web Design - The Viewport
 * 
 @see https://www.w3schools.com/TAGS/tag_meta.asp
 */
-export class Meta extends GlobalDom<HTMLElement> {
+export class Meta extends GlobalDom<HTMLMetaElement> {
   constructor(props: MetaProps = {}) {
     super({ node: document.createElement("meta"), ...props });
   }

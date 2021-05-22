@@ -1,6 +1,6 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
-export interface LiProps extends NodeProps<HTMLElement> {
+export interface LiProps extends NodeProps<HTMLLIElement> {
     attributes?: {
         /**
     * `<li value>`
@@ -12,20 +12,7 @@ export interface LiProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<ol>
-           
-          <li value="100">Coffee</li>
-           
-          <li>Tea</li>
-           
-          <li>Milk</li>
-           
-          <li>Water</li>
-           
-          <li>Juice</li>
-           
-          <li>Beer</li>
-          </ol>`
+    Example: <ol>               <li value="100">Coffee<\/li>               <li>Tea<\/li>               <li>Milk<\/li>               <li>Water<\/li>               <li>Juice<\/li>               <li>Beer<\/li>       <\/ol>
     *
     @see https://www.w3schools.com/TAGS/att_li_value.asp
     */
@@ -44,6 +31,6 @@ export interface LiProps extends NodeProps<HTMLElement> {
 *
 @see https://www.w3schools.com/TAGS/tag_li.asp
 */
-export declare class Li extends GlobalDom<HTMLElement> {
+export declare class Li extends GlobalDom<HTMLLIElement> {
     constructor(props?: LiProps);
 }

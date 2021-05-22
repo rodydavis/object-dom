@@ -1,7 +1,7 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
 
-export interface QProps extends NodeProps<HTMLElement> {
+export interface QProps extends NodeProps<HTMLQuoteElement> {
   attributes?: {
     /**
 * `<q cite>`
@@ -12,10 +12,7 @@ export interface QProps extends NodeProps<HTMLElement> {
 * | :------: | :-----: | :-------: | :----: |
 * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
 * 
-Example: `<p>WWF's goal is to:
- <q cite="http://www.wwf.org">
- Build a future where people live in harmony with nature.</q>
- We hope they succeed.</p>`
+Example: <p>WWF's goal is to:  <q cite="http:\/\/www.wwf.org">  Build a future where people live in harmony with nature.<\/q>  We hope they succeed.<\/p>
 * 
 @see https://www.w3schools.com/TAGS/att_q_cite.asp
 */
@@ -36,7 +33,7 @@ Example: `<p>WWF's goal is to:
 * 
 @see https://www.w3schools.com/TAGS/tag_q.asp
 */
-export class Q extends GlobalDom<HTMLElement> {
+export class Q extends GlobalDom<HTMLQuoteElement> {
   constructor(props: QProps = {}) {
     super({ node: document.createElement("q"), ...props });
   }

@@ -1,6 +1,6 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
-export interface ProgressProps extends NodeProps<HTMLElement> {
+export interface ProgressProps extends NodeProps<HTMLProgressElement> {
     attributes?: {
         /**
     * `<progress max>`
@@ -11,8 +11,7 @@ export interface ProgressProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **8.0**  | **16.0**  |   **6.0**   | **10.0** |
     *
-    Example: `<label for="file">Downloading progress:</label><progress id="file"
-        value="32" max="100"> 32% </progress>`
+    Example: <label for="file">Downloading progress:<\/label><progress id="file"      value="32" max="100"> 32% <\/progress>
     *
     @see https://www.w3schools.com/TAGS/att_progress_max.asp
     */
@@ -26,8 +25,7 @@ export interface ProgressProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **8.0**  | **16.0**  |   **6.0**   | **10.0** |
     *
-    Example: `<label for="file">Downloading progress:</label><progress id="file"
-        value="32" max="100"> 32% </progress>`
+    Example: <label for="file">Downloading progress:<\/label><progress id="file"      value="32" max="100"> 32% <\/progress>
     *
     @see https://www.w3schools.com/TAGS/att_progress_value.asp
     */
@@ -46,6 +44,6 @@ export interface ProgressProps extends NodeProps<HTMLElement> {
 *
 @see https://www.w3schools.com/TAGS/tag_progress.asp
 */
-export declare class Progress extends GlobalDom<HTMLElement> {
+export declare class Progress extends GlobalDom<HTMLProgressElement> {
     constructor(props?: ProgressProps);
 }

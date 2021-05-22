@@ -19,14 +19,15 @@ export interface ObjectDomProps<T extends HTMLElement = HTMLElement> extends Nod
     node: T;
 }
 export declare abstract class ObjectDom<T extends HTMLElement = HTMLElement> {
-    abstract render: () => GlobalDom<T>;
+    abstract render(): GlobalDom<T>;
     update: () => void;
+    onCreate: (node: HTMLElement) => void;
 }
 interface NodeEvent {
     callback: EventListenerOrEventListenerObject;
     options: boolean | AddEventListenerOptions | undefined;
 }
-export declare class GlobalDom<T extends HTMLElement = HTMLElement> extends ObjectDom<T> {
+export declare class GlobalDom<T extends HTMLElement> extends ObjectDom<T> {
     attributes: {
         [key: string]: NodeAttr<string | boolean | number>;
     };
@@ -43,8 +44,8 @@ export declare class GlobalDom<T extends HTMLElement = HTMLElement> extends Obje
     setAttr(key: string, value: AttrType): void;
     addStyle(key: string, value: PossibleStyle): void;
     setStyle(key: string, value: string): void;
-    render: () => this;
-    get node(): T;
+    render(): this;
+    get node(): HTMLElement;
     get children(): NodeArray;
     set children(value: NodeArray);
     addChild(value: ObjectDom<HTMLElement> | string, index?: number | undefined): void;

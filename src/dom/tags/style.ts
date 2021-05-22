@@ -1,7 +1,7 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
 
-export interface StyleProps extends NodeProps<HTMLElement> {
+export interface StyleProps extends NodeProps<HTMLStyleElement> {
   attributes?: {
     /**
 * `<style media>`
@@ -12,12 +12,7 @@ export interface StyleProps extends NodeProps<HTMLElement> {
 * | :------: | :-----: | :-------: | :----: |
 * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
 * 
-Example: `<style media="print">
- h1 {color:#000000;}
- p {color:#000000;}
- body {background-color:#FFFFFF;}
-  
-</style>`
+Example: <style media="print">  h1 \{color:#000000;\}  p \{color:#000000;\}  body \{background-color:#FFFFFF;\}    <\/style>
 * 
 @see https://www.w3schools.com/TAGS/att_style_media.asp
 */
@@ -48,10 +43,7 @@ Example: `<style media="print">
 * | :------: | :-----: | :-------: | :----: |
 * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
 * 
-Example: `<style type="text/css">
- h1 {color:red;}
- p {color:blue;}
- </style>`
+Example: <style type="text\/css">  h1 \{color:red;\}  p \{color:blue;\}  <\/style>
 * 
 @see https://www.w3schools.com/TAGS/att_style_type.asp
 */
@@ -72,7 +64,7 @@ Example: `<style type="text/css">
 * 
 @see https://www.w3schools.com/TAGS/tag_style.asp
 */
-export class Style extends GlobalDom<HTMLElement> {
+export class Style extends GlobalDom<HTMLStyleElement> {
   constructor(props: StyleProps = {}) {
     super({ node: document.createElement("style"), ...props });
   }

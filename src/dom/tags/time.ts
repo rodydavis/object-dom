@@ -1,7 +1,7 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
 
-export interface TimeProps extends NodeProps<HTMLElement> {
+export interface TimeProps extends NodeProps<HTMLTimeElement> {
   attributes?: {
     /**
 * `<time datetime>`
@@ -12,7 +12,7 @@ export interface TimeProps extends NodeProps<HTMLElement> {
 * | :------: | :-----: | :-------: | :----: |
 * |  **62.0**  | **22.0**  |   **7.0**   | **18.0** |
 * 
-Example: `<p>I have a date on <time datetime="2017-02-14">Valentines day</time>.</p>`
+Example: <p>I have a date on <time datetime="2017-02-14">Valentines day<\/time>.<\/p>
 * 
 @see https://www.w3schools.com/TAGS/att_time_datetime.asp
 */
@@ -33,7 +33,7 @@ Example: `<p>I have a date on <time datetime="2017-02-14">Valentines day</time>.
 * 
 @see https://www.w3schools.com/TAGS/tag_time.asp
 */
-export class Time extends GlobalDom<HTMLElement> {
+export class Time extends GlobalDom<HTMLTimeElement> {
   constructor(props: TimeProps = {}) {
     super({ node: document.createElement("time"), ...props });
   }

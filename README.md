@@ -9,6 +9,9 @@ Declarative dom with 1:1 mapping of objects and tags, typed css, reactive update
 - ✅ No Dependencies
 - ✅ ES Modules
 - ✅ Full Browser Support
+- ✅ Fully typing for CSS
+- ✅ Fully typing for DOM Events
+- ✅ Fully typing for Attributes
 - ✅ 100% Typescript
 
 ## Supported Tags
@@ -182,17 +185,14 @@ import { ObjectDom, Div, H1, Button, Row, render } from "object-dom";
 export class MyApp extends ObjectDom {
   render = () => {
     return new Div({
-      children: [
-        new H1({ text: "Counter Example" }), 
-        new Counter()
-      ],
+      children: [new H1({ text: "Counter Example" }), new Counter()],
     });
   };
 }
 
 class Counter extends ObjectDom {
   value = 0;
-  render = () => {
+  render() {
     return new Div({
       style: { margin: "5px" },
       children: [
@@ -223,7 +223,7 @@ class Counter extends ObjectDom {
         }),
       ],
     });
-  };
+  }
 }
 
 render(new MyApp(), document.body.querySelector("#root"));

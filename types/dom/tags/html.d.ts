@@ -1,6 +1,6 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
-export interface HtmlProps extends NodeProps<HTMLElement> {
+export interface HtmlProps extends NodeProps<HTMLHtmlElement> {
     attributes?: {
         /**
     * `<html xmlns>`
@@ -11,15 +11,7 @@ export interface HtmlProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-    <title>Title of the document</title>
-    </head>
-    <body>
-    The content of the document......
-    </body>
-    </html>`
+    Example: <!DOCTYPE html PUBLIC "-\/\/W3C\/\/DTD XHTML 1.0 Transitional\/\/EN" "http:\/\/www.w3.org\/TR\/xhtml1\/DTD\/xhtml1-transitional.dtd"><html xmlns="http:\/\/www.w3.org\/1999\/xhtml"> <head> <title>Title of the document<\/title> <\/head> <body> The content of the document...... <\/body> <\/html>
     *
     @see https://www.w3schools.com/TAGS/att_html_xmlns.asp
     */
@@ -38,6 +30,6 @@ export interface HtmlProps extends NodeProps<HTMLElement> {
 *
 @see https://www.w3schools.com/TAGS/tag_html.asp
 */
-export declare class Html extends GlobalDom<HTMLElement> {
+export declare class Html extends GlobalDom<HTMLHtmlElement> {
     constructor(props?: HtmlProps);
 }

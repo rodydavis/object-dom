@@ -1,6 +1,6 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
-export interface EmbedProps extends NodeProps<HTMLElement> {
+export interface EmbedProps extends NodeProps<HTMLEmbedElement> {
     attributes?: {
         /**
     * `<embed height>`
@@ -11,7 +11,7 @@ export interface EmbedProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<embed src="pic_trulli.jpg" width="200" height="200">`
+    Example: <embed src="pic_trulli.jpg" width="200" height="200">
     *
     @see https://www.w3schools.com/TAGS/att_embed_height.asp
     */
@@ -25,7 +25,7 @@ export interface EmbedProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<embed src="pic_trulli.jpg">`
+    Example: <embed src="pic_trulli.jpg">
     *
     @see https://www.w3schools.com/TAGS/att_embed_src.asp
     */
@@ -39,7 +39,7 @@ export interface EmbedProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<embed type="image/jpg" src="pic_trulli.jpg">`
+    Example: <embed type="image\/jpg" src="pic_trulli.jpg">
     *
     @see https://www.w3schools.com/TAGS/att_embed_type.asp
     */
@@ -53,7 +53,7 @@ export interface EmbedProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<embed src="pic_trulli.jpg" width="200" height="200">`
+    Example: <embed src="pic_trulli.jpg" width="200" height="200">
     *
     @see https://www.w3schools.com/TAGS/att_embed_width.asp
     */
@@ -72,6 +72,6 @@ export interface EmbedProps extends NodeProps<HTMLElement> {
 *
 @see https://www.w3schools.com/TAGS/tag_embed.asp
 */
-export declare class Embed extends GlobalDom<HTMLElement> {
+export declare class Embed extends GlobalDom<HTMLEmbedElement> {
     constructor(props?: EmbedProps);
 }

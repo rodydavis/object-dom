@@ -1,6 +1,6 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
-export interface TemplateProps extends NodeProps<HTMLElement> {
+export interface TemplateProps extends NodeProps<HTMLTemplateElement> {
     attributes?: {
         [key: string]: PossibleAttr;
     };
@@ -16,6 +16,6 @@ export interface TemplateProps extends NodeProps<HTMLElement> {
 *
 @see https://www.w3schools.com/TAGS/tag_template.asp
 */
-export declare class Template extends GlobalDom<HTMLElement> {
+export declare class Template extends GlobalDom<HTMLTemplateElement> {
     constructor(props?: TemplateProps);
 }

@@ -1,7 +1,7 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
 
-export interface ColgroupProps extends NodeProps<HTMLElement> {
+export interface ColgroupProps extends NodeProps<HTMLTableColElement> {
   attributes?: {
     /**
 * `<colgroup span>`
@@ -12,24 +12,7 @@ export interface ColgroupProps extends NodeProps<HTMLElement> {
 * | :------: | :-----: | :-------: | :----: |
 * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
 * 
-Example: `<table>
-  <colgroup span="2" style="background:red"></colgroup>
-  <tr>
-    <th>ISBN</th>
-    <th>Title</th>
-    <th>Price</th>
-  </tr>
-  <tr>
-    <td>3476896</td>
-    <td>My first HTML</td>
-    <td>$53</td>
-  </tr>
-  <tr>
-    <td>5869207</td>
-    <td>My first CSS</td>
-    <td>$49</td>
-  </tr>
- </table>`
+Example: <table>   <colgroup span="2" style="background:red"><\/colgroup>   <tr>     <th>ISBN<\/th>     <th>Title<\/th>     <th>Price<\/th>   <\/tr>   <tr>     <td>3476896<\/td>     <td>My first HTML<\/td>     <td>$53<\/td>   <\/tr>   <tr>     <td>5869207<\/td>     <td>My first CSS<\/td>     <td>$49<\/td>   <\/tr>  <\/table>
 * 
 @see https://www.w3schools.com/TAGS/att_colgroup_span.asp
 */
@@ -50,7 +33,7 @@ Example: `<table>
 * 
 @see https://www.w3schools.com/TAGS/tag_colgroup.asp
 */
-export class Colgroup extends GlobalDom<HTMLElement> {
+export class Colgroup extends GlobalDom<HTMLTableColElement> {
   constructor(props: ColgroupProps = {}) {
     super({ node: document.createElement("colgroup"), ...props });
   }

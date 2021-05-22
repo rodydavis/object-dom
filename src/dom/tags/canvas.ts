@@ -1,7 +1,7 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
 
-export interface CanvasProps extends NodeProps<HTMLElement> {
+export interface CanvasProps extends NodeProps<HTMLCanvasElement> {
   attributes?: {
     /**
 * `<canvas height>`
@@ -12,7 +12,7 @@ export interface CanvasProps extends NodeProps<HTMLElement> {
 * | :------: | :-----: | :-------: | :----: |
 * |  **4.0**  | **2.0**  |   **3.1**   | **9.0** |
 * 
-Example: `<canvas id="myCanvas" width="200" height="200" style="border:1px solid">`
+Example: <canvas id="myCanvas" width="200" height="200" style="border:1px solid">
 * 
 @see https://www.w3schools.com/TAGS/att_canvas_height.asp
 */
@@ -27,7 +27,7 @@ Example: `<canvas id="myCanvas" width="200" height="200" style="border:1px solid
 * | :------: | :-----: | :-------: | :----: |
 * |  **4.0**  | **2.0**  |   **3.1**   | **9.0** |
 * 
-Example: `<canvas id="myCanvas" width="200" height="200" style="border:1px solid">`
+Example: <canvas id="myCanvas" width="200" height="200" style="border:1px solid">
 * 
 @see https://www.w3schools.com/TAGS/att_canvas_width.asp
 */
@@ -48,7 +48,7 @@ Example: `<canvas id="myCanvas" width="200" height="200" style="border:1px solid
 * 
 @see https://www.w3schools.com/TAGS/tag_canvas.asp
 */
-export class Canvas extends GlobalDom<HTMLElement> {
+export class Canvas extends GlobalDom<HTMLCanvasElement> {
   constructor(props: CanvasProps = {}) {
     super({ node: document.createElement("canvas"), ...props });
   }

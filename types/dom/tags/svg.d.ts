@@ -1,6 +1,6 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
-export interface SvgProps extends NodeProps<HTMLElement> {
+export interface SvgProps extends NodeProps<HTMLUnknownElement> {
     attributes?: {
         [key: string]: PossibleAttr;
     };
@@ -16,6 +16,6 @@ export interface SvgProps extends NodeProps<HTMLElement> {
 *
 @see https://www.w3schools.com/TAGS/tag_svg.asp
 */
-export declare class Svg extends GlobalDom<HTMLElement> {
+export declare class Svg extends GlobalDom<HTMLUnknownElement> {
     constructor(props?: SvgProps);
 }

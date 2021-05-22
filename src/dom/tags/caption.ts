@@ -1,7 +1,7 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
 
-export interface CaptionProps extends NodeProps<HTMLElement> {
+export interface CaptionProps extends NodeProps<HTMLTableCaptionElement> {
   attributes?: {
     [key: string]: PossibleAttr;
   };
@@ -18,7 +18,7 @@ export interface CaptionProps extends NodeProps<HTMLElement> {
 * 
 @see https://www.w3schools.com/TAGS/tag_caption.asp
 */
-export class Caption extends GlobalDom<HTMLElement> {
+export class Caption extends GlobalDom<HTMLTableCaptionElement> {
   constructor(props: CaptionProps = {}) {
     super({ node: document.createElement("caption"), ...props });
   }

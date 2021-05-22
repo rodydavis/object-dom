@@ -1,6 +1,6 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
-export interface InsProps extends NodeProps<HTMLElement> {
+export interface InsProps extends NodeProps<HTMLModElement> {
     attributes?: {
         /**
     * `<ins cite>`
@@ -11,8 +11,7 @@ export interface InsProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<p>This is a text.
-     <ins cite="why_inserted.htm">This is an inserted text.</ins></p>`
+    Example: <p>This is a text.  <ins cite="why_inserted.htm">This is an inserted text.<\/ins><\/p>
     *
     @see https://www.w3schools.com/TAGS/att_ins_cite.asp
     */
@@ -26,8 +25,7 @@ export interface InsProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<p>This is a text.
-     <ins datetime="2015-09-15T22:55:03Z">This is an inserted text.</ins></p>`
+    Example: <p>This is a text.  <ins datetime="2015-09-15T22:55:03Z">This is an inserted text.<\/ins><\/p>
     *
     @see https://www.w3schools.com/TAGS/att_ins_datetime.asp
     */
@@ -46,6 +44,6 @@ export interface InsProps extends NodeProps<HTMLElement> {
 *
 @see https://www.w3schools.com/TAGS/tag_ins.asp
 */
-export declare class Ins extends GlobalDom<HTMLElement> {
+export declare class Ins extends GlobalDom<HTMLModElement> {
     constructor(props?: InsProps);
 }

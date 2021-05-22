@@ -1,7 +1,7 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
 
-export interface H3Props extends NodeProps<HTMLElement> {
+export interface H3Props extends NodeProps<HTMLHeadingElement> {
   attributes?: {
     [key: string]: PossibleAttr;
   };
@@ -18,7 +18,7 @@ export interface H3Props extends NodeProps<HTMLElement> {
 * 
 @see https://www.w3schools.com/TAGS/tag_h3.asp
 */
-export class H3 extends GlobalDom<HTMLElement> {
+export class H3 extends GlobalDom<HTMLHeadingElement> {
   constructor(props: H3Props = {}) {
     super({ node: document.createElement("h3"), ...props });
   }

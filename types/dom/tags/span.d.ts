@@ -1,6 +1,6 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
-export interface SpanProps extends NodeProps<HTMLElement> {
+export interface SpanProps extends NodeProps<HTMLSpanElement> {
     attributes?: {
         [key: string]: PossibleAttr;
     };
@@ -16,6 +16,6 @@ export interface SpanProps extends NodeProps<HTMLElement> {
 *
 @see https://www.w3schools.com/TAGS/tag_span.asp
 */
-export declare class Span extends GlobalDom<HTMLElement> {
+export declare class Span extends GlobalDom<HTMLSpanElement> {
     constructor(props?: SpanProps);
 }

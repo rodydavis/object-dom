@@ -1,7 +1,7 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
 
-export interface LegendProps extends NodeProps<HTMLElement> {
+export interface LegendProps extends NodeProps<HTMLLegendElement> {
   attributes?: {
     [key: string]: PossibleAttr;
   };
@@ -18,7 +18,7 @@ export interface LegendProps extends NodeProps<HTMLElement> {
 * 
 @see https://www.w3schools.com/TAGS/tag_legend.asp
 */
-export class Legend extends GlobalDom<HTMLElement> {
+export class Legend extends GlobalDom<HTMLLegendElement> {
   constructor(props: LegendProps = {}) {
     super({ node: document.createElement("legend"), ...props });
   }

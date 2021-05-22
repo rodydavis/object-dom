@@ -1,6 +1,6 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
-export interface InputProps extends NodeProps<HTMLElement> {
+export interface InputProps extends NodeProps<HTMLInputElement> {
     attributes?: {
         /**
     * `<input accept>`
@@ -12,10 +12,7 @@ export interface InputProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **26.0**  | **37.0**  |   **11.1**   | **10.0** |
     *
-    Example: `<form action="/action_page.php">
-       <label for="img">Select image:</label>  <input type="file" id="img"
-        name="img" accept="image/*">  <input type="submit">
-     </form>`
+    Example: <form action="\/action_page.php">    <label for="img">Select image:<\/label>  <input type="file" id="img"      name="img" accept="image\/*">  <input type="submit">  <\/form>
     *
     @see https://www.w3schools.com/TAGS/att_input_accept.asp
     */
@@ -50,12 +47,7 @@ export interface InputProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<form action="/action_page.php">
-       <label for="fname">First name:</label>  <input type="text" id="fname"
-        name="fname">
-      
-     <input type="image" src="submit.gif" alt="Submit" width="48" height="48">
-     </form>`
+    Example: <form action="\/action_page.php">    <label for="fname">First name:<\/label>  <input type="text" id="fname"      name="fname">     <input type="image" src="submit.gif" alt="Submit" width="48" height="48">  <\/form>
     *
     @see https://www.w3schools.com/TAGS/att_input_alt.asp
     */
@@ -69,13 +61,7 @@ export interface InputProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **17.0**  | **2.0**  |   **5.1**   | **6.0** |
     *
-    Example: `<form action="/action_page.php" autocomplete="on">
-       <label for="fname">First name:</label>  <input type="text" id="fname"
-        name="fname"><br><br>  <label for="lname">Last name:</label>
-        <input type="text" id="lname" name="lname"><br><br>  <label
-        for="email">Email:</label>  <input type="email" id="email"
-        name="email" autocomplete="off"><br><br>  <input type="submit">
-     </form>`
+    Example: <form action="\/action_page.php" autocomplete="on">    <label for="fname">First name:<\/label>  <input type="text" id="fname"      name="fname"><br><br>  <label for="lname">Last name:<\/label>       <input type="text" id="lname" name="lname"><br><br>  <label      for="email">Email:<\/label>  <input type="email" id="email"      name="email" autocomplete="off"><br><br>  <input type="submit">  <\/form>
     *
     @see https://www.w3schools.com/TAGS/att_input_autocomplete.asp
     */
@@ -94,11 +80,7 @@ export interface InputProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **5.0**  | **4.0**  |   **5.0**   | **11.0** |
     *
-    Example: `<form action="/action_page.php">
-       <label for="fname">First name:</label>  <input type="text" id="fname"
-        name="fname" autofocus><br><br>  <label for="lname">Last
-        name:</label>  <input type="text" id="lname" name="lname"><br><br>
-        <input type="submit"></form>`
+    Example: <form action="\/action_page.php">    <label for="fname">First name:<\/label>  <input type="text" id="fname"      name="fname" autofocus><br><br>  <label for="lname">Last      name:<\/label>  <input type="text" id="lname" name="lname"><br><br>       <input type="submit"><\/form>
     *
     @see https://www.w3schools.com/TAGS/att_input_autofocus.asp
     */
@@ -112,15 +94,7 @@ export interface InputProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<form
-        action="/action_page.php">
-       <input type="checkbox" name="vehicle1" value="Bike">  <label
-        for="vehicle1"> I have a bike</label><br>  <input type="checkbox"
-        name="vehicle2" value="Car">  <label for="vehicle2"> I have a
-        car</label><br>  <input type="checkbox" name="vehicle3"
-        value="Boat" checked>  <label for="vehicle3"> I have a
-        boat</label><br><br>  <input type="submit" value="Submit">
-        </form>`
+    Example: <form      action="\/action_page.php">    <input type="checkbox" name="vehicle1" value="Bike">  <label      for="vehicle1"> I have a bike<\/label><br>  <input type="checkbox"      name="vehicle2" value="Car">  <label for="vehicle2"> I have a      car<\/label><br>  <input type="checkbox" name="vehicle3"      value="Boat" checked>  <label for="vehicle3"> I have a      boat<\/label><br><br>  <input type="submit" value="Submit">     <\/form>
     *
     @see https://www.w3schools.com/TAGS/att_input_checked.asp
     */
@@ -134,11 +108,7 @@ export interface InputProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Not supported**  |   **Yes**   | **79.0** |
     *
-    Example: `<form action="/action_page.php">
-       <label for="fname">First name:</label>  <input type="text" id="fname"
-        name="fname" dirname="fname.dir">  <input type="submit"
-        value="Submit">
-     </form>`
+    Example: <form action="\/action_page.php">    <label for="fname">First name:<\/label>  <input type="text" id="fname"      name="fname" dirname="fname.dir">  <input type="submit"      value="Submit">  <\/form>
     *
     @see https://www.w3schools.com/TAGS/att_input_dirname.asp
     */
@@ -152,13 +122,7 @@ export interface InputProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<form
-        action="/action_page.php">
-      <label for="fname">First name:</label>  <input type="text" id="fname"
-        name="fname"><br><br>  <label for="lname">Last name:</label>
-        <input type="text" id="lname" name="lname" disabled><br><br>
-        <input type="submit" value="Submit">
-        </form>`
+    Example: <form      action="\/action_page.php">   <label for="fname">First name:<\/label>  <input type="text" id="fname"      name="fname"><br><br>  <label for="lname">Last name:<\/label>       <input type="text" id="lname" name="lname" disabled><br><br>       <input type="submit" value="Submit">     <\/form>
     *
     @see https://www.w3schools.com/TAGS/att_input_disabled.asp
     */
@@ -172,11 +136,7 @@ export interface InputProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **5.1**   | **Yes** |
     *
-    Example: `<form action="/action_page.php" id="form1">
-       <label for="fname">First name:</label>  <input type="text" id="fname"
-        name="fname"><br><br>  <input type="submit" value="Submit"></form>
-        <label for="lname">Last name:</label><input type="text" id="lname"
-        name="lname" form="form1">`
+    Example: <form action="\/action_page.php" id="form1">    <label for="fname">First name:<\/label>  <input type="text" id="fname"      name="fname"><br><br>  <input type="submit" value="Submit"><\/form>     <label for="lname">Last name:<\/label><input type="text" id="lname"      name="lname" form="form1">
     *
     @see https://www.w3schools.com/TAGS/att_input_form.asp
     */
@@ -190,12 +150,7 @@ export interface InputProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **5.1**   | **10.0** |
     *
-    Example: `<form action="/action_page.php">
-       <label for="fname">First name:</label>  <input type="text" id="fname"
-        name="fname"><br><br>  <label for="lname">Last name:</label>
-        <input type="text" id="lname" name="lname"><br><br>  <input
-        type="submit" value="Submit">  <input type="submit" formaction="/action_page2.php"
-        value="Submit to another page"></form>`
+    Example: <form action="\/action_page.php">    <label for="fname">First name:<\/label>  <input type="text" id="fname"      name="fname"><br><br>  <label for="lname">Last name:<\/label>       <input type="text" id="lname" name="lname"><br><br>  <input      type="submit" value="Submit">  <input type="submit" formaction="\/action_page2.php"      value="Submit to another page"><\/form>
     *
     @see https://www.w3schools.com/TAGS/att_input_formaction.asp
     */
@@ -209,12 +164,7 @@ export interface InputProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **5.1**   | **10.0** |
     *
-    Example: `<form action="/action_page_binary.asp" method="post">
-       <label for="fname">First name:</label>  <input type="text" id="fname"
-        name="fname"><br><br>  <input type="submit" value="Submit">
-        <input type="submit" formenctype="multipart/form-data" value="Submit as
-        Multipart/form-data">
-     </form>`
+    Example: <form action="\/action_page_binary.asp" method="post">    <label for="fname">First name:<\/label>  <input type="text" id="fname"      name="fname"><br><br>  <input type="submit" value="Submit">       <input type="submit" formenctype="multipart\/form-data" value="Submit as      Multipart\/form-data">  <\/form>
     *
     @see https://www.w3schools.com/TAGS/att_input_formenctype.asp
     */
@@ -239,13 +189,7 @@ export interface InputProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **5.1**   | **10.0** |
     *
-    Example: `<form action="/action_page.php" method="get">
-       <label for="fname">First name:</label>  <input type="text" id="fname"
-        name="fname"><br><br>  <label for="lname">Last name:</label>
-        <input type="text" id="lname" name="lname"><br><br>  <input
-        type="submit" value="Submit">  <input type="submit" formmethod="post"
-        value="Submit using POST">
-     </form>`
+    Example: <form action="\/action_page.php" method="get">    <label for="fname">First name:<\/label>  <input type="text" id="fname"      name="fname"><br><br>  <label for="lname">Last name:<\/label>       <input type="text" id="lname" name="lname"><br><br>  <input      type="submit" value="Submit">  <input type="submit" formmethod="post"      value="Submit using POST">  <\/form>
     *
     @see https://www.w3schools.com/TAGS/att_input_formmethod.asp
     */
@@ -264,12 +208,7 @@ export interface InputProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **10.1**   | **10.0** |
     *
-    Example: `<form action="/action_page.php">
-       <label for="email">Enter your email:</label>  <input
-        type="email" id="email" name="email"><br><br>  <input type="submit"
-        value="Submit">  <input type="submit" formnovalidate="formnovalidate"
-        value="Submit without validation">
-     </form>`
+    Example: <form action="\/action_page.php">    <label for="email">Enter your email:<\/label>  <input      type="email" id="email" name="email"><br><br>  <input type="submit"      value="Submit">  <input type="submit" formnovalidate="formnovalidate"      value="Submit without validation">  <\/form>
     *
     @see https://www.w3schools.com/TAGS/att_input_formnovalidate.asp
     */
@@ -283,15 +222,7 @@ export interface InputProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **5.1**   | **10.0** |
     *
-    Example: `<form action="/action_page.php">
-       <input type="text" id="fname" name="fname"><br><br>  <label
-        for="lname">Last name:</label>  <input type="text" id="lname"
-        name="lname"><br><br>
-      
-     <input type="submit" value="Submit as normal">
-      
-     <input type="submit" formtarget="_blank" value="Submit to a new window">
-     </form>`
+    Example: <form action="\/action_page.php">    <input type="text" id="fname" name="fname"><br><br>  <label      for="lname">Last name:<\/label>  <input type="text" id="lname"      name="lname"><br><br>     <input type="submit" value="Submit as normal">     <input type="submit" formtarget="_blank" value="Submit to a new window">  <\/form>
     *
     @see https://www.w3schools.com/TAGS/att_input_formtarget.asp
     */
@@ -325,12 +256,7 @@ export interface InputProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **16.0**  |   **Yes**   | **Yes** |
     *
-    Example: `<form action="/action_page.php">
-       <label for="fname">First name:</label>  <input type="text" id="fname"
-        name="fname"><br><br>  <label for="lname">Last name:</label>
-        <input type="text" id="lname" name="lname"><br><br>
-     <input type="image" src="img_submit.gif" alt="Submit" width="48" height="48">
-     </form>`
+    Example: <form action="\/action_page.php">    <label for="fname">First name:<\/label>  <input type="text" id="fname"      name="fname"><br><br>  <label for="lname">Last name:<\/label>       <input type="text" id="lname" name="lname"><br><br>   <input type="image" src="img_submit.gif" alt="Submit" width="48" height="48">  <\/form>
     *
     @see https://www.w3schools.com/TAGS/att_input_height.asp
     */
@@ -344,19 +270,7 @@ export interface InputProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **20.0**  | **4.0**  |   **Not supported**   | **10.0** |
     *
-    Example: `<input list="browsers">
-     <datalist id="browsers">
-      
-     <option value="Internet Explorer">
-      
-     <option value="Firefox">
-      
-     <option value="Google Chrome">
-      
-     <option value="Opera">
-      
-     <option value="Safari">
-     </datalist>`
+    Example: <input list="browsers">  <datalist id="browsers">     <option value="Internet Explorer">     <option value="Firefox">     <option value="Google Chrome">     <option value="Opera">     <option value="Safari">  <\/datalist>
     *
     @see https://www.w3schools.com/TAGS/att_input_list.asp
     */
@@ -370,14 +284,7 @@ export interface InputProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **5.0**  | **16.0**  |   **5.1**   | **10.0** |
     *
-    Example: `<form action="/action_page.php">
-      <label for="datemax">Enter a date before 1980-01-01:</label>
-        <input type="date" id="datemax" name="datemax" max="1979-12-31"><br><br>
-          <label for="datemin">Enter a date after 2000-01-01:</label>
-        <input type="date" id="datemin" name="datemin" min="2000-01-02"><br><br>
-          <label for="quantity">Quantity (between 1 and 5):</label>
-        <input type="number" id="quantity" name="quantity" min="1" max="5"><br><br>
-          <input type="submit"></form>`
+    Example: <form action="\/action_page.php">   <label for="datemax">Enter a date before 1980-01-01:<\/label>       <input type="date" id="datemax" name="datemax" max="1979-12-31"><br><br>       <label for="datemin">Enter a date after 2000-01-01:<\/label>       <input type="date" id="datemin" name="datemin" min="2000-01-02"><br><br>       <label for="quantity">Quantity (between 1 and 5):<\/label>       <input type="number" id="quantity" name="quantity" min="1" max="5"><br><br>       <input type="submit"><\/form>
     *
     @see https://www.w3schools.com/TAGS/att_input_max.asp
     */
@@ -396,12 +303,7 @@ export interface InputProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<form
-        action="/action_page.php">
-      <label for="username">Username:</label>  <input type="text"
-        id="username" name="username" maxlength="10"><br><br>  <input
-        type="submit" value="Submit">
-        </form>`
+    Example: <form      action="\/action_page.php">   <label for="username">Username:<\/label>  <input type="text"      id="username" name="username" maxlength="10"><br><br>  <input      type="submit" value="Submit">     <\/form>
     *
     @see https://www.w3schools.com/TAGS/att_input_maxlength.asp
     */
@@ -415,15 +317,7 @@ export interface InputProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **5.0**  | **16.0**  |   **5.1**   | **10.0** |
     *
-    Example: `<form action="/action_page.php">
-      <label for="datemax">Enter a date before 1980-01-01:</label>
-        <input type="date" id="datemax" name="datemax" max="1979-12-31"><br><br>
-          <label for="datemin">Enter a date after 2000-01-01:</label>
-        <input type="date" id="datemin" name="datemin" min="2000-01-02"><br><br>
-          <label for="quantity">Quantity (between 1 and 5):</label>
-        <input type="number" id="quantity" name="quantity" min="1" max="5"><br><br>
-          <input type="submit">
-    </form>`
+    Example: <form action="\/action_page.php">   <label for="datemax">Enter a date before 1980-01-01:<\/label>       <input type="date" id="datemax" name="datemax" max="1979-12-31"><br><br>       <label for="datemin">Enter a date after 2000-01-01:<\/label>       <input type="date" id="datemin" name="datemin" min="2000-01-02"><br><br>       <label for="quantity">Quantity (between 1 and 5):<\/label>       <input type="number" id="quantity" name="quantity" min="1" max="5"><br><br>       <input type="submit"> <\/form>
     *
     @see https://www.w3schools.com/TAGS/att_input_min.asp
     */
@@ -442,12 +336,7 @@ export interface InputProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **40.0**  | **51.0**  |   **10.1**   | **17.0** |
     *
-    Example: `<form
-        action="/action_page.php">
-      <label for="password">Password:</label>  <input type="password"
-        id="password" name="password" minlength="8"><br><br>  <input
-        type="submit" value="Submit">
-        </form>`
+    Example: <form      action="\/action_page.php">   <label for="password">Password:<\/label>  <input type="password"      id="password" name="password" minlength="8"><br><br>  <input      type="submit" value="Submit">     <\/form>
     *
     @see https://www.w3schools.com/TAGS/att_input_minlength.asp
     */
@@ -461,10 +350,7 @@ export interface InputProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **6.0**  | **3.6**  |   **5.0**   | **10.0** |
     *
-    Example: `<form action="/action_page.php">
-       <label for="files">Select files:</label>  <input type="file"
-        id="files" name="files" multiple><br><br>  <input type="submit">
-     </form>`
+    Example: <form action="\/action_page.php">    <label for="files">Select files:<\/label>  <input type="file"      id="files" name="files" multiple><br><br>  <input type="submit">  <\/form>
     *
     @see https://www.w3schools.com/TAGS/att_input_multiple.asp
     */
@@ -478,13 +364,7 @@ export interface InputProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<form
-        action="/action_page.php">
-      <label for="fname">First name:</label>  <input type="text" id="fname"
-        name="fname"><br><br>  <label for="lname">Last name:</label>
-        <input type="text" id="lname" name="lname"><br><br>  <input
-        type="submit" value="Submit">
-        </form>`
+    Example: <form      action="\/action_page.php">   <label for="fname">First name:<\/label>  <input type="text" id="fname"      name="fname"><br><br>  <label for="lname">Last name:<\/label>       <input type="text" id="lname" name="lname"><br><br>  <input      type="submit" value="Submit">     <\/form>
     *
     @see https://www.w3schools.com/TAGS/att_input_name.asp
     */
@@ -498,11 +378,7 @@ export interface InputProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **5.0**  | **4.0**  |   **10.1**   | **10.0** |
     *
-    Example: `<form action="/action_page.php">
-       <label for="country_code">Country code:</label>  <input
-        type="text" id="country_code" name="country_code"  pattern="[A-Za-z]{3}"
-        title="Three letter country code"><br><br>  <input type="submit">
-     </form>`
+    Example: <form action="\/action_page.php">    <label for="country_code">Country code:<\/label>  <input      type="text" id="country_code" name="country_code"  pattern="[A-Za-z]\{3\}"      title="Three letter country code"><br><br>  <input type="submit">  <\/form>
     *
     @see https://www.w3schools.com/TAGS/att_input_pattern.asp
     */
@@ -516,12 +392,7 @@ export interface InputProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **10.0**  | **4.0**  |   **5.0**   | **10.0** |
     *
-    Example: `<form action="/action_page.php">
-       <label for="phone">Enter a phone number:</label><br><br>
-        <input type="tel" id="phone" name="phone" placeholder="123-45-678"
-        pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"><br><br>  <small>Format:
-        123-45-678</small><br><br>  <input type="submit">
-     </form>`
+    Example: <form action="\/action_page.php">    <label for="phone">Enter a phone number:<\/label><br><br>       <input type="tel" id="phone" name="phone" placeholder="123-45-678"       pattern="[0-9]\{3\}-[0-9]\{2\}-[0-9]\{3\}"><br><br>  <small>Format:      123-45-678<\/small><br><br>  <input type="submit">  <\/form>
     *
     @see https://www.w3schools.com/TAGS/att_input_placeholder.asp
     */
@@ -535,12 +406,7 @@ export interface InputProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<form
-        action="/action_page.php">
-          <label for="country">Country:</label>   <input type="text"
-        id="country" name="country" value="Norway" readonly><br><br>
-        <input type="submit" value="Submit">
-        </form>`
+    Example: <form      action="\/action_page.php">       <label for="country">Country:<\/label>   <input type="text"      id="country" name="country" value="Norway" readonly><br><br>       <input type="submit" value="Submit">     <\/form>
     *
     @see https://www.w3schools.com/TAGS/att_input_readonly.asp
     */
@@ -554,10 +420,7 @@ export interface InputProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **5.0**  | **4.0**  |   **10.1**   | **10.0** |
     *
-    Example: `<form action="/action_page.php">
-       <label for="username">Username:</label>  <input type="text"
-        id="username" name="username" required>  <input type="submit">
-     </form>`
+    Example: <form action="\/action_page.php">    <label for="username">Username:<\/label>  <input type="text"      id="username" name="username" required>  <input type="submit">  <\/form>
     *
     @see https://www.w3schools.com/TAGS/att_input_required.asp
     */
@@ -571,13 +434,7 @@ export interface InputProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<form
-        action="/action_page.php">
-      <label for="fname">First name:</label>  <input type="text" id="fname"
-        name="fname" size="50"><br><br>  <label for="pin">PIN:</label>
-        <input type="text" id="pin" name="pin" maxlength="4" size="4"><br><br>
-        <input type="submit" value="Submit">
-        </form>`
+    Example: <form      action="\/action_page.php">   <label for="fname">First name:<\/label>  <input type="text" id="fname"      name="fname" size="50"><br><br>  <label for="pin">PIN:<\/label>       <input type="text" id="pin" name="pin" maxlength="4" size="4"><br><br>       <input type="submit" value="Submit">     <\/form>
     *
     @see https://www.w3schools.com/TAGS/att_input_size.asp
     */
@@ -592,11 +449,7 @@ export interface InputProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<form action="/action_page.php">
-      <label for="fname">First name:</label>  <input type="text" id="fname"
-        name="fname"><br><br>  <input type="image" src="submit.gif"
-        alt="Submit" width="48" height="48">
-        </form>`
+    Example: <form action="\/action_page.php">   <label for="fname">First name:<\/label>  <input type="text" id="fname"      name="fname"><br><br>  <input type="image" src="submit.gif"      alt="Submit" width="48" height="48">     <\/form>
     *
     @see https://www.w3schools.com/TAGS/att_input_src.asp
     */
@@ -610,9 +463,7 @@ export interface InputProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **6.0**  | **16.0**  |   **5.0**   | **10.0** |
     *
-    Example: `<form action="/action_page.php">
-       <label for="points">Points:</label>  <input type="number"
-        id="points" name="points" step="3">  <input type="submit"></form>`
+    Example: <form action="\/action_page.php">    <label for="points">Points:<\/label>  <input type="number"      id="points" name="points" step="3">  <input type="submit"><\/form>
     *
     @see https://www.w3schools.com/TAGS/att_input_step.asp
     */
@@ -629,13 +480,7 @@ export interface InputProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<form action="/action_page.php">
-      
-        <label for="username">Username: </label>  <input type="text"
-        id="username" name="username"><br>
-      
-     <input type="submit" value="Submit">
-     </form>`
+    Example: <form action="\/action_page.php">        <label for="username">Username: <\/label>  <input type="text"      id="username" name="username"><br>     <input type="submit" value="Submit">  <\/form>
     *
     @see https://www.w3schools.com/TAGS/att_input_type.asp
     */
@@ -754,13 +599,7 @@ export interface InputProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<form
-        action="/action_page.php">
-      <label for="fname">First name:</label>  <input type="text" id="fname"
-        name="fname" value="John"><br><br>  <label for="lname">Last
-        name:</label>  <input type="text" id="lname" name="lname"
-        value="Doe"><br><br>  <input type="submit" value="Submit">
-        </form>`
+    Example: <form      action="\/action_page.php">   <label for="fname">First name:<\/label>  <input type="text" id="fname"      name="fname" value="John"><br><br>  <label for="lname">Last      name:<\/label>  <input type="text" id="lname" name="lname"      value="Doe"><br><br>  <input type="submit" value="Submit">     <\/form>
     *
     @see https://www.w3schools.com/TAGS/att_input_value.asp
     */
@@ -774,12 +613,7 @@ export interface InputProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **16.0**  |   **Yes**   | **Yes** |
     *
-    Example: `<form action="/action_page.php">
-       <label for="fname">First name:</label>  <input type="text" id="fname"
-        name="fname"><br><br>  <label for="lname">Last name:</label>
-        <input type="text" id="lname" name="lname"><br><br>
-     <input type="image" src="img_submit.gif" alt="Submit" width="48" height="48">
-     </form>`
+    Example: <form action="\/action_page.php">    <label for="fname">First name:<\/label>  <input type="text" id="fname"      name="fname"><br><br>  <label for="lname">Last name:<\/label>       <input type="text" id="lname" name="lname"><br><br>   <input type="image" src="img_submit.gif" alt="Submit" width="48" height="48">  <\/form>
     *
     @see https://www.w3schools.com/TAGS/att_input_width.asp
     */
@@ -798,6 +632,6 @@ export interface InputProps extends NodeProps<HTMLElement> {
 *
 @see https://www.w3schools.com/TAGS/tag_input.asp
 */
-export declare class Input extends GlobalDom<HTMLElement> {
+export declare class Input extends GlobalDom<HTMLInputElement> {
     constructor(props?: InputProps);
 }

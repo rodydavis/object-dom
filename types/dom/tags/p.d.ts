@@ -1,6 +1,6 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
-export interface PProps extends NodeProps<HTMLElement> {
+export interface PProps extends NodeProps<HTMLParagraphElement> {
     attributes?: {
         [key: string]: PossibleAttr;
     };
@@ -16,6 +16,6 @@ export interface PProps extends NodeProps<HTMLElement> {
 *
 @see https://www.w3schools.com/TAGS/tag_p.asp
 */
-export declare class P extends GlobalDom<HTMLElement> {
+export declare class P extends GlobalDom<HTMLParagraphElement> {
     constructor(props?: PProps);
 }

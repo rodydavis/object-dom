@@ -1,7 +1,7 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
 
-export interface TbodyProps extends NodeProps<HTMLElement> {
+export interface TbodyProps extends NodeProps<HTMLTableSectionElement> {
   attributes?: {
     [key: string]: PossibleAttr;
   };
@@ -18,7 +18,7 @@ export interface TbodyProps extends NodeProps<HTMLElement> {
 * 
 @see https://www.w3schools.com/TAGS/tag_tbody.asp
 */
-export class Tbody extends GlobalDom<HTMLElement> {
+export class Tbody extends GlobalDom<HTMLTableSectionElement> {
   constructor(props: TbodyProps = {}) {
     super({ node: document.createElement("tbody"), ...props });
   }

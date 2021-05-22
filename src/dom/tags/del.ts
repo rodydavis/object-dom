@@ -1,7 +1,7 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
 
-export interface DelProps extends NodeProps<HTMLElement> {
+export interface DelProps extends NodeProps<HTMLModElement> {
   attributes?: {
     /**
 * `<del cite>`
@@ -12,7 +12,7 @@ export interface DelProps extends NodeProps<HTMLElement> {
 * | :------: | :-----: | :-------: | :----: |
 * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
 * 
-Example: `<p><del cite="del_demo_cite.htm">This text has been deleted</del></p>`
+Example: <p><del cite="del_demo_cite.htm">This text has been deleted<\/del><\/p>
 * 
 @see https://www.w3schools.com/TAGS/att_del_cite.asp
 */
@@ -27,9 +27,7 @@ Example: `<p><del cite="del_demo_cite.htm">This text has been deleted</del></p>`
 * | :------: | :-----: | :-------: | :----: |
 * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
 * 
-Example: `<p>
- <del datetime="2015-11-15T22:55:03Z">This text has been deleted</del>
- </p>`
+Example: <p>  <del datetime="2015-11-15T22:55:03Z">This text has been deleted<\/del>  <\/p>
 * 
 @see https://www.w3schools.com/TAGS/att_del_datetime.asp
 */
@@ -50,7 +48,7 @@ Example: `<p>
 * 
 @see https://www.w3schools.com/TAGS/tag_del.asp
 */
-export class Del extends GlobalDom<HTMLElement> {
+export class Del extends GlobalDom<HTMLModElement> {
   constructor(props: DelProps = {}) {
     super({ node: document.createElement("del"), ...props });
   }

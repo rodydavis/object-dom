@@ -1,6 +1,6 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
-export interface AProps extends NodeProps<HTMLElement> {
+export interface AProps extends NodeProps<HTMLAnchorElement> {
     attributes?: {
         /**
     * `<a download>`
@@ -11,7 +11,7 @@ export interface AProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **14.0***  | **20.0***  |   **10.1**   | **18.0** |
     *
-    Example: `<a href="/images/myw3schoolsimage.jpg" download>`
+    Example: <a href="\/images\/myw3schoolsimage.jpg" download>
     *
     @see https://www.w3schools.com/TAGS/att_a_download.asp
     */
@@ -25,7 +25,7 @@ export interface AProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<a href="https://www.w3schools.com">Visit W3Schools</a>`
+    Example: <a href="https:\/\/www.w3schools.com">Visit W3Schools<\/a>
     *
     @see https://www.w3schools.com/TAGS/att_a_href.asp
     */
@@ -39,7 +39,7 @@ export interface AProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<a href="https://www.w3schools.com" hreflang="en">W3Schools</a>`
+    Example: <a href="https:\/\/www.w3schools.com" hreflang="en">W3Schools<\/a>
     *
     @see https://www.w3schools.com/TAGS/att_a_hreflang.asp
     */
@@ -53,9 +53,7 @@ export interface AProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<a href="att_a_media.asp?output=print"
-     media="print and (resolution:300dpi)">
-     Open media attribute page for print.</a>`
+    Example: <a href="att_a_media.asp?output=print"  media="print and (resolution:300dpi)">  Open media attribute page for print.<\/a>
     *
     @see https://www.w3schools.com/TAGS/att_a_media.asp
     */
@@ -81,7 +79,7 @@ export interface AProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **No**   | **No** |
     *
-    Example: `<a href="https://www.w3schools.com/html" ping="https://www.w3schools.com/trackpings">`
+    Example: <a href="https:\/\/www.w3schools.com\/html" ping="https:\/\/www.w3schools.com\/trackpings">
     *
     @see https://www.w3schools.com/TAGS/att_a_ping.asp
     */
@@ -107,7 +105,7 @@ export interface AProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<a rel="nofollow" href="http://www.functravel.com/">Cheap Flights</a>`
+    Example: <a rel="nofollow" href="http:\/\/www.functravel.com\/">Cheap Flights<\/a>
     *
     @see https://www.w3schools.com/TAGS/att_a_rel.asp
     */
@@ -183,7 +181,7 @@ export interface AProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<a href="https://www.w3schools.com" target="_blank">Visit W3Schools</a>`
+    Example: <a href="https:\/\/www.w3schools.com" target="_blank">Visit W3Schools<\/a>
     *
     @see https://www.w3schools.com/TAGS/att_a_target.asp
     */
@@ -217,7 +215,7 @@ export interface AProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<a href="https://www.w3schools.com" type="text/html">W3Schools</a>`
+    Example: <a href="https:\/\/www.w3schools.com" type="text\/html">W3Schools<\/a>
     *
     @see https://www.w3schools.com/TAGS/att_a_type.asp
     */
@@ -236,6 +234,6 @@ export interface AProps extends NodeProps<HTMLElement> {
 *
 @see https://www.w3schools.com/TAGS/tag_a.asp
 */
-export declare class A extends GlobalDom<HTMLElement> {
+export declare class A extends GlobalDom<HTMLAnchorElement> {
     constructor(props?: AProps);
 }

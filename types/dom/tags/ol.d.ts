@@ -1,6 +1,6 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
-export interface OlProps extends NodeProps<HTMLElement> {
+export interface OlProps extends NodeProps<HTMLOListElement> {
     attributes?: {
         /**
     * `<ol reversed>`
@@ -11,14 +11,7 @@ export interface OlProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **18.0**  | **18.0**  |   **6.0**   | **79.0** |
     *
-    Example: `<ol reversed>
-      
-     <li>Coffee</li>
-      
-     <li>Tea</li>
-      
-     <li>Milk</li>
-     </ol>`
+    Example: <ol reversed>     <li>Coffee<\/li>     <li>Tea<\/li>     <li>Milk<\/li>  <\/ol>
     *
     @see https://www.w3schools.com/TAGS/att_ol_reversed.asp
     */
@@ -32,14 +25,7 @@ export interface OlProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<ol start="50">
-           
-          <li>Coffee</li>
-           
-          <li>Tea</li>
-           
-          <li>Milk</li>
-          </ol>`
+    Example: <ol start="50">               <li>Coffee<\/li>               <li>Tea<\/li>               <li>Milk<\/li>       <\/ol>
     *
     @see https://www.w3schools.com/TAGS/att_ol_start.asp
     */
@@ -53,14 +39,7 @@ export interface OlProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<ol type="I">
-           
-          <li>Coffee</li>
-           
-          <li>Tea</li>
-           
-          <li>Milk</li>
-          </ol>`
+    Example: <ol type="I">               <li>Coffee<\/li>               <li>Tea<\/li>               <li>Milk<\/li>       <\/ol>
     *
     @see https://www.w3schools.com/TAGS/att_ol_type.asp
     */
@@ -99,6 +78,6 @@ export interface OlProps extends NodeProps<HTMLElement> {
 *
 @see https://www.w3schools.com/TAGS/tag_ol.asp
 */
-export declare class Ol extends GlobalDom<HTMLElement> {
+export declare class Ol extends GlobalDom<HTMLOListElement> {
     constructor(props?: OlProps);
 }

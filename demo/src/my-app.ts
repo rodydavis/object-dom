@@ -11,7 +11,7 @@ export class MyApp extends ObjectDom {
 
 class Counter extends ObjectDom {
   value = 0;
-  render = () => {
+  render() {
     return new Div({
       style: { margin: "5px" },
       children: [
@@ -42,5 +42,26 @@ class Counter extends ObjectDom {
         }),
       ],
     });
-  };
+  }
 }
+
+// class CanvasExample extends ObjectDom {
+//   render() {
+//     return new Canvas({
+//       style: { width: "200px", height: "200px" },
+//       onCreate: (node) => {
+//         const canvas = node as HTMLCanvasElement;
+//         const ctx = canvas.getContext("2d")!;
+
+//         // Create gradient
+//         const grd = ctx.createRadialGradient(75, 50, 5, 90, 60, 100);
+//         grd.addColorStop(0, "red");
+//         grd.addColorStop(1, "white");
+
+//         // Fill with gradient
+//         ctx.fillStyle = grd;
+//         ctx.fillRect(10, 10, 150, 80);
+//       },
+//     });
+//   }
+// }

@@ -1,6 +1,6 @@
 import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
-export interface SelectProps extends NodeProps<HTMLElement> {
+export interface SelectProps extends NodeProps<HTMLSelectElement> {
     attributes?: {
         /**
     * `<select autofocus>`
@@ -11,17 +11,7 @@ export interface SelectProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Not supported**  |   **Yes**   | **10.0** |
     *
-    Example: `<label for="cars">Choose a car:</label><select
-        name="cars" id="cars" autofocus>
-      
-     <option value="volvo">Volvo</option>
-      
-     <option value="saab">Saab</option>
-      
-     <option value="opel">Opel</option>
-      
-     <option value="audi">Audi</option>
-     </select>`
+    Example: <label for="cars">Choose a car:<\/label><select      name="cars" id="cars" autofocus>     <option value="volvo">Volvo<\/option>     <option value="saab">Saab<\/option>     <option value="opel">Opel<\/option>     <option value="audi">Audi<\/option>  <\/select>
     *
     @see https://www.w3schools.com/TAGS/att_select_autofocus.asp
     */
@@ -35,17 +25,7 @@ export interface SelectProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **9.0** |
     *
-    Example: `<label for="cars">Choose a car:</label><select
-        name="cars" id="cars" disabled>
-           
-          <option value="volvo">Volvo</option>
-           
-          <option value="saab">Saab</option>
-           
-          <option value="mercedes">Mercedes</option>
-           
-          <option value="audi">Audi</option>
-          </select>`
+    Example: <label for="cars">Choose a car:<\/label><select      name="cars" id="cars" disabled>               <option value="volvo">Volvo<\/option>               <option value="saab">Saab<\/option>               <option value="mercedes">Mercedes<\/option>               <option value="audi">Audi<\/option>       <\/select>
     *
     @see https://www.w3schools.com/TAGS/att_select_disabled.asp
     */
@@ -59,23 +39,7 @@ export interface SelectProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<form action="/action_page.php" id="carform">
-      <label for="fname">Firstname:</label>  <input type="text" id="fname"
-        name="fname">
-      <input type="submit">
-     </form>
-     
-        <label for="cars">Choose a car:</label><select
-        name="cars" id="cars" form="carform">
-      
-     <option value="volvo">Volvo</option>
-      
-     <option value="saab">Saab</option>
-      
-     <option value="opel">Opel</option>
-      
-     <option value="audi">Audi</option>
-     </select>`
+    Example: <form action="\/action_page.php" id="carform">   <label for="fname">Firstname:<\/label>  <input type="text" id="fname"      name="fname">   <input type="submit">  <\/form>       <label for="cars">Choose a car:<\/label><select      name="cars" id="cars" form="carform">     <option value="volvo">Volvo<\/option>     <option value="saab">Saab<\/option>     <option value="opel">Opel<\/option>     <option value="audi">Audi<\/option>  <\/select>
     *
     @see https://www.w3schools.com/TAGS/att_select_form.asp
     */
@@ -89,17 +53,7 @@ export interface SelectProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<label for="cars">Choose a car:</label><select
-        name="cars" id="cars" multiple>
-           
-          <option value="volvo">Volvo</option>
-           
-          <option value="saab">Saab</option>
-           
-          <option value="opel">Opel</option>
-           
-          <option value="audi">Audi</option>
-          </select>`
+    Example: <label for="cars">Choose a car:<\/label><select      name="cars" id="cars" multiple>               <option value="volvo">Volvo<\/option>               <option value="saab">Saab<\/option>               <option value="opel">Opel<\/option>               <option value="audi">Audi<\/option>       <\/select>
     *
     @see https://www.w3schools.com/TAGS/att_select_multiple.asp
     */
@@ -113,17 +67,7 @@ export interface SelectProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<label for="cars">Choose a car:</label><select
-        name="cars" id="cars">
-           
-          <option value="volvo">Volvo</option>
-           
-          <option value="saab">Saab</option>
-      
-     <option value="opel">Opel</option>
-           
-          <option value="audi">Audi</option>
-          </select>`
+    Example: <label for="cars">Choose a car:<\/label><select      name="cars" id="cars">               <option value="volvo">Volvo<\/option>               <option value="saab">Saab<\/option>     <option value="opel">Opel<\/option>               <option value="audi">Audi<\/option>       <\/select>
     *
     @see https://www.w3schools.com/TAGS/att_select_name.asp
     */
@@ -137,17 +81,7 @@ export interface SelectProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **4.0**  |   **Yes**   | **10.0** |
     *
-    Example: `<label for="cars">Choose a car:</label><select
-        name="cars" id="cars" required>  <option value="">None</option>
-           
-          <option value="volvo">Volvo</option>
-           
-          <option value="saab">Saab</option>
-           
-          <option value="mercedes">Mercedes</option>
-           
-          <option value="audi">Audi</option>
-          </select>`
+    Example: <label for="cars">Choose a car:<\/label><select      name="cars" id="cars" required>  <option value="">None<\/option>               <option value="volvo">Volvo<\/option>               <option value="saab">Saab<\/option>               <option value="mercedes">Mercedes<\/option>               <option value="audi">Audi<\/option>       <\/select>
     *
     @see https://www.w3schools.com/TAGS/att_select_required.asp
     */
@@ -161,17 +95,7 @@ export interface SelectProps extends NodeProps<HTMLElement> {
     * | :------: | :-----: | :-------: | :----: |
     * |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
     *
-    Example: `<label for="cars">Choose a car:</label><select
-        name="cars" id="cars" size="3">
-      
-     <option value="volvo">Volvo</option>
-      
-     <option value="saab">Saab</option>
-      
-     <option value="opel">Opel</option>
-      
-     <option value="audi">Audi</option>
-     </select>`
+    Example: <label for="cars">Choose a car:<\/label><select      name="cars" id="cars" size="3">     <option value="volvo">Volvo<\/option>     <option value="saab">Saab<\/option>     <option value="opel">Opel<\/option>     <option value="audi">Audi<\/option>  <\/select>
     *
     @see https://www.w3schools.com/TAGS/att_select_size.asp
     */
@@ -190,6 +114,6 @@ export interface SelectProps extends NodeProps<HTMLElement> {
 *
 @see https://www.w3schools.com/TAGS/tag_select.asp
 */
-export declare class Select extends GlobalDom<HTMLElement> {
+export declare class Select extends GlobalDom<HTMLSelectElement> {
     constructor(props?: SelectProps);
 }
