@@ -315,7 +315,6 @@ export interface CSSStyles {
     writingMode?: string;
     zIndex?: string;
 }
-export declare function convertCssStyles(style: CSSStyles | string | undefined): string | undefined;
 export declare function convertClassList(value: string | string[] | undefined): string | undefined;
 export declare type PossibleStyle = string | NodeStyle<string> | undefined;
 export declare class NodeStyle<T extends string> {

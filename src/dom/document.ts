@@ -11,7 +11,7 @@ interface DocumentProps {
 }
 
 /**
- * The HTML DOM document object is the owner 
+ * The HTML DOM document object is the owner
  * of all other objects in your web page.
  *
  * Reference: https://www.w3schools.com/js/js_htmldom_document.asp
@@ -20,7 +20,7 @@ export class ObjectDocument extends ObjectDom {
   constructor(public props: DocumentProps = {}) {
     super();
   }
-  
+
   render = () => {
     return new Html({
       children: [

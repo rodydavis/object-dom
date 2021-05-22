@@ -1,3 +1,11 @@
+## 0.3.0
+
+- Generating all tags and attributes from w3schools.com
+- Adding browser support in description
+- Adding attribute values
+- Updating Demo
+- Adding support for all events
+
 ## 0.2.4
 
 - Adding Typing for `Anchor`

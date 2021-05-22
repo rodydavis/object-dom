@@ -1,6 +1,6 @@
 import {
   Body,
-  Bold,
+  B,
   Br,
   Button,
   Del,
@@ -33,13 +33,13 @@ import {
   Table,
   Td,
   Th,
-  TBody,
-  TFoot,
-  THead,
+  Tbody,
+  Tfoot,
+  Thead,
   Tr,
   Caption,
   Col,
-  ColGroup,
+  Colgroup,
   generateHtml,
   GlobalDom,
 } from "../src/object-dom";
@@ -58,7 +58,7 @@ group("Component tests", () => {
   testComponent("br", new Br());
   testComponent("span", new Span());
   testComponent("p", new P());
-  testComponent("b", new Bold());
+  testComponent("b", new B());
   testComponent("strong", new Strong());
   testComponent("i", new I());
   testComponent("em", new Em());
@@ -77,15 +77,15 @@ group("Component tests", () => {
   testComponent("label", new Label());
   testComponent("input", new Input());
   testComponent("table", new Table());
-  testComponent("thead", new THead());
-  testComponent("tfoot", new TFoot());
-  testComponent("tbody", new TBody());
+  testComponent("thead", new Thead());
+  testComponent("tfoot", new Tfoot());
+  testComponent("tbody", new Tbody());
   testComponent("tr", new Tr());
   testComponent("th", new Th());
   testComponent("td", new Td());
   testComponent("caption", new Caption());
   testComponent("col", new Col());
-  testComponent("colgroup", new ColGroup());
+  testComponent("colgroup", new Colgroup());
 });
 
 function testComponent(tag: string, target: GlobalDom<HTMLElement>) {

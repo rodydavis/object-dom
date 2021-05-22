@@ -26,7 +26,7 @@ function parseNode(node: Element): GlobalDom<HTMLElement> {
   let base: GlobalDom<HTMLElement>;
   switch (node.tagName.toLowerCase()) {
     case "a":
-      base = new tags.Anchor({});
+      base = new tags.A({});
       break;
     case "abbr":
       base = new tags.Abbr({});
@@ -47,7 +47,7 @@ function parseNode(node: Element): GlobalDom<HTMLElement> {
       base = new tags.Audio({});
       break;
     case "b":
-      base = new tags.Bold({});
+      base = new tags.B({});
       break;
     case "base":
       base = new tags.Base({});
@@ -59,7 +59,7 @@ function parseNode(node: Element): GlobalDom<HTMLElement> {
       base = new tags.Bdo({});
       break;
     case "blockquote":
-      base = new tags.BlockQuote({});
+      base = new tags.Blockquote({});
       break;
     case "body":
       base = new tags.Body({});
@@ -86,13 +86,13 @@ function parseNode(node: Element): GlobalDom<HTMLElement> {
       base = new tags.Col({});
       break;
     case "colgroup":
-      base = new tags.ColGroup({});
+      base = new tags.Colgroup({});
       break;
     case "data":
       base = new tags.Data({});
       break;
     case "datalist":
-      base = new tags.DataList({});
+      base = new tags.Datalist({});
       break;
     case "dd":
       base = new tags.Dd({});
@@ -125,10 +125,10 @@ function parseNode(node: Element): GlobalDom<HTMLElement> {
       base = new tags.Embed({});
       break;
     case "fieldset":
-      base = new tags.FieldSet({});
+      base = new tags.Fieldset({});
       break;
     case "figcaption":
-      base = new tags.FigCaption({});
+      base = new tags.Figcaption({});
       break;
     case "figure":
       base = new tags.Figure({});
@@ -218,7 +218,7 @@ function parseNode(node: Element): GlobalDom<HTMLElement> {
       base = new tags.Nav({});
       break;
     case "noscript":
-      base = new tags.NoScript({});
+      base = new tags.Noscript({});
       break;
     case "object":
       base = new tags.Obj({});
@@ -227,7 +227,7 @@ function parseNode(node: Element): GlobalDom<HTMLElement> {
       base = new tags.Ol({});
       break;
     case "optgroup":
-      base = new tags.OptGroup({});
+      base = new tags.Optgroup({});
       break;
     case "option":
       base = new tags.Option({});
@@ -251,7 +251,7 @@ function parseNode(node: Element): GlobalDom<HTMLElement> {
       base = new tags.Progress({});
       break;
     case "q":
-      base = new tags.Quote({});
+      base = new tags.Q({});
       break;
     case "rp":
       base = new tags.Rp({});
@@ -308,7 +308,7 @@ function parseNode(node: Element): GlobalDom<HTMLElement> {
       base = new tags.Table({});
       break;
     case "tbody":
-      base = new tags.TBody({});
+      base = new tags.Tbody({});
       break;
     case "td":
       base = new tags.Td({});
@@ -317,16 +317,16 @@ function parseNode(node: Element): GlobalDom<HTMLElement> {
       base = new tags.Template({});
       break;
     case "textarea":
-      base = new tags.TextArea({});
+      base = new tags.Textarea({});
       break;
     case "tfoot":
-      base = new tags.TFoot({});
+      base = new tags.Tfoot({});
       break;
     case "th":
       base = new tags.Th({});
       break;
     case "thead":
-      base = new tags.THead({});
+      base = new tags.Thead({});
       break;
     case "time":
       base = new tags.Time({});

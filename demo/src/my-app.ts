@@ -24,17 +24,21 @@ class Counter extends ObjectDom {
             new Button({
               text: "-",
               style: { width: "50px" },
-              onClick: () => {
-                this.value -= 1;
-                this.update();
+              events: {
+                click: () => {
+                  this.value -= 1;
+                  this.update();
+                },
               },
             }),
             new Button({
               text: "+",
               style: { width: "50px", marginLeft: "5px" },
-              onClick: () => {
-                this.value += 1;
-                this.update();
+              events: {
+                click: () => {
+                  this.value += 1;
+                  this.update();
+                },
               },
             }),
           ],

@@ -4,6 +4,7 @@ coverage
 .DS_Store
 *.log
 .vscode
+.cache
 .idea
 /dist/
 /build/

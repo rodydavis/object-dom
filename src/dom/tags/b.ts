@@ -1,13 +1,25 @@
-import type { NodeProps } from "../../object-dom";
+import type { NodeProps, PossibleAttr } from "../../object-dom";
 import { GlobalDom } from "../../object-dom";
 
+export interface BProps extends NodeProps<HTMLElement> {
+  attributes?: {
+    [key: string]: PossibleAttr;
+  };
+}
+
 /**
- * Defines bold text.
- *
- * Reference: https://www.w3schools.com/TAGS/tag_b.asp
- */
-export class Bold extends GlobalDom<HTMLElement> {
-  constructor(props: NodeProps<HTMLElement> = {}) {
+* `<b>`
+* 
+* Defines bold text
+* 
+* |  Chrome  | Firefox |  Safari   |  Edge  |
+* | :------: | :-----: | :-------: | :----: |
+* |  **Yes**  | **Yes**  |   **Yes**   | **Yes** |
+* 
+@see https://www.w3schools.com/TAGS/tag_b.asp
+*/
+export class B extends GlobalDom<HTMLElement> {
+  constructor(props: BProps = {}) {
     super({ node: document.createElement("b"), ...props });
   }
 }
