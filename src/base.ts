@@ -82,9 +82,9 @@ export class GlobalDom<T extends HTMLElement> extends ObjectDom<T> {
         this.attributes[key] = new NodeAttr<boolean>(this, key, value);
       } else if (typeof value === "number") {
         this.attributes[key] = new NodeAttr<number>(this, key, value);
-      } else if (value) {
-        for (const [key, val] of Object.entries(value)) {
-          this.addStyle(key, val);
+      } else if (key === "style") {
+        for (const [k, v] of Object.entries(value)) {
+          this.addStyle(k, v);
         }
       }
     }
@@ -232,18 +232,18 @@ export function generateNode(source: GlobalDom<HTMLElement>) {
       result.append(child);
     }
   }
+  if (source.styles) {
+    for (const [key, val] of Object.entries(source.styles)) {
+      result.style.setProperty(key, val.value);
+    }
+  }
   if (source.attributes) {
+    if (source.attributes.className) {
+      result.className =
+        typeof source.attributes.className === "string" ? source.attributes.className : "";
+    }
     for (const [key, value] of Object.entries(source.attributes).filter((n) => n[1].value)) {
-      if (key === "style") {
-        for (const [styleKey, styleVal] of Object.entries(source.styles).filter(
-          (n) => n[1].value
-        )) {
-          result.style.setProperty(styleKey, styleVal.value);
-        }
-        continue;
-      }
-      if (key === "className") {
-        result.className = typeof value === "string" ? value : "";
+      if (key == "className") {
         continue;
       }
       const val = value.value;

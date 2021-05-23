@@ -1,4 +1,3 @@
-// @ts-ignore
 import { ObjectDom, Div, H1, Button, Row, Canvas } from "object-dom";
 
 export class MyApp extends ObjectDom {
@@ -13,14 +12,14 @@ class Counter extends ObjectDom {
   value = 0;
   render() {
     return new Div({
-      style: { margin: "5px" },
+      attributes: { style: { margin: "5px" } },
       children: [
         `${this.value}`,
         new Row({
           children: [
             new Button({
               text: "-",
-              style: { width: "50px" },
+              attributes: { style: { width: "50px" } },
               events: {
                 click: () => {
                   this.value -= 1;
@@ -30,7 +29,7 @@ class Counter extends ObjectDom {
             }),
             new Button({
               text: "+",
-              style: { width: "50px", marginLeft: "5px" },
+              attributes: { style: { width: "50px", marginLeft: "5px" } },
               events: {
                 click: () => {
                   this.value += 1;
@@ -48,7 +47,7 @@ class Counter extends ObjectDom {
 class CanvasExample extends ObjectDom {
   render() {
     return new Canvas({
-      style: { width: "200px", height: "200px" },
+      attributes: { style: { width: "200px", height: "200px" } },
       onCreate: (node) => {
         const canvas = node as HTMLCanvasElement;
         const ctx = canvas.getContext("2d")!;
