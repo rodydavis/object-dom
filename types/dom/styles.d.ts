@@ -1,5 +1,5 @@
 import { ObjectDom } from "../object-dom";
-export declare type PossibleStyle = NodeStyle<string> | "unset" | string | undefined;
+export declare type PossibleStyle = NodeStyle<string> | string | undefined;
 export declare function convertClassList(value: string | string[] | undefined): string | undefined;
 export declare class NodeStyle<T extends string> {
     constructor(root: ObjectDom<HTMLElement>, key: string, value: T | undefined);

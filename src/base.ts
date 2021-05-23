@@ -1,31 +1,24 @@
 import { GlobalAttrs } from "./dom/attrs";
-import { convertToPathCase } from "./dom/utils";
 import { NodeEvents } from "./events";
 import {
   AttrType,
-  AutoCapitalize,
-  convertClassList,
   CSSStyles,
-  Direction,
-  InputMode,
   NodeAttr,
   NodeStyle,
   PossibleAttr,
   PossibleStyle,
-  StringBool,
-  StringYesNo,
 } from "./object-dom";
 
-export type NodeAttrs = {
+export interface NodeAttrs extends GlobalAttrs {
   [key: string]: PossibleAttr;
-};
+}
 export interface NodeStyles extends CSSStyles {
   [key: string]: PossibleStyle;
 }
 
 export type NodeArray = Array<ObjectDom | string | Comment>;
 
-export interface NodeProps<T extends HTMLElement = HTMLElement> extends GlobalAttrs {
+export interface NodeProps<T extends HTMLElement = HTMLElement> {
   node?: T;
   text?: string;
   children?: NodeArray;
@@ -69,36 +62,9 @@ export class GlobalDom<T extends HTMLElement> extends ObjectDom<T> {
     this._node = props.node!;
     if (props.text) this.text = props.text;
     this.children = [...(props?.children ?? [])];
-    this.attributes = {
-      id: new NodeAttr(this, "id", props?.id),
-      className: new NodeAttr(this, "class", convertClassList(props?.className)),
-      contentEditable: new NodeAttr<StringBool>(this, "contenteditable", props?.contenteditable),
-      accesskey: new NodeAttr(this, "accesskey", props?.accesskey),
-      autocapitalize: new NodeAttr<AutoCapitalize>(this, "autocapitalize", props?.autocapitalize),
-      dir: new NodeAttr<Direction>(this, "dir", props?.dir),
-      draggable: new NodeAttr<StringBool>(this, "draggable", props?.draggable),
-      enterkeyhint: new NodeAttr<string>(this, "enterkeyhint", props?.enterkeyhint),
-      hidden: new NodeAttr<boolean>(this, "hidden", props?.hidden),
-      inputmode: new NodeAttr<InputMode>(this, "inputmode", props?.inputmode),
-      is: new NodeAttr<string>(this, "is", props?.is),
-      lang: new NodeAttr<string>(this, "lang", props?.lang),
-      nonce: new NodeAttr<string>(this, "nonce", props?.nonce),
-      part: new NodeAttr<string>(this, "part", props?.part),
-      slot: new NodeAttr<string>(this, "slot", props?.slot),
-      spellcheck: new NodeAttr<StringBool>(this, "spellcheck", props?.spellcheck),
-      style: new NodeAttr<string | number | boolean>(this, "style", convertCssStyles(props?.style)),
-      tabindex: new NodeAttr<number>(this, "tabindex", props?.tabindex),
-      title: new NodeAttr<string>(this, "title", props?.title),
-      translate: new NodeAttr<StringYesNo>(this, "translate", props?.translate),
-    };
     if (props.attributes) {
       for (const [key, value] of Object.entries(props.attributes)) {
         this.addAttr(key, value);
-      }
-    }
-    if (props.style) {
-      for (const [key, value] of Object.entries(props.style)) {
-        this.addStyle(key, value);
       }
     }
     if (props.events) {
@@ -117,7 +83,9 @@ export class GlobalDom<T extends HTMLElement> extends ObjectDom<T> {
       } else if (typeof value === "number") {
         this.attributes[key] = new NodeAttr<number>(this, key, value);
       } else if (value) {
-        this.attributes[key] = value;
+        for (const [key, val] of Object.entries(value)) {
+          this.addStyle(key, val);
+        }
       }
     }
   }
@@ -251,6 +219,10 @@ export function generateNode(source: GlobalDom<HTMLElement>) {
   if (source.text) {
     result.textContent = source.text;
   }
+  if (source.attributes.className) {
+    result.className =
+      typeof source.attributes.className === "string" ? source.attributes.className : "";
+  }
   for (const child of source.children) {
     if (child instanceof ObjectDom) {
       let childNode = generateNode(child.renderDom());
@@ -292,17 +264,4 @@ export function generateNode(source: GlobalDom<HTMLElement>) {
     source.props.onCreate(result);
   }
   return result;
-}
-
-function convertCssStyles(style: CSSStyles | string | undefined): string | undefined {
-  if (style) {
-    if (typeof style === "string") return style;
-    const results: string[] = [];
-    for (const [key, value] of Object.entries(style)) {
-      const _key = convertToPathCase(key);
-      results.push(`${_key}: ${value};`);
-    }
-    return results.join(" ");
-  }
-  return undefined;
 }

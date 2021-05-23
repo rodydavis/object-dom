@@ -43,7 +43,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * align-self
   *
@@ -92,7 +92,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * all
   *
@@ -116,7 +116,7 @@ export interface CSSStyles {
      * Changes all the properties applied to the element or the element's parent to their parent value if they are inheritable or to their initial value if not
      *
      */
-     | "unset" | PossibleStyle;
+     | "unset";
     /**
   * animation
   *
@@ -175,7 +175,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * animation-delay
   *
@@ -199,7 +199,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * animation-direction
   *
@@ -239,7 +239,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * animation-duration
   *
@@ -263,7 +263,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * animation-fill-mode
   *
@@ -305,7 +305,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * animation-iteration-count
   *
@@ -334,7 +334,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * animation-name
   *
@@ -363,7 +363,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * animation-play-state
   *
@@ -392,7 +392,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * animation-timing-function
   *
@@ -457,7 +457,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * background
   *
@@ -516,7 +516,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * background-attachment
   *
@@ -575,7 +575,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * background-color
   *
@@ -633,7 +633,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * background-position
   *
@@ -702,7 +702,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * border
   *
@@ -768,7 +768,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * border-bottom-right-radius
   *
@@ -797,7 +797,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * border-bottom-style
   *
@@ -889,7 +889,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * border-image-outset
   *
@@ -918,7 +918,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * border-image-repeat
   *
@@ -957,7 +957,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * border-image-slice
   *
@@ -991,7 +991,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * border-image-source
   *
@@ -1020,7 +1020,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * border-image-width
   *
@@ -1059,7 +1059,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * border-left
   *
@@ -1136,7 +1136,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * border-right
   *
@@ -1262,7 +1262,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * border-top-right-radius
   *
@@ -1291,7 +1291,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * border-top-style
   *
@@ -1371,7 +1371,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * box-shadow
   *
@@ -1430,7 +1430,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * box-sizing
   *
@@ -1461,7 +1461,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * break-after
   *
@@ -1532,7 +1532,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * @charset
   *
@@ -1609,7 +1609,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * column-fill
   *
@@ -1640,7 +1640,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * column-gap
   *
@@ -1669,7 +1669,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * column-rule
   *
@@ -1703,7 +1703,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * column-rule-color
   *
@@ -1727,7 +1727,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * column-rule-style
   *
@@ -1796,7 +1796,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * column-rule-width
   *
@@ -1835,7 +1835,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * column-span
   *
@@ -1864,7 +1864,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * column-width
   *
@@ -1895,7 +1895,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * columns
   *
@@ -1929,7 +1929,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * content
   *
@@ -2035,7 +2035,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * flex-basis
   *
@@ -2064,7 +2064,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * flex-direction
   *
@@ -2103,7 +2103,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * flex-flow
   *
@@ -2135,7 +2135,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * flex-grow
   *
@@ -2159,7 +2159,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * flex-shrink
   *
@@ -2183,7 +2183,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * flex-wrap
   *
@@ -2217,7 +2217,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * float
   *
@@ -2285,7 +2285,7 @@ export interface CSSStyles {
      * Format: string [1|0|on|off] Always a string of 4 ASCII characters.
      *
      */
-     | "feature-value" | PossibleStyle;
+     | "feature-value";
     /**
   * @font-feature-values
   *
@@ -2321,7 +2321,7 @@ export interface CSSStyles {
      * Specifies that font kerning is not applied
      *
      */
-     | "none" | PossibleStyle;
+     | "none";
     /**
   * font-language-override
   *
@@ -2341,7 +2341,7 @@ export interface CSSStyles {
     defined by string
 *
 */
-     | "string" | PossibleStyle;
+     | "string";
     /**
   * font-size
   *
@@ -2382,7 +2382,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * font-stretch
   *
@@ -2446,7 +2446,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * font-style
   *
@@ -2552,7 +2552,7 @@ export interface CSSStyles {
      | "inherit"
     /**
      */
-     | "unset" | PossibleStyle;
+     | "unset";
     /**
   * font-variant-east-asian
   *
@@ -2582,7 +2582,7 @@ export interface CSSStyles {
      | "inherit"
     /**
      */
-     | "unset" | PossibleStyle;
+     | "unset";
     /**
   * font-variant-ligatures
   *
@@ -2895,7 +2895,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * @import
   *
@@ -2936,7 +2936,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * letter-spacing
   *
@@ -3188,7 +3188,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * opacity
   *
@@ -3212,7 +3212,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * order
   *
@@ -3236,7 +3236,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * orphans
   *
@@ -3297,7 +3297,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * outline-style
   *
@@ -3384,7 +3384,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * overflow-y
   *
@@ -3423,7 +3423,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * padding-bottom
   *
@@ -3602,7 +3602,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * table-layout
   *
@@ -3680,7 +3680,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * text-combine-upright
   *
@@ -3728,7 +3728,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * text-decoration-line
   *
@@ -3767,7 +3767,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * text-decoration-style
   *
@@ -3811,7 +3811,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * text-indent
   *
@@ -3862,7 +3862,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * text-orientation
   *
@@ -3908,7 +3908,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * text-shadow
   *
@@ -3952,7 +3952,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * text-transform
   *
@@ -4117,7 +4117,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * transform-origin
   *
@@ -4184,7 +4184,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * transition-delay
   *
@@ -4208,7 +4208,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * transition-duration
   *
@@ -4232,7 +4232,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * transition-property
   *
@@ -4266,7 +4266,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * transition-timing-function
   *
@@ -4331,7 +4331,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * user-select
   *
@@ -4360,7 +4360,7 @@ export interface CSSStyles {
      * Text selection is made with one click instead of a double-click
      *
      */
-     | "all" | PossibleStyle;
+     | "all";
     /**
   * visibility
   *
@@ -4436,7 +4436,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * word-spacing
   *
@@ -4477,7 +4477,7 @@ export interface CSSStyles {
      * Inherits this property from its parent element. Read about inherit
      *
      */
-     | "inherit" | PossibleStyle;
+     | "inherit";
     /**
   * writing-mode
   *
@@ -4503,6 +4503,6 @@ export interface CSSStyles {
     left to right
 *
 */
-     | "vertical-lr" | PossibleStyle;
+     | "vertical-lr";
     [key: string]: PossibleStyle | undefined;
 }

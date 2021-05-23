@@ -3,7 +3,7 @@ import type { CSSStyles } from "../css";
 import { convertToPathCase } from "./utils";
 
 export type AttrType = string | number | boolean;
-export type PossibleAttr = AttrType | NodeAttr<AttrType> | undefined;
+export type PossibleAttr = AttrType | CSSStyles | undefined;
 
 export class NodeAttr<T extends string | boolean | number> {
   constructor(root: ObjectDom<HTMLElement>, key: string, value: T | undefined) {
@@ -60,7 +60,7 @@ export class NodeAttr<T extends string | boolean | number> {
 
 export interface GlobalAttrs {
   id?: string;
-  className?: string | string[];
+  className?: string;
   contenteditable?: StringBool;
   accesskey?: string;
   autocapitalize?: AutoCapitalize;

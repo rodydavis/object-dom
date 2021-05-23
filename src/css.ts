@@ -54,8 +54,7 @@ Example: div  \{    display: flex;  align-items: center;  \}
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * align-self
@@ -116,8 +115,7 @@ Example: #myBlueDiv  \{        align-self: center;\}
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * all
@@ -148,8 +146,7 @@ Example: div  \{  background-color: yellow;  color: red;  all: initial;\}
      * Changes all the properties applied to the element or the element's parent to their parent value if they are inheritable or to their initial value if not
      *
      */
-    | "unset"
-    | PossibleStyle;
+    | "unset";
 
   /**
 * animation
@@ -222,8 +219,7 @@ Example: div  \{    animation: mymove 5s infinite;  \}
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * animation-delay
@@ -256,8 +252,7 @@ Example: div \{  animation-delay: 2s;\}
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * animation-direction
@@ -307,8 +302,7 @@ Example: div \{  animation-direction: alternate;\}
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * animation-duration
@@ -341,8 +335,7 @@ animation should take to complete one cycle. This can be specified in seconds or
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * animation-fill-mode
@@ -394,8 +387,7 @@ Example: div \{  animation-fill-mode: forwards;\}
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * animation-iteration-count
@@ -432,8 +424,7 @@ Example: div \{  animation-iteration-count: 2;\}
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * animation-name
@@ -470,8 +461,7 @@ Example: div \{  animation-name: mymove; \}
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * animation-play-state
@@ -508,8 +498,7 @@ Example: div \{  animation-play-state: paused; \}
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * animation-timing-function
@@ -589,8 +578,7 @@ Example: div \{      animation-timing-function: linear;\}
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * background
@@ -663,8 +651,7 @@ Example: body  \{     background: lightblue url("img_tree.gif") no-repeat fixe
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * background-attachment
@@ -734,8 +721,7 @@ Example: div  \{    border: 10px dotted black;  padding: 15px;  background: 
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * background-color
@@ -804,8 +790,7 @@ Example: #example1 \{    border: 10px dashed black;  padding:      25px;  
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * background-position
@@ -887,8 +872,7 @@ Example: #example1 \{  background: url(mountain.jpg);       background-repeat:
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * border
@@ -965,8 +949,7 @@ Example: #example1 \{  border: 2px solid red;       border-bottom-left-radius:
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * border-bottom-right-radius
@@ -1003,8 +986,7 @@ Example: #example1 \{  border: 2px solid red;       border-bottom-right-radius
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * border-bottom-style
@@ -1111,8 +1093,7 @@ Example: #borderimg \{   border-image: url(border.png) 30 round;\}
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * border-image-outset
@@ -1149,8 +1130,7 @@ Example: #borderimg  \{        border-image-source: url(border.png);        bo
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * border-image-repeat
@@ -1199,8 +1179,7 @@ Example: #borderimg  \{    border-image-source: url(border.png);    border-i
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * border-image-slice
@@ -1243,8 +1222,7 @@ Example: #borderimg \{   border-image-slice: 30%;  \}
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * border-image-source
@@ -1281,8 +1259,7 @@ Example: #borderimg  \{    border-image-source: url(border.png);  \}
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * border-image-width
@@ -1331,8 +1308,7 @@ Example: #borderimg  \{    border-image-source: url(border.png);    border-i
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * border-left
@@ -1421,8 +1397,7 @@ Example: #example1 \{  border: 2px solid red;       border-radius: 25px;\}#ex
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * border-right
@@ -1564,8 +1539,7 @@ Example: #example1 \{  border: 2px solid red;  border-top-left-radius: 25px;
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * border-top-right-radius
@@ -1602,8 +1576,7 @@ Example: #example1 \{  border: 2px solid red;  border-top-right-radius: 25px
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * border-top-style
@@ -1696,8 +1669,7 @@ Example: span.ex1 \{   -webkit-box-decoration-break: clone;  -o-box-decorati
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * box-shadow
@@ -1769,8 +1741,7 @@ Example: #example1 \{  box-shadow: 5px 10px;\}#example2 \{  box-shadow:      
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * box-sizing
@@ -1810,8 +1781,7 @@ Example: #example1 \{  box-sizing: border-box;\}
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * break-after
@@ -1893,8 +1863,7 @@ Example: input \{   caret-color: red;\}
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * @charset
@@ -1983,8 +1952,7 @@ Example: div  \{        column-count: 3;  \}
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * column-fill
@@ -2026,8 +1994,7 @@ Example: .newspaper1 \{       column-fill: auto;\}.newspaper2 \{  column-fill:
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * column-gap
@@ -2064,8 +2031,7 @@ Example: div  \{        column-gap: 40px;  \}
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * column-rule
@@ -2108,8 +2074,7 @@ Example: div  \{  column-rule: 4px double #ff00ff;  \}
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * column-rule-color
@@ -2140,8 +2105,7 @@ Example: div  \{    column-rule-color: #ff0000;  \}
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * column-rule-style
@@ -2226,8 +2190,7 @@ Example: div  \{        column-rule-style: dotted;  \}
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * column-rule-width
@@ -2276,8 +2239,7 @@ Example: div  \{    column-rule-width: 10px;  \}
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * column-span
@@ -2314,8 +2276,7 @@ Example: h2  \{   column-span: all;  \}
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * column-width
@@ -2354,8 +2315,7 @@ Example: div  \{    column-width: 100px;   \}
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * columns
@@ -2398,8 +2358,7 @@ Example: div  \{  columns: 100px 3;    \}
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * content
@@ -2521,8 +2480,7 @@ Example: #main div \{  -ms-flex: 1; \/* IE 10 *\/        flex: 1;\}
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * flex-basis
@@ -2559,8 +2517,7 @@ Example: div:nth-of-type(2) \{  flex-basis:    100px;\}
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * flex-direction
@@ -2609,8 +2566,7 @@ Example: div \{       display: flex;     flex-direction: row-reverse;  \}
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * flex-flow
@@ -2652,8 +2608,7 @@ Example: div \{   display: flex;  flex-flow: row-reverse wrap;\}
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * flex-grow
@@ -2684,8 +2639,7 @@ Example: div:nth-of-type(1) \{flex-grow: 1;\} div:nth-of-type(2) \{flex-grow: 3;
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * flex-shrink
@@ -2716,8 +2670,7 @@ Example: div:nth-of-type(2) \{  flex-shrink: 3;\}
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * flex-wrap
@@ -2760,8 +2713,7 @@ Example: div \{      display: flex;     flex-wrap: wrap;\}
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * float
@@ -2839,8 +2791,7 @@ Example: \/* enable small-caps *\/.ex1 \{ font-feature-settings: "smcp" on; \}  
      * Format: string [1|0|on|off] Always a string of 4 ASCII characters.
      *
      */
-    | "feature-value"
-    | PossibleStyle;
+    | "feature-value";
 
   /**
 * @font-feature-values
@@ -2885,8 +2836,7 @@ Example: .ex1 \{   font-kerning: normal;\}
      * Specifies that font kerning is not applied
      *
      */
-    | "none"
-    | PossibleStyle;
+    | "none";
 
   /**
 * font-language-override
@@ -2913,8 +2863,7 @@ Example: div1 \{   font-language-override: normal;\}div2 \{        font-langu
     defined by string
 * 
 */
-    | "string"
-    | PossibleStyle;
+    | "string";
 
   /**
 * font-size
@@ -2964,8 +2913,7 @@ Example: div  \{    font-size-adjust: 0.58;  \}
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * font-stretch
@@ -3044,8 +2992,7 @@ Example: div  \{  font-family: sans-serif, "Helvetica Neue", "Lucida Grande", A
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * font-style
@@ -3169,8 +3116,7 @@ Example: p.normal \{font-variant-caps: normal;\}p.small \{font-variant-caps:    
 
     /**
      */
-    | "unset"
-    | PossibleStyle;
+    | "unset";
 
   /**
 * font-variant-east-asian
@@ -3209,8 +3155,7 @@ Example: p.normal \{font-variant-caps: normal;\}p.small \{font-variant-caps:    
 
     /**
      */
-    | "unset"
-    | PossibleStyle;
+    | "unset";
 
   /**
 * font-variant-ligatures
@@ -3555,8 +3500,7 @@ Example: div.a \{  -webkit-hyphens: none;  -ms-hyphens: none;     hyphens: no
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * @import
@@ -3606,8 +3550,7 @@ Example: #e \{  isolation: isolate;\}
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * letter-spacing
@@ -3887,8 +3830,7 @@ Example: img.a \{  width: 200px;  height:      400px;  object-fit: none;  
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * opacity
@@ -3919,8 +3861,7 @@ Example: div  \{    opacity: 0.5;  \}
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * order
@@ -3951,8 +3892,7 @@ Example: div#myRedDIV \{order: 2;\}div#myBlueDIV \{order: 4;\}div#myGreenDIV \{o
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * orphans
@@ -4023,8 +3963,7 @@ Example: div  \{    outline: 4px solid red;    outline-offset: 15px;  \}
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * outline-style
@@ -4126,8 +4065,7 @@ Example: div.ex1 \{  overflow-x: scroll;\}div.ex2 \{       overflow-x: hidden
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * overflow-y
@@ -4177,8 +4115,7 @@ Example: div.ex1 \{  overflow-y: scroll;\}div.ex2 \{  overflow-y: hidden;\}di
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * padding-bottom
@@ -4377,8 +4314,7 @@ Example: div  \{       display: grid;  row-gap: 50px;  \}
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * table-layout
@@ -4471,8 +4407,7 @@ Example: div.a \{   text-align: justify;  \/* For Edge *\/  text-align-last:
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * text-combine-upright
@@ -4529,8 +4464,7 @@ Example: p \{     text-decoration: underline;  text-decoration-color: red; \}
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * text-decoration-line
@@ -4579,8 +4513,7 @@ Example: div.a \{  text-decoration-line: overline; \}div.b \{  text-decorati
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * text-decoration-style
@@ -4635,8 +4568,7 @@ Example: div.a \{  text-decoration-line: underline;  text-decoration-style: so
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * text-indent
@@ -4698,8 +4630,7 @@ Example: div  \{     text-align: justify;        text-justify: inter-word;  \}
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * text-orientation
@@ -4755,8 +4686,7 @@ Example: div  \{  white-space: nowrap;   overflow:      hidden;   text-overfl
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * text-shadow
@@ -4811,8 +4741,7 @@ Example: h1  \{        text-shadow: 2px 2px #ff0000;  \}
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * text-transform
@@ -5008,8 +4937,7 @@ Example: div.a \{  transform: rotate(20deg);\}div.b \{       transform: skewY(
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * transform-origin
@@ -5088,8 +5016,7 @@ Example: div  \{    width: 100px;  transition: width 2s;  \}  div:hover \{ 
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * transition-delay
@@ -5120,8 +5047,7 @@ Example: div \{      transition-delay: 2s;\}
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * transition-duration
@@ -5152,8 +5078,7 @@ Example: div \{  transition-duration: 5s;     \}
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * transition-property
@@ -5196,8 +5121,7 @@ Example: div  \{        transition-property: width;  \}div:hover \{  width: 30
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * transition-timing-function
@@ -5277,8 +5201,7 @@ Example: div \{  transition-timing-function: linear;     \}
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * user-select
@@ -5315,8 +5238,7 @@ Example: div  \{       -webkit-user-select: none; \/* Safari *\/  -ms-user-sel
      * Text selection is made with one click instead of a double-click
      *
      */
-    | "all"
-    | PossibleStyle;
+    | "all";
 
   /**
 * visibility
@@ -5405,8 +5327,7 @@ Example: p.a \{  word-break: break-all;\}
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * word-spacing
@@ -5456,8 +5377,7 @@ Example: div \{  word-wrap: break-word;\}
      * Inherits this property from its parent element. Read about inherit
      *
      */
-    | "inherit"
-    | PossibleStyle;
+    | "inherit";
 
   /**
 * writing-mode
@@ -5491,8 +5411,7 @@ Example: p.test1 \{  writing-mode: horizontal-tb; \}p.test2 \{       writing-m
     left to right
 * 
 */
-    | "vertical-lr"
-    | PossibleStyle;
+    | "vertical-lr";
 
   [key: string]: PossibleStyle | undefined;
 }

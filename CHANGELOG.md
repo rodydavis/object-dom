@@ -1,3 +1,7 @@
+## 0.6.0
+
+- Moving global attributes from props to attributes
+
 ## 0.5.0
 
 - Fixing render call to swap nodes

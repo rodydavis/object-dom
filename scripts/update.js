@@ -57,8 +57,8 @@ async function main() {
                         })}
                         ${values.length > 0 ? '|' : ''} "${ValName}"`);
                     }
-                    values.push(` 
-                    | PossibleStyle`);
+                    // values.push(` 
+                    // | PossibleStyle`);
                 }
             }
             const example = cssDetailsDom.window.document.querySelector("div.w3-code")?.textContent;
