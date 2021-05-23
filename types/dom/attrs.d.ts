@@ -1,7 +1,6 @@
 import type { ObjectDom } from "../base";
-import type { CSSStyles } from "../css";
 export declare type AttrType = string | number | boolean;
-export declare type PossibleAttr = AttrType | CSSStyles | undefined;
+export declare type PossibleAttr = AttrType | undefined;
 export declare class NodeAttr<T extends string | boolean | number> {
     constructor(root: ObjectDom<HTMLElement>, key: string, value: T | undefined);
     _value: T | null;
@@ -30,7 +29,7 @@ export interface GlobalAttrs {
     part?: string;
     slot?: string;
     spellcheck?: StringBool;
-    style?: CSSStyles;
+    style?: string;
     tabindex?: number;
     title?: string;
     translate?: StringYesNo;

@@ -23,6 +23,7 @@ export interface NodeProps<T extends HTMLElement = HTMLElement> {
   text?: string;
   children?: NodeArray;
   attributes?: NodeAttrs;
+  styles?: CSSStyles;
   events?: NodeEvents;
   onCreate?: ((node: HTMLElement) => void) | undefined;
 }
@@ -72,6 +73,11 @@ export class GlobalDom<T extends HTMLElement> extends ObjectDom<T> {
         this.addEventListener(key, value);
       }
     }
+    if (props.styles) {
+      for (const [k, v] of Object.entries(props.styles)) {
+        this.addStyle(k, v);
+      }
+    }
   }
 
   addAttr(key: string, value: PossibleAttr) {
@@ -82,10 +88,6 @@ export class GlobalDom<T extends HTMLElement> extends ObjectDom<T> {
         this.attributes[key] = new NodeAttr<boolean>(this, key, value);
       } else if (typeof value === "number") {
         this.attributes[key] = new NodeAttr<number>(this, key, value);
-      } else if (key === "style") {
-        for (const [k, v] of Object.entries(value)) {
-          this.addStyle(k, v);
-        }
       }
     }
   }
@@ -238,14 +240,7 @@ export function generateNode(source: GlobalDom<HTMLElement>) {
     }
   }
   if (source.attributes) {
-    if (source.attributes.className) {
-      result.className =
-        typeof source.attributes.className === "string" ? source.attributes.className : "";
-    }
     for (const [key, value] of Object.entries(source.attributes).filter((n) => n[1].value)) {
-      if (key == "className") {
-        continue;
-      }
       const val = value.value;
       if (val) {
         if (typeof val === "string") {

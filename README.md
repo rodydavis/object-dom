@@ -194,14 +194,14 @@ class Counter extends ObjectDom {
   value = 0;
   render() {
     return new Div({
-      attributes: { style: { margin: "5px" } },
+      styles: { margin: "5px" },
       children: [
         `${this.value}`,
         new Row({
           children: [
             new Button({
               text: "-",
-              attributes: { style: { width: "50px" } },
+              styles: { width: "50px" },
               events: {
                 click: () => {
                   this.value -= 1;
@@ -211,7 +211,7 @@ class Counter extends ObjectDom {
             }),
             new Button({
               text: "+",
-              attributes: { style: { width: "50px", marginLeft: "5px" } },
+              styles: { width: "50px", marginLeft: "5px" },
               events: {
                 click: () => {
                   this.value += 1;
@@ -229,13 +229,13 @@ class Counter extends ObjectDom {
 class CanvasExample extends ObjectDom {
   render() {
     return new Canvas({
-      attributes: { style: { width: "200px", height: "200px" } },
+      styles: { width: "200px", height: "200px" },
       onCreate: (node) => {
         const canvas = node as HTMLCanvasElement;
         const ctx = canvas.getContext("2d")!;
 
         // Create gradient
-        var grd = ctx.createRadialGradient(75, 50, 5, 90, 60, 100);
+        const grd = ctx.createRadialGradient(75, 50, 5, 90, 60, 100);
         grd.addColorStop(0, "red");
         grd.addColorStop(1, "white");
 

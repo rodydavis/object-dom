@@ -13,6 +13,7 @@ export interface NodeProps<T extends HTMLElement = HTMLElement> {
     text?: string;
     children?: NodeArray;
     attributes?: NodeAttrs;
+    styles?: CSSStyles;
     events?: NodeEvents;
     onCreate?: ((node: HTMLElement) => void) | undefined;
 }
