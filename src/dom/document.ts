@@ -47,7 +47,7 @@ export class ObjectDocument extends ObjectDom {
     const addToNode = (target: HTMLElement, children: NodeArray) => {
       for (const item of children) {
         if (item instanceof ObjectDom) {
-          const node = item.render().node;
+          const node = item.renderDom().node;
           target.append(node);
         } else {
           target.append(item);

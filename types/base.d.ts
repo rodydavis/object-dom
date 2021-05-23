@@ -17,7 +17,8 @@ export interface NodeProps<T extends HTMLElement = HTMLElement> extends GlobalAt
     onCreate?: ((node: HTMLElement) => void) | undefined;
 }
 export declare abstract class ObjectDom<T extends HTMLElement = HTMLElement> {
-    abstract render(): GlobalDom<T>;
+    abstract render(): ObjectDom<T> | GlobalDom<T>;
+    renderDom(): GlobalDom<HTMLElement>;
     update: () => void;
     onCreate: (node: HTMLElement) => void;
 }

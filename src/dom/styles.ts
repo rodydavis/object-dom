@@ -50,6 +50,6 @@ export class NodeStyle<T extends string> {
   }
 
   public get node(): HTMLElement {
-    return this._root.render().node;
+    return this._root.renderDom().node;
   }
 }

@@ -35,9 +35,21 @@ export interface NodeProps<T extends HTMLElement = HTMLElement> extends GlobalAt
 }
 
 export abstract class ObjectDom<T extends HTMLElement = HTMLElement> {
-  abstract render(): GlobalDom<T>;
+  abstract render(): ObjectDom<T> | GlobalDom<T>;
+  renderDom(): GlobalDom<HTMLElement> {
+    return renderChild(this.render());
+  }
   update: () => void = () => {};
   onCreate: (node: HTMLElement) => void = (_) => {};
+}
+
+function renderChild(
+  node: ObjectDom<HTMLElement> | GlobalDom<HTMLElement>
+): GlobalDom<HTMLElement> {
+  if (node instanceof GlobalDom) {
+    return node;
+  }
+  return renderChild(node.render());
 }
 
 interface NodeEvent {
@@ -241,9 +253,9 @@ export function generateNode(source: GlobalDom<HTMLElement>) {
   }
   for (const child of source.children) {
     if (child instanceof ObjectDom) {
-      let childNode = generateNode(child.render());
+      let childNode = generateNode(child.renderDom());
       child.update = () => {
-        const _newNode = generateNode(child.render());
+        const _newNode = generateNode(child.renderDom());
         result?.replaceChild(_newNode, childNode);
         childNode = _newNode;
       };
