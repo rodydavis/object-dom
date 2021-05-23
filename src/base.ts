@@ -219,10 +219,6 @@ export function generateNode(source: GlobalDom<HTMLElement>) {
   if (source.text) {
     result.textContent = source.text;
   }
-  if (source.attributes.className) {
-    result.className =
-      typeof source.attributes.className === "string" ? source.attributes.className : "";
-  }
   for (const child of source.children) {
     if (child instanceof ObjectDom) {
       let childNode = generateNode(child.renderDom());
@@ -236,13 +232,20 @@ export function generateNode(source: GlobalDom<HTMLElement>) {
       result.append(child);
     }
   }
-  if (source.styles) {
-    for (const [key, value] of Object.entries(source.styles).filter((n) => n[1].value)) {
-      result.style.setProperty(key, value.value);
-    }
-  }
   if (source.attributes) {
     for (const [key, value] of Object.entries(source.attributes).filter((n) => n[1].value)) {
+      if (key === "style") {
+        for (const [styleKey, styleVal] of Object.entries(source.styles).filter(
+          (n) => n[1].value
+        )) {
+          result.style.setProperty(styleKey, styleVal.value);
+        }
+        continue;
+      }
+      if (key === "className") {
+        result.className = typeof value === "string" ? value : "";
+        continue;
+      }
       const val = value.value;
       if (val) {
         if (typeof val === "string") {
