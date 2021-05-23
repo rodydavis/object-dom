@@ -1,6 +1,6 @@
 {
   "name": "object-dom",
-  "version": "0.6.4",
+  "version": "0.6.6",
   "description": "Declarative dom with 1:1 mapping of objects and tags, typed css, reactive updates and no bundler needed.",
   "main": "build/object-dom.umd.js",
   "module": "build/object-dom.es.js",

@@ -2,6 +2,7 @@ import { GlobalAttrs } from "./dom/attrs";
 import { NodeEvents } from "./events";
 import {
   AttrType,
+  convertToPathCase,
   CSSStyles,
   NodeAttr,
   NodeStyle,
@@ -236,19 +237,20 @@ export function generateNode(source: GlobalDom<HTMLElement>) {
   }
   if (source.styles) {
     for (const [key, val] of Object.entries(source.styles)) {
-      result.style.setProperty(key, val.value);
+      result.style.setProperty(convertToPathCase(key), val.value);
     }
   }
   if (source.attributes) {
     for (const [key, value] of Object.entries(source.attributes).filter((n) => n[1].value)) {
       const val = value.value;
+      const fixedKey = convertToPathCase(key);
       if (val) {
         if (typeof val === "string") {
-          result.setAttribute(key, val);
+          result.setAttribute(fixedKey, val);
         } else if (typeof val === "number") {
-          result.setAttribute(key, `${val}`);
+          result.setAttribute(fixedKey, `${val}`);
         } else if (typeof val === "boolean" && val) {
-          result.setAttribute(key, key);
+          result.setAttribute(fixedKey, fixedKey);
         }
       }
     }
