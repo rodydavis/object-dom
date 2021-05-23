@@ -154,7 +154,7 @@ https://www.w3schools.com/TAGS/default.ASP
   const label = new P({ text: "Hello World!" });
   const button = new Button({
     text: "Update",
-    style: { width: "100px" },
+    styles: { width: "100px" },
   });
   const app = new Div({
     children: [
@@ -163,7 +163,7 @@ https://www.w3schools.com/TAGS/default.ASP
           label,
           button,
           new Row({
-            style: { padding: "10px" },
+            styles: { padding: "10px" },
             children: ["A", "B", "C"],
           }),
         ],
