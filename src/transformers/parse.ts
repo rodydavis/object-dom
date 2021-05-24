@@ -1,8 +1,6 @@
 import { GlobalDom } from "../object-dom";
 import * as tags from "../dom";
 
-const parser = new DOMParser();
-
 type DocType =
   | "text/html"
   | "text/xml"
@@ -15,6 +13,7 @@ type DocType =
  * a object dom object
  */
 export function parseHtml(source: string, type: DocType = "text/html"): GlobalDom<HTMLElement> {
+  const parser = new DOMParser();
   const doc = parser.parseFromString(source, type);
   if (doc.firstChild) {
     return parseNode(doc.firstChild as Element);
@@ -22,7 +21,7 @@ export function parseHtml(source: string, type: DocType = "text/html"): GlobalDo
   return new tags.Html({});
 }
 
-function parseNode(node: Element): GlobalDom<HTMLElement> {
+export function parseNode(node: Element): GlobalDom<HTMLElement> {
   let base: GlobalDom<HTMLElement>;
   switch (node.tagName.toLowerCase()) {
     // -- BEGIN_TAGS --

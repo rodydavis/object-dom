@@ -55,8 +55,6 @@ export declare class GlobalDom<T extends HTMLElement> extends ObjectDom<T> {
     get text(): string | undefined;
     set text(text: string | undefined);
     addEventListener(type: string, callback: EventListenerOrEventListenerObject | undefined, options?: boolean | AddEventListenerOptions | undefined): void;
-    toString: () => string;
 }
-export declare function generateCode(source: GlobalDom<HTMLElement>): string;
 export declare function generateNode(source: GlobalDom<HTMLElement>): HTMLElement;
 export {};

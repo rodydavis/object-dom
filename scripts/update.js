@@ -102,6 +102,10 @@ case "${item.tagName}":
     base = new tags.${item.className}({});
     break;`).join('')
     );
+    updateFile('src/transformers/html-to-code.ts', '// -- BEGIN_TAGS --', '// -- END_TAGS --', tags.map((item) => `
+case "${item.tagName}":
+    return "${item.className}";`).join('')
+    );
 
     updateFile('test/dom.test.ts', '// -- BEGIN_TAGS --', '// -- END_TAGS --', tags.map((item) => `
     testComponent("${item.tagName}", new tags.${item.className}());`).join('')

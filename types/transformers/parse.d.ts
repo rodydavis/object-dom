@@ -5,4 +5,5 @@ declare type DocType = "text/html" | "text/xml" | "application/xml" | "applicati
  * a object dom object
  */
 export declare function parseHtml(source: string, type?: DocType): GlobalDom<HTMLElement>;
+export declare function parseNode(node: Element): GlobalDom<HTMLElement>;
 export {};

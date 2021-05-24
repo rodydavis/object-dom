@@ -169,52 +169,6 @@ export class GlobalDom<T extends HTMLElement> extends ObjectDom<T> {
     if (!this._events[type]) this._events[type] = [];
     this._events[type].push({ callback, options });
   }
-
-  public toString = (): string => {
-    return generateCode(this);
-  };
-}
-
-export function generateCode(source: GlobalDom<HTMLElement>) {
-  const tab = "";
-  const sb: string[] = [];
-  sb.push(`new ${source.constructor.name}({`);
-  if (source.text) sb.push(`${tab}text: "${source.text}"`);
-  if (source.styles) {
-    const styles = Object.entries(source.styles)
-      .filter((n) => n[1].value)
-      .map(([key, value]) => `"${key}": "${value.value}"`);
-    if (styles.length > 0) {
-      sb.push(`${tab}styles: {`);
-      for (const item of styles) {
-        sb.push(`${tab}${tab}${item},`);
-      }
-      sb.push(`${tab}},`);
-    }
-  }
-  if (source.attributes) {
-    const attrs = Object.entries(source.attributes)
-      .filter((n) => n[1].value)
-      .filter((n) => n[1].value)
-      .map(([key, value]) => `"${key}": "${value.value}"`);
-    if (attrs.length > 0) {
-      sb.push(`${tab}attributes: {`);
-      for (const item of attrs) {
-        sb.push(`${tab}${tab}${item},`);
-      }
-      sb.push(`${tab}},`);
-    }
-  }
-  if (source.children && source.children.length > 0) {
-    sb.push(`${tab}children: {`);
-    for (const child of source.children) {
-      const item = child.toString();
-      sb.push(`${tab}${tab}${item},`);
-    }
-    sb.push(`${tab}},`);
-  }
-  sb.push(`})`);
-  return sb.join("");
 }
 
 export function generateNode(source: GlobalDom<HTMLElement>) {

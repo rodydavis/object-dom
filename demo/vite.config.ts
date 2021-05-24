@@ -5,6 +5,7 @@ import { resolve } from "path";
 export default defineConfig({
   base: "/object-dom/",
   build: {
+    minify: false,
     outDir: "build",
     rollupOptions: {
       input: {

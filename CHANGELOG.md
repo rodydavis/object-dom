@@ -1,3 +1,8 @@
+## 0.7.0
+
+- Adding full html to object dom code generator
+- Updating example
+
 ## 0.6.0
 
 - Moving global attributes from props to attributes
